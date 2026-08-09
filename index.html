@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Course page description">
+    <title>Origins of Math Fall 2026 </title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Origins of Mathematics</h1>
+        <h1> Fall 2026</h1>
+    </header>
+    <div id="navigation-placeholder"></div>
+
+    <main>
+    <section class="welcome">
+    <p>
+      Welcome to Computer Science I. This course introduces the fundamental ideas of programming and computational thinking using the Processing programming environment. The website contains lesson notes, 
+      assignments, and course resources that support the course throughout the semester.
+    </p>
+    <br>
+    <p><em>I hope these notes help someone discover the elegance of computer science.</em></p>
+  </section>
+        <section class="instructor-info">
+            <h3>Instructor</h3>
+            <p><strong>Irina Shablinsky</strong><br>
+            Email: irina.shablinsky@purchase.edu<br>
+            Office: NS 3002<br>
+            Office Hours:Tue, Fri 1:30 pm - 2:15 pm, and 6:10 pm - 6:40 pm</p>
+        </section>
+        
+        <section class="schedule-location">
+        
+                   
+                    <p><strong>Schedule:</strong> TF 2:30 pm - 4:10 pm</p>
+                    <p><strong>Location:</strong> NS 1013 (New Media Lab)</p>
+                    
+               
+        </section>
+        <section class="announcements">
+    <h2>Announcements</h2>
+
+    <p><strong>Welcome to CS1!</strong></p>
+
+    <p>
+      Please read the syllabus before the first class and install Processing
+      using the instructions under Resources.
+    </p>
+  </section>
+
+    </main>
+    
+    <div id="footer-placeholder"></div>
+
+ <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+
+</body>
+</html>  
