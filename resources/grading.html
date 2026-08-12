@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Course page description">
+  <title>CS1 – Grading</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>How Grading Works in CS1</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+
+    <p class="small">
+      This course uses a proficiency-based grading system designed to prioritize
+      learning, revision, and conceptual understanding over point-chasing.
+    </p>
+
+    <h2>Levels</h2>
+
+    <section class="grading-level">
+      <div class="level-3"><strong>Level 3: Proficient</strong></div>
+      <p class="small">You have demonstrated proficiency with the material for this assignment.</p>
+    </section>
+
+    <section class="grading-level">
+      <div class="level-2"><strong>Level 2: Progressing</strong></div>
+      <p class="small">You are close, but the work needs refinement.</p>
+
+      <h3>To upgrade to Level 3</h3>
+      <ul>
+        <li>Revise your work based on the feedback.</li>
+        <li>Submit an improved version within <strong>one week of receiving feedback</strong>.</li>
+        <li>Be prepared to explain your revisions if asked.</li>
+      </ul>
+    </section>
+
+    <section class="grading-level">
+      <div class="level-1"><strong>Level 1: Developing</strong></div>
+      <p class="small">The work is incomplete or needs significant correction.</p>
+
+      <h3>To upgrade your level</h3>
+      <ul>
+        <li>Come to office hours or schedule a short meeting.</li>
+        <li>Revise your work based on the feedback.</li>
+        <li>Submit an improved version within <strong>one week of receiving feedback</strong>.</li>
+      </ul>
+    </section>
+
+    <section class="grading-level">
+      <div class="level-0"><strong>Level 0: No submission</strong></div>
+      <p class="small">Nothing was submitted for evaluation.</p>
+      <blockquote>Nothing can come of nothing.</blockquote>
+      <p class="small">— William Shakespeare, <em>King Lear</em>, Act I, Scene I</p>
+
+      <h3>Next steps</h3>
+      <ul>
+        <li>Start the assignment as soon as possible.</li>
+        <li>Come to office hours early; this course is cumulative.</li>
+      </ul>
+    </section>
+
+    <h2>Revision and Late Submission Policy</h2>
+    <p>
+      Programming is cumulative: falling behind makes later topics harder.
+      At the same time, unlimited late work becomes unmanageable. This policy is designed to balance both.
+    </p>
+
+    <section>
+      <h3>Deadlines</h3>
+      <ul>
+        <li>Assignments are due on the posted date and time.</li>
+        <li>Each student has <strong>two late passes</strong> during the semester.</li>
+        <li>Each late pass extends the deadline by <strong>seven days</strong>.</li>
+        <li>To use a late pass, email me <strong>before the deadline</strong>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Revisions</h3>
+      <ul>
+        <li>Level 1 and Level 2 work may be revised within <strong>one week of receiving feedback</strong>.</li>
+        <li>Revisions must address the feedback.</li>
+        <li>I may ask you to explain your revisions during office hours.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Final limits</h3>
+      <p>
+        No work is accepted after the course has moved beyond the assignment
+        or after the end-of-semester deadline.
+      </p>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
