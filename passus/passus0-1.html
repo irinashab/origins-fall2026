@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Origins of Mathematics: Passus 0:1 — Tale of Numbers">
+  <title>Origins of Mathematics — Passus 0:1: Tale of Numbers</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Passus 0:1 — Tale of Numbers</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+    <section>
+      <h2>Can Crows Count?</h2>
+      <p>There are many animals that appear to recognize quantities. An old story about crows gives us a particularly interesting example.</p>
+      <p>A hunter had a hut near his fields where he would hide to shoot crows that came to eat his crops. The crows learned his trick. When they saw the hunter enter the hut, they stayed away until they saw him leave.</p>
+      <p>The hunter tried to fool them. He brought a friend into the hut with him. After a while, one person left—but the crows did not return. Apparently, they knew that someone was still inside.</p>
+      <p>The hunter tried again with three people, having them leave one at a time. Again the crows stayed away until the last person had left. He continued increasing the number. According to one version of the story, only when the number reached six did the crows finally lose track. Other versions put the limit as high as sixteen.</p>
+      <p>We do not know whether this really happened. The story has been told in many forms and is not an experiment. But it raises an interesting question:</p>
+      <p><strong>Can crows count?</strong></p>
+      <p>Perhaps what the story describes is <strong>subitizing</strong>—the ability to recognize a small quantity without consciously counting its members.</p>
+      <p>But that raises another question:</p>
+      <p><strong>Is recognizing “three” the same thing as having the abstract concept of the number three?</strong></p>
+      <p>Whatever the answer is for crows, humans went considerably further. We developed ways not only to recognize quantities, but to <strong>represent</strong> them.</p>
+    </section>
+
+    <section>
+      <h2>Numbers and Numerals</h2>
+      <p>Consider:</p>
+      <p><strong>five</strong></p>
+      <p><strong>5</strong></p>
+      <p><strong>V</strong></p>
+      <p><strong>|||||</strong></p>
+      <p>These are not four different numbers. They are four different ways of representing the same number.</p>
+      <p>A <strong>number</strong> is an abstract mathematical object.</p>
+      <p>A <strong>numeral</strong> is a symbol, or collection of symbols, used to represent a number.</p>
+      <p>A systematic way of using such symbols is called a <strong>numeral system</strong>.</p>
+      <p>And there is no single inevitable way to construct one.</p>
+    </section>
+
+    <section>
+      <h2>From Tallies to Groups</h2>
+      <p>In Passus 0:0 we saw one of the simplest ways of recording a quantity: make one mark for every object being counted.</p>
+      <p>But what happens when the number of marks becomes large?</p>
+      <p><strong>|||||||||||||||||||||||</strong></p>
+      <p>might become</p>
+      <p><strong>|||||&nbsp;&nbsp;|||||&nbsp;&nbsp;|||||&nbsp;&nbsp;|||||&nbsp;&nbsp;|||</strong></p>
+      <p>Now we can recognize four groups of five and three additional marks much more easily.</p>
+      <p>Grouping does more than make tallies easier to read. We have begun to think not only in <strong>ones</strong>, but in <strong>groups of five</strong>.</p>
+      <p>Why five?</p>
+      <p>Our hands provide one obvious answer. Ten is another natural choice because most of us have ten fingers.</p>
+      <p>But mathematics does not require us to use either one.</p>
+    </section>
+
+    <section>
+      <h2>A Visit from Outer Space</h2>
+      <p>Suppose an alien civilization on a distant planet—in a distant solar system, of course—uses the following <strong>base-five</strong> notation.</p>
+      <p>Naturally, the aliens have two hands with two and a half fingers each.</p>
+
+      <table>
+        <thead>
+          <tr><th>Symbol</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>%</code></td><td>1</td></tr>
+          <tr><td><code>#</code></td><td>5</td></tr>
+          <tr><td><code>&amp;</code></td><td>25</td></tr>
+          <tr><td><code>$</code></td><td>125</td></tr>
+          <tr><td><code>@</code></td><td>625</td></tr>
+        </tbody>
+      </table>
+
+      <p>No symbol may be repeated more than four times.</p>
+      <p>Thus, in Alienese,</p>
+      <p><strong>18 = ###%%%</strong></p>
+      <p>because</p>
+      <p><strong>18 = 5 + 5 + 5 + 1 + 1 + 1,</strong></p>
+      <p>and</p>
+      <p><strong>47 = &amp;####%%</strong></p>
+      <p>because</p>
+      <p><strong>47 = 25 + 5 + 5 + 5 + 5 + 1 + 1.</strong></p>
+
+      <p><strong>Question 1.</strong> In Alienese, do <code>###%%%</code> and <code>%%%###</code> represent the same number? Why?</p>
+      <p><strong>Question 2.</strong> What is the largest number that can be written in Alienese?</p>
+      <p>Do not just calculate it. How do you know that your answer really is the largest possible number?</p>
+
+      <p>The alien system is based on successive powers of five:</p>
+      <p><strong>1, 5, 25, 125, 625.</strong></p>
+      <p>But the <strong>position</strong> of a symbol does not change its value. The symbol <code>#</code> means 5 wherever it appears.</p>
+      <p>Alienese is therefore based on powers of five, but it is <strong>not positional</strong>.</p>
+    </section>
+
+    <section>
+      <h2>When Position Matters</h2>
+      <p>Our familiar numeral system works differently.</p>
+      <p>Consider <strong>555</strong>.</p>
+      <p>The same symbol occurs three times, but the three occurrences do <strong>not</strong> have the same value:</p>
+      <p><strong>555 = 5 · 100 + 5 · 10 + 5.</strong></p>
+      <p>The first 5 represents five hundreds, the second five tens, and the third five ones.</p>
+      <p>More generally,</p>
+      <p><strong>3854 = 3 · 10<sup>3</sup> + 8 · 10<sup>2</sup> + 5 · 10<sup>1</sup> + 4 · 10<sup>0</sup>.</strong></p>
+      <p>The value of a digit depends both on <strong>which digit it is</strong> and <strong>where it occurs</strong>.</p>
+      <p>This is a <strong>positional numeral system</strong>.</p>
+      <p>And because the positions correspond to powers of ten, ours is a <strong>base-ten positional numeral system</strong>.</p>
+      <p>But ten is not mathematically privileged.</p>
+    </section>
+
+    <section>
+      <h2>Other Bases</h2>
+      <p>Suppose we use base three.</p>
+      <p>There are only three available digits:</p>
+      <p><strong>0, 1, 2.</strong></p>
+      <p>The positions correspond to powers of three:</p>
+      <p><strong>1, 3, 9, 27, 81, 243, …</strong></p>
+      <p>Thus <strong>(120120)<sub>3</sub></strong> means</p>
+      <p><strong>1 · 3<sup>5</sup> + 2 · 3<sup>4</sup> + 0 · 3<sup>3</sup> + 1 · 3<sup>2</sup> + 2 · 3 + 0,</strong></p>
+      <p>so</p>
+      <p><strong>(120120)<sub>3</sub> = 420.</strong></p>
+      <p>The subscript tells us the base in which the numeral is written.</p>
+    </section>
+
+    <section>
+      <h2>From a Number to Its Representation</h2>
+      <p>Suppose we want to write 19 in base four.</p>
+      <p>The powers of four are</p>
+      <p><strong>1, 4, 16, 64, …</strong></p>
+      <p>The largest power of four not exceeding 19 is 16.</p>
+      <p><strong>19 = 1 · 16 + 3.</strong></p>
+      <p>There are no 4s in the remainder, so</p>
+      <p><strong>19 = 1 · 4<sup>2</sup> + 0 · 4 + 3.</strong></p>
+      <p>Therefore,</p>
+      <p><strong>19 = (103)<sub>4</sub>.</strong></p>
+      <p>Notice the zero. It tells us that there are <strong>no fours</strong>, while preserving the positions of the other digits.</p>
+      <p>That is one of the jobs zero performs in a positional numeral system.</p>
+      <p>There is much more to the story of zero—but that story will have to wait.</p>
+    </section>
+
+    <section>
+      <h2>Another Way: Division</h2>
+      <p>There is another systematic way to find the digits of a numeral.</p>
+      <p>The <strong>Division Algorithm</strong> says that if we divide an integer <em>n</em> by a positive integer <em>b</em>, we can write</p>
+      <p><strong>n = bq + r,&nbsp;&nbsp;0 ≤ r &lt; b.</strong></p>
+      <p>The remainder is unique.</p>
+      <p>To write 19 in base three, repeatedly divide by 3:</p>
+      <p><strong>19 = 3(6) + 1</strong></p>
+      <p><strong>6 = 3(2) + 0</strong></p>
+      <p><strong>2 = 3(0) + 2.</strong></p>
+      <p>The remainders, read <strong>from bottom to top</strong>, give</p>
+      <p><strong>19 = (201)<sub>3</sub>.</strong></p>
+      <p>Why?</p>
+      <p><strong>19 = 3[3(2) + 0] + 1 = 2 · 3<sup>2</sup> + 0 · 3 + 1.</strong></p>
+      <p>The two methods approach the same problem from opposite directions.</p>
+      <p>Using powers of the base finds the digits beginning with the <strong>leftmost</strong> digit.</p>
+      <p>Repeated division finds them beginning with the <strong>rightmost</strong> digit.</p>
+    </section>
+
+    <section>
+      <h2>The Base Representation Theorem</h2>
+      <p>This is not an accident.</p>
+      <p><strong>Base Representation Theorem.</strong> For every integer <em>b</em> ≥ 2, every positive integer can be represented uniquely in base <em>b</em>, using the digits</p>
+      <p><strong>0, 1, …, b − 1.</strong></p>
+      <p>More precisely, every positive integer <em>n</em> can be written uniquely as</p>
+      <p><strong>n = a<sub>k</sub>b<sup>k</sup> + a<sub>k−1</sub>b<sup>k−1</sup> + ··· + a<sub>1</sub>b + a<sub>0</sub>,</strong></p>
+      <p>where</p>
+      <p><strong>0 ≤ a<sub>i</sub> &lt; b</strong></p>
+      <p>and <strong>a<sub>k</sub> ≠ 0</strong>.</p>
+      <p>The Division Algorithm gives us both a way to find these digits and the reason that the representation is unique.</p>
+    </section>
+
+    <section>
+      <h2>Does Decimal Have to Be the Middleman?</h2>
+      <p>We now know that</p>
+      <p><strong>19 = (201)<sub>3</sub></strong></p>
+      <p>and</p>
+      <p><strong>19 = (103)<sub>4</sub>.</strong></p>
+      <p>We could therefore write</p>
+      <p><strong>(201)<sub>3</sub> = (103)<sub>4</sub>.</strong></p>
+      <p>Did we really have to convert the base-three numeral to decimal first?</p>
+      <p><strong>No.</strong></p>
+      <p>There is nothing mathematically special about decimal. We could perform arithmetic directly in base three and convert directly to another base.</p>
+      <p>Decimal is simply convenient because it is the numeral system in which most of us are accustomed to doing arithmetic.</p>
+      <p>For example,</p>
+      <p><strong>19 = (201)<sub>3</sub> = (103)<sub>4</sub> = (34)<sub>5</sub>.</strong></p>
+      <p>The representations change.</p>
+      <p><strong>The number does not.</strong></p>
+    </section>
+
+    <section>
+      <h2>A Number in Disguise</h2>
+      <figure>
+        <img src="../assets/images/passus0-1/lo-shu-cummings.png" alt="Lo Shu magic square represented by traditional dot patterns">
+        <figcaption>The Lo Shu magic square represented by dots. After Jay Cummings, <em>Math History: A Long-Form Mathematics Textbook</em>.</figcaption>
+      </figure>
+      <p>This ancient Chinese diagram is associated with the <strong>Lo Shu</strong> legend.</p>
+      <p>Before translating it into our familiar numerals, look at it.</p>
+      <p><strong>What do you notice?</strong></p>
+      <p><strong>Can you determine what numbers the groups of dots represent?</strong></p>
+      <p>Written with our numerals, the diagram becomes</p>
+      <table>
+        <tbody>
+          <tr><td>4</td><td>9</td><td>2</td></tr>
+          <tr><td>3</td><td>5</td><td>7</td></tr>
+          <tr><td>8</td><td>1</td><td>6</td></tr>
+        </tbody>
+      </table>
+      <p>Now something remarkable appears.</p>
+      <p>Add the numbers in any row:</p>
+      <p><strong>4 + 9 + 2 = 15.</strong></p>
+      <p>Any column:</p>
+      <p><strong>4 + 3 + 8 = 15.</strong></p>
+      <p>Or either diagonal:</p>
+      <p><strong>4 + 5 + 6 = 15.</strong></p>
+      <p>Every row, every column, and both diagonals have the same sum.</p>
+      <p>This is a <strong>magic square</strong>.</p>
+      <p>Magic configurations became an important subject of study in Chinese mathematics. Centuries later, the mathematician <strong>Yang Hui</strong> investigated methods for constructing magic squares and other magic configurations.</p>
+      <p>But for us, the Lo Shu has another lesson.</p>
+      <p>The dots looked unfamiliar. The arrangement looked unfamiliar. Once we understood the representation, however, the mathematics was perfectly recognizable.</p>
+    </section>
+
+    <section>
+      <h2>One Number, Many Numerals</h2>
+      <p>Seven remains prime whether we write it as</p>
+      <p><strong>7,&nbsp;&nbsp;VII,&nbsp;&nbsp;(111)<sub>2</sub>,</strong></p>
+      <p>or represent it in some notation we have not yet encountered.</p>
+      <p>A number is not the symbol we use to write it.</p>
+      <p>A numeral system gives us a language for representing numbers—and human beings have invented many such languages.</p>
+      <p>Which leaves us with the question that will take us into the historical part of our story:</p>
+      <p><strong>If the numbers are the same, why have people invented so many different ways of writing them?</strong></p>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <ol>
+        <li>Cummings, Jay. <em>Math History: A Long-Form Mathematics Textbook</em>. Independently published, 2025.</li>
+<li>Lewinter, Marty, and William Widulski. <em>The Saga of Mathematics: A Brief History</em>. Prentice Hall, 2002.</li>
+      </ol>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    const siteRoot = window.location.hostname.endsWith("github.io")
+      ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+      : "/";
+
+    fetch(`${siteRoot}assets/includes/navigation.html`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Navigation request failed: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(html => {
+        const placeholder = document.getElementById("navigation-placeholder");
+        placeholder.innerHTML = html;
+        placeholder.querySelectorAll("a[data-path]").forEach(link => {
+          link.href = `${siteRoot}${link.dataset.path}`;
+        });
+      })
+      .catch(error => console.error("Navigation load failed:", error));
+
+    fetch(`${siteRoot}assets/includes/footer.html`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Footer request failed: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+      })
+      .catch(error => console.error("Footer load failed:", error));
+  </script>
+</body>
+</html>
