@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive introduction to ancient Egyptian numerals and arithmetic.">
+  <title>Passus 1: A Tale of Ancient Egypt</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        enableMenu: true
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header class="lesson-header">
+    <p class="eyebrow">Passus 1 · Origins of Mathematics</p>
+    <h1>A Tale of Ancient Egypt</h1>
+    <p class="lesson-deck">A river changes the land. A civilization learns to count, measure, record—and calculate with pictures.</p>
+  </header>
+
+  <nav class="lesson-nav" aria-label="On this page">
+    <ol>
+      <li><a href="#why-math">Why mathematics?</a></li>
+      <li><a href="#picture-numbers">Numbers as pictures</a></li>
+      <li><a href="#addition">Addition by exchange</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section class="lesson-section" id="why-math">
+      <p class="section-kicker">01 · The need</p>
+      <h2>Why did Egypt need mathematics?</h2>
+
+      <aside class="challenge" aria-labelledby="notch-challenge">
+        <h3 id="notch-challenge">Try this before reading on</h3>
+        <p>Write the number <strong>256</strong> using only tally marks. Now imagine carving them into wood or stone. What makes the method inconvenient?</p>
+        <details class="answer">
+          <summary>Reveal the problem</summary>
+          <p>Tallies preserve a count, but large quantities become slow to write, difficult to check, and easy to misread. A growing society needs a more compact system.</p>
+        </details>
+      </aside>
+
+      <p class="lead">Small communities can manage with small numbers. Agriculture changes the scale of the problem.</p>
+      <p>Along the Nile, farming produced harvests large enough to store and trade. Annual flooding renewed the soil, but it also made time, land, and quantities worth recording. Mathematics became part of organizing everyday life—not an isolated school subject.</p>
+
+      <div class="need-grid" aria-label="Three practical needs for mathematics">
+        <article>
+          <h3>Time</h3>
+          <p>Calendars helped communities anticipate seasons, planting, harvesting, and religious observances.</p>
+        </article>
+        <article>
+          <h3>Measure</h3>
+          <p>Builders and surveyors needed lengths, areas, volumes, and reliable right angles.</p>
+        </article>
+        <article>
+          <h3>Record</h3>
+          <p>Trade, stored grain, wages, offerings, and taxes all required quantities that others could verify.</p>
+        </article>
+      </div>
+
+      <p>The important shift is not that earlier people were unable to count. It is that Egyptian society repeatedly confronted quantities too large—and too consequential—to leave as piles of marks.</p>
+    </section>
+
+    <section class="lesson-section" id="picture-numbers">
+      <p class="section-kicker">02 · The notation</p>
+      <h2>Writing numbers with pictures</h2>
+
+      <p class="lead">Egyptian numerals were additive. Each symbol had a fixed value, and a scribe repeated symbols until their values added to the required number.</p>
+
+      <div class="glyph-grid" aria-label="Ancient Egyptian numeral symbols">
+        <figure class="glyph-card">
+          <img src="images/passus1/one.png" alt="A single vertical stroke, the Egyptian symbol for one">
+          <figcaption><strong>1</strong><span>stroke</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="images/passus1/ten.png" alt="A heel-bone shape, the Egyptian symbol for ten">
+          <figcaption><strong>10</strong><span>heel bone</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="images/passus1/hundred.png" alt="A coil of rope, the Egyptian symbol for one hundred">
+          <figcaption><strong>100</strong><span>coil of rope</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="images/passus1/thousand.png" alt="A lotus plant, the Egyptian symbol for one thousand">
+          <figcaption><strong>1,000</strong><span>lotus</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="images/passus1/ten-thousand.png" alt="A pointing finger, the Egyptian symbol for ten thousand">
+          <figcaption><strong>10,000</strong><span>finger</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="images/passus1/hundred-thousand.png" alt="A tadpole, the Egyptian symbol for one hundred thousand">
+          <figcaption><strong>100,000</strong><span>tadpole</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="images/passus1/one-million.png" alt="A kneeling figure with raised arms, the Egyptian symbol for one million">
+          <figcaption><strong>1,000,000</strong><span>astonished figure</span></figcaption>
+        </figure>
+      </div>
+
+      <aside class="evidence-note">
+        <h3>Additive, not positional</h3>
+        <p>In our notation, moving a digit changes its place value: the 2 in 20 is not the 2 in 200. Egyptian symbols carried their values with them. Their order could vary without changing the total.</p>
+      </aside>
+
+      <div class="example-grid">
+        <article class="worked-example">
+          <h3>A small example</h3>
+          <figure class="numeral-figure">
+            <img src="images/passus1/number-123.png" alt="The number 123 written with one hundred symbol, two ten symbols, and three one symbols">
+            <figcaption>Egyptian representation of 123</figcaption>
+          </figure>
+          <p class="math-line">\(123=1\cdot100+2\cdot10+3\cdot1\)</p>
+        </article>
+
+        <article class="worked-example">
+          <h3>A much larger example</h3>
+          <figure class="numeral-figure">
+            <img src="images/passus1/number-2345486.png" alt="The number 2,345,486 written with repeated Egyptian numeral symbols">
+            <figcaption>Egyptian representation of 2,345,486</figcaption>
+          </figure>
+          <details class="answer">
+            <summary>Show its expanded form</summary>
+            <p>\[2{,}345{,}486=2\cdot10^6+3\cdot10^5+4\cdot10^4+5\cdot10^3+4\cdot10^2+8\cdot10+6\]</p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" id="addition">
+      <p class="section-kicker">03 · The operation</p>
+      <h2>Addition by collecting and exchanging</h2>
+
+      <p class="lead">To add, combine symbols of the same kind. Whenever ten identical symbols appear, exchange them for one symbol of the next value.</p>
+
+      <div class="exchange-pair">
+        <figure class="exchange-figure">
+          <img src="images/passus1/add-six-and-five.png" alt="Six one-strokes plus five one-strokes exchanged for one ten-symbol and one one-stroke">
+          <figcaption>Six ones plus five ones</figcaption>
+        </figure>
+        <figure class="exchange-figure">
+          <img src="images/passus1/add-six-tens-and-five-tens.png" alt="Six ten-symbols plus five ten-symbols exchanged for one hundred-symbol and one ten-symbol">
+          <figcaption>Six tens plus five tens</figcaption>
+        </figure>
+      </div>
+
+      <p>The pictures look different, but the action is identical:</p>
+      <p class="math-line">\[6+5=11 \qquad\text{and}\qquad 6\cdot10+5\cdot10=11\cdot10=110.\]</p>
+
+      <aside class="worked-example">
+        <h3>Why this idea matters</h3>
+        <p>Think about exchanging ten one-dollar bills for a ten-dollar bill, or ten tens for one hundred. Egyptian addition makes that exchange visible. Our modern carrying algorithm hides the same idea inside positional notation.</p>
+      </aside>
+
+      <aside class="challenge" aria-labelledby="addition-check">
+        <h3 id="addition-check">Check your understanding</h3>
+        <p>After combining two Egyptian numbers, you count twelve 100-symbols. What should you exchange, and what remains?</p>
+        <details class="answer">
+          <summary>Reveal the exchange</summary>
+          <p>Exchange ten 100-symbols for one 1,000-symbol. Two 100-symbols remain, so the group represents \(1{,}200\).</p>
+        </details>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Origins of Mathematics · Passus 1</p>
+  </footer>
+</body>
+</html>

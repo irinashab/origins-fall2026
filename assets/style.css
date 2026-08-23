@@ -74,20 +74,48 @@ a:focus {
 
 
 /* Responsive YouTube embeds (optional utility) */
-.youtube-container {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-}
+     @media (prefers-color-scheme: dark) {
+         html {
+           filter: invert(100%);
+        }
 
-.youtube-container iframe {
-  height: 100%;
-  width: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-}
+        .youtube-container iframe {
+          filter: invert(100%);
+        }
+
+        .noreverse {
+          filter: invert(100%);
+        }
+      }
+      .desmos-container {
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        height: 0;
+      }
+
+      .desmos-container iframe {
+        height: 95%;
+        width: 95%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      .youtube-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+
+      .youtube-container iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
 /* ---- Page utilities (safe defaults) ---- */
 
 ol {
@@ -420,4 +448,227 @@ section {
 
 .announcements p:last-child {
   margin-bottom: 0;
+}
+
+/* ===========================
+   Narrative lesson components
+   =========================== */
+
+:root {
+  --accent: #8a4f2d;
+  --accent-soft: #f5e9dc;
+  --surface: #f7f4ef;
+  --muted: #5f5a54;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #e5ad83;
+    --accent-soft: #35271f;
+    --surface: #1d1b19;
+    --muted: #c4bdb5;
+  }
+}
+
+.lesson-header {
+  margin: 2rem 0 2.75rem;
+  text-align: left;
+}
+
+.lesson-header h1 {
+  max-width: 16ch;
+  margin: 0.2rem 0 0.65rem;
+  text-align: left;
+  font-size: clamp(2.25rem, 8vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.lesson-deck {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.lesson-nav {
+  margin-bottom: 3rem;
+  border-block: 1px solid color-mix(in srgb, var(--border) 25%, transparent);
+}
+
+.lesson-nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0;
+  padding: 0.75rem 0;
+  list-style-position: inside;
+}
+
+.lesson-nav li {
+  margin: 0;
+}
+
+.lesson-section {
+  scroll-margin-top: 1rem;
+  margin-bottom: 4.5rem;
+}
+
+.lesson-section > h2 {
+  margin: 0.25rem 0 1rem;
+  font-size: clamp(1.8rem, 5vw, 2.7rem);
+  line-height: 1.1;
+}
+
+.lead {
+  font-size: 1.12rem;
+}
+
+.challenge,
+.worked-example,
+.evidence-note {
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--border) 20%, transparent);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.challenge {
+  border-left: 5px solid var(--accent);
+}
+
+.challenge h3,
+.worked-example h3,
+.evidence-note h3 {
+  margin: 0 0 0.35rem;
+}
+
+.need-grid,
+.glyph-grid,
+.example-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.need-grid {
+  margin: 1.5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.need-grid article {
+  padding-top: 0.8rem;
+  border-top: 3px solid var(--accent);
+}
+
+.need-grid h3 {
+  margin: 0;
+}
+
+.need-grid p {
+  color: var(--muted);
+}
+
+.glyph-grid {
+  margin: 1.5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
+.glyph-card {
+  display: grid;
+  min-height: 135px;
+  place-items: center;
+  padding: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--border) 20%, transparent);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.glyph-card img {
+  width: auto;
+  max-width: 76px;
+  height: 65px;
+  object-fit: contain;
+  filter: var(--glyph-filter, none);
+}
+
+.glyph-card strong,
+.glyph-card span {
+  display: block;
+}
+
+.glyph-card span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.example-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.numeral-figure,
+.exchange-figure {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  text-align: center;
+}
+
+.numeral-figure img,
+.exchange-figure img {
+  max-height: 135px;
+  object-fit: contain;
+}
+
+.exchange-pair {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+details.answer {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: var(--accent-soft);
+}
+
+details.answer summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+mjx-container[display="true"] {
+  margin: 1.1rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.math-line {
+  text-align: center;
+  font-size: 1.08rem;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 16px;
+  }
+
+  .lesson-nav ol {
+    display: block;
+  }
+
+  .glyph-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
