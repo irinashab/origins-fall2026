@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="An interactive introduction to ancient Egyptian numerals and arithmetic.">
+  <title>Passus 1: A Tale of Ancient Egypt</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    /* Page-specific layout only; colors and typography come from the shared stylesheet. */
+    .page-introduction {
+      text-align: center;
+    }
+
+    .contents {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      margin: 1.5rem 0 2rem;
+      padding: 0.75rem 0;
+    }
+
+    .contents ol {
+      margin-bottom: 0;
+    }
+
+    .glyph-grid,
+    .example-grid,
+    .doubling-visuals,
+    .fraction-glyphs,
+    .rope-sequence {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    figure {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .glyph-card img {
+      max-height: 105px;
+      width: auto;
+    }
+
+    figcaption,
+    .image-credit {
+      font-size: 0.9rem;
+    }
+
+    .image-credit {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #bbb;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    aside,
+    .worked-example {
+      border-left: 3px solid #999;
+      margin: 1.25rem 0;
+      padding: 0.25rem 0 0.25rem 1rem;
+    }
+
+    .lesson-section {
+      margin-bottom: 2.5rem;
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        enableMenu: true
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <h1>A Tale of Ancient Egypt</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+    <p class="page-introduction">Passus 1. A river changes the land. A civilization learns to count, measure, record—and calculate with pictures.</p>
+
+    <nav class="contents" aria-label="On this page">
+      <strong>On this page</strong>
+      <ol>
+        <li><a href="#why-math">Why mathematics?</a></li>
+        <li><a href="#picture-numbers">Numbers as pictures</a></li>
+        <li><a href="#addition">Addition by exchange</a></li>
+        <li><a href="#multiplication">Multiplication by doubling</a></li>
+        <li><a href="#fractions">Sharing and unit fractions</a></li>
+        <li><a href="#rhind-papyrus">The Rhind Papyrus</a></li>
+      </ol>
+    </nav>
+    <section class="lesson-section" id="why-math">
+      <p class="section-kicker">01 · The need</p>
+      <h2>Why did Egypt need mathematics?</h2>
+
+      <aside class="challenge" aria-labelledby="notch-challenge">
+        <h3 id="notch-challenge">Try this before reading on</h3>
+        <p>Write the number <strong>256</strong> using only tally marks. Now imagine carving them into wood or stone. What makes the method inconvenient?</p>
+        <details class="answer">
+          <summary>Reveal the problem</summary>
+          <p>Tallies preserve a count, but large quantities become slow to write, difficult to check, and easy to misread. A growing society needs a more compact system.</p>
+        </details>
+      </aside>
+
+      <p class="lead">Small communities can manage with small numbers. Agriculture changes the scale of the problem.</p>
+      <p>Along the Nile, farming produced harvests large enough to store and trade. Annual flooding renewed the soil, but it also made time, land, and quantities worth recording. Mathematics became part of organizing everyday life—not an isolated school subject.</p>
+
+      <div class="need-grid" aria-label="Three practical needs for mathematics">
+        <article>
+          <h3>Time</h3>
+          <p>Calendars helped communities anticipate seasons, planting, harvesting, and religious observances.</p>
+        </article>
+        <article>
+          <h3>Measure</h3>
+          <p>Builders and surveyors needed lengths, areas, volumes, and reliable right angles.</p>
+        </article>
+        <article>
+          <h3>Record</h3>
+          <p>Trade, stored grain, wages, offerings, and taxes all required quantities that others could verify.</p>
+        </article>
+      </div>
+
+      <p>The important shift is not that earlier people were unable to count. It is that Egyptian society repeatedly confronted quantities too large—and too consequential—to leave as piles of marks.</p>
+    </section>
+
+    <section class="lesson-section" id="picture-numbers">
+      <p class="section-kicker">02 · The notation</p>
+      <h2>Writing numbers with pictures</h2>
+
+      <p class="lead">Egyptian numerals were additive. Each symbol had a fixed value, and a scribe repeated symbols until their values added to the required number.</p>
+
+      <div class="glyph-grid" aria-label="Ancient Egyptian numeral symbols">
+        <figure class="glyph-card">
+          <img src="../assets/images/passus1/one.png" alt="A single vertical stroke, the Egyptian symbol for one">
+          <figcaption><strong>1</strong><span>stroke</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="../assets/images/passus1/ten.png" alt="A heel-bone shape, the Egyptian symbol for ten">
+          <figcaption><strong>10</strong><span>heel bone</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="../assets/images/passus1/hundred.png" alt="A coil of rope, the Egyptian symbol for one hundred">
+          <figcaption><strong>100</strong><span>coil of rope</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="../assets/images/passus1/thousand.png" alt="A lotus plant, the Egyptian symbol for one thousand">
+          <figcaption><strong>1,000</strong><span>lotus</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="../assets/images/passus1/ten-thousand.png" alt="A pointing finger, the Egyptian symbol for ten thousand">
+          <figcaption><strong>10,000</strong><span>finger</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="../assets/images/passus1/hundred-thousand.png" alt="A tadpole, the Egyptian symbol for one hundred thousand">
+          <figcaption><strong>100,000</strong><span>tadpole</span></figcaption>
+        </figure>
+        <figure class="glyph-card">
+          <img src="../assets/images/passus1/one-million.png" alt="A kneeling figure with raised arms, the Egyptian symbol for one million">
+          <figcaption><strong>1,000,000</strong><span>astonished figure</span></figcaption>
+        </figure>
+      </div>
+
+      <p class="image-credit"><em>All glyph drawings in this passus are by Tatiana Makarova.</em></p>
+
+      <aside class="evidence-note">
+        <h3>Additive, not positional</h3>
+        <p>In our notation, moving a digit changes its place value: the 2 in 20 is not the 2 in 200. Egyptian symbols carried their values with them. Their order could vary without changing the total.</p>
+      </aside>
+
+      <div class="example-grid">
+        <article class="worked-example">
+          <h3>A small example</h3>
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/number-123.png" alt="The number 123 written with one hundred symbol, two ten symbols, and three one symbols">
+            <figcaption>Egyptian representation of 123</figcaption>
+          </figure>
+          <p class="math-line">\(123=1\cdot100+2\cdot10+3\cdot1\)</p>
+        </article>
+
+        <article class="worked-example">
+          <h3>A much larger example</h3>
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/number-2345486.png" alt="The number 2,345,486 written with repeated Egyptian numeral symbols">
+            <figcaption>Egyptian representation of 2,345,486</figcaption>
+          </figure>
+          <details class="answer">
+            <summary>Show its expanded form</summary>
+            <p>\[2{,}345{,}486=2\cdot10^6+3\cdot10^5+4\cdot10^4+5\cdot10^3+4\cdot10^2+8\cdot10+6\]</p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" id="addition">
+      <p class="section-kicker">03 · The operation</p>
+      <h2>Addition by collecting and exchanging</h2>
+
+      <p class="lead">To add, combine symbols of the same kind. Whenever ten identical symbols appear, exchange them for one symbol of the next value.</p>
+
+      <div class="exchange-pair">
+        <figure class="exchange-figure">
+          <img src="../assets/images/passus1/add-six-and-five.png" alt="Six one-strokes plus five one-strokes exchanged for one ten-symbol and one one-stroke">
+          <figcaption>Six ones plus five ones</figcaption>
+        </figure>
+        <figure class="exchange-figure">
+          <img src="../assets/images/passus1/add-six-tens-and-five-tens.png" alt="Six ten-symbols plus five ten-symbols exchanged for one hundred-symbol and one ten-symbol">
+          <figcaption>Six tens plus five tens</figcaption>
+        </figure>
+      </div>
+
+      <p>The pictures look different, but the action is identical:</p>
+      <p class="math-line">\[6+5=11 \qquad\text{and}\qquad 6\cdot10+5\cdot10=11\cdot10=110.\]</p>
+
+      <aside class="worked-example">
+        <h3>Why this idea matters</h3>
+        <p>Think about exchanging ten one-dollar bills for a ten-dollar bill, or ten tens for one hundred. Egyptian addition makes that exchange visible. Our modern carrying algorithm hides the same idea inside positional notation.</p>
+      </aside>
+
+      <aside class="challenge" aria-labelledby="addition-check">
+        <h3 id="addition-check">Check your understanding</h3>
+        <p>After combining two Egyptian numbers, you count twelve 100-symbols. What should you exchange, and what remains?</p>
+        <details class="answer">
+          <summary>Reveal the exchange</summary>
+          <p>Exchange ten 100-symbols for one 1,000-symbol. Two 100-symbols remain, so the group represents \(1{,}200\).</p>
+        </details>
+      </aside>
+    </section>
+
+    <section class="lesson-section" id="multiplication">
+      <p class="section-kicker">04 · The algorithm</p>
+      <h2>Multiplication by doubling</h2>
+
+      <p class="lead">Instead of memorizing a large multiplication table, Egyptian scribes could build a product from repeated doubling and addition.</p>
+
+      <div class="example-grid">
+        <article class="worked-example">
+          <h3>Doubling a written number</h3>
+          <div class="doubling-images" aria-label="The Egyptian numeral 257 doubled to obtain 514">
+            <figure class="numeral-figure">
+              <img src="../assets/images/passus1/number-257.png" alt="The number 257 written with Egyptian numeral symbols">
+              <figcaption>Start with 257</figcaption>
+            </figure>
+            <span class="doubling-arrow" aria-hidden="true">× 2 →</span>
+            <figure class="numeral-figure">
+              <img src="../assets/images/passus1/number-514.png" alt="The number 514 written with Egyptian numeral symbols">
+              <figcaption>Doubling gives 514</figcaption>
+            </figure>
+          </div>
+          <p>Each symbol is copied. Whenever ten symbols of one kind accumulate, they are exchanged for the next higher symbol.</p>
+        </article>
+
+        <aside class="evidence-note">
+          <h3>The doubling numbers</h3>
+          <p>Beginning with 1 and repeatedly doubling produces</p>
+          <p class="math-line">\[1,2,4,8,16,32,64,\ldots\]</p>
+          <p>Today we call these powers of two: \(2^0,2^1,2^2,\ldots\).</p>
+        </aside>
+      </div>
+
+      <article class="worked-example multiplication-example">
+        <p class="section-kicker">Worked example</p>
+        <h3>Multiply \(13\times19\)</h3>
+        <p>Place 1 beside 19, then double both columns. Stop when the next number in the left column would exceed 13.</p>
+
+        <table class="doubling-table">
+          <caption>Doubling table for \(13\times19\)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Power of two</th>
+              <th scope="col">Multiple of 19</th>
+              <th scope="col">Use?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="selected-row">
+              <td>1</td>
+              <td>19</td>
+              <td><span class="row-status">yes</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>38</td>
+              <td><span class="row-status muted-status">no</span></td>
+            </tr>
+            <tr class="selected-row">
+              <td>4</td>
+              <td>76</td>
+              <td><span class="row-status">yes</span></td>
+            </tr>
+            <tr class="selected-row">
+              <td>8</td>
+              <td>152</td>
+              <td><span class="row-status">yes</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="method-steps">
+          <section>
+            <h4>1. Build 13</h4>
+            <p>Choose rows whose left entries add to 13:</p>
+            <p class="math-line">\[13=1+4+8.\]</p>
+          </section>
+          <section>
+            <h4>2. Add the matching multiples</h4>
+            <p class="math-line">\[19+76+152=247.\]</p>
+          </section>
+        </div>
+
+        <details class="answer">
+          <summary>Why does the method work?</summary>
+          <p>It is the distributive law in action:</p>
+          <p>\[13\cdot19=(1+4+8)\cdot19=1\cdot19+4\cdot19+8\cdot19=247.\]</p>
+        </details>
+      </article>
+
+      <aside class="challenge" aria-labelledby="doubling-challenge">
+        <h3 id="doubling-challenge">Choose the rows</h3>
+        <p>Suppose the left column contains \(1,2,4,8,16\). Which rows would you select to multiply a number by 22?</p>
+        <details class="answer">
+          <summary>Reveal the selection</summary>
+          <p>Select 2, 4, and 16 because \(22=2+4+16\). Then add the corresponding entries from the right column.</p>
+        </details>
+      </aside>
+
+      <aside class="binary-note">
+        <p class="section-kicker">A glimpse ahead</p>
+        <h3>Why this feels familiar to a computer</h3>
+        <p>Writing 13 as \(8+4+1\) records which powers of two are present. In binary notation, those choices become</p>
+        <p class="math-line">\[13=8+4+1=(1101)_2.\]</p>
+        <p>The Egyptian procedure is not binary notation, but both rely on decomposing numbers into distinct powers of two.</p>
+      </aside>
+
+      <aside class="worked-example reverse-operation">
+        <p class="section-kicker">Reverse the question</p>
+        <h3>Division undoes multiplication</h3>
+        <p>To calculate \(247\div19\), use the same doubling table and ask which entries in the 19-column add to 247.</p>
+        <p class="math-line">\[247=19+76+152.\]</p>
+        <p>The matching entries in the left column are 1, 4, and 8. Their sum is 13, so \(247\div19=13\). Multiplication builds the product; division works backward from it.</p>
+      </aside>
+    </section>
+
+    <section class="lesson-section" id="fractions">
+      <p class="section-kicker">05 · Sharing</p>
+      <h2>Fractions begin with a fair share</h2>
+
+      <aside class="challenge bread-problem" aria-labelledby="bread-sharing">
+        <h3 id="bread-sharing">Six loaves, eight workers</h3>
+        <p>At the end of a job, 6 identical loaves must be shared equally among 8 workers. No loaf may be wasted. How much should each worker receive?</p>
+        <details class="answer">
+          <summary>First calculate the share</summary>
+          <p>Each worker’s share is</p>
+          <p class="math-line">\[\frac{6}{8}=\frac{3}{4}\text{ of a loaf}.\]</p>
+        </details>
+      </aside>
+
+      <article class="worked-example">
+        <p class="section-kicker">Work it out with bread</p>
+        <h3>Share first; name the fractions afterward</h3>
+        <ol class="sharing-steps">
+          <li>
+            <strong>Give everyone half a loaf.</strong>
+            Eight halves use 4 of the 6 loaves, leaving 2 loaves.
+          </li>
+          <li>
+            <strong>Cut each remaining loaf into quarters.</strong>
+            Two loaves make eight quarter-loaves, so every worker receives one quarter more.
+          </li>
+        </ol>
+        <p>Each worker therefore receives</p>
+        <p class="math-line">\[\frac12+\frac14=\frac34.\]</p>
+        <p>The answer is not merely a number: it is also a practical cutting plan.</p>
+      </article>
+
+      <section class="fraction-notation" aria-labelledby="egyptian-unit-fractions">
+        <p class="section-kicker">The Egyptian convention</p>
+        <h3 id="egyptian-unit-fractions">Build fractions from unit fractions</h3>
+        <p>Egyptian scribes normally represented a fraction as a sum of <strong>distinct unit fractions</strong>—fractions with numerator 1. The fraction \(2/3\) had a special notation, but a fraction such as \(3/4\) could be written as</p>
+        <p class="math-line">\[\frac34=\frac12+\frac14.\]</p>
+
+        <div class="fraction-glyphs">
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/unit-fraction-one-eighth.png" alt="Ancient Egyptian notation for the unit fraction one eighth">
+            <figcaption>Egyptian notation for \(1/8\)</figcaption>
+          </figure>
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/unit-fraction-one-twentieth.png" alt="Ancient Egyptian notation for the unit fraction one twentieth">
+            <figcaption>Egyptian notation for \(1/20\)</figcaption>
+          </figure>
+        </div>
+
+        <p>The oval-like mark placed above a number indicated its reciprocal. Thus the symbol for 8 became the unit fraction \(1/8\).</p>
+      </section>
+
+      <article class="worked-example">
+        <p class="section-kicker">The Egyptian method</p>
+        <h3>Write \(7/18\) as unit fractions</h3>
+        <p>Multiply basic unit fractions by the denominator, 18. Select distinct products whose sum is the numerator, 7.</p>
+
+        <table class="fraction-method-table">
+          <caption>Testing unit fractions against the denominator 18</caption>
+          <thead>
+            <tr>
+              <th scope="col">Unit fraction</th>
+              <th scope="col">Multiply by 18</th>
+              <th scope="col">Decision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>\(\frac12\)</td>
+              <td>\(9\)</td>
+              <td>Too large</td>
+            </tr>
+            <tr class="selected-row">
+              <td>\(\frac13\)</td>
+              <td>\(6\)</td>
+              <td>Need 1 more</td>
+            </tr>
+            <tr class="selected-row">
+              <td>\(\frac1{18}\)</td>
+              <td>\(1\)</td>
+              <td>Complete</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>\(7\)</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>Since \(6+1=7\), use the corresponding unit fractions:</p>
+        <p class="math-line">\[\frac7{18}=\frac13+\frac1{18}.\]</p>
+      </article>
+
+      <article class="worked-example try-method">
+        <p class="section-kicker">Now try the same method</p>
+        <h3>Why \(2/5\) becomes cumbersome</h3>
+        <p>The procedure still works, but multiplying by 5 produces fractional values. Finding the next useful unit fraction is less obvious.</p>
+
+        <table class="fraction-method-table">
+          <caption>Testing unit fractions against the denominator 5</caption>
+          <thead>
+            <tr>
+              <th scope="col">Unit fraction</th>
+              <th scope="col">Multiply by 5</th>
+              <th scope="col">Decision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>\(\frac12\)</td>
+              <td>\(\frac52\)</td>
+              <td>Too large</td>
+            </tr>
+            <tr class="selected-row">
+              <td>\(\frac13\)</td>
+              <td>\(\frac53\)</td>
+              <td>Need \(\frac13\) more</td>
+            </tr>
+            <tr class="selected-row">
+              <td>\(\frac1{15}\)</td>
+              <td>\(\frac13\)</td>
+              <td>Complete</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>\(2\)</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>Because \(\frac53+\frac13=2\), the corresponding unit fractions give</p>
+        <p class="math-line">\[\frac25=\frac13+\frac1{15}.\]</p>
+        <p>Equivalently, changing to fifteenths makes the same calculation easier to see:</p>
+        <p class="math-line">\[\frac25=\frac6{15}=\frac5{15}+\frac1{15}.\]</p>
+      </article>
+
+      <section class="greedy-method" aria-labelledby="greedy-heading">
+        <p class="section-kicker">A modern algorithm</p>
+        <h3 id="greedy-heading">Always take the largest piece that fits</h3>
+        <p>The <strong>greedy algorithm</strong> repeatedly chooses the largest unit fraction that does not exceed the remaining amount.</p>
+
+        <div class="greedy-steps">
+          <section>
+            <h4>Start with \(2/5\)</h4>
+            <p>The largest unit fraction no greater than \(2/5\) is \(1/3\).</p>
+          </section>
+          <section>
+            <h4>Subtract it</h4>
+            <p class="math-line">\[\frac25-\frac13=\frac1{15}.\]</p>
+          </section>
+          <section>
+            <h4>The remainder is already a unit fraction</h4>
+            <p class="math-line">\[\frac25=\frac13+\frac1{15}.\]</p>
+          </section>
+        </div>
+
+        <aside class="evidence-note">
+          <h3>Historical caution</h3>
+          <p>The Rhind Papyrus records \(\frac25=\frac13+\frac1{15}\) in its \(2/n\) table. The greedy algorithm is a modern general procedure, however, and should not be presented as the rule used by Ahmes to generate every entry.</p>
+        </aside>
+      </section>
+
+      <aside class="challenge" aria-labelledby="greedy-challenge">
+        <h3 id="greedy-challenge">Use the greedy algorithm</h3>
+        <p>Decompose \(4/5\) into distinct unit fractions.</p>
+        <details class="answer">
+          <summary>Reveal the steps</summary>
+          <p>Choose \(1/2\), leaving \(3/10\). Then choose \(1/4\), leaving \(1/20\). Therefore</p>
+          <p class="math-line">\[\frac45=\frac12+\frac14+\frac1{20}.\]</p>
+        </details>
+      </aside>
+    </section>
+
+    <section class="lesson-section" id="rhind-papyrus">
+      <p class="section-kicker">06 · The surviving evidence</p>
+      <h2>The Rhind Papyrus: mathematics speaks across time</h2>
+
+      <p class="lead">Most ancient calculations disappeared with the people who performed them. The Rhind Mathematical Papyrus survived.</p>
+
+      <figure class="numeral-figure">
+        <img src="../assets/images/passus1/rhind-papyrus.webp" alt="A surviving fragment of the Rhind Mathematical Papyrus showing hieratic writing and geometric diagrams">
+        <figcaption>A fragment of the Rhind Mathematical Papyrus</figcaption>
+      </figure>
+
+      <p>The scroll is usually dated to about 1650 BCE. Its scribe, Ahmes, says that he copied it from an older source. The surviving text contains roughly eighty problems involving arithmetic, fractions, measurement, geometry, and the distribution of goods.</p>
+
+      <aside class="evidence-note">
+        <h3>Why the papyrus matters</h3>
+        <p>It does not present mathematics as a modern sequence of definitions and theorems. It preserves tables, worked examples, and concrete problems. We see what a scribe did, even when the text does not fully explain how the method was discovered.</p>
+      </aside>
+
+      <div class="example-grid">
+        <article class="worked-example">
+          <p class="section-kicker">A working table</p>
+          <h3>Dividing 2 by odd numbers</h3>
+          <p>The opening table decomposes fractions of the form \(2/n\), for odd \(n\) from 3 through 101, into distinct unit fractions. For example, it records</p>
+          <p class="math-line">\[\frac25=\frac13+\frac1{15}.\]</p>
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/special-fraction-two-thirds.png" alt="Ancient Egyptian special notation for the fraction two thirds">
+            <figcaption>A special Egyptian notation was used for \(2/3\).</figcaption>
+          </figure>
+          <p>The table was a computational resource: when a division produced \(2/n\), a scribe could use the recorded decomposition rather than start again.</p>
+        </article>
+
+        <article class="worked-example">
+          <p class="section-kicker">A problem we would call algebra</p>
+          <h3>A number and its seventh make 19</h3>
+          <p>Ahmes asks for a number that becomes 19 when its seventh is added to it. In modern notation:</p>
+          <p class="math-line">\[x+\frac{x}{7}=19.\]</p>
+          <details class="answer">
+            <summary>Work out the answer</summary>
+            <p>Since \(x+\frac{x}{7}=\frac87x\),</p>
+            <p class="math-line">\[x=19\cdot\frac78=\frac{133}{8}=16+\frac12+\frac18.\]</p>
+            <p>The final expression is written in the unit-fraction style we have just studied.</p>
+          </details>
+        </article>
+      </div>
+
+      <article class="worked-example">
+        <p class="section-kicker">Geometry from a rule</p>
+        <h3>Ropes, right angles, and circles</h3>
+        <div class="rope-sequence" aria-label="Forming a 3-4-5 triangle from a twelve-interval rope">
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/twelve-interval-rope.png" alt="A closed rope divided by twelve evenly spaced markers">
+            <figcaption><strong>1.</strong> Begin with 12 equal intervals.</figcaption>
+          </figure>
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/rope-being-arranged.png" alt="A twelve-interval rope being pulled into three sides">
+            <figcaption><strong>2.</strong> Separate the intervals into groups of 3, 4, and 5.</figcaption>
+          </figure>
+          <figure class="numeral-figure">
+            <img src="../assets/images/passus1/rope-3-4-5-triangle.png" alt="A twelve-interval rope arranged as a right triangle with sides of three, four, and five intervals">
+            <figcaption><strong>3.</strong> Pull the rope taut to form a right triangle.</figcaption>
+          </figure>
+        </div>
+
+        <p>A loop divided into 12 equal intervals can be pulled into a triangle with sides of 3, 4, and 5 intervals. The angle between the sides of lengths 3 and 4 is a right angle because</p>
+        <p class="math-line">\[3^2+4^2=5^2.\]</p>
+        <p>This is a useful model of surveying with measured cords. The familiar “rope-stretcher” story should be presented cautiously, however: direct evidence that Egyptian builders routinely used this exact knotted-rope construction is limited.</p>
+
+        <h4>Approximating the area of a circle</h4>
+        <p>The papyrus gives a rule equivalent to replacing a circle of diameter \(d\) by a square whose side is \(8d/9\):</p>
+        <p class="math-line">\[A\approx\left(\frac89d\right)^2.\]</p>
+        <p>Compare this with the modern expression \(A=\pi(d/2)^2\). Equating the coefficients gives</p>
+        <p class="math-line">\[\frac{\pi}{4}\approx\frac{64}{81},\qquad \pi\approx\frac{256}{81}\approx3.1605.\]</p>
+        <p>This is remarkably close to \(\pi\approx3.14159\), especially for a practical rule expressed without algebraic notation.</p>
+      </article>
+
+      <article class="worked-example">
+        <p class="section-kicker">A mathematical puzzle</p>
+        <h3>Seven houses, cats, mice, grain</h3>
+        <p>One entry lists a chain of powers of seven:</p>
+        <p class="math-line">\[7,\;49,\;343,\;2401,\;16807.\]</p>
+        <ul>
+          <li>7 houses contain 7 cats each.</li>
+          <li>Each cat catches 7 mice.</li>
+          <li>Each mouse would have eaten 7 ears of grain.</li>
+          <li>Each ear would have produced 7 measures of grain.</li>
+        </ul>
+        <p>The grain saved is \(16{,}807\) measures. Ahmes also adds every quantity in the chain:</p>
+        <p class="math-line">\[7+49+343+2401+16807=19607.\]</p>
+        <details class="answer">
+          <summary>A familiar echo</summary>
+          <p>The structure resembles the later “As I was going to St. Ives” nursery riddle: houses, people, sacks, cats, and kittens multiply by seven at each step. The resemblance does not establish a direct historical connection, but it makes a delightful mathematical rhyme across centuries.</p>
+        </details>
+      </article>
+
+      <aside class="evidence-note">
+        <p class="section-kicker">Myth or evidence?</p>
+        <h3>The Eye of Horus fractions</h3>
+        <figure class="numeral-figure">
+          <img src="../assets/images/passus1/eye-of-horus-fractions.png" alt="Modern diagram associating parts of the Eye of Horus with one half, one quarter, one eighth, one sixteenth, one thirty-second, and one sixty-fourth">
+          <figcaption>A popular modern association between the Eye of Horus and powers of one half.</figcaption>
+        </figure>
+        <p>Modern illustrations often assign \(1/2,1/4,1/8,1/16,1/32\), and \(1/64\) to parts of the eye. The exact historical correspondence is uncertain. It is best treated as a memorable modern interpretation, not as settled evidence about Egyptian notation.</p>
+      </aside>
+
+      <section class="worked-example" aria-labelledby="lesson-close">
+        <p class="section-kicker">What remains</p>
+        <h3 id="lesson-close">A mathematics of procedures</h3>
+        <p>Egyptian scribes left us more than unusual symbols. Their surviving mathematics shows several powerful ideas working together:</p>
+        <ul>
+          <li>large quantities represented by a compact system of symbols;</li>
+          <li>addition performed by collecting and exchanging;</li>
+          <li>multiplication and division reduced to doubling and selection;</li>
+          <li>fractions understood through concrete sharing and unit-fraction decompositions;</li>
+          <li>rules for solving practical problems in measurement and geometry.</li>
+        </ul>
+        <p>The notation is unfamiliar. The mathematical habits—represent, decompose, calculate, check—are very much our own.</p>
+      </section>
+
+      <section class="references" aria-labelledby="sources-heading">
+        <h3 id="sources-heading">Sources and further reading</h3>
+        <ul>
+          <li>Cummings, Jay. <em>Math History: A Long-Form Mathematics Textbook</em>. Independently published, 2025.</li>
+          <li>Lewinter, Marty, and William Widulski. <em>The Saga of Mathematics: A Brief History</em>. Prentice Hall, 2002.</li>
+          <li>Newman, James R. “The Rhind Papyrus.” <em>The World of Mathematics</em>, vol. 1, Simon and Schuster, 1956, pp. 170–179.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+  </script>
+</body>
+</html>
