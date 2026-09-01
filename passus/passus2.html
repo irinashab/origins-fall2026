@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Passus 2 of Origins of Mathematics: Mesopotamian numerals, Babylonian computation, Plimpton 322, and YBC 7289">
+  <title>Origins of Mathematics – Passus 2: A Tale of Mesopotamia</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 2: A Tale of Mesopotamia</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+    <article>
+<h2 id="the-land-between-the-rivers">The land between the rivers</h2>
+<p>Our first extended mathematical tale took us to Egypt, a civilization
+shaped by the Nile. Now we travel east to another river valley: the
+broad plain between the Tigris and Euphrates. The Greeks later called
+this region <em>Mesopotamia</em>, literally “the land between the
+rivers.” Much of it lies in modern Iraq.</p>
+<p>Like the Nile Valley, Mesopotamia offered fertile soil and water for
+irrigation. Unlike Egypt, however, it was not protected by deserts on
+every side. The open plain was crossed and conquered repeatedly.
+Sumerians, Akkadians, Babylonians, Assyrians, and other peoples
+succeeded one another, but they did not simply erase everything that
+came before. Languages and rulers changed; scribal practices,
+administrative habits, religious stories, and mathematical techniques
+were adopted, adapted, and passed along.</p>
+<p>This makes the word <em>Babylonian</em> slightly misleading when we
+use it to describe mathematics. We are not always speaking about one
+people in one short historical period. We are speaking about a long
+mathematical tradition preserved in Mesopotamian clay tablets,
+especially during the Old Babylonian period, roughly the first half of
+the second millennium BCE.</p>
+<p>The region is often called a “cradle of civilization.” That phrase
+can sound grand and vague, so let us be more specific. Here we find some
+of the earliest cities, governments, tax records, written laws, and
+sustained traditions of writing. We also find records of astronomy,
+medicine, engineering, accounting—and mathematics.</p>
+<p>Perhaps mathematics did not begin with philosophers gazing at the
+stars. Perhaps it began with someone trying to keep track of grain,
+livestock, land, workers, debts, and taxes. Bureaucracy may not be
+romantic, but it is very good at producing records.</p>
+<h2 id="from-pictures-to-wedges">From pictures to wedges</h2>
+<p>Early Mesopotamian writing grew from pictorial signs. But the
+material used for writing changed the appearance of those signs.
+Egyptian scribes could draw curved forms with ink on papyrus.
+Mesopotamian scribes usually pressed a cut reed stylus into soft clay.
+Pressing the stylus produced small wedge-shaped marks; drawing graceful
+curves in clay was inconvenient.</p>
+<p>Over time the pictures became collections of wedges, and the original
+objects were no longer recognizable. This writing is called
+<em>cuneiform</em>, from the Latin <em>cuneus</em>, meaning “wedge.”
+Cuneiform is not a language. It is a writing system that was used for
+several languages, just as the Roman alphabet is now used for English,
+French, Turkish, and many others.</p>
+<p>Clay had disadvantages. A tablet was usually small, and the scribe
+needed to finish before the surface dried. Yet clay gave Mesopotamian
+history an enormous advantage: a baked tablet is remarkably durable.
+Papyrus decays or burns; clay often survives the destruction of the
+building around it. Hundreds of thousands of tablets have been
+recovered, including several hundred tablets or fragments with
+mathematical content.</p>
+<p>Clay beats papyrus in the game of “clay, scissors, papyrus.”</p>
+<h2 id="reading-the-unreadable">Reading the unreadable</h2>
+<p>For many centuries, no one could read these wedge marks. The road to
+decipherment is a mathematical story of its own: identify patterns,
+propose a hypothesis, test it, revise it, and use the pieces already
+understood to attack the unknown.</p>
+<p>At the beginning of the nineteenth century, the German schoolteacher
+Georg Friedrich Grotefend studied copies of inscriptions from
+<em>Persepolis</em>, the ceremonial capital of the ancient Persian
+Empire. The inscriptions repeatedly named Persian kings and their
+ancestors. Grotefend reasoned that recurring groups of signs might mean
+“king” or “king of kings,” and that nearby groups might be royal names.
+By comparing these patterns with the known succession of Persian rulers,
+he identified Darius, Xerxes, and several cuneiform signs. His work
+contained errors, but the central idea was right.</p>
+<p>The decisive evidence came from the great inscription at Behistun,
+carved high on a cliff in present-day Iran by order of Darius I around
+520 BCE. It tells of Darius’s victories in three languages—Old Persian,
+Elamite, and Babylonian—written in cuneiform scripts. It is often
+compared with the Rosetta Stone, although the comparison is imperfect:
+none of the three Behistun versions was initially written in a familiar
+script.</p>
+<p>Henry Rawlinson, a British army officer and diplomat, copied the
+inscription at considerable personal risk. Some portions lay hundreds of
+feet above the road. Working from the relatively simple Old Persian
+version and using proper names as anchors, Rawlinson and other scholars
+gradually opened the way to reading Babylonian cuneiform.</p>
+<p>It is worth pausing over this. The tablets did not explain
+themselves. Everything we say about Babylonian mathematics rests on the
+combined work of excavators, linguists, historians, and
+mathematicians—and sometimes on educated disagreement among them.</p>
+<h2 id="a-positional-system-with-base-sixty">A positional system with
+base sixty</h2>
+<p>The Babylonian number system used only two basic numerical signs: a
+narrow vertical wedge for one and a broader sideways wedge for ten.
+These signs were repeated and combined to write the numbers from 1
+through 59.</p>
+<p>At first glance, that sounds like an additive system rather like
+Egyptian numerals. Within a single group it was additive: three
+ten-wedges and six one-wedges represented 36. But the groups themselves
+were positional. Their value depended on where they appeared.</p>
+<figure class="lesson-figure">
+  <svg viewBox="0 0 560 210" width="560" height="210"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;"
+       role="img"
+       aria-labelledby="babylonian-36-title babylonian-36-desc"
+       xmlns="http://www.w3.org/2000/svg">
+    <title id="babylonian-36-title">A stylized Babylonian numeral for 36</title>
+    <desc id="babylonian-36-desc">Three broad horizontal wedges for thirty, followed by six narrow vertical wedges for six.</desc>
+    <rect x="1" y="1" width="558" height="208" rx="18" fill="#f4ead8" stroke="#bda77f" stroke-width="2"/>
+    <g fill="#63482f">
+      <path d="M55 50 L145 73 L55 96 Z"/>
+      <path d="M55 93 L145 116 L55 139 Z"/>
+      <path d="M55 136 L145 159 L55 182 Z"/>
+      <path d="M250 35 L274 117 L226 117 Z"/>
+      <path d="M330 35 L354 117 L306 117 Z"/>
+      <path d="M410 35 L434 117 L386 117 Z"/>
+      <path d="M250 98 L274 180 L226 180 Z"/>
+      <path d="M330 98 L354 180 L306 180 Z"/>
+      <path d="M410 98 L434 180 L386 180 Z"/>
+    </g>
+    <text x="100" y="32" text-anchor="middle" font-size="19" fill="#4d4032">3 tens</text>
+    <text x="330" y="28" text-anchor="middle" font-size="19" fill="#4d4032">6 ones</text>
+    <text x="510" y="115" text-anchor="middle" font-size="30" fill="#4d4032">= 36</text>
+  </svg>
+  <figcaption>A stylized Babylonian 36: three ten-wedges followed by six one-wedges.</figcaption>
+</figure>
+<p>Our decimal system uses powers of ten. In</p>
+<p><span class="math display">\[
+357=3\cdot10^2+5\cdot10+7,
+\]</span></p>
+<p>each step to the left multiplies the place value by 10. The
+Babylonian system instead used powers of 60. Using commas to separate
+sexagesimal places, we can write</p>
+<p><span class="math display">\[
+(2,3,50)_{60}
+=2\cdot60^2+3\cdot60+50
+=7430.
+\]</span></p>
+<p>The notation with commas and the subscript 60 is ours, not theirs. It
+allows us to discuss their numbers without repeatedly drawing
+wedges.</p>
+<p>Why is positional notation such a powerful idea? A small collection
+of symbols can represent numbers of any size. No new symbol is needed
+for a thousand, a million, or a billion. Position does the work.</p>
+<h3 id="pause-and-try">Pause and try</h3>
+<p>Convert the following sexagesimal numbers to decimal:</p>
+<p><span class="math display">\[
+(1,1)_{60},\qquad (1,1,5)_{60},\qquad (1,2,3)_{60}.
+\]</span></p>
+<p>For example,</p>
+<p><span class="math display">\[
+(1,1,5)_{60}=1\cdot60^2+1\cdot60+5=3665.
+\]</span></p>
+<p>Now consider a larger number:</p>
+<p><span class="math display">\[
+(12,23,38,59)_{60}.
+\]</span></p>
+<p>Its decimal value is</p>
+<p><span class="math display">\[
+12\cdot60^3+23\cdot60^2+38\cdot60+59=2,677,139.
+\]</span></p>
+<p>Notice how quickly the place values grow: <span
+class="math inline">\(1,60,3600,216000,\ldots\)</span>.</p>
+<h2 id="traveling-in-the-other-direction">Traveling in the other
+direction</h2>
+<p>To express 7820 in base 60, we can first find the largest useful
+power of 60. Since</p>
+<p><span class="math display">\[
+60^2=3600,
+\]</span></p>
+<p>we have</p>
+<p><span class="math display">\[
+7820=2\cdot3600+620
+=2\cdot3600+10\cdot60+20.
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+7820=(2,10,20)_{60}.
+\]</span></p>
+<p>Repeated division gives the same answer:</p>
+<p><span class="math display">\[
+\begin{aligned}
+7820&amp;=130\cdot60+20,\\
+130&amp;=2\cdot60+10,\\
+2&amp;=0\cdot60+2.
+\end{aligned}
+\]</span></p>
+<p>Reading the remainders from bottom to top gives <span
+class="math inline">\((2,10,20)_{60}\)</span>.</p>
+<p>This is not a special Babylonian trick. It is the general method for
+converting a whole number from decimal to another base.</p>
+<h2 id="the-empty-place-problem">The empty-place problem</h2>
+<p>The early Babylonian system had a serious weakness: it had no symbol
+for an empty place.</p>
+<p>Suppose one group contains a single wedge and the next contains signs
+for 24. Does this mean</p>
+<p><span class="math display">\[
+1\cdot60+24=84,
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+1\cdot60^2+0\cdot60+24=3624?
+\]</span></p>
+<p>A visible gap might indicate the missing middle place, but a gap is
+fragile. A copyist can overlook it. Spacing varies. Context must
+decide.</p>
+<p>By the late first millennium BCE, scribes sometimes used a special
+placeholder between groups. That was an important step toward zero, but
+it was not yet our zero. The placeholder was not consistently used at
+the end of a number, and it was not treated as a number that could be
+added, subtracted, or multiplied.</p>
+<p>This distinction matters. A <em>placeholder</em> keeps positions from
+collapsing. The <em>number zero</em> represents a quantity and
+participates in arithmetic. Humanity learned these two ideas at
+different times.</p>
+<p>Even with an internal placeholder, the Babylonian notation was not
+absolute. A written group such as <span
+class="math inline">\((2,24)\)</span> might mean</p>
+<p><span class="math display">\[
+2\cdot60+24=144,
+\]</span></p>
+<p>but it might also mean <span class="math inline">\(8640\)</span>, or
+<span class="math inline">\(2+24/60=2.4\)</span>. The relative place
+values were clear; the location of the “sexagesimal point” often had to
+be supplied by context—rather as we might infer whether “three fifty”
+means $3.50, 3:50 p.m., or 350 from the conversation.</p>
+<h2 id="why-sixty">Why sixty?</h2>
+<p>We do not know with certainty why 60 became the base. Many
+explanations have been proposed.</p>
+<p>The most attractive mathematical fact is that 60 has many
+divisors:</p>
+<p><span class="math display">\[
+2,3,4,5,6,10,12,15,20,30.
+\]</span></p>
+<p>This makes common fractions easy to express. In sexagesimal
+notation,</p>
+<p><span class="math display">\[
+\frac12=0;30,\qquad
+\frac13=0;20,\qquad
+\frac14=0;15,\qquad
+\frac15=0;12.
+\]</span></p>
+<p>Here the semicolon plays the role of a sexagesimal point. Again, it
+is a modern convention introduced for clarity.</p>
+<p>Compare this with decimal notation. One third becomes the repeating
+decimal (0.3333), but in base 60 it terminates immediately. Fractions
+whose denominators contain only factors of 2, 3, and 5 have terminating
+sexagesimal expansions. This was wonderfully convenient for measurement,
+commerce, and astronomical calculation.</p>
+<p>Other proposed explanations connect base 60 with older counting
+systems or with a merger of decimal and base-six practices. It is
+tempting to offer one clever origin story, but the evidence does not
+allow certainty. Historical honesty sometimes requires the sentence:
+<em>We do not know.</em></p>
+<p>We do know that sexagesimal notation had a very long afterlife. We
+still divide an hour into 60 minutes, a minute into 60 seconds, and a
+circle into 360 degrees. When you say “two hours, ten minutes, and
+twenty seconds,” you are effectively reading a sexagesimal numeral.</p>
+<h2 id="mathematics-for-people-who-needed-answers">Mathematics for
+people who needed answers</h2>
+<p>Mesopotamian scribes produced tables of multiplication, reciprocals,
+squares, cubes, and other useful values. They calculated areas and
+volumes, divided inheritances and rations, measured fields, and computed
+interest on loans. They solved problems that we would translate into
+linear and quadratic equations.</p>
+<p>But they did not write symbolic algebra in our manner. We might
+begin:</p>
+<p><span class="math display">\[
+2x+10=50.
+\]</span></p>
+<p>Then we subtract 10 from both sides and divide by 2. A Babylonian
+text would state a procedure in words: take away 10 from 50; take half
+of what remains; the result is 20.</p>
+<p>Calling this “rhetorical” or “procedural” algebra does not make it
+primitive. The reasoning is algebraic even when the symbol <span
+class="math inline">\(x\)</span> is absent. The notation we use today
+compresses and generalizes the procedure, but the underlying reversible
+operations are the same.</p>
+<p>This is a recurring warning in the history of mathematics: do not
+confuse unfamiliar notation—or the absence of our notation—with the
+absence of mathematical thought.</p>
+<h2 id="plimpton-322-a-tablet-without-instructions">Plimpton 322: a
+tablet without instructions</h2>
+<p>One of the most famous mathematical tablets is known as Plimpton 322.
+The name is not Babylonian. George Arthur Plimpton purchased the tablet
+in the twentieth century, and it later became item 322 in his collection
+at Columbia University.</p>
+<p>The tablet was written around 1800 BCE. It is small, damaged along
+one edge, and contains fifteen rows of numbers arranged in columns. It
+does not contain a preface saying, “This is a table of right triangles.”
+It gives no proof and no explanation of its purpose.</p>
+<figure class="lesson-figure">
+  <img
+    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Plimpton%20322.jpg"
+    alt="The clay tablet Plimpton 322, with cuneiform numbers arranged in columns"
+    style="max-width:100%;height:auto;"
+    loading="lazy">
+  <figcaption>
+    Plimpton 322, an Old Babylonian mathematical tablet, now at Columbia
+    University. Public-domain image via
+    <a href="https://commons.wikimedia.org/wiki/File:Plimpton_322.jpg">Wikimedia Commons</a>.
+  </figcaption>
+</figure>
+<p>That makes it an ideal invitation to think like a historian of
+mathematics.</p>
+<p>The mathematician R. Creighton Buck called this kind of
+reconstruction “Sherlock Holmes in Babylon.” Like a detective, the
+historian begins with incomplete clues, looks for patterns, tests
+conjectures, and tries to explain apparent errors. Unlike a Sherlock
+Holmes story, however, the case may have no final resolution: several
+reconstructions can fit the surviving evidence.</p>
+<p>Consider one of its simplest rows. In decimal translation, three
+relevant numbers are</p>
+<p><span class="math display">\[
+45,\qquad 60,\qquad 75.
+\]</span></p>
+<p>What do you notice?</p>
+<p><span class="math display">\[
+45^2+60^2=75^2.
+\]</span></p>
+<p>They are the sides of a right triangle. Other rows contain much
+larger triples, such as</p>
+<p><span class="math display">\[
+2291^2+2700^2=3541^2.
+\]</span></p>
+<p>These numbers are not plausible products of lucky guessing. The
+scribes had a systematic method for producing what we now call
+Pythagorean triples—more than a thousand years before Pythagoras.</p>
+<p>Does this prove that they knew the Pythagorean theorem? It proves
+that they knew and organized numerical relationships equivalent to many
+cases of</p>
+<p><span class="math display">\[
+a^2+b^2=c^2.
+\]</span></p>
+<p>It does not prove that they possessed a general theorem together with
+a proof in the Greek sense. The tablet supplies numbers, not an
+explanation.</p>
+<p>The first surviving column contains ratios related to the triangles.
+This has led to several interpretations: perhaps the tablet was a
+teacher’s list of exercises, a table useful in surveying, or an object
+connected with a kind of proto-trigonometry. Historians still debate its
+precise construction and purpose.</p>
+<p>The important lesson is not that history refuses to give us an
+answer. It is that evidence places limits on the strength of the answer.
+“The tablet records Pythagorean triples” is secure. “The Babylonians
+proved the Pythagorean theorem exactly as Euclid later did” is not.</p>
+<h2 id="a-square-and-an-astonishing-diagonal">A square and an
+astonishing diagonal</h2>
+<p>Another small tablet, YBC 7289, shows a square with its diagonals.
+One side is labeled 30. Along a diagonal appears a sexagesimal
+approximation to <span class="math inline">\(\sqrt2\)</span>:</p>
+<figure class="lesson-figure">
+  <img
+    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/YBC-7289-OBV-labeled.jpg"
+    alt="YBC 7289, with labels identifying the square, its diagonal, and the inscribed sexagesimal numbers"
+    style="max-width:100%;height:auto;"
+    loading="lazy">
+  <figcaption>
+    YBC 7289 with its numerical inscriptions labeled. Yale Peabody
+    Museum photograph by A. Urcia; labels by Theodor Langhorne Franklin;
+    CC0, via
+    <a href="https://commons.wikimedia.org/wiki/File:YBC-7289-OBV-labeled.jpg">Wikimedia Commons</a>.
+  </figcaption>
+</figure>
+<p><span class="math display">\[
+(1;24,51,10)_{60}
+=1+\frac{24}{60}+\frac{51}{60^2}+\frac{10}{60^3}
+\approx1.414212963.
+\]</span></p>
+<p>The true value begins</p>
+<p><span class="math display">\[
+\sqrt2\approx1.414213562\ldots
+\]</span></p>
+<p>The Babylonian value is correct to about six decimal places.
+Multiplying it by 30 gives the other number written along the diagonal,
+an approximation to the diagonal of a square of side 30.</p>
+<p>This is not merely close “for an ancient calculation.” It is close by
+any reasonable standard.</p>
+<p>How might such an approximation have been found? The tablet does not
+show the calculation, so we cannot be certain. But a method associated
+with Babylonian mathematics—and later explicitly described by Hero of
+Alexandria—produces it rapidly.</p>
+<p>Suppose we want <span class="math inline">\(\sqrt2\)</span>. Begin
+with an estimate <span class="math inline">\(a_1=1\)</span>. If <span
+class="math inline">\(a_n\)</span> is one estimate, then <span
+class="math inline">\(2/a_n\)</span> lies on the other side of <span
+class="math inline">\(\sqrt2\)</span>. Average the two:</p>
+<p><span class="math display">\[
+a_{n+1}=\frac12\left(a_n+\frac{2}{a_n}\right).
+\]</span></p>
+<p>Starting with <span class="math inline">\(a_1=1\)</span>, we
+obtain</p>
+<p><span class="math display">\[
+a_2=\frac12\left(1+2\right)=1.5,
+\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+a_3=\frac12\left(1.5+\frac{2}{1.5}\right)
+=1.416666\ldots,
+\]</span></p>
+<p>and then</p>
+<p><span class="math display">\[
+a_4\approx1.414215686.
+\]</span></p>
+<p>One more iteration gives an approximation agreeing with <span
+class="math inline">\(\sqrt2\)</span> to many decimal places.</p>
+<p>Why does the averaging idea make sense? If <span
+class="math inline">\(a\)</span> is smaller than <span
+class="math inline">\(\sqrt2\)</span>, then <span
+class="math inline">\(2/a\)</span> is larger than <span
+class="math inline">\(\sqrt2\)</span>. If <span
+class="math inline">\(a\)</span> is too large, then <span
+class="math inline">\(2/a\)</span> is too small. Their average pulls the
+two estimates together.</p>
+<p>More generally, to approximate <span class="math inline">\(\sqrt
+t\)</span> for <span class="math inline">\(t&gt;0\)</span>, use</p>
+<p><span class="math display">\[
+a_{n+1}=\frac12\left(a_n+\frac{t}{a_n}\right).
+\]</span></p>
+<p>This algorithm converges extraordinarily quickly. It is a special
+case of the method we now call Newton’s method. A four-thousand-year-old
+mathematical idea survives inside modern numerical computation.</p>
+<h2 id="what-survives">What survives</h2>
+<p>The Babylonians left us no Euclidean-style treatise. Instead, they
+left tables, exercises, diagrams, and procedures pressed into clay. From
+those fragments we can see a positional number system, sophisticated
+fraction arithmetic, algorithms for roots, methods for equations, and a
+systematic command of numerical patterns in right triangles.</p>
+<p>Their mathematics feels simultaneously foreign and familiar. The
+wedges are foreign; place value is familiar. A number without a written
+zero is foreign; inferring magnitude from context is familiar. Their
+algebra is verbal; its operations are ours. Their base is 60; we consult
+it whenever we read a clock or measure an angle.</p>
+<p>Perhaps that is the most interesting part of the story. Mathematical
+ideas can outlive the cities, languages, and empires that created them.
+Babylon is ancient. Sexagesimal mathematics is on your phone.</p>
+<h2 id="afterthoughts">Afterthoughts</h2>
+<p><strong>Choose one.</strong> Write a short but thoughtful response.
+If you choose the square-root question, show your calculation. Be
+prepared to explain your answer to someone who chose a different
+question.</p>
+<ol type="1">
+<li>Why was clay both a limitation and an advantage for preserving
+Mesopotamian mathematics?</li>
+<li>Is a placeholder automatically the number zero? Explain the
+distinction.</li>
+<li>What makes 60 a convenient base for fractions? Give an example that
+is simpler in base 60 than in base 10.</li>
+<li>What can Plimpton 322 establish with confidence, and what remains
+interpretation?</li>
+<li>Use one step of the Babylonian square-root method to improve the
+estimate <span class="math inline">\(5&lt;\sqrt{30}&lt;6\)</span>.</li>
+<li>Where do you encounter remnants of the sexagesimal system in
+ordinary life?</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>David M. Burton, <em>The History of Mathematics: An
+Introduction</em>, section on Babylonian number recording and the
+positional number system.</li>
+<li>Jay Cummings, <em>Math History: A Long-Form Mathematics
+Textbook</em>, section “Ancient Babylonian Methods.”</li>
+<li>Marty Lewinter and William Widulski, <em>The Saga of Mathematics: A
+Brief History</em>.</li>
+<li>R. Creighton Buck, “Sherlock Holmes in Babylon,” <em>The American
+Mathematical Monthly</em> 87, no. 5 (1980): 335–345.
+<a href="https://doi.org/10.1080/00029890.1980.11995031">https://doi.org/10.1080/00029890.1980.11995031</a>.</li>
+</ul>
+    </article>
+
+    <p class="back-to-top">
+      <a href="#top">↑ Back to top</a>
+    </p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? "/" + window.location.pathname.split("/").filter(Boolean)[0] + "/"
+    : "/";
+
+  fetch(siteRoot + "assets/includes/navigation.html")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Navigation request failed: " + response.status);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = siteRoot + link.dataset.path;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(siteRoot + "assets/includes/footer.html")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Footer request failed: " + response.status);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+  </script>
+</body>
+</html>
