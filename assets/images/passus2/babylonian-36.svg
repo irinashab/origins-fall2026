@@ -1,0 +1,19 @@
+<svg viewBox="0 0 560 210" width="560" height="210" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">A stylized Babylonian numeral for 36</title>
+  <desc id="desc">Three broad horizontal wedges for thirty, followed by six narrow vertical wedges for six.</desc>
+  <rect x="1" y="1" width="558" height="208" rx="18" fill="#f4ead8" stroke="#bda77f" stroke-width="2"/>
+  <g fill="#63482f">
+    <path d="M55 50 L145 73 L55 96 Z"/>
+    <path d="M55 93 L145 116 L55 139 Z"/>
+    <path d="M55 136 L145 159 L55 182 Z"/>
+    <path d="M250 35 L274 117 L226 117 Z"/>
+    <path d="M330 35 L354 117 L306 117 Z"/>
+    <path d="M410 35 L434 117 L386 117 Z"/>
+    <path d="M250 98 L274 180 L226 180 Z"/>
+    <path d="M330 98 L354 180 L306 180 Z"/>
+    <path d="M410 98 L434 180 L386 180 Z"/>
+  </g>
+  <text x="100" y="32" text-anchor="middle" font-size="19" fill="#4d4032">3 tens</text>
+  <text x="330" y="28" text-anchor="middle" font-size="19" fill="#4d4032">6 ones</text>
+  <text x="510" y="115" text-anchor="middle" font-size="30" fill="#4d4032">= 36</text>
+</svg>
