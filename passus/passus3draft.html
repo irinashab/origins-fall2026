@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Passus 3 of Origins of Mathematics: counting rods, The Nine Chapters, fangcheng, negative numbers, gougu geometry, Liu Hui, and Yang Hui">
+  <title>Origins of Mathematics – Passus 3: Mathematics in Ancient China</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 3: Mathematics in Ancient China</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <article>
+<p><strong>Before class.</strong> On the board, write: <em>What counts
+as an explanation in mathematics: a proof, a diagram, a procedure, or a
+successful answer?</em> Leave space beside it; we will return to the
+question after meeting Liu Hui. This script is deliberately fuller than
+can be read aloud in ninety minutes. The first class can end after
+fangcheng and negative numbers; the remaining sections can open a second
+class.</p>
+<h2 id="a-different-mathematical-landscape">A different mathematical
+landscape</h2>
+<p>Today we move east, at your request, to China. That move is not
+simply a change of scenery. It gives us a chance to notice how easily
+the history of mathematics becomes distorted when one civilization is
+treated as the standard and every other tradition is measured against
+it.</p>
+<p>You may have heard a familiar contrast: Greek mathematics was
+theoretical and Chinese mathematics was practical; Greeks proved,
+Chinese calculated. There is something behind that contrast, but in that
+form it is much too crude. The surviving Chinese classics do present
+problems, answers, and procedures rather than beginning with axioms in
+the style of Euclid. Yet procedures can embody general reasoning, and
+Chinese commentators - especially Liu Hui - repeatedly asked why those
+procedures worked. If we call that work merely practical, we miss much
+of its mathematical depth.</p>
+<p>There is another difficulty. “Ancient Chinese mathematics” covers
+many centuries, several dynasties, and texts that were edited and
+commented on long after their earliest layers were written. We should
+resist talking about “the Chinese” as if one person sat at one desk for
+two thousand years.</p>
+<p>Our landmarks today will be these:</p>
+<ol type="1">
+<li>decimal numerals and counting rods;</li>
+<li>the <em>Book on Numbers and Computation</em>;</li>
+<li><em>The Nine Chapters on the Mathematical Art</em> and Liu Hui;</li>
+<li>fangcheng, a method recognizably related to elimination;</li>
+<li>negative numbers as working objects;</li>
+<li>the <em>gougu</em> theorem and right-triangle geometry;</li>
+<li>Liu Hui’s cutting of the circle;</li>
+<li>Yang Hui’s magic squares.</li>
+</ol>
+<p>Notice that this is not a complete history. It is one route through a
+very large landscape.</p>
+<p><strong>Pause and ask.</strong> What did the physical writing
+material do to Egyptian mathematics? What did clay do to Babylonian
+mathematics? Keep those answers in mind, because in China the
+calculating surface itself becomes part of the mathematics.</p>
+<h2 id="numerals-that-could-be-moved">Numerals that could be moved</h2>
+<p>Some of the earliest surviving Chinese numerals appear on oracle
+bones from the Shang period. These bones and turtle shells were used in
+divination. Questions were inscribed, heat was applied, cracks were
+interpreted, and records were sometimes added. They matter to us because
+the inscriptions include number signs and show a decimal way of
+organizing quantity.</p>
+<p>But the central computational technology of the later mathematical
+tradition was not the oracle bone. It was the counting board.</p>
+<p>Imagine a flat surface divided mentally, or sometimes visibly, into
+positions. Small rods are placed on it. A rod can be moved, removed, or
+regrouped. The arrangement represents a number, and the board is also
+the scratch work. It is rather like writing on a whiteboard, except that
+the symbols are physical objects.</p>
+<p>The digits from 1 through 9 were represented by arrangements of rods.
+To prevent adjacent digits from running together, vertical and
+horizontal forms alternated from one place to the next: units, hundreds,
+and ten-thousands used one orientation; tens, thousands, and
+hundred-thousands used the other. Place value did much of the work. A
+vacant position could indicate that a place contained nothing; a written
+symbol for zero appeared later.</p>
+<figure class="lesson-figure">
+<img src="../assets/images/china-counting-board.png" style="width:5.4in;max-width:100%;height:auto;display:block;margin:0 auto"
+alt="A modern schematic of a counting board. The rods alternate orientation by place value; empty cells act as zero in 205 and 3,042." />
+<figcaption aria-hidden="true">A modern schematic of a counting board.
+The rods alternate orientation by place value; empty cells act as zero
+in 205 and 3,042.</figcaption>
+</figure>
+<p>Read the first row as <span class="math inline">\(231\)</span>: two
+rods in the hundreds place, three rods in the tens place, and one rod in
+the units place. The hundreds and units rods are vertical; the tens rods
+are horizontal.</p>
+<p>Now look at <span class="math inline">\(205\)</span>. The tens
+position is empty. Nothing has been written there, but the space is
+doing mathematical work. Likewise, the empty hundreds position in <span
+class="math inline">\(3{,}042\)</span> must remain visibly present.
+Without a stable place-value layout, the same loose group of rods could
+be misread.</p>
+<p>Compare this with Babylonian notation. Both traditions used position,
+and both at some stage could use an empty place. But one system was
+decimal and the other sexagesimal. The same broad idea - position gives
+a sign much of its value - can live inside very different numerical
+worlds.</p>
+<p><strong>Board moment.</strong> Cover the labels above the diagram and
+ask students to identify <span class="math inline">\(231\)</span> and
+<span class="math inline">\(205\)</span>. Then ask: How would you
+arrange the rods for <span class="math inline">\(3{,}042\)</span>? Why
+must the hundreds position remain visibly empty?</p>
+<p>Counting rods were not merely numerals. They supported algorithms.
+Numbers could be arranged in columns, moved through a sequence of
+operations, and colored differently. This is why it is misleading to ask
+only, “What symbols did they write?” A better question is, “What could
+they do on the board?”</p>
+<p><strong>Brief activity.</strong> Ask students to imagine calculating
+without permanent scratch paper. What would be easier with movable
+pieces? What would be harder? Likely answers: rearrangement is easy;
+preserving a record of intermediate steps is hard. This tension will
+return when we discuss what survives in the texts.</p>
+<h2 id="books-made-from-many-hands">Books made from many hands</h2>
+<p>The earliest surviving Chinese mathematical book presently known is
+commonly called the <em>Book on Numbers and Computation</em>, or
+<em>Suan shu shu</em>. It was buried in a tomb early in the second
+century BCE and recovered in the twentieth century on bamboo strips
+whose binding cords had decayed. Reconstructing the book meant putting a
+scattered object back into order before interpreting its
+mathematics.</p>
+<p>The text contains dozens of problems about arithmetic, measurement,
+rates, areas, volumes, and what later came to be called excess and
+deficit. Its usual form is important:</p>
+<blockquote>
+<p>a problem is stated; an answer is given; then a method is
+supplied.</p>
+</blockquote>
+<p>The purpose of the method is not to solve only the displayed problem.
+It should work for a family of similar problems.</p>
+<p>Consider a simple excess-and-deficit problem:</p>
+<blockquote>
+<p>If each person receives 2 coins, 3 coins remain. If each person
+receives 3 coins, the group is short by 2 coins. How many people and how
+many coins are there?</p>
+</blockquote>
+<p>Let <span class="math inline">\(p\)</span> be the number of people
+and <span class="math inline">\(c\)</span> the number of coins. In
+modern notation,</p>
+<p><span class="math display">\[2p+3=c,\]</span></p>
+<p><span class="math display">\[3p-2=c.\]</span></p>
+<p>Subtracting the first equation from the second gives</p>
+<p><span class="math display">\[p-5=0,\]</span></p>
+<p>so <span class="math inline">\(p=5\)</span> and <span
+class="math inline">\(c=13\)</span>.</p>
+<p>The ancient text does not introduce <span
+class="math inline">\(p\)</span> and <span
+class="math inline">\(c\)</span> or display the equations this way. We
+are translating. That translation is useful because it lets us see a
+system of linear equations, but it can also tempt us to imagine modern
+algebra sitting invisibly behind the words. Historical reading requires
+both moves: translate enough to understand, then remember that the
+original method had its own language and tools.</p>
+<p>The best-known Chinese mathematical classic is <em>The Nine Chapters
+on the Mathematical Art</em>. It was not written at one moment by one
+author. It accumulated over centuries and reached us through later
+editions and commentaries. Its 246 problems concern such matters as
+field measurement, proportions, taxation, construction, volumes, square
+and cube roots, and right triangles.</p>
+<p>Around 263 CE, Liu Hui wrote the commentary through which the work
+became enormously influential. He did more than preserve answers. He
+explained and justified procedures, corrected or sharpened results, and
+added mathematical ideas of his own.</p>
+<p>This gives us a different literary structure from Euclid’s
+<em>Elements</em>. Euclid’s familiar sequence is definition, postulate,
+proposition, proof. A Chinese classic more often gives problem, answer,
+procedure, commentary. Neither sequence is intellectually empty. They
+organize mathematical knowledge differently.</p>
+<p><strong>Return to the opening question.</strong> If a procedure
+always produces the right result, has the author explained why? What
+must a commentary add before we are willing to call it
+justification?</p>
+<h2 id="fangcheng---elimination-on-a-counting-board">Fangcheng -
+elimination on a counting board</h2>
+<p>The eighth chapter of <em>The Nine Chapters</em> is called fangcheng.
+The original term is difficult to translate exactly; it is associated
+with a rectangular arrangement of measures. The method handles
+simultaneous linear relationships by arranging numbers on a counting
+board and eliminating them systematically.</p>
+<p>Here is its first problem in modernized language:</p>
+<blockquote>
+<p>Three bundles of top-grade grain, two of medium-grade, and one of
+low-grade yield 39 dou. Two top, three medium, and one low yield 34 dou.
+One top, two medium, and three low yield 26 dou. How much does one
+bundle of each grade yield?</p>
+</blockquote>
+<p>Let <span class="math inline">\(x\)</span>, <span
+class="math inline">\(y\)</span>, and <span
+class="math inline">\(z\)</span> be the yields of one bundle of top-,
+medium-, and low-grade grain. Then</p>
+<p><span class="math display">\[\begin{aligned}
+3x+2y+z&amp;=39,\\
+2x+3y+z&amp;=34,\\
+x+2y+3z&amp;=26.
+\end{aligned}\]</span></p>
+<p>Today we might build an augmented matrix with each equation in a row.
+On the Chinese counting board, the data were arranged by columns. The
+order also appears reversed from our modern display:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1&amp;2&amp;3\\
+2&amp;3&amp;2\\
+3&amp;1&amp;1\\
+26&amp;34&amp;39
+\end{bmatrix}.
+\]</span></p>
+<p>Read the right-hand column from top to bottom: <span
+class="math inline">\(3,2,1,39\)</span>. That is the first equation,
+<span class="math inline">\(3x+2y+z=39\)</span>. The middle column is
+the second equation, and the left column is the third.</p>
+<p><strong>Pause.</strong> Ask students to turn their heads,
+metaphorically, ninety degrees. What we call row operations appear here
+as column operations. The mathematical aim is familiar: create zeros so
+that one unknown can be isolated.</p>
+<p>We begin by eliminating the first entry of the middle column. If the
+columns are <span class="math inline">\(C_1,C_2,C_3\)</span> from left
+to right, replace <span class="math inline">\(C_2\)</span> by</p>
+<p><span class="math display">\[3C_2-2C_3.\]</span></p>
+<p>Indeed,</p>
+<p><span class="math display">\[3\begin{bmatrix}2\\3\\1\\34\end{bmatrix}
+-2\begin{bmatrix}3\\2\\1\\39\end{bmatrix}
+=\begin{bmatrix}0\\5\\1\\24\end{bmatrix}.\]</span></p>
+<p>Now eliminate the first entry of the left column by replacing <span
+class="math inline">\(C_1\)</span> with</p>
+<p><span class="math display">\[3C_1-C_3,\]</span></p>
+<p>which gives</p>
+<p><span class="math display">\[3\begin{bmatrix}1\\2\\3\\26\end{bmatrix}
+-\begin{bmatrix}3\\2\\1\\39\end{bmatrix}
+=\begin{bmatrix}0\\4\\8\\39\end{bmatrix}.\]</span></p>
+<p>At this stage the array is</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+0&amp;0&amp;3\\
+4&amp;5&amp;2\\
+8&amp;1&amp;1\\
+39&amp;24&amp;39
+\end{bmatrix}.
+\]</span></p>
+<p>To eliminate the 4 in the second position of the left column, replace
+<span class="math inline">\(C_1\)</span> by</p>
+<p><span class="math display">\[5C_1-4C_2.\]</span></p>
+<p>The resulting array is</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+0&amp;0&amp;3\\
+0&amp;5&amp;2\\
+36&amp;1&amp;1\\
+99&amp;24&amp;39
+\end{bmatrix}.
+\]</span></p>
+<p>Now the left column says</p>
+<p><span class="math display">\[36z=99,\]</span></p>
+<p>so</p>
+<p><span
+class="math display">\[z=\frac{99}{36}=\frac{11}{4}.\]</span></p>
+<p>The middle column says</p>
+<p><span class="math display">\[5y+z=24,\]</span></p>
+<p>and therefore</p>
+<p><span class="math display">\[y=\frac{17}{4}.\]</span></p>
+<p>Finally,</p>
+<p><span class="math display">\[3x+2y+z=39,\]</span></p>
+<p>so</p>
+<p><span class="math display">\[x=\frac{37}{4}.\]</span></p>
+<p>Thus one bundle yields</p>
+<p><span class="math display">\[x=9\frac14,\qquad y=4\frac14,\qquad
+z=2\frac34\]</span></p>
+<p>dou for the three grades respectively.</p>
+<p><strong>Class check.</strong> Substitute the three answers into one
+of the original equations. For example,</p>
+<p><span
+class="math display">\[3\left(\frac{37}{4}\right)+2\left(\frac{17}{4}\right)+\frac{11}{4}
+=\frac{111+34+11}{4}=\frac{156}{4}=39.\]</span></p>
+<h3 id="the-same-grain-problem-in-modern-gaussian-elimination">The same
+grain problem in modern Gaussian elimination</h3>
+<p>Some of you have taken linear algebra and some have not, so let us
+build the modern method from the beginning. An augmented matrix is
+simply a compact record of the coefficients and the numbers on the
+right-hand side. The vertical line stands where the equals signs
+stood:</p>
+<p><span class="math display">\[
+\left[
+\begin{array}{ccc|c}
+3&amp;2&amp;1&amp;39\\
+2&amp;3&amp;1&amp;34\\
+1&amp;2&amp;3&amp;26
+\end{array}
+\right].
+\]</span></p>
+<p>Each row is one equation. Interchanging two rows merely changes the
+order in which the equations are written, so first place the row
+beginning with 1 at the top:</p>
+<p><span class="math display">\[
+\left[
+\begin{array}{ccc|c}
+1&amp;2&amp;3&amp;26\\
+2&amp;3&amp;1&amp;34\\
+3&amp;2&amp;1&amp;39
+\end{array}
+\right].
+\]</span></p>
+<p>Now subtract twice the first row from the second and three times the
+first row from the third:</p>
+<p><span class="math display">\[R_2\leftarrow R_2-2R_1,\qquad
+R_3\leftarrow R_3-3R_1.\]</span></p>
+<p>This gives</p>
+<p><span class="math display">\[
+\left[
+\begin{array}{ccc|c}
+1&amp;2&amp;3&amp;26\\
+0&amp;-1&amp;-5&amp;-18\\
+0&amp;-4&amp;-8&amp;-39
+\end{array}
+\right].
+\]</span></p>
+<p>The zeros mean that <span class="math inline">\(x\)</span> has been
+eliminated from the last two equations. To eliminate <span
+class="math inline">\(y\)</span> from the third equation, use</p>
+<p><span class="math display">\[R_3\leftarrow R_3-4R_2.\]</span></p>
+<p>We obtain</p>
+<p><span class="math display">\[
+\left[
+\begin{array}{ccc|c}
+1&amp;2&amp;3&amp;26\\
+0&amp;-1&amp;-5&amp;-18\\
+0&amp;0&amp;12&amp;33
+\end{array}
+\right].
+\]</span></p>
+<p>The last row says <span class="math inline">\(12z=33\)</span>, so
+<span class="math inline">\(z=11/4\)</span>. The second row says</p>
+<p><span class="math display">\[-y-5z=-18,\]</span></p>
+<p>which gives <span class="math inline">\(y=17/4\)</span>. Finally, the
+first row gives <span class="math inline">\(x=37/4\)</span>.</p>
+<p>Put the two triangular arrays beside one another on the board. The
+ancient calculation stores equations in columns and performs column
+operations; the modern calculation stores equations in rows and performs
+row operations. The numerical steps are not identical, but the strategy
+is the same: combine equations to make coefficients vanish, obtain a
+triangular arrangement, and recover the unknowns in reverse order.</p>
+<p><strong>Pause and ask.</strong> Why are we allowed to replace one
+equation by a multiple of itself minus another equation? The essential
+answer is that every solution of the original equations also satisfies
+the new combination, and the operation can be reversed. Row reduction is
+not a collection of magic gestures; each step preserves the solution
+set.</p>
+<p>There is a subtle computational point here. A counting board was
+especially convenient for integers. Fractions during intermediate steps
+would be awkward. The procedure therefore delayed division. Instead of
+immediately writing <span class="math inline">\(z=99/36\)</span> and
+substituting a fraction, the calculator could keep the scaled integer
+quantities <span class="math inline">\(36z=99\)</span>, <span
+class="math inline">\(36y=153\)</span>, and <span
+class="math inline">\(36x=333\)</span>, dividing only at the end.</p>
+<p>This is not an accidental clumsiness. It is an algorithm adapted to
+its medium.</p>
+<p>Should we call this Gaussian elimination? Mathematically, the family
+resemblance is unmistakable: arrange coefficients and systematically
+eliminate unknowns. Historically, the name is awkward. The Chinese
+procedure predates Gauss by many centuries, and the expression “Gaussian
+elimination” itself became standard much later. I would say: fangcheng
+is an early systematic elimination procedure, closely related to what we
+now call Gaussian elimination. That acknowledges the mathematics without
+erasing its history.</p>
+<p><strong>Discussion, two minutes.</strong> When we translate fangcheng
+into matrices, what do we gain? What do we lose? We gain compactness and
+connection to modern algebra. We risk losing the physical counting
+board, the column orientation, the avoidance of fractions, and the fact
+that the text teaches a procedure rather than a symbolic theory of
+matrices.</p>
+<h2 id="red-and-black-rods---negative-numbers-become-usable">Red and
+black rods - negative numbers become usable</h2>
+<p>Elimination naturally creates negative quantities. Suppose we
+subtract a larger coefficient from a smaller one. A method that cannot
+represent a deficit will quickly become stuck.</p>
+<p>Chinese counting-board practice used rods of different colors to
+distinguish positive and negative quantities: red rods represented
+positive quantities and black rods negative ones. This is the reverse of
+the later accounting convention in which red ink signals debt. The
+important mathematical point is that oppositely directed quantities
+occupied the same computational system.</p>
+<p>Liu Hui’s commentary gives rules for operating with what were called
+positive and negative counting rods. In modern notation, the logic
+includes familiar statements such as</p>
+<p><span class="math display">\[a-(-b)=a+b\]</span></p>
+<p>and</p>
+<p><span class="math display">\[(-a)-b=-(a+b).\]</span></p>
+<p>For us, negative numbers are ordinary. Historically, they were not
+ordinary everywhere. In a concrete problem, a negative answer might seem
+nonsensical: what is minus three bundles of grain? But inside a
+computation, a deficit, debt, or opposed quantity can be meaningful even
+when the final physical answer must be positive.</p>
+<p>That distinction matters. A culture need not first invent an abstract
+number line and then permit negative numbers. Negative quantities can
+enter because an algorithm needs them.</p>
+<p><strong>Ask.</strong> Which came first here: a philosophical
+acceptance of negative numbers, or a calculating practice that made them
+useful? The surviving evidence points us toward practice, though Liu
+Hui’s rules show that the practice was also being conceptualized.</p>
+<blockquote>
+<p><strong>Possible stopping point.</strong> For a single 90-minute
+meeting, pause here and begin the next class with geometry. The first
+class then has a coherent arc: physical numerals, classical texts,
+fangcheng, its modern elimination counterpart, and negative numbers.</p>
+</blockquote>
+<h2 id="gougu---right-triangles-by-words-numbers-and-pieces">Gougu -
+right triangles by words, numbers, and pieces</h2>
+<p>The traditional Chinese name for the right-triangle relation is the
+<em>gougu</em> theorem. The shorter leg was called the <em>gou</em>, the
+longer leg the <em>gu</em>, and the hypotenuse the <em>xian</em>. In
+modern notation, if these lengths are <span
+class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>, and <span
+class="math inline">\(c\)</span>, then</p>
+<p><span class="math display">\[a^2+b^2=c^2.\]</span></p>
+<p>An early discussion appears in the <em>Zhoubi suanjing</em>, often
+translated as the <em>Mathematical Classic of the Gnomon and the
+Circular Paths of Heaven</em>. The surviving text is difficult to date
+precisely and contains material from different periods, so this is not a
+sensible occasion for a simple contest over who “discovered the
+Pythagorean theorem first.” What matters is that a Chinese mathematical
+tradition treated the right-triangle relation numerically and
+diagrammatically.</p>
+<p>The familiar example is the <span
+class="math inline">\(3\)</span>-<span
+class="math inline">\(4\)</span>-<span class="math inline">\(5\)</span>
+triangle:</p>
+<p><span class="math display">\[3^2+4^2=9+16=25=5^2.\]</span></p>
+<p>But a single numerical verification is not yet a general explanation.
+The surviving Chinese discussion is presented through the <span
+class="math inline">\(3\)</span>-<span
+class="math inline">\(4\)</span>-<span class="math inline">\(5\)</span>
+case; the following modernized, lettered version makes the general
+dissection visible.</p>
+<figure class="lesson-figure">
+<img src="../assets/images/china-gougu-dissection.png" style="width:3.8in;max-width:100%;height:auto;display:block;margin:0 auto"
+alt="A modernized dissection of a square of side a plus b into four congruent right triangles and a central square of side c." />
+<figcaption aria-hidden="true">A modernized dissection of a square of
+side a plus b into four congruent right triangles and a central square
+of side c.</figcaption>
+</figure>
+<p>The outer square has side <span class="math inline">\(a+b\)</span>,
+so its area is <span class="math inline">\((a+b)^2\)</span>. It is also
+composed of four right triangles, each of area <span
+class="math inline">\(ab/2\)</span>, together with the central square of
+area <span class="math inline">\(c^2\)</span>. Therefore</p>
+<p><span class="math display">\[
+(a+b)^2=4\left(\frac{ab}{2}\right)+c^2.
+\]</span></p>
+<p>Expanding and cancelling <span class="math inline">\(2ab\)</span>
+gives</p>
+<p><span class="math display">\[a^2+b^2=c^2.\]</span></p>
+<p>For <span class="math inline">\(a=3\)</span> and <span
+class="math inline">\(b=4\)</span>, the outer square has area <span
+class="math inline">\(49\)</span>. The four triangles have total area
+<span class="math inline">\(4\cdot6=24\)</span>, leaving</p>
+<p><span class="math display">\[49-24=25\]</span></p>
+<p>for the central square. Its side is therefore 5.</p>
+<p><strong>Pause and ask.</strong> Which part of this argument is the
+picture, and which part is algebra that we have supplied? Could someone
+understand the general theorem from the dissection without writing <span
+class="math inline">\((a+b)^2\)</span>?</p>
+<h3 id="a-broken-bamboo-from-the-nine-chapters">A broken bamboo from
+<em>The Nine Chapters</em></h3>
+<p>One problem describes a bamboo 10 <em>chi</em> high that breaks. Its
+top touches the ground 3 <em>chi</em> from the foot of the bamboo. At
+what height did it break?</p>
+<p>Let <span class="math inline">\(h\)</span> be the height of the
+remaining upright part. The broken upper portion has length <span
+class="math inline">\(10-h\)</span>. It becomes the hypotenuse of a
+right triangle whose legs are <span class="math inline">\(h\)</span> and
+3:</p>
+<p><span class="math display">\[h^2+3^2=(10-h)^2.\]</span></p>
+<p>After expanding,</p>
+<p><span class="math display">\[h^2+9=100-20h+h^2,\]</span></p>
+<p>so</p>
+<p><span class="math display">\[20h=91\qquad\text{and}\qquad
+h=\frac{91}{20}=4.55.\]</span></p>
+<p>The problem is practical, but its solution depends on recognizing an
+invariant geometric relation. This is another reason the labels
+“practical” and “theoretical” should not be treated as opposites.</p>
+<p><strong>Board variation.</strong> Before doing the algebra, ask
+students to estimate whether the break must be above or below the
+midpoint. Since the broken part reaches sideways as well as downward, it
+must be longer than the standing part; therefore <span
+class="math inline">\(h&lt;5\)</span>.</p>
+<h2 id="liu-hui-cuts-the-circle">Liu Hui cuts the circle</h2>
+<p>The practical-versus-theoretical stereotype becomes especially
+unhelpful when we look at Liu Hui’s work on the circle.</p>
+<p>Earlier calculations sometimes used <span
+class="math inline">\(\pi=3\)</span>. Liu Hui inscribed regular polygons
+in a circle and repeatedly doubled the number of sides. The perimeter of
+the polygon approaches the circumference, and its area approaches the
+area of the circle.</p>
+<p>If <span class="math inline">\(s_n\)</span> is the side length of an
+inscribed regular <span class="math inline">\(n\)</span>-gon in a circle
+of radius <span class="math inline">\(r\)</span>, the polygon can be
+divided into <span class="math inline">\(n\)</span> triangles. As the
+number of sides grows, the polygon hugs the circle more closely. Liu Hui
+worked successively with polygons having more and more sides and
+obtained a much sharper approximation to <span
+class="math inline">\(\pi\)</span>.</p>
+<p>Burton reports Liu Hui’s estimate from a 192-sided polygon as</p>
+<p><span
+class="math display">\[3.141024&lt;\pi&lt;3.142704,\]</span></p>
+<p>and his later calculation with many more sides led to the
+approximation</p>
+<p><span class="math display">\[\pi\approx3.14159.\]</span></p>
+<p>The exact modern reconstruction of every numerical step is less
+important for us today than the idea: bound a curved figure by a
+sequence of straight-sided figures whose behavior can be calculated.</p>
+<p>This is a procedure, but it is not “mere calculation.” It rests on a
+limiting idea and on an argument about why refinement improves the
+approximation. Liu Hui’s commentary is exactly where the opening
+question - proof, diagram, procedure, successful answer - becomes
+interesting.</p>
+<p><strong>Optional comparison.</strong> Archimedes also bounded the
+circle using polygons. Similar mathematical ideas can arise in distinct
+traditions, expressed through different texts and purposes. Similarity
+does not by itself establish transmission in either direction.</p>
+<h2 id="yang-huis-4-by-4-exchange-method">Yang Hui’s 4 by 4 exchange
+method</h2>
+<p>Magic squares sit at the border of arithmetic, pattern, recreation,
+and cultural symbolism. We have already encountered the <span
+class="math inline">\(3\times3\)</span> Lo Shu square, so today we will
+build a larger one. A normal <span
+class="math inline">\(4\times4\)</span> magic square uses the integers 1
+through 16 exactly once so that every row, column, and main diagonal has
+the same sum.</p>
+<p>Yang Hui, who lived in the thirteenth century, recorded magic squares
+of orders from 3 through 10, as well as magic circles. He did not claim
+to have invented all of them. For the <span
+class="math inline">\(4\times4\)</span> square he explicitly described a
+method called <em>huan yi</em>, or “exchange.”</p>
+<p>Begin by writing the integers 1 through 16 in their ordinary
+order:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1&amp;2&amp;3&amp;4\\
+5&amp;6&amp;7&amp;8\\
+9&amp;10&amp;11&amp;12\\
+13&amp;14&amp;15&amp;16
+\end{bmatrix}.
+\]</span></p>
+<p>First exchange the opposite outer corners:</p>
+<p><span
+class="math display">\[1\longleftrightarrow16,\qquad4\longleftrightarrow13.\]</span></p>
+<p>The array becomes</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+16&amp;2&amp;3&amp;13\\
+5&amp;6&amp;7&amp;8\\
+9&amp;10&amp;11&amp;12\\
+4&amp;14&amp;15&amp;1
+\end{bmatrix}.
+\]</span></p>
+<p>Now exchange the opposite inner corners:</p>
+<p><span
+class="math display">\[6\longleftrightarrow11,\qquad7\longleftrightarrow10.\]</span></p>
+<p>The completed square is</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+16&amp;2&amp;3&amp;13\\
+5&amp;11&amp;10&amp;8\\
+9&amp;7&amp;6&amp;12\\
+4&amp;14&amp;15&amp;1
+\end{bmatrix}.
+\]</span></p>
+<p>Check one row, one column, and the two diagonals:</p>
+<p><span class="math display">\[16+2+3+13=34,\]</span></p>
+<p><span class="math display">\[2+11+7+14=34,\]</span></p>
+<p><span class="math display">\[16+11+6+1=34,\]</span></p>
+<p><span class="math display">\[13+10+7+4=34.\]</span></p>
+<p>The exchanges replace selected entries with their complements to
+17:</p>
+<p><span class="math display">\[1+16=4+13=6+11=7+10=17.\]</span></p>
+<p>The remaining numbers also occur in complementary pairs: <span
+class="math inline">\(2+15\)</span>, <span
+class="math inline">\(3+14\)</span>, <span
+class="math inline">\(5+12\)</span>, and <span
+class="math inline">\(8+9\)</span> are all 17. Each completed row,
+column, or main diagonal contains two such pairs, so its sum is</p>
+<p><span class="math display">\[17+17=34.\]</span></p>
+<p>We can also predict 34 before constructing the square. The integers
+from 1 through 16 total</p>
+<p><span
+class="math display">\[1+2+\cdots+16=\frac{16\cdot17}{2}=136.\]</span></p>
+<p>If four rows have the same sum, each must sum to</p>
+<p><span class="math display">\[\frac{136}{4}=34.\]</span></p>
+<p>The method is striking because it begins with the most ordinary
+possible arrangement and changes only eight positions. Once again, we
+meet mathematics as an art of procedures - but also as an art of seeing
+which quantities belong together.</p>
+<h2 id="closing-and-afterthoughts">Closing and Afterthoughts</h2>
+<p>Return to the sentence on the board:</p>
+<blockquote>
+<p>What counts as an explanation in mathematics: a proof, a diagram, a
+procedure, or a successful answer?</p>
+</blockquote>
+<p>Today we saw all four. Counting rods made procedures visible and
+movable. <em>The Nine Chapters</em> organized mathematical knowledge
+around problems and methods. Liu Hui asked why methods worked. Fangcheng
+eliminated unknowns while respecting the integer-friendly counting
+board, while modern row reduction let us view the same problem through
+contemporary notation. Negative numbers became usable within
+computation. The <em>gougu</em> dissection joined a picture to a general
+relation. Polygon cutting gave increasingly precise information about a
+circle. Yang Hui turned a number pattern into a construction.</p>
+<p>Put the following questions on the board. Ask each student to choose
+one and write a short, thoughtful response. If time allows, have
+students pair with someone who chose a different question.</p>
+<h3 id="afterthoughts---choose-one">Afterthoughts - choose one</h3>
+<ol type="1">
+<li>The counting board made rearrangement easy but did not preserve
+every intermediate step. How might that tool have shaped the style of
+Chinese mathematical writing?</li>
+<li>Is it fair to describe fangcheng as “Gaussian elimination before
+Gauss”? Explain what that phrase reveals and what it hides.</li>
+<li>Why might negative numbers be accepted first as intermediate
+computational objects rather than as answers to concrete problems?</li>
+<li>Does Liu Hui’s cutting-circle method weaken the claim that Chinese
+mathematics was practical rather than theoretical? Explain.</li>
+<li>Explain why Yang Hui’s exchanges are precisely the exchanges needed
+to turn the ordered <span class="math inline">\(4\times4\)</span> array
+into a magic square. Why is knowing that the required sum is 34 not
+enough by itself?</li>
+<li>Compare Chinese counting-rod notation with either Egyptian numerals
+or Babylonian sexagesimal notation. Which similarities are mathematical,
+and which arise from the physical medium?</li>
+<li>In the <em>gougu</em> dissection, where is the general proof? Is it
+in the diagram, in the algebraic equation, or in the combination of the
+two?</li>
+<li>The bamboo problem looks like a practical measurement exercise. What
+mathematical reasoning turns it into something more general than a
+single numerical puzzle?</li>
+</ol>
+<hr>
+<h2 id="dividing-the-material-between-classes">Dividing the material
+between classes</h2>
+<p>For one 90-minute class, stop after the negative-number section. Do
+not abbreviate the fangcheng board work or its modern
+Gaussian-elimination counterpart; together they are the mathematical
+center of the first meeting.</p>
+<p>Begin the continuation with the <em>gougu</em> theorem and bamboo
+problem, then move to Liu Hui’s circle and Yang Hui’s magic square. This
+second arc moves deliberately from diagram to approximation to numerical
+pattern.</p>
+<p>If the class moves quickly, add one of these extensions:</p>
+<ul>
+<li>Solve the excess-and-deficit problem without introducing variables,
+using two guesses and the sizes of the excess and deficit.</li>
+<li>Ask students to mark the exchanged positions in the original <span
+class="math inline">\(4\times4\)</span> array. What geometric pattern do
+those eight positions form?</li>
+<li>Return to the fangcheng solution and show explicitly how keeping
+<span class="math inline">\(36z\)</span>, <span
+class="math inline">\(36y\)</span>, and <span
+class="math inline">\(36x\)</span> integral postpones fractions until
+the final division.</li>
+<li>Ask students to rearrange four paper copies of a <span
+class="math inline">\(3\)</span>-<span
+class="math inline">\(4\)</span>-<span class="math inline">\(5\)</span>
+right triangle into the <em>gougu</em> diagram and account for every
+unit of area.</li>
+</ul>
+<h2 id="references-used-for-this-draft">References used for this
+draft</h2>
+<ul>
+<li>David M. Burton, <em>The History of Mathematics: An
+Introduction</em>, section on the ancient Chinese <em>Nine Chapters</em>
+and later Chinese mathematics.</li>
+<li>Jay Cummings, <em>Math History: A Long-Form Mathematics
+Textbook</em>, section 2.3, “Ancient Chinese Methods.”</li>
+<li>Jay Cummings, discussion of Yang Hui’s magic squares and magic
+circles, supplied excerpt.</li>
+<li>Marty Lewinter and William Widulski, <em>The Saga of Mathematics: A
+Brief History</em>.</li>
+<li>Chia-Yun Wu, “Were the Mathematical Aspects of Chinese Magic Squares
+Influenced by Arabic Magic Squares? Focusing on Yang Hui’s <em>Zong Heng
+Tu</em> of the 13th Century,” no. 18 (2013): 45-58.</li>
+<li>J. J. O’Connor and E. F. Robertson, “Chinese Numerals,” <em>MacTutor
+History of Mathematics Archive</em>.</li>
+<li>NRICH, “Magic Squares II,” University of Cambridge, for a modern
+classroom presentation of complementary exchanges in doubly even magic
+squares.</li>
+</ul>
+    </article>
+
+    <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>

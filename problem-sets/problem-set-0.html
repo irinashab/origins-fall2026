@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Problem Set 0 for Origins of Mathematics: grouping systems, positional notation, Babylonian and Egyptian computation, unit fractions, magic squares, and Chinese counting rods">
+  <title>Origins of Mathematics – Problem Set 0</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    .magic-square {
+      margin: 1.25rem auto;
+      border-collapse: collapse;
+    }
+    .magic-square td {
+      width: 3.25rem;
+      height: 3.25rem;
+      border: 1px solid currentColor;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <h1>Problem Set 0</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <article>
+<p>Show your work and explain your reasoning. Use the notation
+introduced in the relevant passus.</p>
+<h2 id="a-simple-grouping-system">1. A simple grouping system</h2>
+<p>In a base-4 simple grouping system, the values <span
+class="math inline">\(1\)</span>, <span
+class="math inline">\(4\)</span>, <span
+class="math inline">\(4^2\)</span>, and <span
+class="math inline">\(4^3\)</span> are represented by
+<strong>●</strong>, <strong>▲</strong>, <strong>■</strong>, and
+<strong>◆</strong>, respectively.</p>
+<ol type="a">
+<li><p>What number is represented by <strong>◆◆■●</strong>?</p></li>
+<li><p>What number is represented by <strong>◆■■■▲</strong>?</p></li>
+<li><p>Express <span class="math inline">\(81\)</span> in this
+system.</p></li>
+<li><p>Express <span class="math inline">\(210\)</span> in this
+system.</p></li>
+</ol>
+<h2 id="inventing-a-base-11-system">2. Inventing a base-11 system</h2>
+<p>Create eleven distinct symbols of your own for the digit values <span
+class="math inline">\(0,1,2,\ldots,10\)</span> in a base-11 positional
+system. Your symbols may be letters, drawings, or any other symbols you
+choose. State clearly which value each symbol represents.</p>
+<ol type="a">
+<li><p>Give three examples of numbers in your system and translate each
+number into our usual base-10 system.</p></li>
+<li><p>Write a number in your base-11 system that uses at least three
+different symbols. Convert that number into base 5.</p></li>
+</ol>
+<h2 id="multiplication-in-base-6">3. Multiplication in base 6</h2>
+<p>Construct a multiplication table in base 6. Include the product <span
+class="math inline">\(a\cdot b\)</span> for each</p>
+<p><span class="math display">\[
+a,b\in\{(1)_6,(2)_6,(3)_6,(4)_6,(5)_6,(10)_6\},
+\]</span></p>
+<p>and write every product in base 6.</p>
+<h2 id="babylonian-notation">4. Babylonian notation</h2>
+<p>Babylonians used a base-60 positional system, but they wrote the
+numbers from 1 through 59 using only two basic signs: a vertical wedge
+for one and a horizontal wedge for ten. For much of their history they
+had no consistent symbol for zero, and spacing between groups could be
+ambiguous.</p>
+<ol type="a">
+<li>Interpret the following sequence in at least four different
+ways:</li>
+</ol>
+<blockquote>
+<p>horizontal wedge, vertical wedge, vertical wedge, vertical wedge</p>
+</blockquote>
+<p>For each interpretation, use the notation introduced in Passus 2 and
+give its value in base 10.</p>
+<ol start="2" type="a">
+<li>Write <span class="math inline">\(120\frac{1}{3}\)</span> in base
+60. Use a semicolon as the sexagesimal point.</li>
+</ol>
+<h2 id="magic-squares">5. Magic squares</h2>
+<ol type="a">
+<li>Complete the array below to produce a normal <span
+class="math inline">\(4\times4\)</span> magic square. Use each integer
+from 1 through 16 exactly once.</li>
+</ol>
+<table class="magic-square" aria-label="Partially completed four by four magic square">
+  <tbody>
+    <tr><td>1</td><td>14</td><td>&nbsp;</td><td>15</td></tr>
+    <tr><td>&nbsp;</td><td>11</td><td>&nbsp;</td><td>10</td></tr>
+    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>12</td><td>7</td><td>&nbsp;</td><td>6</td></tr>
+  </tbody>
+</table>
+<ol start="2" type="a">
+<li><strong>Extra credit.</strong> Let <span
+class="math inline">\(A\)</span> be a normal <span
+class="math inline">\(n\times n\)</span> magic square using the integers
+<span class="math inline">\(1,2,\ldots,n^2\)</span>. Determine the
+common sum of every row, column, and main diagonal. Explain your
+formula.</li>
+</ol>
+<h2 id="unit-fractions">6. Unit fractions</h2>
+<p>Show that, for every positive integer <span
+class="math inline">\(n\)</span>,</p>
+<p><span class="math display">\[
+\frac{1}{n}=\frac{1}{n+1}+\frac{1}{n(n+1)}.
+\]</span></p>
+<p>Then use the identity to write <span
+class="math inline">\(\frac{1}{101}\)</span> as a sum of unit
+fractions.</p>
+<h2 id="a-second-decomposition">7. A second decomposition</h2>
+<p><strong>Extra credit.</strong> The Rhind Mathematical Papyrus
+includes</p>
+<p><span class="math display">\[
+\frac{2}{101}=\frac{1}{101}+\frac{1}{202}+\frac{1}{303}+\frac{1}{606}.
+\]</span></p>
+<p>Find a different representation of <span
+class="math inline">\(\frac{2}{101}\)</span> as a sum of distinct unit
+fractions.</p>
+<h2 id="adding-fractions-in-the-nine-chapters">8. Adding fractions in
+<em>The Nine Chapters</em></h2>
+<p>The following method for adding fractions appears in <em>The Nine
+Chapters on the Mathematical Art</em>:</p>
+<blockquote>
+<p>Multiply each numerator by the denominators of the other fractions.
+Add the resulting numbers to obtain the dividend. Multiply the
+denominators to obtain the divisor. Divide; if there is a remainder, use
+it as the numerator and the divisor as the denominator.</p>
+</blockquote>
+<p>Using modern notation, give a complete explanation of what this
+procedure does and why it works.</p>
+<h2 id="seven-has-no-inverse">9. “Seven has no inverse”</h2>
+<p>Some Babylonian texts say that “seven has no inverse.” What do you
+think they meant? Explain your answer in the context of Babylonian
+base-60 computation.</p>
+<h2 id="a-quantity-from-the-rhind-mathematical-papyrus">10. A quantity
+from the Rhind Mathematical Papyrus</h2>
+<p>Problem 32 asks:</p>
+<blockquote>
+<p>A quantity, its one-third, and its one-fourth, added together, become
+2. What is the quantity?</p>
+</blockquote>
+<p>Solve the problem and explain your method.</p>
+<h2 id="egyptian-multiplication">11. Egyptian multiplication</h2>
+<ol type="a">
+<li><p>Use the Egyptian method of multiplication to multiply <span
+class="math inline">\(26\)</span> by <span
+class="math inline">\(31\)</span>.</p></li>
+<li><p>Choose one additional pair of two-digit numbers and multiply them
+using the Egyptian method.</p></li>
+<li><p>Verify both answers using ordinary multiplication.</p></li>
+<li><p>Explain why the Egyptian method will always work.</p></li>
+</ol>
+<h2 id="egyptian-division">12. Egyptian division</h2>
+<p>Ancient Egyptians also had a method for dividing integers that was
+similar to their multiplication method. To calculate <span
+class="math inline">\(132\div6\)</span>, one asks what must be
+multiplied by 6 to obtain 132. Perform this division using the Egyptian
+method and show your work.</p>
+<h2 id="empty-places-on-a-chinese-counting-board">13. Empty places on a
+Chinese counting board</h2>
+<p>Chinese counting rods used an empty position to represent a missing
+place.</p>
+<ol type="a">
+<li><p>Draw or clearly describe how <span
+class="math inline">\(205\)</span> and <span
+class="math inline">\(25\)</span> would be distinguished on a counting
+board.</p></li>
+<li><p>Compare this with Babylonian notation. Why was an empty position
+less ambiguous on a counting board than in a written line of cuneiform
+numerals?</p></li>
+</ol>
+    </article>
+
+    <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
