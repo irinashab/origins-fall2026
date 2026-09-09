@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Passus 4: From Patterns to Proof</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 4: From Patterns to Proof</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <article>
+<p class="lead">Numbers, shapes, and explanations in early Greek mathematics.</p>
+<nav class="lesson-nav" aria-label="In this lesson"><ol><li><a href="#why-proof">Why prove?</a></li><li><a href="#thales">Thales and the circle</a></li><li><a href="#exercise">Guided exercise</a></li><li><a href="#pythagoras">Pythagoras and his school</a></li><li><a href="#pythagorean-theorem">The theorem and its proofs</a></li><li><a href="#numbers">Figurate numbers</a></li><li><a href="#afterthoughts">Afterthoughts</a></li></ol></nav>
+<section id="why-proof"><h2>Why prove something that looks obvious?</h2>
+<p>In our discussion of Chinese mathematics, we encountered procedures, diagrams, and explanations of why methods work. Keep that question with you as we turn to early Greek mathematics: what makes an explanation general?</p>
+<p>Consider the sums 1 = 1², 1 + 3 = 2², and 1 + 3 + 5 = 3². The next case is easy to predict. But how could we explain why the pattern continues, however many terms we take?</p>
+<p>Today we move from Thales’ circle geometry to Pythagoras and his school, the right-triangle theorem, and the arrangement of whole numbers as dots. In each, a picture suggests a result; our task is to identify the reasoning that makes the picture apply beyond a particular example.</p>
+<div class="evidence-note"><h3>What can we know about the beginnings?</h3><p>Cummings opens his chapter with a question: “The First Proof in History?” His discussion traces the attribution to Thales through later writers, especially Proclus and the lost history of Eudemus. This is a chain of testimony, not a surviving manuscript by Thales. We will distinguish the validity of an argument from certainty about who first gave it.</p><p>Likewise, this lesson does not require us to imagine that earlier mathematical traditions lacked reasoning. We are examining a particular tradition of proof and its later presentation.</p></div>
+</section>
+<section id="thales"><h2>Thales and the circle</h2>
+<h3>A diameter bisects a circle</h3><p>Cummings’s first example is deliberately simple: any diameter divides a circle into two equal halves. A circle consists of points at a fixed distance from its center. A diameter passes through that center.</p>
+<p>Imagine folding the circle along the diameter. Why must the two arcs coincide? Reflection across the diameter leaves the center fixed and preserves distance. Every reflected point is therefore still at the same radius from the center. The reflected semicircle coincides with the other semicircle.</p>
+<p>Cummings presents this as a contradiction argument: a mismatch would require unequal radial distances where both must equal the circle’s radius. The definition of a circle does the essential work. Folding a paper circle illustrates the argument; the distance-preserving property explains why it works for any circle.</p>
+<h3>Thales’ theorem</h3><p><strong>If AB is a diameter and C is any other point on the circle, then angle ACB is a right angle.</strong> The point C need not be at the top or in a symmetric position.</p>
+<p>We will investigate this through Cummings’s Exercise 3.2, using rectangles. Treat the argument as a possible reconstruction, not as a preserved original proof by Thales.</p>
+</section>
+<section id="exercise"><h2>Guided exercise: discovering Thales’ theorem</h2><p><em>Adapted from Cummings, Exercise 3.2. Allow approximately 10–12 minutes.</em></p>
+<div class="challenge"><h3>Explore first</h3><ol><li>Draw a wide rectangle and a tall rectangle.</li><li>In each, draw both diagonals and mark their intersection O.</li><li>Draw a circle centered at O through one corner. Explain why it passes through all four corners.</li><li>Choose one diagonal. What angle does it subtend at either remaining corner?</li></ol><p>Now return to an arbitrary circle with diameter AB and a point C on its circumference. Explain why angle ACB must be 90°.</p></div>
+<figure><svg viewBox="0 0 520 370" role="img" aria-labelledby="circle-title circle-desc" style="width:100%;max-width:520px;display:block;margin:auto"><title id="circle-title">Two diameters complete an inscribed rectangle</title><desc id="circle-desc">A and B are opposite endpoints of a horizontal diameter. C is above and to the right of center O; D is its opposite. Joining A, C, B, D forms a rectangle.</desc><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="260" cy="180" r="145"/><path d="M115 180 L347 64 L405 180 L173 296 Z"/><path d="M115 180 H405 M347 64 L173 296" stroke-dasharray="6 5"/></g><g fill="currentColor" font-family="Arial, sans-serif" font-size="20"><text x="92" y="187">A</text><text x="416" y="187">B</text><text x="354" y="55">C</text><text x="151" y="318">D</text><text x="267" y="204">O</text><circle cx="260" cy="180" r="3"/></g></svg><figcaption>Construction to use after exploring: extend CO through the center to D, then join A–C–B–D. The dashed lines are the diagonals.</figcaption></figure>
+<details class="answer"><summary>Hint 1: distances to the corners</summary><p>A rectangle’s diagonals are equal and bisect each other. Its four half-diagonals therefore have the same length. What does that say about a circle centered at their intersection?</p></details>
+<details class="answer"><summary>Hint 2: start with any point C</summary><p>Draw the diameter CD through C and the center O. Consider quadrilateral ACBD. Its diagonals are AB and CD.</p></details>
+<details class="answer"><summary>Hint 3: recognize the quadrilateral</summary><p>The diagonals bisect each other, so ACBD is a parallelogram. They are equal as well. A parallelogram with equal diagonals is a rectangle.</p></details>
+<details class="answer"><summary>Worked answer</summary><p>In a rectangle, the four half-diagonals have equal lengths. All four vertices consequently lie on a circle centered at their intersection. Each diagonal is a diameter, and the angle it subtends at another corner is a right angle.</p><p>To establish the result for every point C, let D be the point opposite C on the circle. The diagonals AB and CD of quadrilateral ACBD bisect each other at O, so ACBD is a parallelogram. Both diagonals are diameters of the same circle, so they are equal. Thus ACBD is a rectangle, and its corner angle ACB is 90°.</p><p><strong>Why does the rectangle criterion work?</strong> In a parallelogram, opposite sides are equal. If the diagonals are also equal, the triangles ABC and BAD are congruent by side–side–side: AB is shared, BC = AD, and AC = BD. Hence the adjacent angles ABC and BAD are equal. Adjacent angles of a parallelogram sum to 180°, so each is 90°. Apply this fact with the vertices ordered A–C–B–D in our circle diagram.</p></details>
+<p><strong>Discuss:</strong> What did the initial drawings help us discover? What does the final construction establish that several drawings alone could not?</p>
+</section>
+<section id="pythagoras"><h2>Pythagoras and the Pythagorean community</h2>
+<p>Pythagoras came from Samos and lived in the sixth century BCE. He established a community at Croton, a Greek city in southern Italy. Its interests included mathematics, philosophy, religious practices, and a shared way of life. The school continued beyond its founder, so we should distinguish Pythagoras himself from the generations of Pythagoreans who followed him.</p>
+<p>Cummings emphasizes how difficult the evidence is. Later accounts mix mathematical achievements with extraordinary legends, and discoveries within a community could be credited to its leader. We have no surviving proof written by Pythagoras. Even whether he personally proved the theorem bearing his name remains uncertain. The name records a tradition of attribution; it does not settle the question of priority.</p>
+<h3>Whole numbers and the order of the world</h3><p>The Pythagorean tradition associated number with order and harmony. Studying whole numbers could therefore be more than a computational activity: their relationships might reveal something about the world. Number symbolism belonged to this outlook, but so did investigations whose mathematical content we can still examine.</p>
+<p>For example, 6 equals the sum of its positive proper divisors: 1 + 2 + 3 = 6. So does 28: 1 + 2 + 4 + 7 + 14 = 28. Such numbers are called <em>perfect</em>. This gives a taste of the study of numbers for their own properties; we will leave their systematic construction for another occasion.</p>
+<h3>Musical ratios</h3><p>Lewinter and Widulski use musical intervals to illustrate the attraction of simple ratios. For ideal strings of the same material and thickness under the same tension, the frequency is inversely proportional to the vibrating length. Halving a string’s length doubles its frequency, producing an octave. Length ratios 3:2 and 4:3 correspond to a perfect fifth and a perfect fourth, respectively, with the shorter string sounding higher.</p>
+<p>These relationships help explain the appeal of a world understood through number. They do not establish every story told about Pythagoras’s own experiments. Keep the mathematical relationship separate from the biography.</p>
+<p>Figurate numbers belong in this setting: a collection of counters can display the structure of a whole number as a triangle or a square. We will return to those arrangements after the theorem for which Pythagoras is most famous.</p></section>
+<section id="pythagorean-theorem"><h2>The famous theorem: squares on the sides</h2>
+<p><strong>For a right triangle with legs a and b and hypotenuse c, a² + b² = c².</strong> Geometrically, the two squares constructed on the legs have the same total area as the square constructed on the hypotenuse. It is a statement about every right triangle, not only triangles with whole-number sides.</p>
+<p>The example 3² + 4² = 5² verifies one instance. Knowing a triple, stating a general relationship, and proving that relationship are different achievements. Cummings’s discussion of the theorem around the world makes these distinctions particularly useful.</p>
+<h3>Who else gave proofs?</h3>
+<ul><li><strong>Zhao Shuang, China, third century CE:</strong> his commentary on the <em>Zhoubi suanjing</em> includes the famous diagram of a square and four right triangles. Cummings discusses how its area relationships can be interpreted and generalized as a dissection proof (p. 137). This connects with the gougu geometry of our previous lecture.</li>
+<li><strong>Bhāskara II, India, twelfth century:</strong> a dissection proof arranges four copies of a right triangle inside a square whose side is the hypotenuse. We work through this argument below.</li>
+<li><strong>James A. Garfield, United States, 1876:</strong> while serving in Congress, before becoming president, he published a proof that computes a trapezoid’s area in two ways. The pieces are two copies of the original triangle and a third right triangle.</li>
+<li><strong>Euclid, around 300 BCE:</strong> his proof appears in <em>Elements</em>, Book I, Proposition 47. We will study its construction and place in his deductive system later.</li></ul>
+<p>The historical comparisons of Bhāskara, Garfield, and Euclid are also presented in the University of Cambridge’s <a href="https://undergroundmathematics.org/thinking-about-geometry/proving-pythag/historical-background">Proving Pythagoras: historical background</a>. For Garfield’s 1876 publication, see <a href="https://mathworld.wolfram.com/PythagoreanTheorem.html">MathWorld’s account</a>.</p>
+<p>There is no need to choose just one of these arguments as the proof. Different proofs expose different relationships: rearrangement, equality of areas, or similarity. Nor does a later proof tell us what Pythagoras’s own argument was.</p>
+<h3 id="bhaskara-proof">A dissection proof associated with Bhāskara II</h3>
+<p>Take four congruent copies of a right triangle with legs a and b and hypotenuse c. Name the longer leg b, so b &gt; a for the diagram. Arrange the triangles as shown. Their four hypotenuses form the outside boundary; their legs surround a small central square.</p>
+<figure><svg viewBox="0 0 520 510" role="img" aria-labelledby="bhaskara-title bhaskara-desc" style="display:block;width:100%;max-width:520px;margin:auto"><title id="bhaskara-title">Bhāskara’s four-triangle dissection</title><desc id="bhaskara-desc">Four congruent right triangles surround a central square of side b minus a. Their hypotenuses form an outer square of side c. In the upper triangle the vertical leg is a and the horizontal leg is b.</desc><g transform="translate(140 0)" stroke="currentColor" stroke-width="2"><path d="M100 40 L340 220 L100 220 Z" fill="currentColor" fill-opacity="0.07"/><path d="M340 220 L160 460 L160 220 Z" fill="currentColor" fill-opacity="0.14"/><path d="M160 460 L-80 280 L160 280 Z" fill="currentColor" fill-opacity="0.07"/><path d="M-80 280 L100 40 L100 280 Z" fill="currentColor" fill-opacity="0.14"/><rect x="100" y="220" width="60" height="60" fill="none"/><path d="M100 204 H116 V220" fill="none"/></g><g fill="currentColor" font-family="Arial,sans-serif" font-size="19"><text x="220" y="140">a</text><text x="357" y="207">b</text><text x="369" y="118">c</text><text x="408" y="357">c</text><text x="158" y="386">c</text><text x="125" y="136">c</text><text x="270" y="257" text-anchor="middle" font-size="16">b − a</text></g></svg><figcaption>Modern schematic: four triangles of area ab/2 and a central square of area (b − a)² fill the square on c.</figcaption></figure>
+<ol><li><strong>Why is the outer boundary a square?</strong> All four sides are hypotenuses of congruent triangles, so each has length c. At each outer vertex, the two acute angles of the original right triangle meet. They sum to 90°, so all four outer angles are right angles.</li>
+<li><strong>What is left in the middle?</strong> The exposed segments of the legs have length b − a. They form a square, since the legs meet at right angles. Its area is (b − a)².</li>
+<li><strong>Count the same area in two ways.</strong> The outer square has area c². The four triangles have total area 4(ab/2) = 2ab. Add the central square:</li></ol>
+<p class="math-line">c² = 4(ab/2) + (b − a)²</p>
+<p class="math-line">= 2ab + b² − 2ab + a²</p>
+<p class="math-line"><strong>= a² + b².</strong></p>
+<p>If a = b, the central gap disappears: the four triangles meet at one point and the same area equation holds with (b − a)² = 0. Thus the equal-leg case is included as well.</p>
+<div class="challenge"><h3>Pause at the picture</h3><p>Which step would be missing if we simply announced that the outside is a square because it looks like one? Explain how the angle argument supplies that step. Notice that we used triangle angles and areas; we did not assume the theorem we were proving.</p></div>
+<p>With legs 3 and 4, the four triangle areas total 24 and the central square has area 1. The outer square therefore has area 25. This illustrates the construction; the argument with a and b establishes the general result.</p>
+</section>
+<section id="numbers"><h2>Numbers made visible</h2><p>Returning to the Pythagorean interest in whole numbers, Burton’s discussion of figurate numbers gives us another way to connect a picture with a general argument. Arrange counters in triangular rows of 1, 2, 3, and so on. The first triangular numbers are 1, 3, 6, and 10. Let T<sub>n</sub> denote the total in n rows.</p>
+<h3>Two triangles make a rectangle</h3><p>Take two copies of the same triangular array. Rotate one and fit the two together to form a rectangle with n rows and n + 1 columns. Each copy contains T<sub>n</sub> dots, so:</p><p class="math-line">2T<sub>n</sub> = n(n + 1), &nbsp; therefore &nbsp; T<sub>n</sub> = n(n + 1)/2.</p>
+<figure><svg viewBox="0 0 350 240" role="img" aria-label="Two triangular arrays of ten dots form a four by five rectangle" style="width:100%;max-width:350px;display:block;margin:auto"><circle cx="75" cy="40" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="85" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="85" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="85" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="85" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="85" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="130" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="130" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="130" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="130" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="130" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="175" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg><figcaption>For n = 4, ten filled dots and ten outlined dots form a 4 × 5 rectangle. The same arrangement works for any positive integer n.</figcaption></figure>
+<p>We have explained the sum 1 + 2 + ··· + n. The letters record the arrangement in modern notation; the construction supplies its meaning.</p>
+<h3>Odd numbers build squares</h3><p>Start with one dot. Add an L-shaped border of three dots to make a 2 × 2 square. Add five more to make a 3 × 3 square; add seven to make a 4 × 4 square.</p><p>To grow an (n − 1) × (n − 1) square into an n × n square, add one row of n dots and one column of n − 1 additional dots. The border contains 2n − 1 dots. Thus:</p><p class="math-line">1 + 3 + 5 + ··· + (2n − 1) = n².</p>
+<p>The opening pattern now has an explanation. Every stage adds exactly the next odd number and produces exactly the next square.</p>
+<h3>Two consecutive triangles make a square</h3><p>A square array of n² dots can be split along its diagonal into a triangular array with n rows and another with n − 1 rows. Consequently:</p><p class="math-line">T<sub>n</sub> + T<sub>n−1</sub> = n².</p><p>For example, 10 + 6 = 16. Sketch the two parts inside a 4 × 4 array, then explain how your division would work in a larger square.</p><p>Algebra confirms the same relationship:</p><p class="math-line">n(n + 1)/2 + (n − 1)n/2 = 2n²/2 = n².</p>
+</section>
+<section id="afterthoughts"><h2>Closing and afterthoughts</h2><p>In the circle argument, equal distances and the properties of rectangles forced a right angle. In Bhāskara’s dissection, the areas of four triangles and a small square established the right-triangle theorem. In the dot arrays, rearrangement forced an identity. A useful picture makes a relationship visible; an explanation tells us why its structure persists in every permitted case.</p><ol><li>Why does measuring several inscribed angles fail to establish Thales’ theorem?</li><li>Which earlier geometric facts did the rectangle proof require?</li><li>How does Bhāskara’s dissection compare with the gougu dissection from Passus 3?</li><li>Why distinguish knowing a numerical triple from proving the general theorem?</li><li>Explain one dot identity to someone without using an algebraic formula.</li><li>How does uncertainty about the historical author of a proof differ from uncertainty about the proof’s validity?</li></ol><p><strong>Looking ahead:</strong> Incommensurable lengths and Zeno’s paradoxes will raise further questions about number, magnitude, and infinity.</p></section>
+<section id="reading"><h2>Reading and sources</h2><ul><li>Jay Cummings, <em>Math History: A Long-Form Mathematics Textbook</em>, Chapter 3, “Transition to Proofs,” printed pp. 125–137; Exercise 3.2 (PDF page 33 of the supplied compilation). Core reading: pp. 127–130, pp. 131–137 on the Pythagoreans and their theorem, and the exercise.</li><li>David M. Burton, <em>The History of Mathematics: An Introduction</em>, printed pp. 95–97, on triangular numbers, square numbers, and gnomons. Core reading: these three pages.</li><li>Marty Lewinter and William Widulski, <em>The Saga of Mathematics: A Brief History</em>, Chapter 3, “Those Incredible Greeks!” See pp. 45–52 for the Pythagorean community, whole numbers, and musical ratios, and pp. 55–59 for proofs. The lecture’s Thales activity follows Cummings.</li></ul><p>The diagrams and classroom explanations on this page are modern adaptations.</p></section>
+</article>
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>

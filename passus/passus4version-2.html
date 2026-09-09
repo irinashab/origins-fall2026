@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Passus 4: From Patterns to Proof</title>
+  <link rel="stylesheet" href="../assets/style.css">
+<style>
+/* Plain student reading layout; keep disclosures without colored panels. */
+main details.guidance { margin: 1rem 0; padding: 0; background: transparent; border: 0; border-radius: 0; }
+main details.guidance summary { cursor: pointer; font-weight: bold; }
+main table { margin: 1.5rem 0; }
+main th, main td { background: transparent; white-space: normal !important; }
+main caption { text-align: left; font-weight: bold; margin-bottom: .5rem; }
+@media print { main details.guidance > * { display: block; } }
+</style>
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 4: From Patterns to Proof</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <article>
+<p class="lead">Thales, Pythagoras, and the search for order in circles, strings, and whole numbers.</p>
+<nav class="lesson-nav" aria-label="In this lesson"><ol><li><a href="#why-proof">Why prove?</a></li><li><a href="#thales">Thales and the circle</a></li><li><a href="#exercise">Guided exercise</a></li><li><a href="#pythagoras">Pythagoras and his school</a></li><li><a href="#pythagorean-theorem">The theorem and its proofs</a></li><li><a href="#numbers">Figurate numbers</a></li><li><a href="#afterthoughts">Afterthoughts</a></li></ol></nav>
+<section id="why-proof"><h2>A journey across the Mediterranean</h2>
+<p>Our last journey took us to China, where counting rods could be moved across a board and geometric figures could be cut apart to explain a calculation. We now turn west, to Greek-speaking communities around the Mediterranean. The setting changes, but a familiar question travels with us: how can we know that a mathematical method will always work?</p>
+<p>Begin in Miletus, on the Aegean coast of what is now Turkey. In the sixth century BCE, this was a Greek city connected by sea to other trading communities. Greek mathematics developed in a world of contact with Egypt and western Asia. Measuring land, navigating, building, and keeping accounts already had long histories. Mathematical knowledge did not begin on an empty shore.</p>
+<p>Thales of Miletus belongs to this world. Later generations remembered him as a philosopher and a geometer, a person who sought explanations for things others might simply accept. His mathematical writings have not survived. Much of the story reaches us through later authors, including Proclus, who drew on earlier accounts such as the now-lost history of Eudemus. That distance matters: we can examine the arguments, but we cannot place a surviving notebook of Thales beside them.</p>
+<p>Imagine being asked to explain why a diameter divides a circle equally. You might reply, “Just look at it.” Yet a roughly drawn circle is never exact, and looking at one circle tells us little about every possible circle. The interesting step is to ask what a circle <em>is</em>, and what follows from that definition.</p>
+</section>
+<section id="thales"><h2>Five theorems associated with Thales</h2>
+<p>Five geometric results are traditionally associated with Thales. They are small enough to state in ordinary language, yet together they suggest a new ambition: to explain properties of whole classes of figures.</p>
+<ol class="thales-theorems"><li><strong>A diameter bisects a circle.</strong> Every diameter divides the circle and its enclosed region into two congruent halves.<figure><svg viewBox="0 0 840 370" role="img" aria-labelledby="fold-title fold-desc" style="display:block;width:100%;max-width:840px;margin:1rem auto"><title id="fold-title">A supposed mismatch after folding leads to unequal radii</title><desc id="fold-desc">Two panels show a folded semicircle with an exaggerated protruding arc. The first draws two radii toward the mismatched boundaries. The second puts both radii along the same ray from O: the nearer boundary is P and the farther boundary Q. OP and OQ cannot both equal the radius.</desc><defs><marker id="radius-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="currentColor" stroke-width="1.3"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="2.5">
+<path d="M50 190 L310 40 A150 150 0 0 1 50 190"/>
+<path d="M60 205 C100 260 135 285 168 280 C205 280 240 260 270 235"/>
+<path d="M180 115 L180 265 M180 115 L168 280" stroke-width="1.4" marker-end="url(#radius-arrow)"/>
+<path d="M470 190 L730 40 A150 150 0 0 1 470 190"/>
+<path d="M480 205 C520 260 555 285 588 280 C625 280 660 260 690 235"/>
+<path d="M600 115 L588 280" stroke-width="1.4" marker-end="url(#radius-arrow)"/>
+<path d="M600 115 L589.6 264.6" stroke-width="1.4" marker-end="url(#radius-arrow)"/>
+</g><g fill="currentColor" font-family="Arial,sans-serif" font-size="17">
+<circle cx="180" cy="115" r="4"/><circle cx="600" cy="115" r="4"/>
+<text x="163" y="104">O</text><text x="583" y="104">O</text>
+<text x="606" y="256">P</text><text x="605" y="292">Q</text>
+<text x="195" y="325" text-anchor="middle">1. Suppose the folded arcs do not match.</text>
+<text x="615" y="325" text-anchor="middle">2. Compare along the same ray: OP &lt; OQ.</text>
+</g></svg><figcaption>A deliberately impossible picture: suppose one folded arc protruded beyond the other. Along the same ray from O, the two boundaries would give different distances OP and OQ. Both must equal r, so the supposed mismatch cannot occur. The bulge is exaggerated to show the contradiction.</figcaption></figure></li>
+<li><strong>The base angles of an isosceles triangle are equal.</strong> If AB = AC, then the angles at B and C are equal.<figure><svg viewBox="0 0 640 310" role="img" aria-label="2. Equal sides, equal base angles. Isosceles triangle ABC has matching ticks on AB and AC and matching arcs at B and C." style="display:block;width:100%;max-width:640px;margin:1rem auto"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M320 35 L180 255 H460 Z M243 143 l17 11 M380 154 l17 -11 M205 255 A25 25 0 0 0 193 234 M435 255 A25 25 0 0 1 447 234"/><text x="320" y="25" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">A</text><text x="165" y="275" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">B</text><text x="475" y="275" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">C</text><text x="320" y="295" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">AB = AC  ⇒  ∠ABC = ∠BCA</text></g></svg><figcaption>Matching ticks mark the equal sides; matching arcs mark the equal angles opposite them.</figcaption></figure></li>
+<li><strong>Vertically opposite angles are equal.</strong> When two straight lines cross, each angle equals the angle directly opposite it.<figure><svg viewBox="0 0 640 310" role="img" aria-label="3. Vertically opposite angles. Two intersecting lines have opposite angles alpha and opposite angles beta." style="display:block;width:100%;max-width:640px;margin:1rem auto"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M155 60 L485 240 M155 240 L485 60"/><circle cx="320" cy="150" r="3" fill="currentColor"/><text x="320" y="105" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">β</text><text x="320" y="205" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">β</text><text x="258" y="157" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">α</text><text x="383" y="157" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">α</text><text x="320" y="280" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">Opposite angles agree: α = α and β = β</text></g></svg><figcaption>Each opposite pair is equal. Adjacent angles add to 180°; subtracting their shared neighbor gives equality of the opposite angles.</figcaption></figure></li>
+<li><strong>A side and its two adjacent angles determine a triangle up to congruence.</strong> If two triangles have an equal corresponding side and equal angles at both ends of that side, they have the same size and shape. We call this the angle–side–angle criterion.<figure><svg viewBox="0 0 640 310" role="img" aria-label="4. Angle–side–angle congruence. Two congruent triangles with equal horizontal bases and equal angles at their endpoints." style="display:block;width:100%;max-width:640px;margin:1rem auto"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M70 250 L250 250 L125 55 Z M380 250 L560 250 L435 55 Z M155 242 V258 M465 242 V258 M92 250 A22 22 0 0 0 76 229 M402 250 A22 22 0 0 0 386 229 M228 250 A22 22 0 0 1 238 232 M538 250 A22 22 0 0 1 548 232"/><text x="60" y="276" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">A</text><text x="259" y="276" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">B</text><text x="125" y="43" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">C</text><text x="370" y="276" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">D</text><text x="569" y="276" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">E</text><text x="435" y="43" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">F</text><text x="160" y="225" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">α             β</text><text x="470" y="225" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">α             β</text><text x="320" y="145" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">≅</text></g></svg><figcaption>AB = DE, the angles at A and D agree, and the angles at B and E agree. The included side and its endpoint angles determine the same triangle.</figcaption></figure></li>
+<li><strong>An angle inscribed in a semicircle is a right angle.</strong> If AB is a diameter and C is any other point on the circle, then angle ACB = 90°.<figure><svg viewBox="0 0 640 310" role="img" aria-label="5. An angle in a semicircle is right. Two different positions of C on semicircles yield right angles at C." style="display:block;width:100%;max-width:640px;margin:1rem auto"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M55 210 A115 115 0 0 1 285 210 Z M55 210 L239 118 L285 210 M228 124 L234 136 L246 130 M355 210 A115 115 0 0 1 585 210 Z M355 210 L401 118 L585 210 M394 130 L406 136 L412 124"/><text x="46" y="237" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">A</text><text x="294" y="237" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">B</text><text x="248" y="103" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">C</text><text x="346" y="237" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">A</text><text x="594" y="237" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">B</text><text x="392" y="103" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">C</text><text x="320" y="284" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">The position changes; ∠ACB remains 90°.</text></g></svg><figcaption>In each picture AB is a diameter and C lies on the arc. The small square marks the right angle; C need not be above the center.</figcaption></figure></li></ol>
+<p>“Associated with” is deliberate. These are traditional attributions, not five proofs preserved in Thales’ handwriting. Their mathematical value, however, is something we can judge for ourselves. Let us start with the first.</p>
+<h3>Why a diameter divides a circle equally</h3><p>The first diagram above shows the impossible mismatch we will rule out: after folding, two boundaries cannot lie at different distances from the same center.</p>
+<p>Let O be the center, let r be the radius, and draw a diameter AB. Every point on the circle is exactly distance r from O. Now imagine folding the figure along AB, bringing one side onto the other. In geometric language, we reflect the figure across the line AB.</p>
+<p>The center O lies on the fold, so it stays fixed. Folding preserves lengths. Therefore a point P on the arc, originally at distance r from O, lands at a point P′ that is also at distance r from O. By the definition of a circle, P′ belongs to the same circle.</p>
+<p>Could the two arcs nevertheless fail to match? Suppose one stuck out beyond the other. Along a ray from O through that mismatch, the two boundaries would lie at different distances from O. But both distances must be r. That is impossible. Every point on one arc has its reflected partner on the other; reflecting back reverses the correspondence.</p>
+<p>The same reflection matches the enclosed regions as well: points inside the circle remain at distances less than r from O. Thus the two halves coincide exactly. They are congruent, and consequently have equal areas.</p>
+<p>A folded paper circle lets us see the idea. The proof goes further: equal distances from the center explain why the halves must match, regardless of the circle’s size or the direction of the diameter.</p>
+<h3>A right angle that follows a moving point</h3>
+<p>The fifth theorem is more surprising. Fix a diameter AB, choose a point C anywhere else on the circle, and join C to A and B. Move C around the upper arc. The triangle becomes tall, flat, or lopsided, but its angle at C remains a right angle. Nothing in the statement requires C to sit directly above the center.</p>
+<p>To discover why, we will begin with a figure whose right angles are already familiar: a rectangle.</p>
+</section>
+<section id="exercise"><h2>Guided exercise: discovering Thales’ theorem</h2><p>Draw the figures before opening the hints. The aim is to turn an observation about rectangles into an explanation for every point on a circle.</p>
+<div><h3>Explore first</h3><ol><li>Draw a wide rectangle and a tall rectangle.</li><li>In each, draw both diagonals and mark their intersection O.</li><li>Draw a circle centered at O through one corner. Explain why it passes through all four corners.</li><li>Choose one diagonal. What angle does it subtend at either remaining corner?</li></ol><p>Now return to an arbitrary circle with diameter AB and a point C on its circumference. Explain why angle ACB must be 90°.</p></div>
+<figure><svg viewBox="0 0 520 370" role="img" aria-labelledby="triangle-question-title triangle-question-desc" style="width:100%;max-width:520px;display:block;margin:auto"><title id="triangle-question-title">Why is angle ACB a right angle?</title><desc id="triangle-question-desc">Triangle ABC is inscribed in a circle with diameter AB and center O. A question mark identifies the angle at C. No auxiliary construction is shown.</desc><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="260" cy="180" r="145"/><path d="M115 180 L347 64 L405 180 Z"/></g><g fill="currentColor" font-family="Arial,sans-serif" font-size="20"><text x="92" y="187">A</text><text x="416" y="187">B</text><text x="354" y="55">C</text><text x="267" y="204">O</text><text x="338" y="101" font-size="26">?</text><circle cx="260" cy="180" r="3"/></g></svg><figcaption>AB is a diameter. C is any other point on the circle. Prove that the marked angle ACB is 90°, regardless of where C is placed.</figcaption></figure>
+<details class="guidance"><summary>Hint 1: distances to the corners</summary><p>A rectangle’s diagonals are equal and bisect each other. Its four half-diagonals therefore have the same length. What does that say about a circle centered at their intersection?</p></details>
+<details class="guidance"><summary>Hint 2: start with any point C</summary><p>Draw the diameter CD through C and the center O. Consider quadrilateral ACBD. Its diagonals are AB and CD.</p><figure><svg viewBox="0 0 520 370" role="img" aria-labelledby="circle-title circle-desc" style="width:100%;max-width:520px;display:block;margin:auto"><title id="circle-title">Two diameters complete an inscribed rectangle</title><desc id="circle-desc">A and B are opposite endpoints of a horizontal diameter. C is above and to the right of center O; D is its opposite. Joining A, C, B, D forms a rectangle.</desc><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="260" cy="180" r="145"/><path d="M115 180 L347 64 L405 180 Z"/><path d="M115 180 L173 296 L405 180 M347 64 L173 296" stroke-dasharray="6 5"/></g><g fill="currentColor" font-family="Arial, sans-serif" font-size="20"><text x="92" y="187">A</text><text x="416" y="187">B</text><text x="354" y="55">C</text><text x="151" y="318">D</text><text x="267" y="204">O</text><circle cx="260" cy="180" r="3"/></g></svg><figcaption>The original triangle ABC stays solid. Add the dashed diameter CD and dashed sides AD and DB. Can you show that quadrilateral ACBD is a rectangle? Its corner at C is the angle we want to determine.</figcaption></figure></details>
+<details class="guidance"><summary>Hint 3: recognize the quadrilateral</summary><p>The diagonals bisect each other, so ACBD is a parallelogram. They are equal as well. A parallelogram with equal diagonals is a rectangle.</p></details>
+<details class="guidance"><summary>Worked answer</summary><p>In a rectangle, the four half-diagonals have equal lengths. All four vertices consequently lie on a circle centered at their intersection. Each diagonal is a diameter, and the angle it subtends at another corner is a right angle.</p><p>To establish the result for every point C, let D be the point opposite C on the circle. The diagonals AB and CD of quadrilateral ACBD bisect each other at O, so ACBD is a parallelogram. Both diagonals are diameters of the same circle, so they are equal. Thus ACBD is a rectangle, and its corner angle ACB is 90°.</p><p><strong>Why does the rectangle criterion work?</strong> In a parallelogram, opposite sides are equal. If the diagonals are also equal, the triangles ABC and BAD are congruent by side–side–side: AB is shared, BC = AD, and AC = BD. Hence the adjacent angles ABC and BAD are equal. Adjacent angles of a parallelogram sum to 180°, so each is 90°. Apply this fact with the vertices ordered A–C–B–D in our circle diagram.</p></details>
+<p><strong>Discuss:</strong> What did the initial drawings help us discover? What does the final construction establish that several drawings alone could not?</p>
+</section>
+<section id="pythagoras"><h2>Pythagoras and the Pythagorean community</h2>
+<p>Pythagoras came from Samos and lived in the sixth century BCE. He established a community at Croton, a Greek city in southern Italy. Its interests included mathematics, philosophy, religious practices, and a shared way of life. The school continued beyond its founder, so we should distinguish Pythagoras himself from the generations of Pythagoreans who followed him.</p>
+<p>Later accounts mix mathematical achievements with extraordinary legends, and discoveries within a community could be credited to its leader. We have no surviving proof written by Pythagoras. Even whether he personally proved the theorem bearing his name remains uncertain. The name records a tradition of attribution; it does not settle the question of priority.</p>
+<h3>Whole numbers and the order of the world</h3><p>The Pythagorean tradition associated number with order and harmony. Studying whole numbers could therefore be more than a computational activity: their relationships might reveal something about the world. Number symbolism belonged to this outlook, but so did investigations whose mathematical content we can still examine.</p>
+<p>For example, 6 equals the sum of its positive proper divisors: 1 + 2 + 3 = 6. So does 28: 1 + 2 + 4 + 7 + 14 = 28. Such numbers are called <em>perfect</em>. Compare 12: its proper divisors, 1, 2, 3, 4, and 6, total 16, so it is called abundant. The proper divisors of 10 total only 8, so 10 is deficient. A familiar act—finding divisors—has become a way of classifying numbers by their internal structure.</p>
+<h3 id="finding-perfect-numbers">Finding perfect numbers</h3>
+<p>Finding 6 and 28 invites a question: can we produce more perfect numbers without testing every integer? Start with 1 and keep doubling. Add the numbers as you go:</p>
+<p class="math-line">1 + 2 = 3<br>1 + 2 + 4 = 7<br>1 + 2 + 4 + 8 = 15<br>1 + 2 + 4 + 8 + 16 = 31.</p>
+<p>Each total is one less than the next power of two. To see why, call the last term L and the sum S. Write the sum, then double it:</p>
+<p class="math-line">S = 1 + 2 + 4 + ··· + L<br>2S = 2 + 4 + 8 + ··· + 2L.</p>
+<p>Subtract the first equation from the second. All the shared terms cancel; only the final 2L and the initial −1 remain. Therefore <strong>S = 2L − 1</strong>.</p>
+<p>Now comes the connection with perfect numbers. <strong>If S is prime, multiply it by L. The product LS is a perfect number.</strong> The prime condition is essential: we keep the totals 3, 7, 31, and 127, but skip 15 and 63.</p>
+<p class="math-line">3 × 2 = 6<br>7 × 4 = 28<br>31 × 16 = 496<br>127 × 64 = 8128.</p>
+<p>Why should this work? Consider 28 = 4 × 7. Its proper divisors fall into two groups: 1, 2, 4 and 7, 14. The first group totals 7; the second totals 7(1 + 2) = 21. Together they give 28.</p>
+<p>The same reasoning works in general. Since L is a power of two and S is an odd prime, every divisor of LS is either a power of two or S times a power of two. The proper divisors are exactly:</p>
+<p class="math-line">1, 2, 4, …, L &nbsp; and &nbsp; S, 2S, 4S, …, (L/2)S.</p>
+<p>The first group totals S. The second totals S(L − 1), because 1 + 2 + ··· + L/2 = L − 1. Thus the sum of the proper divisors is</p>
+<p class="math-line">S + S(L − 1) = LS,</p>
+<p>which is the number itself. The pattern has become a construction with a reason behind it. This method is recorded in Euclid’s <em>Elements</em>; here we have expressed its arithmetic in modern notation.</p>
+<h3>Hearing a ratio</h3>
+<p>Number also seemed to reach beyond counting. A plucked string produces a sound, and the sound changes when the vibrating part of the string becomes shorter. A guitar player does this by pressing a string against a fret. A simple instrument for studying the relationship is a <em>monochord</em>: one string stretched over a sounding box, with a movable bridge that changes the length allowed to vibrate.</p>
+<p>Imagine a string whose vibrating length is 60 centimeters. Keep its tension and thickness unchanged. Pluck the whole length, then move the bridge so that only 30 centimeters vibrate. The shorter string sounds an octave higher. If the full string vibrates 240 times each second, the half-length vibrates 480 times each second. These modern frequency numbers help us describe the experiment; the ancient comparison could be made by ear and by measuring lengths.</p>
+<p>The two lengths stand in the ratio 2:1. Their frequencies also stand in a 2:1 ratio, but in the opposite order: the shorter string has the higher frequency. Under these fixed conditions, frequency is inversely proportional to vibrating length.</p>
+<table><caption>One string, four vibrating lengths</caption><thead><tr><th scope="col">Length</th><th scope="col">Frequency in our example</th><th scope="col">Interval above the full string</th></tr></thead><tbody><tr><td>60 cm</td><td>240 Hz</td><td>Starting note</td></tr><tr><td>45 cm</td><td>320 Hz</td><td>Perfect fourth, 4:3</td></tr><tr><td>40 cm</td><td>360 Hz</td><td>Perfect fifth, 3:2</td></tr><tr><td>30 cm</td><td>480 Hz</td><td>Octave, 2:1</td></tr></tbody></table>
+<p>For the fifth, shorten the string to two-thirds of its original length: 40 centimeters. The frequency becomes three-halves of the original, or 360 Hz. For the fourth, use three-quarters of the length: 45 centimeters. The frequency becomes four-thirds of the original, or 320 Hz. If the starting note is called C, these intervals take us to F, G, and the next C in a tuning based on these simple ratios.</p>
+<p>The names count positions in a scale: C–D–E–F spans a fourth; C–D–E–F–G spans a fifth. They do not mean multiplying the frequency by four or five. An octave reaches the eighth named position, where the letter name repeats.</p>
+<p>There is arithmetic in combining intervals, too. Go up a perfect fifth and then a perfect fourth. The frequency ratios multiply:</p>
+<p class="math-line">(3/2) × (4/3) = 2.</p>
+<p>The result is an octave. A relationship that can be heard can also be expressed with the small whole numbers 2, 3, and 4. This helps us understand why the Pythagorean tradition connected harmony with numerical order. It does not mean that every musical preference reduces to a ratio, or that all later tuning systems use precisely these intervals.</p>
+<p>Stories about Pythagoras personally discovering these relationships were told much later. The reliable classroom starting point is the string experiment itself. Its conditions matter: changing tension or using a thicker string also changes the pitch. We compare lengths while holding those other features fixed.</p>
+<p>From this point of view, arranging counters into triangles or investigating the sides of a right triangle belonged to a larger search for order. Let us turn first to the triangle that has carried Pythagoras’s name for centuries.</p></section>
+<section id="pythagorean-theorem"><h2>The famous theorem: squares on the sides</h2>
+<p><strong>For a right triangle with legs a and b and hypotenuse c, a² + b² = c².</strong> Geometrically, the two squares constructed on the legs have the same total area as the square constructed on the hypotenuse. It is a statement about every right triangle, not only triangles with whole-number sides.</p>
+<p>A triangle with sides 3, 4, and 5 gives us 9 + 16 = 25. But the theorem also concerns right triangles with sides that are not whole numbers. A list of numerical examples cannot exhaust them. To understand its history, we must distinguish recognizing useful triples, stating the general rule, and explaining why the rule always holds.</p>
+<h3>A theorem with many lives</h3>
+<p>The relationship was known in forms that predate Pythagoras. Babylonian mathematical records contain right-triangle triples, and the Indian Śulbasūtras state a general relation between a rectangle’s diagonal and its sides. Such evidence tells us that the mathematics had a wider history than its familiar Greek name suggests. It does not provide us with a surviving proof by Pythagoras.</p>
+<p>In China, the right-triangle relation was called gougu, after the two legs. Zhao Shuang, writing in the third century CE, accompanied his commentary on the <em>Zhoubi suanjing</em> with a diagram involving a square and four right triangles. Its pieces make an area argument visible. We met this family of ideas in the previous lecture: move the pieces, preserve their areas, and compare what remains.</p>
+<p>Centuries later, the Indian mathematician Bhāskara II, who lived in the twelfth century, gave a compact dissection proof. Four copies of a right triangle fit around a small square, and their hypotenuses become the sides of a larger square. We will follow that construction in a moment.</p>
+<p>The search for new proofs continued long after the theorem was secure. In 1876, James A. Garfield, then a member of the United States Congress and later president, published a proof using a trapezoid. He calculated its area once from its parallel sides and height, and again by adding the areas of three triangles. The equality of those two calculations yields the same theorem.</p>
+<p>Euclid also supplied a proof in his <em>Elements</em>, around 300 BCE. His construction belongs to a carefully organized sequence of propositions; we will encounter it when we reach his work. Here, the route through cut-and-rearranged figures lets us see another kind of mathematical explanation.</p>
+<p>Why prove a result again? A new argument can reveal something the old one concealed. One proof emphasizes similarity, another rearrangement, another the measurement of areas. The conclusion remains the same, but the connections we see become richer.</p>
+<h3 id="bhaskara-proof">A dissection proof associated with Bhāskara II</h3>
+<p>Take four congruent copies of a right triangle with legs a and b and hypotenuse c. Name the longer leg b, so b &gt; a for the diagram. Arrange the triangles as shown. Their four hypotenuses form the outside boundary; their legs surround a small central square.</p>
+<figure><svg viewBox="0 0 520 510" role="img" aria-labelledby="bhaskara-title bhaskara-desc" style="display:block;width:100%;max-width:520px;margin:auto"><title id="bhaskara-title">Bhāskara’s four-triangle dissection</title><desc id="bhaskara-desc">Four congruent right triangles surround a central square of side b minus a. Their hypotenuses form an outer square of side c. In the upper triangle the vertical leg is a and the horizontal leg is b.</desc><g transform="translate(140 0)" stroke="currentColor" stroke-width="2"><path d="M100 40 L340 220 L100 220 Z" fill="currentColor" fill-opacity="0.07"/><path d="M340 220 L160 460 L160 220 Z" fill="currentColor" fill-opacity="0.14"/><path d="M160 460 L-80 280 L160 280 Z" fill="currentColor" fill-opacity="0.07"/><path d="M-80 280 L100 40 L100 280 Z" fill="currentColor" fill-opacity="0.14"/><rect x="100" y="220" width="60" height="60" fill="none"/><path d="M100 204 H116 V220" fill="none"/></g><g fill="currentColor" font-family="Arial,sans-serif" font-size="19"><text x="220" y="140">a</text><text x="357" y="207">b</text><text x="369" y="118">c</text><text x="408" y="357">c</text><text x="158" y="386">c</text><text x="125" y="136">c</text><text x="270" y="257" text-anchor="middle" font-size="16">b − a</text></g></svg><figcaption>Modern schematic: four triangles of area ab/2 and a central square of area (b − a)² fill the square on c.</figcaption></figure>
+<ol><li><strong>Why is the outer boundary a square?</strong> All four sides are hypotenuses of congruent triangles, so each has length c. At each outer vertex, the two acute angles of the original right triangle meet. They sum to 90°, so all four outer angles are right angles.</li>
+<li><strong>What is left in the middle?</strong> The exposed segments of the legs have length b − a. They form a square, since the legs meet at right angles. Its area is (b − a)².</li>
+<li><strong>Count the same area in two ways.</strong> The outer square has area c². The four triangles have total area 4(ab/2) = 2ab. Add the central square:</li></ol>
+<p class="math-line">c² = 4(ab/2) + (b − a)²</p>
+<p class="math-line">= 2ab + b² − 2ab + a²</p>
+<p class="math-line"><strong>= a² + b².</strong></p>
+<p>If a = b, the central gap disappears: the four triangles meet at one point and the same area equation holds with (b − a)² = 0. Thus the equal-leg case is included as well.</p>
+<div><h3>Pause at the picture</h3><p>Which step would be missing if we simply announced that the outside is a square because it looks like one? Explain how the angle argument supplies that step. Notice that we used triangle angles and areas; we did not assume the theorem we were proving.</p></div>
+<p>With legs 3 and 4, the four triangle areas total 24 and the central square has area 1. The outer square therefore has area 25. This illustrates the construction; the argument with a and b establishes the general result.</p>
+</section>
+<section id="numbers"><h2>Numbers made visible</h2><p>Now return to a handful of counters. To study a whole number, we can count the collection, but we can also arrange it. A Pythagorean interest in the properties of numbers finds a natural expression in these shapes. Place one counter in the first row, two beneath it, then three, and so on. The first triangular numbers are 1, 3, 6, and 10. Let T<sub>n</sub> denote the total in n rows.</p>
+<h3>Two triangles make a rectangle</h3><p>Take two copies of the same triangular array. Rotate one and fit the two together to form a rectangle with n rows and n + 1 columns. Each copy contains T<sub>n</sub> dots, so:</p><p class="math-line">2T<sub>n</sub> = n(n + 1), &nbsp; therefore &nbsp; T<sub>n</sub> = n(n + 1)/2.</p>
+<figure><svg viewBox="0 0 350 240" role="img" aria-label="Two triangular arrays of ten dots form a four by five rectangle" style="width:100%;max-width:350px;display:block;margin:auto"><circle cx="75" cy="40" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="85" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="85" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="85" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="85" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="85" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="130" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="130" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="130" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="130" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="130" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="175" r="8" fill="currentColor" stroke="currentColor" stroke-width="2"/><circle cx="255" cy="175" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg><figcaption>For n = 4, ten filled dots and ten outlined dots form a 4 × 5 rectangle. The same arrangement works for any positive integer n.</figcaption></figure>
+<p>We have explained the sum 1 + 2 + ··· + n. The letters record the arrangement in modern notation; the construction supplies its meaning.</p>
+<h3>Odd numbers build squares</h3><p>Start with one dot. Add an L-shaped border of three dots to make a 2 × 2 square. Add five more to make a 3 × 3 square; add seven to make a 4 × 4 square.</p><p>To grow an (n − 1) × (n − 1) square into an n × n square, add one row of n dots and one column of n − 1 additional dots. The border contains 2n − 1 dots. Thus:</p><p class="math-line">1 + 3 + 5 + ··· + (2n − 1) = n².</p>
+<p>The opening pattern now has an explanation. Every stage adds exactly the next odd number and produces exactly the next square.</p>
+<h3>Two consecutive triangles make a square</h3><p>A square array of n² dots can be split along its diagonal into a triangular array with n rows and another with n − 1 rows. Consequently:</p><p class="math-line">T<sub>n</sub> + T<sub>n−1</sub> = n².</p><p>For example, 10 + 6 = 16. Sketch the two parts inside a 4 × 4 array, then explain how your division would work in a larger square.</p><p>Algebra confirms the same relationship:</p><p class="math-line">n(n + 1)/2 + (n − 1)n/2 = 2n²/2 = n².</p>
+</section>
+<section id="references"><h2 id="references-additional">References</h2>
+<ul>
+<li>David M. Burton, <em>The History of Mathematics: An
+Introduction</em>, section on the Beginnings of Greek Mathematics.</li>
+<li>Jay Cummings, <em>Math History: A Long-Form Mathematics
+Textbook</em>, section on Transition to Proofs.</li>
+<li>Marty Lewinter and William Widulski, <em>The Saga of Mathematics: A
+Brief History</em>, section "Those Incredible greeks!".</li>
+</ul>
+</section>
+<section id="afterthoughts"><h2> Afterthoughts: What a picture can explain</h2><p>In the circle argument, equal distances and the properties of rectangles forced a right angle. In Bhāskara’s dissection, the areas of four triangles and a small square established the right-triangle theorem. In the dot arrays, rearrangement forced an identity. A useful picture makes a relationship visible; an explanation tells us why its structure persists in every permitted case.</p><ol><li>Why does measuring several inscribed angles fail to establish Thales’ theorem?</li><li>Which earlier geometric facts did the rectangle proof require?</li><li>How does Bhāskara’s dissection compare with the gougu dissection from Passus 3?</li><li>Why distinguish knowing a numerical triple from proving the general theorem?</li><li>Explain one dot identity to someone without using an algebraic formula.</li><li>How does uncertainty about the historical author of a proof differ from uncertainty about the proof’s validity?</li></ol><p><strong>Looking ahead:</strong> Incommensurable lengths and Zeno’s paradoxes will raise further questions about number, magnitude, and infinity.</p></section>
+
+</article>
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
