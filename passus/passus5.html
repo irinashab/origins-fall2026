@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Passus 5: Greek mathematics before Euclid, from straightedge-and-compass constructions to quadrature">
+  <title>Origins of Mathematics – Passus 5: In Shape We Trust</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    article.lesson {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    article.lesson .lead {
+      font-size: 1.08rem;
+    }
+
+    article.lesson section {
+      margin-block: 2.5rem;
+    }
+
+    article.lesson figure {
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    article.lesson figure img {
+      display: block;
+      width: min(100%, 780px);
+      height: auto;
+      margin: 0 auto;
+    }
+
+    article.lesson figcaption {
+      margin-top: 0.7rem;
+      font-style: italic;
+    }
+
+    article.lesson .definition,
+    article.lesson .historical-note {
+      margin: 1.4rem 0;
+      padding: 0.85rem 1rem;
+      border-left: 3px solid currentColor;
+      background: #f6f6f4;
+    }
+
+    article.lesson li + li {
+      margin-top: 0.75rem;
+    }
+
+    article.lesson .proof {
+      margin-top: 1.25rem;
+    }
+
+    article.lesson .proof h3,
+    article.lesson ol h3 {
+      margin-bottom: 0.35rem;
+    }
+
+    article.lesson .sources {
+      font-size: 0.95rem;
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 5: In Shape We Trust</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+    <article class="lesson">
+      <p class="lead">
+        What happens when whole numbers and their ratios no longer seem sufficient to describe geometry?
+        The discovery of incommensurable magnitudes did not make geometry fail. Instead, geometry became
+        a language in which Greek mathematicians could construct, compare, and prove relationships among
+        magnitudes without first turning every length into a number.
+      </p>
+
+      <p>
+        We shall follow a sequence of increasingly ambitious constructions: first a few elementary problems,
+        then the quadrature of a rectangle and a triangle, and finally Hippocrates of Chios’s quadrature of a
+        lune. A modern epilogue explains why the much more famous quadrature of the circle is impossible under
+        the classical rules.
+      </p>
+
+      <section aria-labelledby="rules">
+        <h2 id="rules">The Rules of the Game: Straightedge and Compass</h2>
+
+        <p>
+          The geometric constructions in this lesson use only two idealized instruments: an
+          <strong>unmarked straightedge</strong> and a <strong>compass</strong>. The straightedge draws the line
+          through two already known points; it has no scale and does not measure. The compass draws a circle
+          with a chosen center through a chosen point. New points arise where constructed lines and circles
+          intersect. A classical construction consists of finitely many such exact operations.
+        </p>
+
+        <aside class="historical-note">
+          This is the standard later formulation of the classical Greek rules. It states the problems precisely,
+          although we cannot assume that every early Greek geometer announced the rules in exactly this form.
+        </aside>
+
+        <figure>
+          <img src="../assets/images/passus5/basic-constructions.png"
+               alt="Three diagrams showing an equilateral triangle, the perpendicular bisector of a segment, and an angle bisector">
+          <figcaption>Three elementary straightedge-and-compass constructions</figcaption>
+        </figure>
+
+        <ol>
+          <li>
+            <h3>Construct an equilateral triangle on a segment</h3>
+            <p>
+              Given segment \(AB\), draw a circle centered at \(A\) through \(B\), and a circle centered at
+              \(B\) through \(A\). Let one intersection be \(C\), and join \(AC\) and \(BC\).
+              Since \(AC\) and \(AB\) are radii of the first circle, \(AC=AB\). Since \(BC\) and \(BA\)
+              are radii of the second, \(BC=BA\). Therefore \(AB=AC=BC\).
+            </p>
+          </li>
+
+          <li>
+            <h3>Divide a segment in half</h3>
+            <p>
+              Draw circles centered at \(A\) and \(B\) with the same radius, chosen larger than half of
+              \(AB\). Let their intersections be \(P\) and \(Q\), and draw line \(PQ\). It meets \(AB\)
+              at \(M\). Triangles \(APQ\) and \(BPQ\) are congruent by SSS, so
+              \(\angle APM=\angle BPM\). Triangles \(APM\) and \(BPM\) are then congruent by SAS.
+              Hence \(AM=MB\). Their equal supplementary angles at \(M\) are right angles, so the same
+              construction also produces the perpendicular bisector of \(AB\).
+            </p>
+          </li>
+
+          <li>
+            <h3>Bisect an angle</h3>
+            <p>
+              Draw a circle centered at \(O\) meeting the rays of \(\angle AOB\) at \(A\) and \(B\).
+              Draw equal-radius arcs centered at \(A\) and \(B\), meeting at \(C\) inside the angle, and
+              join \(OC\). We have \(OA=OB\), \(AC=BC\), and \(OC\) is common. Thus triangles
+              \(AOC\) and \(BOC\) are congruent by SSS, so \(\angle AOC=\angle COB\).
+            </p>
+          </li>
+        </ol>
+
+        <p>
+          These constructions supply moves that will be used repeatedly: finding a midpoint, erecting a
+          perpendicular, creating equal lengths, and dividing an angle into equal parts. The later quadratures
+          are built by combining such certified steps.
+        </p>
+      </section>
+
+      <section aria-labelledby="number-shape">
+        <h2 id="number-shape">From Number to Shape</h2>
+
+        <p>
+          Earlier mathematical cultures measured fields, computed volumes, solved numerical problems, and
+          developed effective procedures. Greek mathematics did not invent reasoning. What changes in the Greek
+          tradition is the increasingly explicit insistence that a mathematical claim should follow from
+          previously accepted claims by a chain of proof.
+        </p>
+
+        <p>
+          The phrase <em>pre-Euclidean</em> needs care. Euclid wrote the <em>Elements</em> around 300 BCE, but
+          most earlier mathematical works have been lost. Much of what we say about the sixth and fifth centuries
+          BCE comes through later writers. We can often identify an idea as older than Euclid; we cannot always
+          reconstruct its first proof or name its discoverer with confidence.
+        </p>
+
+        <p>
+          If a length cannot be expressed as a ratio of whole numbers, the length does not disappear. It remains
+          visible, constructible, and comparable. Geometry can carry information that the available arithmetic
+          cannot. In shape we trust.
+        </p>
+      </section>
+
+      <section aria-labelledby="incommensurable">
+        <h2 id="incommensurable">Commensurable and Incommensurable Magnitudes</h2>
+
+        <p>
+          Suppose two segments \(AB\) and \(CD\) possess a common measure \(EF\). This means that \(AB\)
+          consists of some whole number \(p\) of copies of \(EF\), while \(CD\) consists of some whole number
+          \(q\) of copies. Their ratio is therefore \(p:q\), or in modern notation,
+          \(AB/CD=p/q\). Such segments are <strong>commensurable</strong>: they can be measured by the same unit.
+        </p>
+
+        <p>
+          The diagonal and side of a square provide the decisive counterexample. Let the side have length \(s\)
+          and the diagonal length \(d\). The Pythagorean theorem gives
+          \[
+            d^2=2s^2.
+          \]
+          If \(d\) and \(s\) were commensurable, their ratio could be written as \(p/q\) in lowest terms.
+        </p>
+
+        <figure>
+          <img src="../assets/images/passus5/incommensurable-square.png"
+               alt="A square with side s and diagonal d">
+          <figcaption>The side and diagonal of a square are incommensurable</figcaption>
+        </figure>
+
+        <div class="proof">
+          <h3>Proof by contradiction</h3>
+          <ol>
+            <li>Assume \(d/s=p/q\), where \(p\) and \(q\) are whole numbers with no common factor.</li>
+            <li>Squaring gives \(p^2=2q^2\). Therefore \(p^2\) is even, and so \(p\) is even.</li>
+            <li>Write \(p=2r\). Substitution gives \(4r^2=2q^2\), so \(q^2=2r^2\). Thus \(q\) is also even.</li>
+            <li>Both \(p\) and \(q\) are even, contradicting the claim that \(p/q\) was in lowest terms.</li>
+          </ol>
+          <p>
+            Therefore no pair of whole numbers \(p\) and \(q\) expresses \(d/s\). The diagonal and side have
+            no common measure. This is <em>reductio ad absurdum</em>: an assumption is shown to force an impossibility.
+          </p>
+        </div>
+
+        <h3>The Hippasus story</h3>
+        <p>
+          A later tradition connects the discovery of incommensurability with Hippasus of Metapontum, a member
+          of the Pythagorean community. The most dramatic version says that he revealed the forbidden discovery
+          and was drowned at sea. It is memorable, but it is not documented biography. Ancient reports conflict,
+          and some associate the drowning story with revealing the construction of a dodecahedron rather than
+          with the diagonal of a square. The legend does show that later writers regarded incommensurability as
+          a profound disruption of the Pythagorean identification of number—especially whole-number ratio—with
+          the structure of the world.
+        </p>
+      </section>
+
+      <section aria-labelledby="quadrature">
+        <h2 id="quadrature">Quadrature: The Problem of Making a Square</h2>
+
+        <p>
+          <strong>Quadrature</strong>, or <strong>squaring</strong>, asks us to construct a square having exactly
+          the same area as a given figure using only an unmarked straightedge and compass. The goal is not to
+          estimate the area, measure it in decimal units, or merely write down a formula. The goal is to produce
+          the square itself.
+        </p>
+
+        <p>
+          The constructions form a ladder. First square a rectangle. Then turn a triangle into an equal-area
+          rectangle and square that rectangle. Finally, prove that a particular lune has the same area as a
+          triangle and use the triangle construction. Each new problem is reduced to one already solved.
+        </p>
+      </section>
+
+      <section aria-labelledby="rectangle">
+        <h2 id="rectangle">Squaring a Rectangle</h2>
+
+        <p>
+          Given a rectangle with side lengths \(a\) and \(b\), we seek a segment \(c\) such that the square on
+          \(c\) has the same area as the rectangle. In modern algebraic language, we want \(c^2=ab\). The length
+          \(c\) is the geometric mean of \(a\) and \(b\).
+        </p>
+
+        <h3>Construction</h3>
+        <ol>
+          <li>On one straight line place segments \(BE=a\) and \(EF=b\), so \(BF=a+b\).</li>
+          <li>Find \(G\), the midpoint of \(BF\).</li>
+          <li>Draw the semicircle with center \(G\) and diameter \(BF\).</li>
+          <li>At \(E\), erect a perpendicular to \(BF\). Let it meet the semicircle at \(H\).</li>
+          <li>Construct a square whose side is \(EH\). Call \(EH=c\).</li>
+        </ol>
+
+        <figure>
+          <img src="../assets/images/passus5/square-rectangle.png"
+               alt="Geometric mean construction turning a rectangle with sides a and b into an equal-area square">
+          <figcaption>The geometric-mean construction squares a rectangle</figcaption>
+        </figure>
+
+        <div class="proof">
+          <h3>Proof</h3>
+          <p>
+            Because \(BF\) is a diameter, \(\angle BHF\) is a right angle. Segment \(HE\) is the altitude
+            from the right angle to the hypotenuse \(BF\). The smaller right triangles \(BHE\) and \(EHF\)
+            are similar. Corresponding sides give
+            \[
+              \frac{BE}{EH}=\frac{EH}{EF}.
+            \]
+            Hence \(EH^2=BE\cdot EF\). Since \(BE=a\), \(EF=b\), and \(EH=c\), we obtain \(c^2=ab\).
+            The square on \(EH\) therefore has the same area as the original rectangle.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="triangle">
+        <h2 id="triangle">Squaring a Triangle</h2>
+
+        <p>
+          Take triangle \(ABC\). Choose \(BC\) as the base and drop the perpendicular altitude \(AD\).
+          Let \(M\) be the midpoint of \(AD\). Construct a rectangle with base \(BC\) and height \(AM\),
+          which is half the altitude.
+        </p>
+
+        <figure>
+          <img src="../assets/images/passus5/square-triangle.png"
+               alt="A triangle with base b and height h beside a rectangle with base b and height h over 2">
+          <figcaption>A triangle is reduced to an equal-area rectangle</figcaption>
+        </figure>
+
+        <div class="proof">
+          <h3>Proof</h3>
+          <p>
+            A parallelogram with base \(BC\) and full height \(AD\) is divided by a diagonal into two equal
+            triangles. Thus triangle \(ABC\) has half the area of that parallelogram. A rectangle with base
+            \(BC\) and half the height \(AD\) also has half the area. In modern notation, both areas equal
+            \[
+              \frac{bh}{2}=b\left(\frac{h}{2}\right).
+            \]
+            The triangle has therefore been replaced by an equal-area rectangle. Applying the preceding
+            construction produces a square equal in area to triangle \(ABC\).
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="lune">
+        <h2 id="lune">Hippocrates’ Quadrature of a Lune</h2>
+
+        <p>
+          Once rectangles and triangles can be squared, any polygon can in principle be cut into triangles and
+          reduced to a square. Curved figures are another matter. The work of Hippocrates of Chios, active in the
+          fifth century BCE, is striking because he squared a particular <strong>lune</strong>: a crescent bounded
+          by two circular arcs.
+        </p>
+
+        <p>His reasoning requires three ingredients:</p>
+        <ul>
+          <li>An angle inscribed in a semicircle is a right angle.</li>
+          <li>The Pythagorean theorem.</li>
+          <li>The areas of circles or semicircles are proportional to the squares of their diameters.</li>
+        </ul>
+
+        <aside class="historical-note">
+          The third ingredient appears much later as Euclid’s Book XII, Proposition 2, supported by the method
+          of exhaustion. Historians cannot be certain that Hippocrates possessed a proof meeting later standards.
+          In this reconstruction, the proportionality is stated explicitly before the area argument begins.
+        </aside>
+
+        <h3>Construction</h3>
+        <ol>
+          <li>Draw a semicircle with diameter \(AB\) and midpoint \(O\).</li>
+          <li>At \(O\), erect a perpendicular meeting the semicircle at \(C\). Join \(AC\) and \(BC\).</li>
+          <li>
+            Using \(AC\) as a diameter, draw a semicircle outward from triangle \(AOC\). The crescent between
+            this semicircle and arc \(AC\) of the original circle is the lune.
+          </li>
+        </ol>
+
+        <figure>
+          <img src="../assets/images/passus5/hippocrates-lune.png"
+               alt="Hippocrates' lune shaded beside triangle AOC inside a semicircle">
+          <figcaption>Hippocrates’ lune and the equal-area triangle \(AOC\)</figcaption>
+        </figure>
+
+        <div class="proof">
+          <h3>Proof</h3>
+          <ol>
+            <li>\(\angle ACB\) is right because it is inscribed in a semicircle.</li>
+            <li>Triangles \(AOC\) and \(BOC\) are congruent, so \(AC=BC\).</li>
+            <li>By the Pythagorean theorem, \(AB^2=AC^2+BC^2=2AC^2\).</li>
+            <li>
+              Areas of semicircles are proportional to the squares of their diameters. Therefore the semicircle
+              on \(AC\) has half the area of the semicircle on \(AB\).
+            </li>
+            <li>
+              Quadrant \(AOC\) also has half the area of the semicircle on \(AB\). Hence the semicircle on
+              \(AC\) and quadrant \(AOC\) have equal areas.
+            </li>
+            <li>
+              These equal figures contain the same circular segment between chord \(AC\) and arc \(AC\).
+              Subtract that shared segment from each.
+            </li>
+            <li>
+              What remains from the semicircle on \(AC\) is the lune. What remains from quadrant \(AOC\) is
+              triangle \(AOC\). Therefore the lune and triangle \(AOC\) have equal areas.
+            </li>
+          </ol>
+          <p>
+            The triangle can be squared by the preceding construction. Consequently, the lune can be squared as well.
+          </p>
+        </div>
+
+        <h3>What has—and has not—been proved</h3>
+        <p>
+          Hippocrates did not square every lune, and he did not square the circle. He squared one carefully
+          constructed lune by showing that it was equal in area to a triangle. The proof works through comparison,
+          proportion, decomposition, and subtraction rather than through a numerical formula for the lune’s area.
+        </p>
+      </section>
+
+      <section aria-labelledby="circle">
+        <h2 id="circle">Modern Epilogue: The Quadrature of the Circle</h2>
+
+        <p>
+          The ancient problem asks us to construct, for a given circle, a square having exactly the same area.
+          A highly accurate approximation is not enough: the construction must terminate after finitely many
+          permitted straightedge-and-compass steps and produce exact equality.
+        </p>
+
+        <p>
+          Suppose the circle has radius \(r\), and the desired square has side \(x\). Equality of areas requires
+          \[
+            x^2=\pi r^2,
+          \]
+          and therefore \(x=r\sqrt{\pi}\). Once the radius is chosen as the unit length, squaring the circle is
+          equivalent to constructing the length \(\sqrt{\pi}\).
+        </p>
+
+        <figure>
+          <img src="../assets/images/passus5/circle-quadrature.png"
+               alt="A circle of radius r and an equal-area square whose required side is r times square root of pi">
+          <figcaption>Squaring a circle would require constructing the length \(r\sqrt{\pi}\)</figcaption>
+        </figure>
+
+        <h3>Algebraic and transcendental numbers</h3>
+
+        <div class="definition">
+          <p>
+            A number is <strong>algebraic</strong> if it satisfies some nonzero polynomial equation with integer
+            coefficients. Equivalently, rational coefficients may be used because denominators can be cleared.
+          </p>
+          <p>
+            For example, \(1/2\) is algebraic because it satisfies \(2x-1=0\); \(\sqrt2\) is algebraic because
+            it satisfies \(x^2-2=0\); and \(\sqrt[3]{2}\) is algebraic because it satisfies \(x^3-2=0\).
+          </p>
+        </div>
+
+        <div class="definition">
+          <p>
+            A number is <strong>transcendental</strong> if it is not algebraic: it satisfies no nonzero polynomial
+            equation with integer or rational coefficients.
+          </p>
+          <p>
+            Every transcendental number is irrational, but not every irrational number is transcendental.
+            The number \(\sqrt2\) is irrational yet algebraic. The numbers \(\pi\) and \(e\) are transcendental.
+          </p>
+        </div>
+
+        <h3>What straightedge and compass can construct</h3>
+        <p>
+          A straight line through two known points requires only linear equations. Intersections involving a
+          circle require quadratic equations. Beginning with a unit segment, each new construction can therefore
+          enlarge the available number system only through ordinary arithmetic and the extraction of square roots.
+          Every constructible length is algebraic over the rational numbers; more precisely, its algebraic degree
+          must be a power of two.
+        </p>
+
+        <p>
+          Algebraicity alone is not enough. For example, \(\sqrt[3]{2}\) is algebraic, but its algebraic degree
+          is three rather than a power of two, so it is not constructible by the classical tools. More precisely,
+          a constructible number must lie in a succession of quadratic extensions; having degree equal to a power
+          of two is a necessary consequence, but is not by itself sufficient in every case.
+        </p>
+
+        <div class="proof">
+          <h3>Why the construction is impossible</h3>
+          <ol>
+            <li>If the circle could be squared, then \(\sqrt\pi\) would be a constructible length.</li>
+            <li>Every straightedge-and-compass constructible length is algebraic.</li>
+            <li>Ferdinand von Lindemann proved in 1882 that \(\pi\) is transcendental.</li>
+            <li>
+              Therefore \(\sqrt\pi\) is transcendental as well: if \(\sqrt\pi\) were algebraic, then its square
+              \(\pi\) would also be algebraic.
+            </li>
+            <li>
+              Thus \(\sqrt\pi\) is not constructible. The required square cannot be constructed with an unmarked
+              straightedge and compass in finitely many exact steps.
+            </li>
+          </ol>
+        </div>
+
+        <p>
+          This argument rests on two deep nineteenth-century results: the algebraic characterization of
+          constructible lengths, developed from work such as Pierre Wantzel’s in 1837, and Lindemann’s proof that
+          \(\pi\) is transcendental. Proving Lindemann’s theorem is far beyond the scope of this lesson; here it
+          is the decisive theorem invoked.
+        </p>
+
+        <p>
+          The conclusion concerns the classical rules only. The equal-area square can be approximated as accurately
+          as desired, and exact constructions become possible if other curves or instruments are permitted. Neither
+          changes the answer to the original straightedge-and-compass problem.
+        </p>
+      </section>
+
+      <section aria-labelledby="afterthoughts">
+        <h2 id="afterthoughts">Afterthoughts</h2>
+        <ol>
+          <li>Why might the discovery of incommensurable magnitudes encourage a preference for geometry over arithmetic?</li>
+          <li>
+            Follow the chain rectangle → triangle → lune. What earlier result is reused at each reduction, and where
+            do similarity, the Pythagorean theorem, and subtraction of equal areas enter?
+          </li>
+          <li>
+            Why does squaring one particular lune not square the circle, and which premise in the lune argument
+            seems historically or logically the most demanding?
+          </li>
+          <li>
+            Where, precisely, does the impossibility of squaring the circle enter: in the area equation, in the
+            rules of construction, or in the nature of \(\pi\)?
+          </li>
+        </ol>
+      </section>
+
+      <section class="sources" aria-labelledby="sources">
+        <h2 id="sources">Sources and Further Reading</h2>
+        <h3>Recommended student reading</h3>
+        <ul>
+          <li>Jay Cummings, <em>Math History: A Long-Form Mathematics Textbook</em>.</li>
+          <li>William Dunham, <em>Journey Through Genius: The Great Theorems of Mathematics</em>, Chapter 1.</li>
+          <li>Euclid, <em>Elements</em>, Book I, Propositions 1, 9, and 10; Book II, Proposition 14; Book XII, Proposition 2.</li>
+          <li>
+            J. J. O’Connor and E. F. Robertson,
+            <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Hippocrates/">“Hippocrates of Chios”</a>,
+            MacTutor History of Mathematics Archive.
+          </li>
+        </ul>
+
+        <h3>Historical primary sources</h3>
+        <p>
+          The following articles are included as historical sources. They are advanced works in French and German
+          and are not expected student reading.
+        </p>
+        <ul>
+          <li>
+            Pierre-Laurent Wantzel,
+            <a href="https://www.numdam.org/item/JMPA_1837_1_2__366_0/">“Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la règle et le compas”</a>,
+            <em>Journal de Mathématiques Pures et Appliquées</em>, series 1, vol. 2 (1837), pp. 366–372.
+            [In French.]
+          </li>
+          <li>
+            Ferdinand Lindemann,
+            <a href="https://eudml.org/doc/157031">“Ueber die Zahl π”</a>,
+            <em>Mathematische Annalen</em>, vol. 20 (1882), pp. 213–225.
+            [In German.]
+          </li>
+        </ul>
+      </section>
+    </article>
+
+    <p class="back-to-top">
+      <a href="#top">↑ Back to top</a>
+    </p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    const siteRoot = window.location.hostname.endsWith("github.io")
+      ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+      : "/";
+
+    fetch(`${siteRoot}assets/includes/navigation.html`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Navigation request failed: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(html => {
+        const placeholder = document.getElementById("navigation-placeholder");
+        placeholder.innerHTML = html;
+
+        placeholder.querySelectorAll("a[data-path]").forEach(link => {
+          link.href = `${siteRoot}${link.dataset.path}`;
+        });
+      })
+      .catch(error => console.error("Navigation load failed:", error));
+
+    fetch(`${siteRoot}assets/includes/footer.html`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Footer request failed: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+      })
+      .catch(error => console.error("Footer load failed:", error));
+  </script>
+</body>
+</html>
