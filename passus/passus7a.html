@@ -98,19 +98,11 @@
 <p>Questions about perfect numbers drew Pierre de Fermat toward properties of prime divisors and powers. In 1640 he communicated the result now called <strong>Fermat’s little theorem</strong>. Euler later supplied a proof. To understand its modern form, we first need a compact language for remainders.</p>
 <h3>Start with division and a remainder</h3>
 <p>Divide 17 by 5. Three groups of 5 use up 15, leaving 2:</p><p class="math">17 = 3 · 5 + 2.</p>
-<p>Here 3 is the quotient and 2 is the remainder. For a positive divisor m, the remainder r must be <strong>non-negative and smaller than m</strong>: 0 ≤ r &lt; m. Thus its possible values are 0, 1, …, m − 1. The quotient may be negative, but the remainder must still lie in this range. Thus a remainder modulo 5 is always 0, 1, 2, 3, or 4. The phrase <strong>“17 modulo 5”</strong> asks for that remainder: 2.</p>
+<p>Here 3 is the quotient and 2 is the remainder. For a positive divisor m, the usual remainder is one of 0, 1, …, m − 1. Thus a remainder modulo 5 is always 0, 1, 2, 3, or 4. The phrase <strong>“17 modulo 5”</strong> asks for that remainder: 2.</p>
 <p>The symbol <strong>17 ≡ 2 (mod 5)</strong> is read “17 is congruent to 2 modulo 5.” It does not mean that 17 and 2 are equal. It means that they have the same remainder when divided by 5.</p>
 <p>We can say the same thing in three ways:</p><ul><li>a and b leave the same remainder when divided by m.</li><li>a and b differ by a whole-number multiple of m.</li><li>m divides a − b.</li></ul>
-<p>These are equivalent descriptions of <strong>a ≡ b (mod m)</strong>. For example, 17 ≡ 7 (mod 5), since both leave remainder 2; their difference 10 is a multiple of 5. Both sides of a congruence may be larger than the divisor. The statement says that they leave the same remainder; ≡ does not mean “has remainder.” For example, 26 ≡ 8 (mod 6), because 26 = 4 · 6 + 2 and 8 = 1 · 6 + 2. Both leave remainder 2. If asked for <em>the remainder of 26 upon division by 6</em>, the answer is 2, not 8.</p>
+<p>These are equivalent descriptions of <strong>a ≡ b (mod m)</strong>. For example, 17 ≡ 7 (mod 5), since both leave remainder 2; their difference 10 is a multiple of 5. The number on the right of ≡ need not itself be the standard remainder. When asked for <em>the remainder</em>, however, report the value between 0 and m − 1.</p>
 <p>A clock gives a familiar example. Starting at 10 and moving forward 5 hours lands at 3: 15 ≡ 3 (mod 12). The clock forgets complete turns of 12 hours. Modular arithmetic similarly ignores complete multiples of its modulus.</p>
-<h3>Remainders when the number is negative</h3>
-<p>To find the remainder when −17 is divided by 5, we still write the number as a multiple of 5 plus a remainder between 0 and 4. The expression −17 = (−3) · 5 − 2 is a correct equality, but −2 is not an allowed remainder.</p>
-<p>Use the next lower multiple of 5, namely −20. Moving from −20 to −17 takes 3 steps, so</p>
-<p class="math">−17 = (−4) · 5 + 3.</p>
-<p>The quotient is −4 and the remainder is <strong>3</strong>. Therefore −17 ≡ 3 (mod 5). We may also write −17 ≡ −2 (mod 5), because their difference is −15, a multiple of 5. This congruence is valid, but the non-negative remainder is still 3.</p>
-<p>Another example is −12 = (−2) · 6 + 0. Here the remainder is 0: “non-negative” includes zero.</p>
-<p><strong>Try it.</strong> Find the remainders when −8 is divided by 3 and when −1 is divided by 7. Write each as a multiple of the divisor plus its non-negative remainder.</p>
-<details><summary>Answers</summary><p>−8 = (−3) · 3 + 1, so the remainder is 1. Also −1 = (−1) · 7 + 6, so the remainder is 6.</p></details>
 <h3>Practice with remainders</h3>
 <ol><li>Find the quotient and remainder when 23 is divided by 5. Write a congruence.</li><li>Find the remainders of 18, 24, and 31 when divided by 6.</li><li>Which of 4, 9, 12, 19, and 24 are congruent to 4 modulo 5?</li><li>Decide whether each statement is true: 26 ≡ 2 (mod 6); 26 ≡ 8 (mod 6); 26 ≡ 3 (mod 6).</li><li>A clock shows 9. What will it show 8 hours later? Write the corresponding congruence.</li></ol>
 <details><summary>Guidance</summary><p>Write each number as a multiple of the divisor plus a remainder. To compare two numbers, either compare their remainders or subtract them and check whether the difference is a multiple of the modulus.</p></details>
