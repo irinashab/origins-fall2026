@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Passus 7 — Whole numbers and the search for proof</title>
+  <link rel="stylesheet" href="../assets/style.css">
+<style>html{filter:none!important}h2{margin-top:2.5rem;scroll-margin-top:1rem}.contents ul{display:flex;flex-wrap:wrap;gap:.4rem 1.3rem;list-style:none;padding:0}.math{text-align:center;font-size:1.1em;overflow-wrap:anywhere}details{margin:.8rem 0;padding:0;background:none;border:0}summary{cursor:pointer;font-weight:bold}figure svg{display:block;width:100%;max-width:620px;margin:auto;height:auto}figcaption{font-size:.95em}.table-wrap{overflow-x:auto}th{background:transparent}table th:first-child,table td:first-child{white-space:normal}@media print{details{display:block}figure{break-inside:avoid}}</style></head>
+<body id="top">
+  <header>
+    <h1>Passus 7 — Whole numbers and the search for proof</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <nav class="contents" aria-label="Lecture contents"><ul><li><a href="#descent">Infinite descent</a></li><li><a href="#primes">Prime numbers</a></li><li><a href="#perfect">Perfect numbers</a></li><li><a href="#mersenne">Mersenne primes</a></li><li><a href="#fermat">Fermat’s little theorem</a></li><li><a href="#base-three-proof">Base-three challenge</a></li><li><a href="#questions">Open questions</a></li><li><a href="#references">References</a></li></ul></nav>
+<p>Whole numbers are familiar, but their simplest properties can lead to difficult questions. Can every number be broken into prime factors? Do primes ever run out? Which numbers equal the sum of their proper divisors? Number theory studies these questions through proof. We will follow a path from Greek arguments about whole numbers to the correspondence of early modern mathematicians—and to problems that remain open.</p>
+<h2 id="descent">A smaller triangle and an impossible descent</h2>
+<p>For the Pythagoreans, whole numbers and their ratios played a central role in understanding the world. Two segments are <em>commensurable</em> if some smaller segment measures each an integer number of times. Their length ratio is then rational. The side and diagonal of a square resist this description: their ratio is √2, which is irrational.</p>
+<p>We previously used parity to prove this. Here is another route, through a method called <strong>infinite descent</strong>. Later tradition associates the discovery of incommensurability with Hippasus, but we do not know which proof he used. The following argument should be understood as a mathematical explanation, not a reconstruction of his work.</p>
+<p>Suppose √2 = h/b for positive integers h and b. Start with a right isosceles triangle whose side lengths are <strong>1, 1, h/b</strong>. Multiply every length by b. Scaling preserves the angles and gives a similar triangle with side lengths <strong>b, b, h</strong>, all positive integers.</p>
+<p>Why may we choose b to be the smallest possible leg? Under our assumption, at least one such integer-sided triangle exists. Consider the set of all positive integer leg lengths of these triangles. Every nonempty set of positive integers has a least member—the <strong>well-ordering principle</strong>. Choose a triangle with that least leg b, and call its hypotenuse h. We have not assumed that an arbitrary denominator is smallest; we have selected a smallest example from all the examples our assumption says exist. Constructing an even smaller example will give a contradiction.</p>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420" role="img" aria-label="Infinite descent construction: right isosceles triangle ABC with equal legs b; D on BC satisfies BD equals b, and DE is perpendicular to BC with E on AC"><rect width="620" height="420" fill="white"/><g fill="none" stroke="#222" stroke-width="2"><path d="M140 350L460 350L140 30Z"/><path d="M140 350V329H161V350"/><path d="M460 350L140 217.45" stroke-dasharray="3 6" stroke-width="2.5"/><path d="M140 30L233.73 123.73L140 217.45Z" fill="#e8e8e8"/><path d="M224 114L214.27 123.73L224 133.46"/></g><g font-family="Georgia,serif" font-size="21" fill="#111"><text x="115" y="379">A</text><text x="469" y="366">B</text><text x="118" y="26">C</text><text x="248" y="128">D</text><text x="114" y="224">E</text><text x="294" y="378">b</text><text x="105" y="290">x</text><text x="68" y="137">b − x</text><text x="330" y="225">BD = b</text><text x="183" y="65">h − b</text><text x="177" y="185">x</text></g></svg><figcaption>The dotted segment BE is the common hypotenuse of triangles BAE and BDE. The smaller triangle CDE is shaded. The picture represents the assumed integer-sided triangle; the contradiction will show that no such integer lengths exist.</figcaption></figure>
+<p>On hypotenuse BC, choose D so that BD = BA = b. Through D draw a perpendicular to BC, meeting AC at E. Triangles BAE and BDE are right triangles with common hypotenuse BE and equal legs BA and BD. They are congruent, so AE = DE. Write this common length as x.</p>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" role="img" aria-label="Triangles BAE and BDE separated for comparison, with corresponding right angles, equal legs b, and common hypotenuse BE"><rect width="700" height="250" fill="white"/><g fill="none" stroke="#222" stroke-width="2.3" stroke-dasharray="3 6"><path d="M55 45V190H300Z"/><path d="M400 45V190H645Z"/></g><g fill="none" stroke="#222" stroke-width="1.5"><path d="M55 170H75V190 M400 170H420V190"/></g><g font-family="Georgia,serif" font-size="19" fill="#111"><text x="36" y="35">E</text><text x="32" y="216">A</text><text x="307" y="204">B</text><text x="381" y="35">E</text><text x="377" y="216">D</text><text x="652" y="204">B</text><text x="170" y="217">b</text><text x="515" y="217">b</text><text x="175" y="103">BE</text><text x="520" y="103">BE</text></g></svg><figcaption>The triangles are redrawn separately, with BDE turned over for comparison. BA = BD = b, BE is common, and both triangles are right. Hypotenuse–leg congruence gives AE = DE. These are the same triangles as in the construction above.</figcaption></figure><p>Triangle CDE has a right angle at D and a 45° angle at C. It is therefore isosceles, so DE = CD. But CD = BC − BD = h − b. Consequently x = h − b, and CE = b − x = 2b − h.</p>
+<p>The smaller triangle thus has equal legs h − b and hypotenuse 2b − h, all integers. They are positive because b &lt; h &lt; 2b. Its leg h − b is smaller than b, contradicting our choice of b as the smallest possible leg. Therefore √2 is irrational.</p>
+<p>The essential idea is that positive integers cannot decrease forever. A geometric construction has brought us to a basic property of whole numbers. We will use the same idea again when looking for prime divisors.</p>
+<h2 id="primes">Prime numbers and the end of a factorization</h2>
+<p>Euclid’s Books VII–IX develop an arithmetic of whole numbers. He distinguished the unit from a number, which was a multitude of units. We will use modern terminology: a positive integer d <strong>divides</strong> N if N = dk for an integer k. We write d ∣ N. A <strong>prime</strong> is an integer greater than 1 whose only positive divisors are 1 and itself. An integer greater than 1 that is not prime is <strong>composite</strong>.</p>
+<p>The number 1 is neither prime nor composite. Excluding it from the primes keeps prime factorizations meaningful: inserting extra factors of 1 should not count as a new factorization. For example, 60 = 2² · 3 · 5. The fundamental theorem of arithmetic says that every integer greater than 1 has a prime factorization unique apart from the order of the factors. We will use this fact when listing divisors of perfect numbers.</p>
+<h3>Proposition VII.31 — Every composite number has a prime divisor</h3>
+<p><strong>Proposition VII.31 (Euclid).</strong> Any composite number is divisible by some prime number.</p>
+<p><strong>Proof.</strong> Let N be composite. It has a divisor d₁ satisfying 1 &lt; d₁ &lt; N. If d₁ is prime, we are done. Otherwise d₁ has a divisor d₂ with 1 &lt; d₂ &lt; d₁. This new number also divides N: if N = kd₁ and d₁ = ℓd₂, then N = kℓd₂.</p>
+<p>If d₂ is composite, repeat. At every stage the current number divides N and is smaller than the previous number. If no prime were ever found, we would obtain</p>
+<p class="math">N &gt; d₁ &gt; d₂ &gt; d₃ &gt; ··· &gt; 1.</p>
+<p>But there are only finitely many positive integers smaller than N. A strictly decreasing sequence of them cannot continue forever. Thus some dᵣ is prime, and it divides N. This proves the proposition.</p>
+<p>In the wording quoted in our reading, Euclid explains that if “[a prime divisor] is not found, an infinite series of numbers will measure N, each of which is less than the other: which is impossible in numbers.” Here <em>measures</em> means <em>divides exactly</em>; N is our modern label.</p>
+<p>It follows that <strong>every integer greater than 1 has a prime divisor</strong>: a composite integer has one by VII.31, and a prime integer divides itself.</p>
+<h3>Proposition IX.20 — There are infinitely many primes</h3>
+<p>Euclid states: <strong>“Prime numbers are more than any assigned multitude of prime numbers.”</strong> His formulation begins with a finite collection and shows that it cannot exhaust the primes. The modern proof below is slightly different in presentation: it begins by assuming the opposite conclusion and ends in a contradiction. Euclid also uses a least common multiple where this version uses a product.</p>
+<p><strong>Proof by contradiction.</strong> Suppose there are only finitely many primes. List all of them as p₁, p₂, …, pₖ, and define</p>
+<p class="math">P = p₁p₂ ··· pₖ, &nbsp; N = P + 1.</p>
+<p>Since N &gt; 1, it has a prime divisor q. Under our assumption that the list contains every prime, q must be one of p₁, …, pₖ. Therefore q divides P. But q also divides N, so it must divide their difference:</p>
+<p class="math">N − P = (P + 1) − P = 1.</p>
+<p>No prime divides 1, since every prime is greater than 1. This contradiction shows that our assumption was false. There are infinitely many primes.</p>
+<p>Notice that we did not claim that N itself is prime. Whether N is prime or composite, it has a prime divisor; no prime on the proposed complete list can be that divisor.</p>
+<h3>Exercise 1 — Is Euclid’s new number always prime</h3>
+<p><strong>Purpose.</strong> This exercise checks the key distinction in the proof: the constructed number need not be prime, but it must have a prime divisor missing from the original list.</p><p>Begin with 2, 3, 5, 7, 11, and 13. Their product plus 1 is 30031. Given that 30031 = 59 · 509, explain why this still supports Euclid’s argument.</p>
+<details><summary>Guidance</summary><p>What remainder does 30031 leave upon division by each prime in the original list? Does the argument require 30031 itself to be prime?</p></details>
+<details><summary>Answer</summary><p>Each listed prime leaves remainder 1. None is a divisor of 30031. The prime divisors 59 and 509 are therefore absent from the list. The proof requires a new prime divisor, not a prime product-plus-one.</p></details>
+<h2 id="perfect">Perfect numbers and the importance of a prime</h2>
+<p>A <strong>perfect number</strong> equals the sum of its positive proper divisors—the divisors smaller than the number itself. Thus 6 = 1 + 2 + 3 and 28 = 1 + 2 + 4 + 7 + 14. In Passus 4 we met a construction using powers of two. We can now explain why it works and why its prime condition is essential.</p>
+<p><strong>Euclid’s theorem, IX.36.</strong> If q = 2<sup>n</sup> − 1 is prime, then N = 2<sup>n−1</sup>q is perfect.</p>
+<p>For n = 2, 3, 5, and 7, this gives 6, 28, 496, and 8128. The construction comes from doubling: 1, 2, 4, …, 2<sup>n−1</sup>. Their sum is 2<sup>n</sup> − 1; when that sum is prime, multiplying it by the last power of two produces a perfect number.</p>
+<h3>Why the divisors add up correctly</h3>
+<p>Because q is an odd prime, the only prime factors of N are 2 and q. Its proper divisors fall into exactly two families:</p>
+<p class="math">1, 2, 2², …, 2<sup>n−1</sup><br>q, 2q, 2²q, …, 2<sup>n−2</sup>q.</p>
+<p>The last possible term 2<sup>n−1</sup>q is N itself, so we leave it out. The first family sums to 2<sup>n</sup> − 1 = q. The second sums to q(2<sup>n−1</sup> − 1). Adding gives</p>
+<p class="math">q + q(2<sup>n−1</sup> − 1) = q · 2<sup>n−1</sup> = N.</p>
+<p>That proves perfection. The argument depends on knowing every divisor; the prime condition makes the two-family list complete.</p>
+<h3>Exercise 2 — What happens when the condition fails</h3>
+<p>Apply the recipe with n = 4. List the proper divisors of the resulting number and decide whether it is perfect.</p>
+<details><summary>Guidance</summary><p>The recipe gives 8 · 15 = 120. Since 15 = 3 · 5, which divisors are missing from a list containing only powers of two and fifteen times powers of two?</p></details>
+<details><summary>Answer</summary><p>The proper divisors are 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, and 60. Their sum is 240, so 120 is not perfect. Factors 3 and 5 create additional divisors. The prime hypothesis cannot simply be dropped.</p></details>
+<p>Many centuries later, Euler proved the converse for even numbers: <strong>every even perfect number has Euclid’s form</strong>. This does not settle whether an odd perfect number can exist; that question remains open. It is also unknown whether there are infinitely many even perfect numbers.</p>
+<h3 id="triangular-perfect">Exercise — Perfect numbers are triangular</h3>
+<p>Earlier we represented triangular numbers by rows of dots. A triangular number is a sum T<sub>N</sub> = 1 + 2 + ··· + N, where N is a positive integer. Recall that T<sub>N</sub> = N(N + 1)/2. We can now connect these arrangements to perfect numbers.</p>
+<ol type="a"><li>Write each of the first three perfect numbers, 6, 28, and 496, as 1 + 2 + ··· + N. Find N in each case.</li><li>Prove that every even perfect number is triangular.</li><li>Where does your proof use Euler’s converse, rather than just Euclid’s construction?</li></ol>
+<details><summary>Hint for part a</summary><p>Try N = 3, 7, and 31 in the triangular-number formula.</p></details>
+<details><summary>Hint for parts b and c</summary><p>An even perfect number has the form 2<sup>p−1</sup>(2<sup>p</sup> − 1). Compare this with N(N + 1)/2. The two consecutive factors you need are 2<sup>p</sup> − 1 and 2<sup>p</sup>.</p></details>
+<details><summary>Answer and proof</summary><p>We have 6 = 1 + 2 + 3; 28 = 1 + 2 + ··· + 7; and 496 = 1 + 2 + ··· + 31, since 31 · 32/2 = 496.</p><p>By Euler’s converse, any even perfect number P can be written as P = 2<sup>p−1</sup>(2<sup>p</sup> − 1), with 2<sup>p</sup> − 1 prime. Set N = 2<sup>p</sup> − 1. Then</p><p class="math">T<sub>N</sub> = N(N + 1)/2<br>= (2<sup>p</sup> − 1)2<sup>p</sup>/2<br>= 2<sup>p−1</sup>(2<sup>p</sup> − 1) = P.</p><p>Thus every even perfect number is triangular. Euclid’s theorem alone supplies perfect numbers of this form; Euler’s converse ensures that the argument covers <em>every</em> even perfect number.</p></details>
+<h2 id="mersenne">A search for special primes</h2>
+<p>Euclid’s theorem turns the search for even perfect numbers into a search for primes of the form 2<sup>n</sup> − 1. These are called <strong>Mersenne primes</strong>, after Marin Mersenne, the seventeenth-century friar whose extensive correspondence helped mathematical discoveries circulate across Europe. Letters connected people working on shared questions long before modern research journals became established.</p>
+<p>The exponent supplies a useful first test. If n = ab with a, b &gt; 1, put x = 2<sup>a</sup>. Then</p>
+<p class="math">2<sup>n</sup> − 1 = x<sup>b</sup> − 1<br>= (x − 1)(1 + x + ··· + x<sup>b−1</sup>).</p>
+<p>Both factors exceed 1, so the number is composite. Therefore a Mersenne prime must have a prime exponent. <strong>The reverse implication would say: if n is prime, then 2<sup>n</sup> − 1 is prime.</strong> This is false. For example, 11 is prime, but 2<sup>11</sup> − 1 = 2047 = 23 · 89. In logical terms, “Mersenne prime ⇒ prime exponent” is true, while “prime exponent ⇒ Mersenne prime” is false.</p>
+<h3>Exercise 3 — Necessary does not mean sufficient</h3>
+<p>Explain why 2<sup>6</sup> − 1 is composite without testing possible prime divisors. Then use 2<sup>11</sup> − 1 = 2047 = 23 · 89 to explain why a prime exponent is not enough.</p>
+<details><summary>Guidance</summary><p>Write 2<sup>6</sup> − 1 as (2³)² − 1 and use the difference of two squares.</p></details>
+<details><summary>Answer</summary><p>(8 − 1)(8 + 1) = 7 · 9 = 63. The exponent 11 is prime, but 2047 is composite. A prime exponent is necessary for a Mersenne prime, not sufficient.</p></details>
+<p>As checked in September 2026, the GIMPS project lists 52 known Mersenne primes, and hence 52 known even perfect numbers. The largest listed is 2<sup>136279841</sup> − 1, discovered in 2024. These are the numbers currently known, not a complete list of all such primes. Each new Mersenne prime immediately supplies another perfect number.</p>
+<h3 id="false-conjectures">Exercises — When a convincing pattern fails</h3>
+<p>Many plausible conjectures about primes have turned out to be false. A long run of successful examples may suggest a pattern, but it cannot prove a universal claim. One counterexample, however, is enough to disprove it. Investigate the following two claims.</p>
+<h4>A — Alternating prime and composite sums</h4>
+<p><strong>Claim:</strong> The sums 1 + 2 + 4, then 1 + 2 + 4 + 8, then 1 + 2 + 4 + 8 + 16, and so on, alternate between prime and composite. Prove that this claim is false.</p>
+<details><summary>Hint</summary><p>Each sum has the form 2<sup>k</sup> − 1. The first six values are 7, 15, 31, 63, 127, and 255. Examine the next value. Try dividing it by 7.</p></details>
+<details><summary>Answer</summary><p>The initial values do alternate, but the next sum is 1 + 2 + 4 + ··· + 256 = 511 = 7 · 73. Since 255 = 3 · 85 is also composite, two consecutive sums are composite. This counterexample disproves the claimed alternation.</p></details>
+<h4>B — Primes on either side of a multiple of six</h4>
+<p><strong>Claim:</strong> For every positive integer n, at least one of 6n − 1 and 6n + 1 is prime. Prove that this claim is false.</p>
+<details><summary>Hint</summary><p>Choose n so that 6n + 1 = 11². Then factor 6n − 1.</p></details>
+<details><summary>Answer</summary><p>Taking n = 20 gives 6n + 1 = 121 = 11² and 6n − 1 = 119 = 7 · 17. Both are composite, so the claim is false.</p></details>
+<p>There is a true statement nearby: every prime greater than 3 is of the form 6n − 1 or 6n + 1. Division by 6 leaves one of the remainders 0, 1, 2, 3, 4, or 5. The even remainders give an even number, and remainder 3 gives a multiple of 3. A prime greater than 3 must therefore leave remainder 1 or 5. But membership in these two possible forms does not guarantee primality, as 119 and 121 show.</p>
+<h2 id="fermat">Fermat and the arithmetic of remainders</h2>
+<p>Questions about perfect numbers drew Pierre de Fermat toward properties of prime divisors and powers. In 1640 he communicated the result now called <strong>Fermat’s little theorem</strong>. Euler later supplied a proof. To understand its modern form, we first need a compact language for remainders.</p>
+<h3>Start with division and a remainder</h3>
+<p>Divide 17 by 5. Three groups of 5 use up 15, leaving 2:</p><p class="math">17 = 3 · 5 + 2.</p>
+<p>Here 3 is the quotient and 2 is the remainder. For a positive divisor m, the usual remainder is one of 0, 1, …, m − 1. Thus a remainder modulo 5 is always 0, 1, 2, 3, or 4. The phrase <strong>“17 modulo 5”</strong> asks for that remainder: 2.</p>
+<p>The symbol <strong>17 ≡ 2 (mod 5)</strong> is read “17 is congruent to 2 modulo 5.” It does not mean that 17 and 2 are equal. It means that they have the same remainder when divided by 5.</p>
+<p>We can say the same thing in three ways:</p><ul><li>a and b leave the same remainder when divided by m.</li><li>a and b differ by a whole-number multiple of m.</li><li>m divides a − b.</li></ul>
+<p>These are equivalent descriptions of <strong>a ≡ b (mod m)</strong>. For example, 17 ≡ 7 (mod 5), since both leave remainder 2; their difference 10 is a multiple of 5. The number on the right of ≡ need not itself be the standard remainder. When asked for <em>the remainder</em>, however, report the value between 0 and m − 1.</p>
+<p>A clock gives a familiar example. Starting at 10 and moving forward 5 hours lands at 3: 15 ≡ 3 (mod 12). The clock forgets complete turns of 12 hours. Modular arithmetic similarly ignores complete multiples of its modulus.</p>
+<h3>Practice with remainders</h3>
+<ol><li>Find the quotient and remainder when 23 is divided by 5. Write a congruence.</li><li>Find the remainders of 18, 24, and 31 when divided by 6.</li><li>Which of 4, 9, 12, 19, and 24 are congruent to 4 modulo 5?</li><li>Decide whether each statement is true: 26 ≡ 2 (mod 6); 26 ≡ 8 (mod 6); 26 ≡ 3 (mod 6).</li><li>A clock shows 9. What will it show 8 hours later? Write the corresponding congruence.</li></ol>
+<details><summary>Guidance</summary><p>Write each number as a multiple of the divisor plus a remainder. To compare two numbers, either compare their remainders or subtract them and check whether the difference is a multiple of the modulus.</p></details>
+<details><summary>Answers</summary><ol><li>23 = 4 · 5 + 3: quotient 4, remainder 3; 23 ≡ 3 (mod 5).</li><li>The remainders are 0, 0, and 1.</li><li>4, 9, 19, and 24. Each differs from 4 by a multiple of 5.</li><li>True, true, false. The differences are 24, 18, and 23; the first two are divisible by 6. The standard remainder of 26 modulo 6 is 2, even though 26 ≡ 8 is also valid modulo 6.</li><li>5 o’clock; 17 ≡ 5 (mod 12).</li></ol></details>
+<h3>Calculating with smaller numbers</h3>
+<p>For addition and multiplication, we may replace numbers by their remainders. Modulo 5, we have 17 ≡ 2 and 14 ≡ 4. Therefore 17 + 14 ≡ 2 + 4 = 6 ≡ 1, and 17 · 14 ≡ 2 · 4 = 8 ≡ 3.</p>
+<p>Why does this work? Writing 17 = 3 · 5 + 2 and 14 = 2 · 5 + 4 shows that the omitted pieces contain factors of 5. When we add or multiply, all terms involving those pieces are still multiples of 5. Only the sum or product of the remainders matters for the final remainder.</p>
+<p><strong>Try it.</strong> Find the remainder of 28 + 19 modulo 5, and of 12 · 15 modulo 7, using small remainders first.</p>
+<details><summary>Answers</summary><p>28 + 19 ≡ 3 + 4 = 7 ≡ 2 (mod 5). Also 12 · 15 ≡ 5 · 1 = 5 (mod 7).</p></details>
+<p>Powers are repeated multiplication, so we may reduce after every multiplication. We should not assume that ordinary division or cancellation always works modulo m; it requires additional conditions.</p>
+<p>Consider successive powers of 3 modulo 7:</p>
+<div class="table-wrap"><table><thead><tr><th>Power</th><th>3¹</th><th>3²</th><th>3³</th><th>3⁴</th><th>3⁵</th><th>3⁶</th></tr></thead><tbody><tr><th>Remainder modulo 7</th><td>3</td><td>2</td><td>6</td><td>4</td><td>5</td><td>1</td></tr></tbody></table></div>
+<p>For instance, once 3³ has remainder 6, the next power has the remainder of 3 · 6 = 18, namely 4. The sixth power leaves remainder 1. Fermat’s theorem explains why this last fact is guaranteed.</p>
+<p><strong>Fermat’s little theorem.</strong> If p is prime and p does not divide a, then a<sup>p−1</sup> ≡ 1 (mod p). Equivalently, p divides a<sup>p−1</sup> − 1.</p>
+<p>This theorem does not say that p − 1 is the first exponent giving remainder 1. For example, 2³ ≡ 1 (mod 7), and consequently 2⁶ ≡ 1 as well.</p>
+<h3>Exercise 4 — A large power without a large calculation</h3>
+<p>Find the remainder when 3<sup>100</sup> is divided by 7.</p>
+<details><summary>Guidance</summary><p>Use 3⁶ ≡ 1 (mod 7) and write 100 = 6 · 16 + 4.</p></details>
+<details><summary>Answer</summary><p>3<sup>100</sup> = (3⁶)<sup>16</sup>3⁴ ≡ 1<sup>16</sup> · 81 ≡ 4 (mod 7). The remainder is 4.</p></details>
+<details><summary>Optional extension — Why Fermat’s theorem works</summary><p>Multiply 1, 2, …, p − 1 by a, reducing each product modulo p. None has remainder 0. No two products have the same remainder: if ai ≡ aj, then p divides a(i − j). Since p is prime and does not divide a, Euclid’s lemma implies that p divides i − j, which is possible in this range only when i = j.</p><p>The products therefore rearrange the nonzero remainders 1, 2, …, p − 1. Multiplying them all gives a<sup>p−1</sup>(p − 1)! ≡ (p − 1)! (mod p), where (p − 1)! means 1 · 2 ··· (p − 1). None of these factors is divisible by p, so we can cancel their product modulo p. This leaves a<sup>p−1</sup> ≡ 1 (mod p).</p><p>The cancellation rests on the same prime-divisor principle: if p divides XY and does not divide X, it must divide Y.</p></details>
+<p>Fermat’s theorem can also rule out primality. If a candidate N does not divide a<sup>N−1</sup> − 1 for some a not divisible by N, then N is composite. Passing one such test does not prove primality: some composite numbers pass. The direction of an implication matters here, just as it did for prime exponents of Mersenne numbers.</p>
+<h3 id="base-three-proof">Guided challenge — A square in base three</h3>
+<p>We have met different number bases before. A short reminder will let us return to √2 with a new argument. In base three, the digits are 0, 1, and 2, and the place values from right to left are 1, 3, 9, 27, and so on. Thus (11)<sub>3</sub> = 1 · 3 + 1 = 4, while (100)<sub>3</sub> = 9. A subscript 3 identifies a base-three numeral; unmarked numbers below are decimal.</p>
+<p>The last digit of a base-three numeral gives its remainder modulo 3, because all the other places are multiples of 3. Multiplication by 3 appends one zero. For example, 4 = (11)<sub>3</sub> and 12 = (110)<sub>3</sub>. The <strong>last nonzero digit</strong> is the rightmost digit that is not zero: in (110)<sub>3</sub>, it is 1.</p>
+<p>Our goal is to justify this claim: <strong>a nonzero integer square has last nonzero base-three digit 1, whereas twice a nonzero integer square has last nonzero base-three digit 2.</strong> If this is true, a square can never equal twice a nonzero square.</p>
+<ol><li>Let u be an integer not divisible by 3. What are its possible remainders modulo 3? What remainders can u² and 2u² have?</li><li>Any positive integer m can be written as m = 3<sup>k</sup>u, where k ≥ 0 and u is not divisible by 3: repeatedly divide out factors of 3 until none remain. Use this to determine the last nonzero base-three digits of m² and 2m².</li><li>Suppose √2 = p/q for positive integers p and q. Explain why the equation p² = 2q² contradicts your result.</li></ol>
+<details><summary>Hint for question 1</summary><p>If u is not divisible by 3, its remainder is 1 or 2. Square both possibilities and reduce modulo 3.</p></details>
+<details><summary>Hint for question 2</summary><p>m² = 3<sup>2k</sup>u² and 2m² = 3<sup>2k</sup>(2u²). Multiplication by 3<sup>2k</sup> appends 2k zeros. It does not change the last nonzero digit of the factor preceding those zeros.</p></details>
+<details><summary>Complete proof</summary><p>If u ≡ 1 or 2 (mod 3), then u² ≡ 1 (mod 3), since 1² = 1 and 2² = 4 ≡ 1. Consequently 2u² ≡ 2 (mod 3). The base-three numeral for u² ends in 1, and that for 2u² ends in 2.</p><p>Write m = 3<sup>k</sup>u with u not divisible by 3. Then m² = 3<sup>2k</sup>u² has the same last nonzero digit as u², namely 1; its numeral merely has 2k additional trailing zeros. Similarly, 2m² has last nonzero digit 2.</p><p>Now suppose √2 = p/q for positive integers p and q. Squaring and multiplying by q² gives p² = 2q². The positive integer on the left has last nonzero base-three digit 1, while the integer on the right has last nonzero digit 2. Equal integers cannot have different base-three representations. This contradiction proves that √2 is irrational.</p><p>No assumption that p/q is in lowest terms is needed: removing powers of 3 handles any factors of 3 in p or q.</p></details>
+<p>For a numerical check, 9 = (100)<sub>3</sub> is a square and 18 = (200)<sub>3</sub> is twice that square. Their last digits are both zero, but their last <em>nonzero</em> digits are 1 and 2. This explains why that phrase is essential.</p>
+<h2 id="questions">Questions that outlived their discoverers</h2>
+<p>Euclid’s argument settles whether primes end. It leaves many questions about their distribution unanswered. Two famous examples show how easy a question can be to state and how hard it can be to prove.</p>
+<h3>Goldbach and sums of primes</h3>
+<p>The modern <strong>Goldbach conjecture</strong> says that every even integer greater than 2 is a sum of two primes, allowing the primes to be equal. For example, 4 = 2 + 2, 20 = 3 + 17, and 50 = 3 + 47 = 7 + 43 = 19 + 31. The conjecture arose from the correspondence between Christian Goldbach and Euler in 1742. It remains unproved.</p>
+<p>A related statement says that every odd integer greater than 5 is a sum of three primes. For example, 7 = 2 + 2 + 3 and 21 = 3 + 7 + 11. This is often called the weak or ternary Goldbach conjecture, but it is now a theorem: Harald Helfgott proved it in work announced in 2013. We should distinguish this modern formulation from historical versions that treated the unit differently.</p>
+<p>If the two-prime conjecture were true, the three-prime statement would follow: for an odd N &gt; 5, the even number N − 3 is greater than 2, so it would be the sum of two primes; adding 3 gives three. Proving the three-prime statement does not reverse this implication.</p>
+<h3>Twin primes and gaps</h3>
+<p><strong>Twin primes</strong> differ by 2: (3, 5), (5, 7), (11, 13), and (17, 19) are examples. The twin-prime conjecture asks whether there are infinitely many such pairs. A <strong>prime gap</strong> is the difference between consecutive primes; between 23 and 29 the gap is 6. De Polignac’s broader conjecture proposes that every positive even integer occurs infinitely often as a gap between consecutive primes.</p>
+<p>The infinitude of primes does not settle the twin-prime question. A sequence may continue forever while its members become widely separated. Modern work has proved that some fixed finite bound contains infinitely many prime gaps, but the specific gap 2 remains an open problem.</p>
+<p>Try writing each even number from 4 through 30 as a sum of two primes. This gives evidence for Goldbach’s conjecture, but it is not a proof for all even numbers. The difference is visible in Euclid’s argument: it deals with <em>any</em> finite list, not a long collection of particular examples.</p>
+<p>Across this lecture we have used descent, factorization, a product plus one, and arithmetic of remainders. Each turns a pattern into a reason. The questions that remain open remind us that recognizing a pattern and explaining why it must continue are different achievements.</p>
+<h2 id="references">References and further reading</h2>
+<ul><li>Jay Cummings, <em>Math History: A Long-Form Mathematics Textbook</em>. Background reading for the geometric descent argument and the historical narrative.</li><li>Euclid, <em>Elements</em>, David E. Joyce’s online edition: <a href="https://mathcs.clarku.edu/~djoyce/elements/bookVII/propVII31.html">VII.31, prime divisors</a>; <a href="https://mathcs.clarku.edu/~djoyce/elements/bookIX/propIX20.html">IX.20, infinitude of primes</a>; <a href="https://mathcs.clarku.edu/~djoyce/elements/bookIX/propIX36.html">IX.36, perfect numbers</a>.</li><li><a href="https://www.mersenne.org/primes/">GIMPS list of known Mersenne primes</a>. Discovery counts in this lecture were checked in September 2026.</li><li><a href="https://mathshistory.st-andrews.ac.uk/Biographies/Goldbach/">MacTutor biography of Christian Goldbach</a>.</li><li>Harald Helfgott, <a href="https://arxiv.org/abs/1312.7748">The ternary Goldbach conjecture is true</a>. Research-level account of the three-prime theorem.</li><li><a href="https://ora.ox.ac.uk/objects/uuid%3A83245111-5eb3-4463-b43e-6065aa1de656/files/m6a6703d14050542095d54c4135bd1a34">James Maynard on the twin-prime conjecture</a>. Further reading on prime gaps.</li></ul>
+
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
