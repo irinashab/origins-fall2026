@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Passus 8 — Prime Numbers, Remainders, and Great Problems</title>
+  <link rel="stylesheet" href="../assets/style.css">
+<style>
+/* Embedded course styles keep this lecture readable as a standalone file. */
+/* Shared styling for course pages */
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --link: #0b63c7;
+  --link-hover: #084a93;
+  --border: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #e9e9e9;
+    --link: #8ab4f8;
+    --link-hover: #a9c7ff;
+    --border: #e9e9e9;
+  }
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  list-style-type: disc;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+ul ul {
+  list-style-type: circle; /* nested lists */
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin: 5px 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: var(--link-hover);
+}
+
+
+/* Responsive YouTube embeds (optional utility) */
+     @media (prefers-color-scheme: dark) {
+         html {
+           filter: invert(100%);
+        }
+
+        .youtube-container iframe {
+          filter: invert(100%);
+        }
+
+        .noreverse {
+          filter: invert(100%);
+        }
+      }
+      .desmos-container {
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        height: 0;
+      }
+
+      .desmos-container iframe {
+        height: 95%;
+        width: 95%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      .youtube-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+
+      .youtube-container iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+/* ---- Page utilities (safe defaults) ---- */
+
+ol {
+  margin: 10px 0;
+  padding-left: 28px;
+}
+
+ol li {
+  margin: 10px 0;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  margin: 10px 0;
+  padding: 12px 14px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  pre {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.callout {
+  border-left: 6px solid var(--border);
+  padding: 10px 14px;
+  margin: 14px 0;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .callout {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+/* ---- Grading page components ---- */
+
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+@media (min-width: 780px) {
+  .grid.two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9em;
+  margin-right: 8px;
+}
+
+.small {
+  font-size: 0.85em;
+}
+
+blockquote {
+  margin: 10px 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--border);
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--link);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: var(--link-hover);
+    text-decoration: none;
+    color: white;
+}
+/* ---- Lecture content utilities ---- */
+
+figure {
+  margin: 14px 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  margin-top: 6px;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.9em;
+  color: #666;
+}
+.site-footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #666;
+}
+.site-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.site-header h1 {
+  margin-bottom: 0.3rem;
+}
+
+.course-meta {
+  font-size: 0.9em;
+  color: #666;
+}
+/* Live format validation (while typing) */
+main .exercise input.format-bad {
+  border: 3px solid #ff0000 !important;
+  background: rgba(255, 0, 0, 0.15) !important;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.6) !important;
+}
+main .exercise input.format-ok {
+  border: 3px solid #00b050 !important;
+  background: rgba(0, 176, 80, 0.12) !important;
+  box-shadow: 0 0 6px rgba(0, 176, 80, 0.5) !important;
+}
+/* Hint button highlight when format is wrong */
+main .exercise button.hint-glow {
+  background: #ff9800 !important;
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.9);
+  transform: scale(1.05);
+}
+.binary-grid{
+display:grid;
+grid-template-columns:repeat(6,60px);
+text-align:center;
+font-family:monospace;
+}
+
+.binary-grid div{
+border:1px solid #444;
+padding:8px;
+}
+.binary-grid{
+  display:grid;
+  grid-template-columns: repeat(6, 70px);
+  justify-content:center;
+  margin:20px 0;
+  font-family:monospace;
+}
+
+.binary-grid div{
+  border:2px solid #444;
+  padding:10px;
+  text-align:center;
+  font-size:18px;
+  background:#fafafa;
+}
+
+.binary-grid .bit{
+  font-weight:bold;
+  background:#eef3ff;
+}
+
+.grid-caption{
+  text-align:center;
+  font-family:monospace;
+}
+pre {
+  background: #f6f8fa;
+  padding: 14px;
+  border-radius: 6px;
+  overflow-x: auto;
+  border-left: 4px solid #4a6fa5;
+  line-height: 1.4;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+pre code {
+  color: #222;
+}
+/* ===========================
+   Tables
+   =========================== */
+
+table {
+     border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+    border: 2px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+    background: #eef2f7;
+}
+
+table th:first-child,
+table td:first-child {
+    white-space: nowrap;
+}
+section {
+  margin-bottom: 35px;
+}
+.callout {
+  background: #ffffe0;
+  border-left: 5px solid #FDFD96;
+  padding: 14px 16px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.callout h3 {
+  margin-top: 0;
+}
+
+.callout ul {
+  margin: 6px 0 0 18px;
+}
+.warning {
+  background: #fff4e5;
+  border-left: 5px solid #f39c12;
+}
+
+.tip {
+  background: #eaf7ff;
+  border-left: 5px solid #3498db;
+}
+
+.note {
+  background: #f3f5f7;
+  border-left: 5px solid #888;
+  
+}
+/*=============================
+       Navigation
+===============================*/
+
+
+.course-navigation {
+  margin: 1rem 0 2rem;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.course-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-navigation a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+.course-navigation a:hover,
+.course-navigation a:focus {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .course-navigation ul {
+    flex-direction: column;
+  }
+}
+/*======================
+   Announcement box
+========================*/
+.announcements {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background-color: #f5f1e8;
+  border-left: 4px solid #7a4f32;
+  border-radius: 6px;
+}
+
+.announcements h2 {
+  margin-top: 0;
+}
+
+.announcements p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   Narrative lesson components
+   =========================== */
+
+:root {
+  --accent: #8a4f2d;
+  --accent-soft: #f5e9dc;
+  --surface: #f7f4ef;
+  --muted: #5f5a54;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #e5ad83;
+    --accent-soft: #35271f;
+    --surface: #1d1b19;
+    --muted: #c4bdb5;
+  }
+}
+
+.lesson-header {
+  margin: 2rem 0 2.75rem;
+  text-align: left;
+}
+
+
+
+.eyebrow,
+.section-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.lesson-deck {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.lesson-nav {
+  margin-bottom: 3rem;
+  border-block: 1px solid color-mix(in srgb, var(--border) 25%, transparent);
+}
+
+.lesson-nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0;
+  padding: 0.75rem 0;
+  list-style-position: inside;
+}
+
+.lesson-nav li {
+  margin: 0;
+}
+
+.lesson-section {
+  scroll-margin-top: 1rem;
+  margin-bottom: 4.5rem;
+}
+
+
+
+.lead {
+  font-size: 1.12rem;
+}
+
+.challenge,
+.worked-example,
+.evidence-note {
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--border) 20%, transparent);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.challenge {
+  border-left: 5px solid var(--accent);
+}
+
+.challenge h3,
+.worked-example h3,
+.evidence-note h3 {
+  margin: 0 0 0.35rem;
+}
+
+.need-grid,
+.glyph-grid,
+.example-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.need-grid {
+  margin: 1.5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.need-grid article {
+  padding-top: 0.8rem;
+  border-top: 3px solid var(--accent);
+}
+
+.need-grid h3 {
+  margin: 0;
+}
+
+.need-grid p {
+  color: var(--muted);
+}
+
+.glyph-grid {
+  margin: 1.5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
+.glyph-card {
+  display: grid;
+  min-height: 135px;
+  place-items: center;
+  padding: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--border) 20%, transparent);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.glyph-card img {
+  width: auto;
+  max-width: 76px;
+  height: 65px;
+  object-fit: contain;
+  filter: var(--glyph-filter, none);
+}
+
+.glyph-card strong,
+.glyph-card span {
+  display: block;
+}
+
+.glyph-card span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.example-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.numeral-figure,
+.exchange-figure {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  text-align: center;
+}
+
+.numeral-figure img,
+.exchange-figure img {
+  max-height: 135px;
+  object-fit: contain;
+}
+
+.exchange-pair {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+details.answer {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: var(--accent-soft);
+}
+
+details.answer summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+mjx-container[display="true"] {
+  margin: 1.1rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.math-line {
+  text-align: center;
+  font-size: 1.08rem;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 16px;
+  }
+
+  .lesson-nav ol {
+    display: block;
+  }
+
+  .glyph-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+html{filter:none!important}h2{margin-top:2.6rem;scroll-margin-top:1rem}.contents ol{columns:2;column-gap:2rem}.contents li{break-inside:avoid}.math{text-align:center;font-size:1.08em;line-height:1.9;overflow-wrap:anywhere}.theorem{border-left:3px solid var(--text);padding:.2rem 1rem;margin:1.3rem 0}.table-wrap{overflow-x:auto;margin:1rem 0}caption{text-align:left;font-weight:bold;margin-bottom:.4rem}th{background:var(--surface)}table th:first-child,table td:first-child{white-space:normal}section{margin-bottom:2.5rem}@media(max-width:560px){.contents ol{columns:1}body{padding:16px}.math{font-size:1em}}@media print{.contents,#navigation-placeholder,.back-to-top{display:none}body{max-width:none;color:#000;background:#fff}h2,h3{break-after:avoid}tr,.theorem{break-inside:avoid}a{color:inherit}}
+</style>
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 8 — Prime Numbers, Remainders, and Great Problems</h1>
+  </header>
+
+  <div id="navigation-placeholder"><nav class="course-navigation" aria-label="Course navigation">
+  <ul>
+    <li><a data-path="index.html" href="../index.html">Home</a></li>
+    <li><a data-path="resources/syllabus.html" href="../resources/syllabus.html">Syllabus</a></li>
+    <li><a data-path="passus.html" href="../passus.html">Passūs</a></li>
+    <li><a data-path="problem-sets.html" href="../problem-sets.html">Problem Sets</a></li>
+    <li><a data-path="resources.html" href="../resources.html">Resources</a></li>
+  </ul>
+</nav>
+</div>
+
+  <main>
+  
+    
+<nav class="contents" aria-label="Lecture contents"><ol>
+<li><a href="#counting">Counting primes</a></li><li><a href="#pnt">The Prime Number Theorem</a></li><li><a href="#remainders">Remainders</a></li><li><a href="#pigeonhole">The pigeonhole principle</a></li><li><a href="#crt">The Chinese Remainder Theorem</a></li><li><a href="#triples">Pythagorean triples</a></li><li><a href="#gaussian">Gaussian integers and primes</a></li><li><a href="#fermat">Fermat’s Last Theorem</a></li><li><a href="#germain">Sophie Germain</a></li><li><a href="#elliptic">Elliptic curves</a></li><li><a href="#modular">Modular forms</a></li><li><a href="#wiles">Andrew Wiles</a></li><li><a href="#hilbert">Hilbert’s problems</a></li><li><a href="#zeta">The zeta function</a></li><li><a href="#riemann">The Riemann Hypothesis</a></li><li><a href="#references">References</a></li>
+</ol></nav>
+<p>Euclid proved that there are infinitely many prime numbers. But infinity does not tell us how frequently primes occur. Are they distributed according to a pattern? Can their properties help us solve equations in whole numbers? These questions lead from elementary counting and remainders to some of the deepest ideas in mathematics.</p>
+<section id="counting"><h2>1. Counting primes: the function π(N)</h2>
+<p>We already know what prime and composite numbers are. Our new question is how to count the primes up to a given bound. Define the <strong>prime-counting function</strong></p>
+<p class="math">π(N) = the number of primes less than or equal to N.</p>
+<p>Here π names a function; it does not mean the circle constant. For example, π(10) = 4 because the primes at most 10 are 2, 3, 5, and 7. Notice that</p>
+<p class="math">π(10) = 4, &nbsp; π(11) = 5, &nbsp; π(12) = 5.</p>
+<p>The function increases by 1 whenever we reach a prime and stays unchanged at other integers. Its graph is a staircase with unevenly spaced steps.</p>
+</section>
+<section id="pnt"><h2>2. The Prime Number Theorem</h2>
+<p>Although individual primes are difficult to predict, their overall number follows a regular law.</p>
+<div class="theorem"><p><strong>Prime Number Theorem.</strong> As N grows without bound,</p><p class="math">π(N) ∼ N / log N.</p></div>
+<p>Here log N is the <strong>natural logarithm</strong>, the logarithm to base e, where e ≈ 2.71828. Equivalently, log N is the number t for which e<sup>t</sup> = N. The symbol ∼, read “is asymptotic to,” means that the ratio approaches 1:</p>
+<p class="math">π(N) / (N / log N) → 1 as N → ∞.</p>
+<div class="table-wrap"><table><caption>The actual count and its leading approximation</caption><thead><tr><th scope="col">N</th><th scope="col">π(N)</th><th scope="col">N / log N</th></tr></thead><tbody><tr><td>100</td><td>25</td><td>21.7</td></tr><tr><td>1,000</td><td>168</td><td>144.8</td></tr><tr><td>1,000,000</td><td>78,498</td><td>72,382.4</td></tr></tbody></table></div>
+<p>The theorem concerns <strong>relative error</strong>. It does not say that the difference between the count and the estimate approaches zero. In the table, the absolute difference grows even while the relative discrepancy decreases.</p>
+<p>Dividing by N gives π(N)/N ∼ 1/log N. The left side is the proportion of integers from 1 to N that are prime. Since log N grows without bound, that proportion tends to zero. There are infinitely many primes, yet they occupy a decreasing proportion of the integers.</p>
+<p>Jacques Hadamard and Charles Jean de la Vallée Poussin independently proved the theorem in 1896, using ideas connected with Riemann’s zeta function. We will return to that function at the end of the lecture. <a href="#ref-riemann">[1]</a></p>
+</section>
+<section id="remainders"><h2>3. Divisibility, remainders, and congruence</h2>
+<p>Recall that d ∣ a means that a = dk for some integer k. For a positive integer m, we write</p><p class="math">a ≡ b (mod m)</p>
+<p>when m divides a − b. We say that a and b are <strong>congruent modulo m</strong>: they have the same remainder upon division by m. For example, 17 ≡ 2 (mod 5), because 17 − 2 = 15 is divisible by 5.</p>
+<p>The number m is the <strong>modulus</strong>. Every integer belongs to one of the m remainder classes 0, 1, …, m − 1. Congruences can be added and multiplied. Thus 17 ≡ 2 (mod 5) implies 17² ≡ 2² ≡ 4 (mod 5). Large powers can often be studied through small remainders.</p>
+<p>Two positive integers are <strong>coprime</strong> if their greatest common divisor is 1. For example, 8 and 15 are coprime even though neither is prime.</p>
+</section>
+<section id="pigeonhole"><h2>4. The pigeonhole principle</h2>
+<div class="theorem"><p><strong>Pigeonhole principle.</strong> If more than r objects are placed into r boxes, where r is a positive integer, at least one box contains two or more objects.</p></div>
+<p><strong>Proof.</strong> If every box contained at most one object, there would be at most r objects altogether. This contradicts the assumption that there are more than r. <span aria-label="End of proof">□</span></p>
+<p>The boxes can be categories. Among 13 people, at least two have birthdays in the same month: there are only 12 possible months. Among any 6 integers, at least two have the same remainder modulo 5: there are only five remainder classes. Their difference is therefore divisible by 5.</p>
+<p>We will use the following consequence: <strong>if r objects occupy r boxes without repetition, every box is occupied.</strong> If one box were empty, r objects would have to fit into at most r − 1 boxes, forcing a repetition.</p>
+</section>
+<section id="crt"><h2>5. The Chinese Remainder Theorem</h2>
+<p>Suppose we know a number’s remainder upon division by two different integers. How much does that tell us about the number?</p>
+<div class="theorem"><p><strong>Chinese Remainder Theorem.</strong> Let m, n &gt; 1 be coprime integers. For any integers a and b, the system</p><p class="math">x ≡ a (mod m), &nbsp; x ≡ b (mod n)</p><p>has exactly one solution modulo mn.</p></div>
+<p>This means that there is one solution x₀ among 0, 1, …, mn − 1, and every integer solution has the form x = x₀ + kmn, where k ∈ ℤ. The symbol ℤ denotes the set of all integers.</p>
+<h3>A divisibility fact</h3>
+<p>If m and n are coprime and n ∣ md, then n ∣ d. Indeed, none of the prime factors of n occurs in m. Therefore every prime power needed for n to divide md must occur in d. This uses unique prime factorization.</p>
+<h3>Existence: a pigeonhole proof</h3>
+<p>Consider these n numbers:</p><p class="math">a, a + m, a + 2m, …, a + (n − 1)m.</p>
+<p>All are congruent to a modulo m. We claim that no two have the same remainder modulo n. If a + im ≡ a + jm (mod n), then n ∣ (i − j)m. Coprimality gives n ∣ i − j. But 0 ≤ i, j &lt; n, so |i − j| &lt; n. The only multiple of n in this range is 0; therefore i = j.</p>
+<p>These n numbers occupy n remainder classes without repetition. By the pigeonhole principle, every class occurs. One of the numbers must therefore be congruent to b modulo n, and it satisfies both conditions.</p>
+<h3>Uniqueness</h3>
+<p>If x and y satisfy both congruences, then m and n both divide x − y. Since they are coprime, mn divides x − y. Thus x ≡ y (mod mn). Reducing any solution modulo mn gives the unique representative between 0 and mn − 1. <span aria-label="End of proof">□</span></p>
+<h3>Example 1: two remainders</h3>
+<p>Solve x ≡ 2 (mod 3) and x ≡ 3 (mod 5). List five numbers satisfying the first condition:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Number</th><th scope="col">Remainder modulo 5</th></tr></thead><tbody><tr><td>2</td><td>2</td></tr><tr><td>5</td><td>0</td></tr><tr><td>8</td><td>3</td></tr><tr><td>11</td><td>1</td></tr><tr><td>14</td><td>4</td></tr></tbody></table></div>
+<p>The number 8 satisfies both conditions. All solutions are <strong>x = 8 + 15k, k ∈ ℤ</strong>.</p>
+<h3>Example 2: three remainders</h3>
+<p>A collection leaves remainder 2 when grouped in threes, remainder 3 when grouped in fives, and remainder 2 when grouped in sevens. The first two conditions give x = 8 + 15k. The third gives</p>
+<p class="math">8 + 15k ≡ 1 + k ≡ 2 (mod 7).</p>
+<p>Hence k = 1 + 7t for an integer t, so</p><p class="math">x = 8 + 15(1 + 7t) = 23 + 105t.</p>
+<p>The smallest positive answer is <strong>23</strong>. Check: 23 = 3·7 + 2 = 5·4 + 3 = 7·3 + 2.</p>
+<p>The theorem extends to any finite collection of <strong>pairwise coprime</strong> moduli, meaning every pair is coprime. Solutions are unique modulo their product; the two-modulus theorem can be applied repeatedly.</p>
+<p>Coprimality matters. The conditions x ≡ 0 (mod 2) and x ≡ 1 (mod 4) have no common solution: one requires an even number and the other an odd number.</p>
+</section>
+<section id="triples"><h2>6. Pythagorean triples: from examples to a formula</h2>
+<p>A <strong>Pythagorean triple</strong> is a triple of positive integers (a, b, c) satisfying a² + b² = c². These are the side lengths of a right triangle with integer sides, with c the hypotenuse.</p>
+<p>Multiplying every entry by the same positive integer gives another triple: (3, 4, 5) becomes (6, 8, 10). A triple is <strong>primitive</strong> if its entries have no common divisor greater than 1. Dividing by the greatest common divisor shows that every triple is a positive integer multiple of a primitive one.</p>
+<h3>Properties of primitive triples</h3>
+<p><strong>The entries are pairwise coprime.</strong> If a prime divided two entries, the equation would force it to divide the square of the third, and hence the third itself. This contradicts primitivity.</p>
+<p><strong>Exactly one leg is even.</strong> Both cannot be even in a primitive triple. Both cannot be odd either: an odd square is 1 modulo 4, so their sum would be 2 modulo 4. But squares are only 0 or 1 modulo 4. Thus one leg is even and the other odd; the hypotenuse is odd.</p>
+<h3>Deriving the formula</h3>
+<p>Let a be the odd leg and b the even leg. Factor the difference of squares:</p><p class="math">b² = c² − a² = (c − a)(c + a),</p><p class="math">(b/2)² = [(c + a)/2] · [(c − a)/2].</p>
+<p>The factors on the right are positive integers. They are coprime, because a common divisor would divide both their sum c and their difference a.</p>
+<p>A product of coprime positive integers is a square only if each factor is a square. By unique prime factorization, each prime appears in only one factor, and its exponent must be even. Therefore, for integers m &gt; n &gt; 0,</p><p class="math">(c + a)/2 = m², &nbsp; (c − a)/2 = n².</p>
+<p>Adding and subtracting yields <strong>Euclid’s formula</strong>:</p><div class="theorem"><p class="math">a = m² − n², &nbsp; b = 2mn, &nbsp; c = m² + n².</p></div>
+<p>The numbers m and n are coprime, since their squares are coprime. They have opposite parity—one even and one odd—because c is odd. Conversely, coprime m &gt; n &gt; 0 of opposite parity produce a primitive triple.</p>
+<p>To verify the converse, expand (m² − n²)² + (2mn)² = (m² + n²)². The first leg is odd. Any odd prime dividing both legs would divide 2mn, hence m or n, and then m² − n² would force it to divide the other. That contradicts coprimality. Thus no prime divides both legs, and the triple is primitive.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">m</th><th scope="col">n</th><th scope="col">m² − n²</th><th scope="col">2mn</th><th scope="col">m² + n²</th></tr></thead><tbody><tr><td>2</td><td>1</td><td>3</td><td>4</td><td>5</td></tr><tr><td>3</td><td>2</td><td>5</td><td>12</td><td>13</td></tr><tr><td>4</td><td>1</td><td>15</td><td>8</td><td>17</td></tr><tr><td>4</td><td>3</td><td>7</td><td>24</td><td>25</td></tr></tbody></table></div>
+<p>Two further consequences follow. The even leg is divisible by 4, since one of m, n is even. Also, one leg is divisible by 3: otherwise both leg squares would be 1 modulo 3, and their sum would be 2, which is not a square modulo 3.</p>
+</section>
+<section id="gaussian"><h2>7. Gaussian integers and Gaussian primes</h2>
+<p>A difference of squares factors as a² − b² = (a − b)(a + b). To factor a sum of squares similarly, introduce i with i² = −1. Then</p><p class="math">a² + b² = (a + bi)(a − bi).</p>
+<p>A <strong>Gaussian integer</strong> is a complex number a + bi with a, b ∈ ℤ. The set is written ℤ[i]. Geometrically, Gaussian integers are the points with integer coordinates in the complex plane: a is the horizontal coordinate and b the vertical coordinate.</p>
+<p>Addition, subtraction, and multiplication stay within this set. For example, (2 + i)(3 − i) = 7 + i.</p>
+<h3>Conjugates, norms, and units</h3>
+<p>The <strong>conjugate</strong> of z = a + bi is z̄ = a − bi. Its <strong>norm</strong> is</p><p class="math">N(z) = zz̄ = a² + b².</p>
+<p>The norm is a nonnegative integer and is multiplicative: N(zw) = N(z)N(w). This follows from (zw)̅ = z̄w̄ and rearranging zwz̄w̄. For example, N(2 + i) = 5, N(3 − i) = 10, and N(7 + i) = 50.</p>
+<p>A <strong>unit</strong> is a number whose multiplicative inverse also belongs to the same number system. The Gaussian units are 1, −1, i, and −i. Indeed, zw = 1 implies N(z)N(w) = 1, so each norm is 1; the only integer solutions to a² + b² = 1 give these four numbers.</p>
+<h3>Which numbers are Gaussian primes?</h3>
+<p>A <strong>Gaussian prime</strong> is a nonzero Gaussian integer that is not a unit and cannot be factored into two nonunits. In ℤ[i], this agrees with the equivalent prime-divisibility definition.</p>
+<p>An ordinary prime need not remain prime in the larger system. For example,</p><p class="math">5 = (2 + i)(2 − i).</p>
+<p>Both factors have norm 5, so neither is a unit. Therefore 5 is not a Gaussian prime. But 2 + i is a Gaussian prime: if 2 + i = uv, then 5 = N(u)N(v). One norm must be 1, making that factor a unit.</p>
+<p>The ordinary prime 3 remains prime in ℤ[i]. A factorization of 3 into two nonunits would require both norms to equal 3, since N(3) = 9. Yet a² + b² = 3 has no integer solutions: squares no larger than 3 are only 0 and 1.</p>
+<h3>The Pythagorean formula appears again</h3>
+<p>Square a Gaussian integer:</p><p class="math">(m + ni)² = (m² − n²) + 2mn i.</p>
+<p>Taking norms gives</p><p class="math">(m² − n²)² + (2mn)² = (m² + n²)².</p>
+<p>These are exactly the expressions in Euclid’s formula. For instance, (2 + i)² = 3 + 4i, and taking norms gives 3² + 4² = 5². Squaring a Gaussian integer produces the legs of a Pythagorean triple as its real and imaginary parts.</p>
+<p>We now have infinitely many solutions for exponent 2 and a formula describing them. What happens when we replace 2 by a larger exponent?</p>
+</section>
+<section id="fermat"><h2>8. Fermat’s Last Theorem</h2>
+<p>A <strong>Diophantine equation</strong> is an equation for which we seek integer solutions. Pythagorean triples solve one such equation.</p>
+<div class="theorem"><p><strong>Fermat’s Last Theorem.</strong> For every integer n &gt; 2, the equation</p><p class="math">x<sup>n</sup> + y<sup>n</sup> = z<sup>n</sup></p><p>has no positive integer solutions.</p></div>
+<p>The word “positive” matters: allowing zero would give 0<sup>n</sup> + 1<sup>n</sup> = 1<sup>n</sup>. This theorem is also different from Fermat’s <em>little</em> theorem about congruences, encountered earlier.</p>
+<h3>Why prime exponents are enough</h3>
+<p>If an odd prime p divides n, write n = pk. A solution for exponent n would give</p><p class="math">(x<sup>k</sup>)<sup>p</sup> + (y<sup>k</sup>)<sup>p</sup> = (z<sup>k</sup>)<sup>p</sup>,</p>
+<p>a solution for exponent p. If n &gt; 2 has no odd prime divisor, it is a power of 2 and is divisible by 4. A solution then produces one for exponent 4. Therefore it suffices to handle exponent 4 and every odd prime exponent.</p>
+</section>
+<section id="germain"><h2>9. Sophie Germain’s strategy</h2>
+<p>For an odd prime exponent p, mathematicians distinguished two cases. In the <strong>first case</strong>, p divides none of x, y, z. In the <strong>second case</strong>, p divides at least one variable.</p>
+<p>Sophie Germain investigated Fermat’s equation using <strong>auxiliary primes</strong>: additional primes chosen to impose useful restrictions on its remainders. A celebrated consequence of her work is the following.</p>
+<div class="theorem"><p>If p is an odd prime and 2p + 1 is also prime, then the first case of Fermat’s Last Theorem holds for exponent p.</p></div>
+<p>A prime p for which 2p + 1 is prime is now called a <strong>Sophie Germain prime</strong>. Examples are 3, 5, and 11, with auxiliary primes 7, 11, and 23. The result above does not by itself settle the second case.</p>
+<h3>How an auxiliary prime restricts a solution</h3>
+<p>Take p = 5 and auxiliary prime 11. The fifth powers modulo 11 are:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">a</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th><th scope="col">9</th><th scope="col">10</th></tr></thead><tbody><tr><th scope="row">a⁵ mod 11</th><td>0</td><td>1</td><td>10</td><td>1</td><td>1</td><td>1</td><td>10</td><td>10</td><td>10</td><td>1</td><td>10</td></tr></tbody></table></div>
+<p>Since 10 ≡ −1 (mod 11), every fifth power is 0, 1, or −1 modulo 11. Suppose x⁵ + y⁵ = z⁵ and none of the variables is divisible by 11. The powers must then be 1 or −1. But adding two such values gives 2, 0, or −2, never 1 or −1 modulo 11. This is impossible.</p>
+<p>Thus any hypothetical solution must have a variable divisible by 11. This illustrates the auxiliary-prime method; it is <em>not</em> the complete proof of Germain’s theorem, which concerns divisibility by the exponent prime 5. Further arguments turn modular restrictions into stronger divisibility conclusions. Germain’s broader plan sought enough such restrictions to rule out solutions altogether. <a href="#ref-germain">[2]</a></p>
+</section>
+<section id="elliptic"><h2>10. What is an elliptic curve?</h2>
+<p>To understand the route to Wiles’s proof, we need a new mathematical object. For our purposes, an <strong>elliptic curve over the rational numbers</strong> can be represented by</p><p class="math">y² = x³ + Ax + B, &nbsp; 4A³ + 27B² ≠ 0,</p>
+<p>where A and B are rational numbers, together with a distinguished <strong>point at infinity</strong>, denoted O. A <strong>rational point</strong> is a solution whose two coordinates are rational.</p>
+<p>The condition ensures that the curve is <strong>nonsingular</strong>: it has no singularity such as a cusp or a crossing of branches. For example,</p><p class="math">E: y² = x³ − x + 1</p>
+<p>is an elliptic curve because 4(−1)³ + 27(1)² = 23 ≠ 0. It contains (0, 1), (1, 1), and (−1, 1). By contrast, y² = x³ has a cusp at the origin and is not an elliptic curve. Despite its name, an elliptic curve is not an ellipse.</p>
+<h3>Adding points</h3>
+<p>Elliptic curves have an operation called <strong>addition of points</strong>. For distinct points P and Q, draw the line through them. In the ordinary case it meets the cubic at a third point R, counting multiplicity. Reflect R across the horizontal axis; the result is P + Q.</p>
+<p>On y² = x³ − x + 1, take P = (0, 1) and Q = (1, 1). Their line is y = 1. Substitution gives</p><p class="math">1 = x³ − x + 1, &nbsp; x(x − 1)(x + 1) = 0.</p>
+<p>The third intersection is R = (−1, 1). Reflecting it gives <strong>P + Q = (−1, −1)</strong>.</p>
+<p>To add a point to itself, use its tangent. A vertical line leads to the point at infinity, which acts as zero:</p><p class="math">P + O = P, &nbsp; P + (−P) = O.</p>
+<p>The rational points form an <strong>abelian group</strong>: the operation stays within the set, is associative and commutative, has an identity, and gives every point an inverse. Associativity requires a proof; it is not immediate from the picture. The curve is both a geometric object and an arithmetic system.</p>
+</section>
+<section id="modular"><h2>11. What does “modular” mean?</h2>
+<p>A complex number is z = u + iv, with real u and v and i² = −1. Its <strong>real part</strong> is u and its <strong>imaginary part</strong> is v. The <strong>upper half-plane</strong> is the set with v &gt; 0.</p>
+<p>A <strong>modular form</strong> is a complex-valued function on the upper half-plane satisfying precise analytic and symmetry conditions. It is <strong>holomorphic</strong>—complex differentiable at every point—obeys transformation rules, and satisfies regularity conditions at boundary points called cusps.</p>
+<p>For example, a modular form of integer <strong>weight</strong> k for the full modular group obeys</p><p class="math">f((az + b)/(cz + d)) = (cz + d)<sup>k</sup> f(z)</p>
+<p>for integers a, b, c, d with ad − bc = 1, together with the analytic and boundary conditions. Weight names the exponent in this rule. The forms associated with elliptic curves have weight 2 and use particular subgroups of these transformations.</p>
+<p>These forms have expansions in powers of q = e<sup>2πiz</sup>. Here π is the circle constant. The coefficients can encode arithmetic information about a curve.</p>
+<h3>Counting points modulo a prime</h3>
+<p>For a prime p, the symbol 𝔽<sub>p</sub> denotes arithmetic with remainders modulo p. This is a <strong>field</strong>: addition, subtraction, multiplication, and division by any nonzero class are possible. Every nonzero class has a multiplicative inverse.</p>
+<p>Reduce an appropriate integral equation for the curve modulo p and count its solutions. At a prime where the reduced curve remains nonsingular, define</p><p class="math">a<sub>p</sub> = p + 1 − #E(𝔽<sub>p</sub>).</p>
+<p>The symbol # means “number of,” and the point count includes O. For E: y² = x³ − x + 1 modulo 3, the right side equals 1 for all three values of x. Each has two possible values of y, namely 1 and 2. Including O gives 7 points, so a₃ = 3 + 1 − 7 = −3. The curve is nonsingular modulo 3.</p>
+<p>For a modular elliptic curve, these a<sub>p</sub> agree with the coefficients of q<sup>p</sup> in a suitable normalized modular form. A geometric equation and a complex function thus carry matching arithmetic information. The technical definition requires specifying the form and its level, but this coefficient correspondence explains what the connection accomplishes.</p>
+</section>
+<section id="wiles"><h2>12. Andrew Wiles and the contradiction</h2>
+<p>Suppose there were a counterexample a<sup>p</sup> + b<sup>p</sup> = c<sup>p</sup> for a prime p ≥ 5. One can associate a <strong>Frey curve</strong> of the form</p><p class="math">y² = x(x − a<sup>p</sup>)(x + b<sup>p</sup>).</p>
+<p>Its right side is a cubic. A change of coordinates over the rationals can put it into the form used above. After normalizing a hypothetical counterexample, the associated curve is <strong>semistable</strong>. Roughly, at each prime an appropriate reduced model is either nonsingular or has only a mild singularity called a node, rather than a cusp.</p>
+<ol><li>A Fermat counterexample would produce this special semistable elliptic curve.</li><li>Ribet’s theorem, building on Frey’s and Serre’s work, implies that this curve could not be modular.</li><li>Wiles proved that every semistable elliptic curve over the rational numbers is modular.</li></ol>
+<p>The same curve would have to be modular and nonmodular. Therefore the assumed counterexample cannot exist. Together with the already established exponents 3 and 4, this proves Fermat’s Last Theorem. <a href="#ref-wiles">[3]</a></p>
+<p>Wiles announced his proof in 1993. A gap was found, and he and Richard Taylor resolved it in 1994. The proof and companion work appeared in 1995. <a href="#ref-biography">[4]</a></p>
+<p>This is the logical structure of the argument, not a proof of the modularity theorem. Establishing that theorem is the difficult step.</p>
+</section>
+<section id="hilbert"><h2>13. Hilbert’s list of problems</h2>
+<p>A <strong>conjecture</strong> is a mathematical statement proposed as true but not yet proved. A <strong>theorem</strong> has been established by proof.</p>
+<p>In 1900, David Hilbert put forward a famous list of 23 problems to guide future mathematical research. His eighth problem concerned prime numbers and included the Riemann Hypothesis. <a href="#ref-riemann">[1]</a></p>
+<p>Two other famous questions associated with that problem are <strong>Goldbach’s conjecture</strong>—every even integer greater than 2 is a sum of two primes—and the <strong>twin-prime conjecture</strong>—there are infinitely many prime pairs differing by 2.</p>
+<p>For example, 20 = 3 + 17 = 7 + 13, and (11, 13) is a twin-prime pair. Examples illustrate a claim; a finite list cannot establish a universal statement or a claim of infinitude.</p>
+</section>
+<section id="zeta"><h2>14. The Riemann zeta function</h2>
+<p>For a real number s &gt; 1, define</p><p class="math">ζ(s) = ∑<sub>n=1</sub><sup>∞</sup> 1/n<sup>s</sup> = 1 + 1/2<sup>s</sup> + 1/3<sup>s</sup> + ···.</p>
+<p>Thus ζ(2) = 1 + 1/4 + 1/9 + 1/16 + ···. An infinite series <strong>converges</strong> when its partial sums approach a finite limit. This series converges for real s &gt; 1; at s = 1 it becomes the divergent harmonic series.</p>
+<h3>Why the function contains information about primes</h3>
+<p>For each prime p, the geometric-series identity gives</p><p class="math">1/(1 − p<sup>−s</sup>) = 1 + p<sup>−s</sup> + p<sup>−2s</sup> + ···.</p>
+<p>Multiplying these expressions over the primes generates terms such as 2<sup>−2s</sup>3<sup>−s</sup> = (2²·3)<sup>−s</sup> = 12<sup>−s</sup>. By unique prime factorization, every positive integer contributes exactly one term. We obtain <strong>Euler’s product</strong>:</p><div class="theorem"><p class="math">ζ(s) = ∏<sub>p prime</sub> 1/(1 − p<sup>−s</sup>), &nbsp; s &gt; 1.</p></div>
+<p>The symbol ∏ means a product, just as ∑ means a sum. Convergence justifies this infinite expansion. The sum runs over all positive integers; the product runs over primes. Unique factorization connects them.</p>
+</section>
+<section id="riemann"><h2>15. The Riemann Hypothesis</h2>
+<p>The zeta series also converges for complex s with Re(s) &gt; 1. Here Re(s) denotes the real part. Through <strong>analytic continuation</strong>, mathematicians extend the function beyond that region: the extension agrees with the original function wherever the original series converges. The extended zeta function is defined throughout the complex plane except for a <strong>pole</strong> at s = 1, where it becomes unbounded.</p>
+<p>A <strong>zero</strong> of a function is an input where its value is zero. The extended zeta function has zeros at −2, −4, −6, …, called its <strong>trivial zeros</strong>. Its other zeros lie in the <strong>critical strip</strong> 0 &lt; Re(s) &lt; 1.</p>
+<div class="theorem"><p><strong>Riemann Hypothesis.</strong> Every nontrivial zero of ζ(s) has real part 1/2.</p></div>
+<p>Geometrically, all these zeros would lie on the vertical line Re(s) = 1/2 in the complex plane. The hypothesis remains unproved. <a href="#ref-rh">[5]</a></p>
+<p>The Prime Number Theorem describes the leading behavior of the prime count. The Riemann Hypothesis would give much tighter control over its fluctuations around a refined approximation. The remarkable connection is that the locations of zeros of a complex function govern the distribution of ordinary prime numbers.</p>
+</section>
+<section id="references"><h2>References and further reading</h2><ol>
+<li id="ref-riemann">Clay Mathematics Institute, <a href="https://www.claymath.org/collections/riemanns-1859-manuscript/">Riemann’s 1859 Manuscript</a>: the Prime Number Theorem, Riemann’s work, and Hilbert’s eighth problem.</li>
+<li id="ref-germain">Reinhard Laubenbacher and David Pengelley, <a href="https://arxiv.org/abs/0801.1809">“Voici ce que j’ai trouvé”: Sophie Germain’s grand plan to prove Fermat’s Last Theorem</a>.</li>
+<li id="ref-wiles">The Abel Prize, <a href="https://abelprize.no/sites/default/files/2021-04/citation_en_2016_A.Wiles_.pdf">2016 citation for Andrew Wiles</a>: the modularity theorem and its connection to Fermat’s Last Theorem.</li>
+<li id="ref-biography">MacTutor History of Mathematics, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Wiles/">Andrew Wiles</a>.</li>
+<li id="ref-rh">Clay Mathematics Institute, <a href="https://www.claymath.org/millennium/Riemann-Hypothesis/">Riemann Hypothesis</a>.</li>
+</ol></section>
+
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"><footer>
+
+
+<p class="small">
+© 2026 Irina Shablinsky.
+Unless otherwise noted, original course materials are licensed under the
+<a href="https://creativecommons.org/licenses/by-nc/4.0/">
+Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0).
+</a>
+Third-party materials remain subject to their respective copyright and license terms.
+Last updated: August 2026
+</p>
+
+</footer></div>
+
+  <script>
+  if (window.location.protocol !== "file:") {
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+}
+</script>
+
+</body>
+</html>
