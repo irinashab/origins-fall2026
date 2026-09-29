@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Exam 1 Review</title>
+  <link rel="stylesheet" href="../assets/style.css">
+<style>
+section { margin: 2rem 0; }
+h2 { font-size: 1.3rem; }
+details { margin: 1rem 0; padding: .7rem 1rem; border: 1px solid var(--border, #777); border-radius: .4rem; }
+summary { cursor: pointer; font-weight: bold; }
+summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.answer { padding-top: .3rem; }
+blockquote { margin: 1rem; padding-left: 1rem; border-left: 3px solid var(--border, #777); }
+</style>
+</head>
+<body id="top">
+  <header>
+    <h1>Exam 1 Review</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <p>Exam 1 is <strong>90 minutes, closed notes, and without calculators.</strong> Show your reasoning, label diagrams, and explain why your methods work. Review both problem sets and the relevant class discussions.</p>
+<p>These problems illustrate the kinds of reasoning you should practice. They are not a list of the exact questions on the exam. This review is longer than the exam and may be completed across several study sessions.</p>
+<p>Try each problem before opening its answer check. The checks do not replace the requested explanations, proofs, or diagrams.</p>
+<section aria-labelledby="problem-1">
+<h2 id="problem-1">1. Grouping systems and positional systems</h2>
+<div class="problem-intro">In a simple grouping system, the symbols <i>A</i>, <i>B</i>, <i>C</i> have values 1, 5, 25.</div>
+<ol type="a"><li>Express 68 using these symbols.</li><li>Explain why CBA and ABC represent the same number in this system.</li><li>Compare (231)<sub>5</sub> and (132)<sub>5</sub>. Why does the order matter here?</li><li>Explain the role of zero in (203)<sub>5</sub>. What changes if the zero is deleted?</li></ol>
+<details><summary>Answer check — Problem 1</summary><div class="answer"><p><b>(a)</b> Two C’s, three B’s, and three A’s: 2 · 25 + 3 · 5 + 3 = 68. <b>(b)</b> Each symbol has a fixed value, regardless of position. <b>(c)</b> The values are 66 and 42; position determines the power of 5 multiplying each digit. <b>(d)</b> (203)<sub>5</sub> = 53, whereas (23)<sub>5</sub> = 13. Zero holds the empty fives place.</p></div></details>
+</section>
+<section aria-labelledby="problem-2">
+<h2 id="problem-2">2. Working with unfamiliar bases</h2>
+<ol type="a"><li>Convert (314)<sub>5</sub> to base 10 and then to base 6.</li><li>Calculate (45)<sub>6</sub> + (34)<sub>6</sub>. Explain every carry.</li><li>In an unknown integer base <i>b</i>, the numeral 21 represents the decimal number 15. Determine <i>b</i>.</li><li>A student says that (28)<sub>7</sub> represents 22 because 2 · 7 + 8 = 22. Explain what is wrong with this statement and write 22 correctly in base 7.</li></ol>
+<details><summary>Answer check — Problem 2</summary><div class="answer"><p><b>(a)</b> 84 = (220)<sub>6</sub>. <b>(b)</b> (123)<sub>6</sub>: 5 + 4 = 9 gives digit 3 and a carry of 1; 4 + 3 + 1 = 8 gives digit 2 and another carry of 1. <b>(c)</b> 2b + 1 = 15, so b = 7. <b>(d)</b> A base-7 digit must be between 0 and 6; 22 = (31)<sub>7</sub>.</p></div></details>
+</section>
+<section aria-labelledby="problem-3">
+<h2 id="problem-3">3. Sexagesimal notation and empty places</h2>
+<div class="problem-intro">Use a comma between integer places and a semicolon before fractional places.</div>
+<ol type="a"><li>Convert (1,12;45)<sub>60</sub> to base 10.</li><li>Write 90¼ in base 60.</li><li>Calculate (0;40)<sub>60</sub> + (0;35)<sub>60</sub>.</li><li>Compare (4,2)<sub>60</sub> and (4,0,2)<sub>60</sub>. Explain why an omitted empty-place marker could cause a substantial error.</li></ol>
+<details><summary>Answer check — Problem 3</summary><div class="answer"><p><b>(a)</b> 72¾. <b>(b)</b> (1,30;15)<sub>60</sub>. <b>(c)</b> (1;15)<sub>60</sub>. <b>(d)</b> 242 and 14,402. Omitting the empty place changes which power of 60 multiplies the 4.</p></div></details>
+</section>
+<section aria-labelledby="problem-4">
+<h2 id="problem-4">4. Egyptian multiplication and division</h2>
+<ol type="a"><li>Use a doubling table to calculate 29 × 12.</li><li>Use the same table to calculate 300 ÷ 12.</li><li>A student proposes using only rows labeled 1, 2, 4, 8, …, even when the desired multiplier is odd. Explain why this is sufficient.</li><li>Explain why the method gives the correct product. Identify where the distributive law is used.</li></ol>
+<details><summary>Answer check — Problem 4</summary><div class="answer"><p><b>(a)</b> 348, selecting 16 + 8 + 4 + 1. <b>(b)</b> 25, selecting 16 + 8 + 1, whose multiples are 192 + 96 + 12 = 300. <b>(c)</b> Every positive integer is a sum of distinct powers of 2; an odd multiplier includes the row labeled 1. <b>(d)</b> The distributive law gives (16 + 8 + 4 + 1) · 12 = 16 · 12 + 8 · 12 + 4 · 12 + 1 · 12.</p></div></details>
+</section>
+<section aria-labelledby="problem-5">
+<h2 id="problem-5">5. Unit fractions</h2>
+<div class="problem-intro">A unit fraction has numerator 1 and a positive integer denominator.</div>
+<ol type="a"><li>Verify that 1/n = 1/(n + 2) + 2/[n(n + 2)] for every positive integer n.</li><li>When n is even, explain why the second term can be written as a unit fraction. Use this observation to write 1/6 as a sum of two distinct unit fractions.</li><li>Find another representation of 1/6 as a sum of two distinct unit fractions.</li><li>A student writes 2/5 = 1/5 + 1/5. The equality is correct. Why does it fail a requirement that the unit fractions be distinct? Find a representation satisfying that requirement.</li></ol>
+<details><summary>Answer check — Problem 5</summary><div class="answer"><p><b>(a)</b> The right side is (n + 2)/[n(n + 2)] = 1/n. <b>(b)</b> 2/[n(n + 2)] = 1/[n(n + 2)/2], whose denominator is an integer when n is even. Thus 1/6 = 1/8 + 1/24. <b>(c)</b> One possibility is 1/7 + 1/42. <b>(d)</b> The fraction 1/5 is repeated; one valid alternative is 1/3 + 1/15.</p></div></details>
+</section>
+<section aria-labelledby="problem-6">
+<h2 id="problem-6">6. Finite representations of fractions</h2>
+<div class="problem-intro">A fraction has a finite representation in base b if it can be written as m/b<sup>k</sup> for integers m and k ≥ 0.</div>
+<ol type="a"><li>Which of 1/9, 1/16, and 1/14 have finite base-60 representations? Explain each answer.</li><li>Give a fraction that terminates in base 60 but does not terminate in base 10.</li><li>A student claims, “If the denominator is smaller than the base, the fraction terminates.” Give a counterexample.</li><li>Explain why a reduced fraction whose denominator contains a prime factor other than 2, 3, or 5 cannot have a finite base-60 representation.</li></ol>
+<details><summary>Answer check — Problem 6</summary><div class="answer"><p><b>(a)</b> 1/9 and 1/16 terminate because their denominators divide 60²; 1/14 does not because of its factor 7. <b>(b)</b> For example, 1/3. <b>(c)</b> For example, 1/7 in base 10. <b>(d)</b> The only prime factors of any power of 60 are 2, 3, and 5. A reduced denominator containing another prime cannot divide a power of 60.</p></div></details>
+</section>
+<section aria-labelledby="problem-7">
+<h2 id="problem-7">7. Similarity in a right triangle</h2>
+<div class="problem-intro">Triangle ABC has a right angle at C. The altitude CD meets hypotenuse AB at D. Suppose AC = 6, BC = 8, and AB = 10.</div>
+<ol type="a"><li>Draw the figure and identify three pairs of equal angles that establish the similarities among the three triangles.</li><li>Use similarity to find AD and DB. Do not simply quote a formula for these segments.</li><li>Find CD by calculating the area of triangle ABC in two ways.</li><li>Explain why AD + DB = AB provides a useful check but does not, by itself, establish that your individual values are correct.</li></ol>
+<details><summary>Answer check — Problem 7</summary><div class="answer"><p><b>(a)</b> Each small triangle has a right angle at D, matching the original right angle at C. Angle CAD equals angle CAB, and angle CBD equals angle CBA. These give the similarities by AA. <b>(b)</b> AD/AC = AC/AB gives AD = 18/5; DB/BC = BC/AB gives DB = 32/5. <b>(c)</b> (6 · 8)/2 = (10 · CD)/2, so CD = 24/5. <b>(d)</b> Many incorrect pairs also sum to 10; the check is necessary but not sufficient.</p></div></details>
+</section>
+<section aria-labelledby="problem-8">
+<h2 id="problem-8">8. Thales’ theorem in a new setting</h2>
+<div class="problem-intro">A circle has center O and diameter AB. A point P lies on the circle, distinct from A and B. Suppose AP = 5 and BP = 12.</div>
+<ol type="a"><li>Find AB and the radius of the circle. State the theorem that allows you to begin.</li><li>Reflect P through O, obtaining a point Q. Explain why quadrilateral APBQ is a rectangle.</li><li>Find the area of this rectangle.</li><li>A student draws one such figure and concludes that the rectangle argument works for every position of P. What general facts must the student explain to justify that conclusion?</li></ol>
+<details><summary>Answer check — Problem 8</summary><div class="answer"><p><b>(a)</b> Thales’ theorem makes angle APB a right angle. The Pythagorean theorem gives AB = 13, so the radius is 13/2. <b>(b)</b> Diagonals AB and PQ bisect one another and have equal lengths, so the quadrilateral is a rectangle. <b>(c)</b> Area 60. <b>(d)</b> Reflection through O always produces another point of the circle; AB and PQ are always diameters with common midpoint O. These facts hold for every permitted P, not just the drawing.</p></div></details>
+</section>
+<section aria-labelledby="problem-9">
+<h2 id="problem-9">9. Squares, remainders, and integer triangles</h2>
+<ol type="a"><li>By considering even and odd integers, prove that every integer square has remainder 0 or 1 when divided by 4.</li><li>Prove that an integer right triangle cannot have both legs odd.</li><li>Suppose an integer right triangle has an even hypotenuse. Explain why dividing all three side lengths by 2 produces another integer right triangle.</li><li>A student claims, “Every Pythagorean triple contains an odd number.” Decide whether the claim is correct and justify your answer.</li><li><b>Extension.</b> Show that a square has remainder 0 or 1 when divided by 3. Deduce that at least one leg of an integer right triangle is divisible by 3.</li></ol>
+<details><summary>Answer check — Problem 9</summary><div class="answer"><p><b>(a)</b> (2k)² = 4k² and (2k + 1)² = 4(k² + k) + 1. <b>(b)</b> Two odd squares would sum to 2 modulo 4, which cannot be a square. <b>(c)</b> An even hypotenuse forces both legs to be even: only 0 + 0 among the possible square remainders sums to 0 modulo 4. Dividing the Pythagorean equation by 4 verifies the new triple. <b>(d)</b> False: (6, 8, 10). <b>(e)</b> Squaring the possible remainders 0, 1, 2 modulo 3 yields 0, 1, 1. If neither leg were divisible by 3, their squares would sum to 2 modulo 3, which cannot be a square.</p></div></details>
+</section>
+<section aria-labelledby="problem-10">
+<h2 id="problem-10">10. Triangular arrays and sums</h2>
+<div class="problem-intro">Let t<sub>n</sub> = 1 + 2 + ⋯ + n. You may use t<sub>n</sub> = n(n + 1)/2.</div>
+<ol type="a"><li>Given t<sub>25</sub> = 325, find t<sub>24</sub> and t<sub>26</sub> without using the formula.</li><li>Remove the three longest rows of a triangular array with n rows (n ≥ 3). How many dots have been removed? Give an expression in terms of n.</li><li>Two triangular arrays differ by three rows. Their numbers of dots differ by 72. Find the number of rows in each array.</li><li>Calculate 16 + 17 + ⋯ + 35 as a difference of triangular numbers.</li><li>Explain geometrically and algebraically why t<sub>n</sub> + t<sub>n−1</sub> = n² (n ≥ 2).</li></ol>
+<details><summary>Answer check — Problem 10</summary><div class="answer"><p><b>(a)</b> 300 and 351. <b>(b)</b> n + (n − 1) + (n − 2) = 3n − 3. <b>(c)</b> 3n − 3 = 72 gives 25 and 22 rows. <b>(d)</b> t<sub>35</sub> − t<sub>15</sub> = 630 − 120 = 510. <b>(e)</b> Two consecutive triangular arrays combine into an n × n square: their row lengths can be paired as 1 + (n − 1), 2 + (n − 2), …, n + 0. Algebraically, n(n + 1)/2 + (n − 1)n/2 = n².</p></div></details>
+</section>
+<section aria-labelledby="problem-11">
+<h2 id="problem-11">11. Examples, conjectures, and proof</h2>
+<div class="problem-intro">A student calculates 1 + 3 = 4, 1 + 3 + 5 = 9, and 1 + 3 + 5 + 7 = 16 and announces that the sum of the first n positive odd integers is n².</div>
+<ol type="a"><li>Explain what the calculations establish and what they do not establish.</li><li>Give a geometric proof by explaining how to enlarge an (n − 1) × (n − 1) square of dots into an n × n square.</li><li>Explain why your argument applies to every positive integer n, including the starting case.</li></ol>
+<details><summary>Answer check — Problem 11</summary><div class="answer"><p><b>(a)</b> The calculations verify three cases, not all positive integers. <b>(b)</b> Enlarging the square adds n dots along one side and n − 1 along the other, for 2n − 1 new dots. <b>(c)</b> Begin with the one-dot square. Each successive odd number adds precisely the border needed for the next square, so the construction continues for any positive integer n.</p></div></details>
+</section>
+<section aria-labelledby="problem-12">
+<h2 id="problem-12">12. Evaluating historical evidence</h2>
+<div class="problem-intro"><span>Consider this hypothetical situation:</span><blockquote>An ancient document contains a worked numerical example. Several centuries later, an author attributes the underlying method to a particular mathematician. A modern scholar supplies a general proof of the method.</blockquote></div>
+<ol type="a"><li>What does each source contribute to our understanding?</li><li>Does the worked example establish that its author possessed a general proof? Explain.</li><li>What would you want to know about the later author before accepting the attribution?</li><li>Why does a correct modern reconstruction not establish which proof an ancient mathematician actually used?</li><li>Relate one of these issues to your reading of Aristotle or Proclus.</li></ol>
+<details><summary>Answer check — Problem 12</summary><div class="answer"><p><b>(a–b)</b> Distinguish evidence of a worked example, a later attribution, and a general proof. A successful numerical example does not establish possession of a general proof. <b>(c)</b> Consider the later writer’s sources, distance from the events, purpose, and independent corroboration. <b>(d)</b> A reconstruction establishes that an argument is possible, not that someone historically used it. <b>(e)</b> Answers should identify a specific claim from the assigned reading and assess the evidence for it.</p></div></details>
+</section>
+<section aria-labelledby="problem-13">
+<h2 id="problem-13">13. Computation and mathematical evidence</h2>
+<div class="problem-intro">A computer checks a claim for the first million positive integers and finds no counterexample.</div>
+<ol type="a"><li>Has it proved the claim for every positive integer? Explain.</li><li>What could a single verified counterexample establish?</li><li>Explain the difference between testing whether one particular number is prime and establishing a statement about infinitely many numbers.</li><li>In a distributed project such as GIMPS, why is independent verification of a reported result valuable?</li></ol>
+<details><summary>Answer check — Problem 13</summary><div class="answer"><p><b>(a)</b> A finite set of successful checks does not establish an unrestricted universal claim. <b>(b)</b> One verified counterexample disproves it. <b>(c)</b> A conclusive primality test concerns a particular number; proving a claim about infinitely many numbers requires an argument covering all the relevant numbers. <b>(d)</b> Independent verification helps detect computational errors and supports confidence in the reported result.</p></div></details>
+</section>
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
