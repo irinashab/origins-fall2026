@@ -1,0 +1,359 @@
+<section id="counting">
+  <h2>1. Counting primes: the function π(N)</h2>
+
+  <p>
+    We already know what prime and composite numbers are. The natural next
+    question is not <em>whether</em> primes are infinite — Euclid settled that —
+    but <em>how many</em> there are up to a given bound, and how that number grows.
+  </p>
+
+  <p>Define the <strong>prime-counting function</strong></p>
+
+  \[ \pi(N) = \text{the number of primes less than or equal to } N. \]
+
+  <p>
+    Here \( \pi \) names a function; it is <em>not</em> the circle constant.
+    The same symbol is used for two unrelated things, and context tells them
+    apart: in this lecture, \( \pi(N) \) always means a prime count. For
+    example, \( \pi(10) = 4 \) because the primes at most \( 10 \) are
+    \( 2, 3, 5, \) and \( 7 \). Notice that
+  </p>
+
+  \[ \pi(10) = 4, \qquad \pi(11) = 5, \qquad \pi(12) = 5. \]
+
+  <p>
+    The function increases by \( 1 \) whenever we reach a prime and stays
+    unchanged at every other integer. Its graph is a staircase with unevenly
+    spaced steps — each step marks a prime, and the gaps between steps grow
+    irregular as \( N \) increases.
+  </p>
+</section>
+
+<section id="pnt">
+  <h2>2. The Prime Number Theorem</h2>
+
+  <p>
+    Individual primes are difficult to predict: no formula produces the
+    <em>n</em>-th prime, and the gaps between consecutive primes fluctuate
+    unpredictably. Yet the <em>overall number</em> of primes up to \( N \)
+    follows a remarkably regular law.
+  </p>
+
+  <div class="theorem">
+    <p><strong>Prime Number Theorem.</strong> As \( N \) grows without bound,</p>
+    \[ \pi(N) \sim \frac{N}{\log N}. \]
+  </div>
+
+  <p>
+    Here \( \log N \) is the <strong>natural logarithm</strong>, the logarithm
+    to base \( e \), where \( e \approx 2.71828 \). Equivalently,
+    \( \log N \) is the number \( t \) for which \( e^t = N \). Natural
+    logarithms appear throughout the analytic theory of primes; the base is
+    not a matter of convenience, but is forced by the calculus and complex
+    analysis that underlie the proof.
+  </p>
+
+  <p>
+    The symbol \( \sim \), read “is asymptotic to,” means that the ratio of
+    the two sides approaches \( 1 \):
+  </p>
+
+  \[ \frac{\pi(N)}{N / \log N} \to 1 \quad \text{as } N \to \infty. \]
+
+  <p>
+    In other words, for large \( N \) the estimate \( N / \log N \) is
+    <em>relatively</em> accurate: the ratio
+    \( \pi(N) / (N / \log N) \) gets closer and closer to \( 1 \), even
+    though the absolute difference \( \pi(N) - N / \log N \) may continue
+    to grow.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>The actual count and its leading approximation</caption>
+      <thead>
+        <tr>
+          <th scope="col">\( N \)</th>
+          <th scope="col">\( \pi(N) \)</th>
+          <th scope="col">\( N / \log N \)</th>
+          <th scope="col">ratio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>100</td><td>25</td><td>21.7</td><td>1.15</td></tr>
+        <tr><td>1,000</td><td>168</td><td>144.8</td><td>1.16</td></tr>
+        <tr><td>1,000,000</td><td>78,498</td><td>72,382.4</td><td>1.08</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    The theorem concerns <strong>relative error</strong>. It does not say that
+    the difference between the count and the estimate approaches zero — in
+    the table, that difference actually grows. What shrinks is the
+    <em>ratio</em>: the last column drifts toward \( 1 \) as \( N \) grows.
+  </p>
+
+  <p>
+    Dividing both sides of \( \pi(N) \sim N / \log N \) by \( N \) gives
+    \( \pi(N)/N \sim 1/\log N \). The left side is the proportion of integers
+    from \( 1 \) to \( N \) that are prime. Since \( \log N \) grows without
+    bound, that proportion tends to zero. There are infinitely many primes,
+    yet they occupy a decreasing proportion of the integers. Primes become
+    rarer as we go.
+  </p>
+
+  <p>
+    Jacques Hadamard and Charles Jean de la Vallée Poussin independently
+    proved the theorem in 1896, using ideas connected with Riemann’s zeta
+    function. That function — and the question about its zeros that Riemann
+    posed and that remains open — is the subject of the final sections of this
+    passus. <a href="#ref-riemann">[1]</a>
+  </p>
+</section>
+
+<section id="remainders">
+  <h2>3. Divisibility, remainders, and congruence</h2>
+
+  <p>
+    Recall that \( d \mid a \) means that \( a = dk \) for some integer
+    \( k \). Fix a positive integer \( m \), called the
+    <strong>modulus</strong>. Two integers \( a \) and \( b \) are
+    <strong>congruent modulo \( m \)</strong> if they have the same remainder
+    upon division by \( m \); equivalently, if \( m \) divides their
+    difference. We write
+  </p>
+
+  \[ a \equiv b \pmod{m}. \]
+
+  <p>
+    For example, \( 17 \equiv 2 \pmod{5} \), because
+    \( 17 - 2 = 15 \) is divisible by \( 5 \). Both \( 17 \) and \( 2 \)
+    leave remainder \( 2 \) when divided by \( 5 \).
+  </p>
+
+  <p>
+    The word <em>modulo</em> is the ablative form of the Latin
+    <em>modulus</em>, a diminutive of <em>modus</em> (“measure”). It means
+    roughly “by the measure of.” Gauss introduced it in the
+    <em>Disquisitiones Arithmeticae</em> (1801) as part of the notation
+    \( a \equiv b \pmod{m} \), where \( m \) is the <strong>modulus</strong>
+    — the standard against which the two numbers are being compared. Earlier
+    mathematicians (Fermat, Euler, Lagrange) worked with the same ideas, but
+    phrased them as statements about divisibility of differences; Gauss made
+    the remainder itself the central object and gave the whole theory its
+    now-familiar vocabulary.
+  </p>
+
+  <p>
+    Every integer belongs to exactly one of the \( m \) remainder classes
+    \( 0, 1, \ldots, m-1 \). Congruences can be added, subtracted, and
+    multiplied: if \( a \equiv b \pmod{m} \) and \( c \equiv d \pmod{m} \),
+    then
+  </p>
+
+  \[ a + c \equiv b + d \pmod{m}, \qquad ac \equiv bd \pmod{m}. \]
+
+  <p>
+    These remainder classes, with addition modulo \( m \), form what
+    mathematicians call a <strong>group</strong>: a set with an operation
+    that is closed, associative, has an identity, and gives every element an
+    inverse. Here the identity is \( 0 \), and the inverse of a class is the
+    class that brings it back to \( 0 \). Because the operation is also
+    commutative, this is an <strong>abelian group</strong>.
+  </p>
+
+  <p>
+    This is what makes congruences useful. Large numbers can be replaced by
+    their small remainders at every step of a computation. Since
+    \( 17 \equiv 2 \pmod{5} \), we get
+    \( 17^2 \equiv 2^2 \equiv 4 \pmod{5} \) without ever computing
+    \( 289 \). Repeated squaring then lets us study enormous powers through
+    small remainders — a technique we will use repeatedly below.
+  </p>
+
+  <p>
+    Two positive integers are <strong>coprime</strong> if their greatest
+    common divisor is \( 1 \). For example, \( 8 \) and \( 15 \) are coprime
+    even though neither is prime: \( 8 = 2^3 \) and \( 15 = 3 \cdot 5 \)
+    share no prime factor. Coprimality, not primeness, is the condition that
+    makes the Chinese Remainder Theorem work in §5.
+  </p>
+</section>
+
+<section id="pigeonhole">
+  <h2>4. The pigeonhole principle</h2>
+
+  <div class="theorem">
+    <p>
+      <strong>Pigeonhole principle.</strong> If more than \( r \) objects are
+      placed into \( r \) boxes, where \( r \) is a positive integer, at
+      least one box contains two or more objects.
+    </p>
+  </div>
+
+  <p>
+    <strong>Proof.</strong> If every box contained at most one object, there
+    would be at most \( r \) objects altogether. This contradicts the
+    assumption that there are more than \( r \).
+    <span aria-label="End of proof">□</span>
+  </p>
+
+  <p>
+    The boxes can be categories rather than physical containers. Among
+    \( 13 \) people, at least two have birthdays in the same month: there
+    are only \( 12 \) possible months.
+  </p>
+
+  <p>
+    For a number-theoretic example, take any \( 6 \) integers. Each has one
+    of only five possible remainders modulo \( 5 \), so by the pigeonhole
+    principle at least two of them have the same remainder. Their difference
+    is therefore divisible by \( 5 \).
+  </p>
+
+  <p>
+    We will use the following consequence repeatedly: <strong>if
+    \( r \) objects occupy \( r \) boxes without repetition, then every box
+    is occupied.</strong> If one box were empty, the \( r \) objects would
+    have to fit into at most \( r - 1 \) boxes, forcing a repetition by the
+    principle itself.
+  </p>
+</section>
+
+<section id="crt">
+  <h2>5. The Chinese Remainder Theorem</h2>
+
+  <p>
+    Suppose we know a number’s remainder upon division by two different
+    integers. How much does that tell us about the number? The answer is
+    surprisingly complete, provided the two moduli are coprime.
+  </p>
+
+  <div class="theorem">
+    <p>
+      <strong>Chinese Remainder Theorem.</strong> Let \( m, n > 1 \) be
+      coprime integers. For any integers \( a \) and \( b \), the system
+    </p>
+    \[ x \equiv a \pmod{m}, \qquad x \equiv b \pmod{n} \]
+    <p>has exactly one solution modulo \( mn \).</p>
+  </div>
+
+  <p>
+    This means that there is one solution \( x_0 \) among
+    \( 0, 1, \ldots, mn - 1 \), and every integer solution has the form
+    \( x = x_0 + kmn \), where \( k \in \mathbb{Z} \). The symbol
+    \( \mathbb{Z} \) denotes the set of all integers.
+  </p>
+
+  <h3>A divisibility fact</h3>
+
+  <p>
+    Before proving the theorem, we need one fact about coprime numbers: if
+    \( m \) and \( n \) are coprime and \( n \mid md \), then
+    \( n \mid d \). The reason is that none of the prime factors of \( n \)
+    occurs in \( m \), so every prime power needed for \( n \) to divide
+    \( md \) must already occur in \( d \). This uses unique prime
+    factorization.
+  </p>
+
+  <h3>Existence: a pigeonhole proof</h3>
+
+  <p>Consider these \( n \) numbers:</p>
+
+  \[ a, \; a + m, \; a + 2m, \; \ldots, \; a + (n-1)m. \]
+
+  <p>
+    All are congruent to \( a \) modulo \( m \). We claim that no two of
+    them have the same remainder modulo \( n \). If
+    \( a + im \equiv a + jm \pmod{n} \) for some
+    \( 0 \le i, j < n \), then \( n \mid (i-j)m \). The divisibility fact
+    above gives \( n \mid i - j \). But \( |i-j| < n \), and the only
+    multiple of \( n \) in that range is \( 0 \). Therefore \( i = j \).
+  </p>
+
+  <p>
+    So these \( n \) numbers occupy \( n \) remainder classes modulo
+    \( n \) without repetition. By the consequence of the pigeonhole
+    principle from §4, every class is occupied. In particular, one of the
+    numbers is congruent to \( b \) modulo \( n \), and it satisfies both
+    congruences.
+  </p>
+
+  <h3>Uniqueness</h3>
+
+  <p>
+    If \( x \) and \( y \) both satisfy the system, then \( m \) and \( n \)
+    both divide \( x - y \). Since they are coprime, \( mn \) divides
+    \( x - y \). Thus \( x \equiv y \pmod{mn} \). Reducing any solution
+    modulo \( mn \) gives the unique representative between \( 0 \) and
+    \( mn - 1 \). <span aria-label="End of proof">□</span>
+  </p>
+
+  <h3>Example 1: two remainders</h3>
+
+  <p>
+    Solve \( x \equiv 2 \pmod{3} \) and \( x \equiv 3 \pmod{5} \). List
+    five numbers satisfying the first condition:
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Remainder modulo \( 5 \)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2</td><td>2</td></tr>
+        <tr><td>5</td><td>0</td></tr>
+        <tr><td>8</td><td>3</td></tr>
+        <tr><td>11</td><td>1</td></tr>
+        <tr><td>14</td><td>4</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    The number \( 8 \) satisfies both conditions. All solutions are
+    <strong>\( x = 8 + 15k, \; k \in \mathbb{Z} \)</strong>.
+  </p>
+
+  <h3>Example 2: three remainders</h3>
+
+  <p>
+    A collection leaves remainder \( 2 \) when grouped in threes, remainder
+    \( 3 \) when grouped in fives, and remainder \( 2 \) when grouped in
+    sevens. The first two conditions give \( x = 8 + 15k \), as in
+    Example 1. The third condition gives
+  </p>
+
+  \[ 8 + 15k \equiv 1 + k \equiv 2 \pmod{7}. \]
+
+  <p>
+    Hence \( k \equiv 1 \pmod{7} \), so \( k = 1 + 7t \) for an integer
+    \( t \), and
+  </p>
+
+  \[ x = 8 + 15(1 + 7t) = 23 + 105t. \]
+
+  <p>
+    The smallest positive answer is <strong>\( 23 \)</strong>. Check:
+    \( 23 = 3 \cdot 7 + 2 = 5 \cdot 4 + 3 = 7 \cdot 3 + 2 \).
+  </p>
+
+  <p>
+    The theorem extends to any finite collection of <strong>pairwise
+    coprime</strong> moduli, meaning every pair of them is coprime.
+    Solutions are then unique modulo their product. The two-modulus version
+    is enough to prove the general case: apply it repeatedly, combining the
+    running solution with each new modulus in turn.
+  </p>
+
+  <p>
+    Coprimality is essential, not a technical convenience. The conditions
+    \( x \equiv 0 \pmod{2} \) and \( x \equiv 1 \pmod{4} \) have no common
+    solution: the first requires an even number, the second an odd one.
+  </p>
+</section>

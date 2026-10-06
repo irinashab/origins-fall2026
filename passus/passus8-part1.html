@@ -1,0 +1,1287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Passus 8 — Prime Numbers, Remainders, and Great Problems</title>
+  <link rel="stylesheet" href="../assets/style.css">
+   <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 8 — Prime Numbers, Remainders, and Great Problems</h1>
+  </header>
+
+  <div id="navigation-placeholder"><nav class="course-navigation" aria-label="Course navigation">
+  <ul>
+    <li><a data-path="index.html" href="../index.html">Home</a></li>
+    <li><a data-path="resources/syllabus.html" href="../resources/syllabus.html">Syllabus</a></li>
+    <li><a data-path="passus.html" href="../passus.html">Passūs</a></li>
+    <li><a data-path="problem-sets.html" href="../problem-sets.html">Problem Sets</a></li>
+    <li><a data-path="resources.html" href="../resources.html">Resources</a></li>
+  </ul>
+</nav>
+</div>
+
+  <main>
+  
+
+
+
+
+
+
+
+<section id="counting">
+  <h2>1. Counting primes: the function π(N)</h2>
+
+  <p>
+    We already know what prime and composite numbers are. The natural next
+    question is not <em>whether</em> primes are infinite — Euclid settled that —
+    but <em>how many</em> there are up to a given bound, and how that number grows.
+  </p>
+
+  <p>Define the <strong>prime-counting function</strong></p>
+
+  \[ \pi(N) = \text{the number of primes less than or equal to } N. \]
+
+  <p>
+    Here \( \pi \) names a function; it is <em>not</em> the circle constant.
+    The same symbol is used for two unrelated things, and context tells them
+    apart: in this lecture, \( \pi(N) \) always means a prime count. For
+    example, \( \pi(10) = 4 \) because the primes at most \( 10 \) are
+    \( 2, 3, 5, \) and \( 7 \). Notice that
+  </p>
+
+  \[ \pi(10) = 4, \qquad \pi(11) = 5, \qquad \pi(12) = 5. \]
+
+  <p>
+    The function increases by \( 1 \) whenever we reach a prime and stays
+    unchanged at every other integer. Its graph is a staircase with unevenly
+    spaced steps — each step marks a prime, and the gaps between steps grow
+    irregular as \( N \) increases.
+  </p>
+</section>
+
+<section id="pnt">
+  <h2>2. The Prime Number Theorem</h2>
+
+  <p>
+    Individual primes are difficult to predict: no formula produces the
+    <em>n</em>-th prime, and the gaps between consecutive primes fluctuate
+    unpredictably. Yet the <em>overall number</em> of primes up to \( N \)
+    follows a remarkably regular law.
+  </p>
+
+  <div class="theorem">
+    <p><strong>Prime Number Theorem.</strong> As \( N \) grows without bound,</p>
+    \[ \pi(N) \sim \frac{N}{\log N}. \]
+  </div>
+
+  <p>
+    Here \( \log N \) is the <strong>natural logarithm</strong>, the logarithm
+    to base \( e \), where \( e \approx 2.71828 \). Equivalently,
+    \( \log N \) is the number \( t \) for which \( e^t = N \). Natural
+    logarithms appear throughout the analytic theory of primes; the base is
+    not a matter of convenience, but is forced by the calculus and complex
+    analysis that underlie the proof.
+  </p>
+
+  <p>
+    The symbol \( \sim \), read “is asymptotic to,” means that the ratio of
+    the two sides approaches \( 1 \):
+  </p>
+
+  \[ \frac{\pi(N)}{N / \log N} \to 1 \quad \text{as } N \to \infty. \]
+
+  <p>
+    In other words, for large \( N \) the estimate \( N / \log N \) is
+    <em>relatively</em> accurate: the ratio
+    \( \pi(N) / (N / \log N) \) gets closer and closer to \( 1 \), even
+    though the absolute difference \( \pi(N) - N / \log N \) may continue
+    to grow.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>The actual count and its leading approximation</caption>
+      <thead>
+        <tr>
+          <th scope="col">\( N \)</th>
+          <th scope="col">\( \pi(N) \)</th>
+          <th scope="col">\( N / \log N \)</th>
+          <th scope="col">ratio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>100</td><td>25</td><td>21.7</td><td>1.15</td></tr>
+        <tr><td>1,000</td><td>168</td><td>144.8</td><td>1.16</td></tr>
+        <tr><td>1,000,000</td><td>78,498</td><td>72,382.4</td><td>1.08</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    The theorem concerns <strong>relative error</strong>. It does not say that
+    the difference between the count and the estimate approaches zero — in
+    the table, that difference actually grows. What shrinks is the
+    <em>ratio</em>: the last column drifts toward \( 1 \) as \( N \) grows.
+  </p>
+
+  <p>
+    Dividing both sides of \( \pi(N) \sim N / \log N \) by \( N \) gives
+    \( \pi(N)/N \sim 1/\log N \). The left side is the proportion of integers
+    from \( 1 \) to \( N \) that are prime. Since \( \log N \) grows without
+    bound, that proportion tends to zero. There are infinitely many primes,
+    yet they occupy a decreasing proportion of the integers. Primes become
+    rarer as we go.
+  </p>
+
+  <p>
+    Jacques Hadamard and Charles Jean de la Vallée Poussin independently
+    proved the theorem in 1896, using ideas connected with Riemann’s zeta
+    function. That function — and the question about its zeros that Riemann
+    posed and that remains open — is the subject of the final sections of this
+    passus. <a href="#ref-riemann">[1]</a>
+  </p>
+</section>
+
+<section id="remainders">
+  <h2>3. Divisibility, remainders, and congruence</h2>
+
+  <p>
+    Recall that \( d \mid a \) means that \( a = dk \) for some integer
+    \( k \). Fix a positive integer \( m \), called the
+    <strong>modulus</strong>. Two integers \( a \) and \( b \) are
+    <strong>congruent modulo \( m \)</strong> if they have the same remainder
+    upon division by \( m \); equivalently, if \( m \) divides their
+    difference. We write
+  </p>
+
+  \[ a \equiv b \pmod{m}. \]
+
+  <p>
+    For example, \( 17 \equiv 2 \pmod{5} \), because
+    \( 17 - 2 = 15 \) is divisible by \( 5 \). Both \( 17 \) and \( 2 \)
+    leave remainder \( 2 \) when divided by \( 5 \).
+  </p>
+
+  <p>
+    The word <em>modulo</em> is the ablative form of the Latin
+    <em>modulus</em>, a diminutive of <em>modus</em> (“measure”). It means
+    roughly “by the measure of.” Gauss introduced it in the
+    <em>Disquisitiones Arithmeticae</em> (1801) as part of the notation
+    \( a \equiv b \pmod{m} \), where \( m \) is the <strong>modulus</strong>
+    — the standard against which the two numbers are being compared. Earlier
+    mathematicians (Fermat, Euler, Lagrange) worked with the same ideas, but
+    phrased them as statements about divisibility of differences; Gauss made
+    the remainder itself the central object and gave the whole theory its
+    now-familiar vocabulary.
+  </p>
+
+  <p>
+    Every integer belongs to exactly one of the \( m \) remainder classes
+    \( 0, 1, \ldots, m-1 \). Congruences can be added, subtracted, and
+    multiplied: if \( a \equiv b \pmod{m} \) and \( c \equiv d \pmod{m} \),
+    then
+  </p>
+
+  \[ a + c \equiv b + d \pmod{m}, \qquad ac \equiv bd \pmod{m}. \]
+
+  <p>
+    These remainder classes, with addition modulo \( m \), form what
+    mathematicians call a <strong>group</strong>: a set with an operation
+    that is closed, associative, has an identity, and gives every element an
+    inverse. Here the identity is \( 0 \), and the inverse of a class is the
+    class that brings it back to \( 0 \). Because the operation is also
+    commutative, this is an <strong>abelian group</strong>.
+  </p>
+
+  <p>
+    This is what makes congruences useful. Large numbers can be replaced by
+    their small remainders at every step of a computation. Since
+    \( 17 \equiv 2 \pmod{5} \), we get
+    \( 17^2 \equiv 2^2 \equiv 4 \pmod{5} \) without ever computing
+    \( 289 \). Repeated squaring then lets us study enormous powers through
+    small remainders — a technique we will use repeatedly below.
+  </p>
+
+  <p>
+    Two positive integers are <strong>coprime</strong> if their greatest
+    common divisor is \( 1 \). For example, \( 8 \) and \( 15 \) are coprime
+    even though neither is prime: \( 8 = 2^3 \) and \( 15 = 3 \cdot 5 \)
+    share no prime factor. Coprimality, not primeness, is the condition that
+    makes the Chinese Remainder Theorem work in §5.
+  </p>
+</section>
+
+<section id="pigeonhole">
+  <h2>4. The pigeonhole principle</h2>
+
+  <div class="theorem">
+    <p>
+      <strong>Pigeonhole principle.</strong> If more than \( r \) objects are
+      placed into \( r \) boxes, where \( r \) is a positive integer, at
+      least one box contains two or more objects.
+    </p>
+  </div>
+
+  <p>
+    <strong>Proof.</strong> If every box contained at most one object, there
+    would be at most \( r \) objects altogether. This contradicts the
+    assumption that there are more than \( r \).
+    <span aria-label="End of proof">□</span>
+  </p>
+
+  <p>
+    The boxes can be categories rather than physical containers. Among
+    \( 13 \) people, at least two have birthdays in the same month: there
+    are only \( 12 \) possible months.
+  </p>
+
+  <p>
+    For a number-theoretic example, take any \( 6 \) integers. Each has one
+    of only five possible remainders modulo \( 5 \), so by the pigeonhole
+    principle at least two of them have the same remainder. Their difference
+    is therefore divisible by \( 5 \).
+  </p>
+
+  <p>
+    We will use the following consequence repeatedly: <strong>if
+    \( r \) objects occupy \( r \) boxes without repetition, then every box
+    is occupied.</strong> If one box were empty, the \( r \) objects would
+    have to fit into at most \( r - 1 \) boxes, forcing a repetition by the
+    principle itself.
+  </p>
+</section>
+
+<section id="crt">
+  <h2>5. The Chinese Remainder Theorem</h2>
+
+  <p>
+    Suppose we know a number’s remainder upon division by two different
+    integers. How much does that tell us about the number? The answer is
+    surprisingly complete, provided the two moduli are coprime.
+  </p>
+
+  <div class="theorem">
+    <p>
+      <strong>Chinese Remainder Theorem.</strong> Let \( m, n > 1 \) be
+      coprime integers. For any integers \( a \) and \( b \), the system
+    </p>
+    \[ x \equiv a \pmod{m}, \qquad x \equiv b \pmod{n} \]
+    <p>has exactly one solution modulo \( mn \).</p>
+  </div>
+
+  <p>
+    This means that there is one solution \( x_0 \) among
+    \( 0, 1, \ldots, mn - 1 \), and every integer solution has the form
+    \( x = x_0 + kmn \), where \( k \in \mathbb{Z} \). The symbol
+    \( \mathbb{Z} \) denotes the set of all integers.
+  </p>
+
+  <h3>A divisibility fact</h3>
+
+  <p>
+    Before proving the theorem, we need one fact about coprime numbers: if
+    \( m \) and \( n \) are coprime and \( n \mid md \), then
+    \( n \mid d \). The reason is that none of the prime factors of \( n \)
+    occurs in \( m \), so every prime power needed for \( n \) to divide
+    \( md \) must already occur in \( d \). This uses unique prime
+    factorization.
+  </p>
+
+  <h3>Existence: a pigeonhole proof</h3>
+
+  <p>Consider these \( n \) numbers:</p>
+
+  \[ a, \; a + m, \; a + 2m, \; \ldots, \; a + (n-1)m. \]
+
+  <p>
+    All are congruent to \( a \) modulo \( m \). We claim that no two of
+    them have the same remainder modulo \( n \). If
+    \( a + im \equiv a + jm \pmod{n} \) for some
+    \( 0 \le i, j < n \), then \( n \mid (i-j)m \). The divisibility fact
+    above gives \( n \mid i - j \). But \( |i-j| < n \), and the only
+    multiple of \( n \) in that range is \( 0 \). Therefore \( i = j \).
+  </p>
+
+  <p>
+    So these \( n \) numbers occupy \( n \) remainder classes modulo
+    \( n \) without repetition. By the consequence of the pigeonhole
+    principle from §4, every class is occupied. In particular, one of the
+    numbers is congruent to \( b \) modulo \( n \), and it satisfies both
+    congruences.
+  </p>
+
+  <h3>Uniqueness</h3>
+
+  <p>
+    If \( x \) and \( y \) both satisfy the system, then \( m \) and \( n \)
+    both divide \( x - y \). Since they are coprime, \( mn \) divides
+    \( x - y \). Thus \( x \equiv y \pmod{mn} \). Reducing any solution
+    modulo \( mn \) gives the unique representative between \( 0 \) and
+    \( mn - 1 \). <span aria-label="End of proof">□</span>
+  </p>
+
+  <h3>Example 1: two remainders</h3>
+
+  <p>
+    Solve \( x \equiv 2 \pmod{3} \) and \( x \equiv 3 \pmod{5} \). List
+    five numbers satisfying the first condition:
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Remainder modulo \( 5 \)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2</td><td>2</td></tr>
+        <tr><td>5</td><td>0</td></tr>
+        <tr><td>8</td><td>3</td></tr>
+        <tr><td>11</td><td>1</td></tr>
+        <tr><td>14</td><td>4</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    The number \( 8 \) satisfies both conditions. All solutions are
+    <strong>\( x = 8 + 15k, \; k \in \mathbb{Z} \)</strong>.
+  </p>
+
+  <h3>Example 2: three remainders</h3>
+
+  <p>
+    A collection leaves remainder \( 2 \) when grouped in threes, remainder
+    \( 3 \) when grouped in fives, and remainder \( 2 \) when grouped in
+    sevens. The first two conditions give \( x = 8 + 15k \), as in
+    Example 1. The third condition gives
+  </p>
+
+  \[ 8 + 15k \equiv 1 + k \equiv 2 \pmod{7}. \]
+
+  <p>
+    Hence \( k \equiv 1 \pmod{7} \), so \( k = 1 + 7t \) for an integer
+    \( t \), and
+  </p>
+
+  \[ x = 8 + 15(1 + 7t) = 23 + 105t. \]
+
+  <p>
+    The smallest positive answer is <strong>\( 23 \)</strong>. Check:
+    \( 23 = 3 \cdot 7 + 2 = 5 \cdot 4 + 3 = 7 \cdot 3 + 2 \).
+  </p>
+
+  <p>
+    The theorem extends to any finite collection of <strong>pairwise
+    coprime</strong> moduli, meaning every pair of them is coprime.
+    Solutions are then unique modulo their product. The two-modulus version
+    is enough to prove the general case: apply it repeatedly, combining the
+    running solution with each new modulus in turn.
+  </p>
+
+  <p>
+    Coprimality is essential, not a technical convenience. The conditions
+    \( x \equiv 0 \pmod{2} \) and \( x \equiv 1 \pmod{4} \) have no common
+    solution: the first requires an even number, the second an odd one.
+  </p>
+</section>
+<section id="triples">
+  <h2>6. Pythagorean triples: from examples to a formula</h2>
+
+  <p>
+    A <strong>Pythagorean triple</strong> is a triple of positive integers
+    \( (a, b, c) \) satisfying \( a^2 + b^2 = c^2 \). These are the side
+    lengths of a right triangle with integer sides, with \( c \) the
+    hypotenuse.
+  </p>
+
+  <p>
+    Multiplying every entry by the same positive integer gives another triple:
+    \( (3, 4, 5) \) becomes \( (6, 8, 10) \). A triple is
+    <strong>primitive</strong> if its entries have no common divisor greater
+    than \( 1 \). Dividing by the greatest common divisor shows that every
+    triple is a positive integer multiple of a primitive one, so it is enough
+    to classify the primitive ones.
+  </p>
+
+  <h3>Properties of primitive triples</h3>
+
+  <p>
+    <strong>The entries are pairwise coprime.</strong> If a prime divided two
+    entries, the equation would force it to divide the square of the third,
+    and hence the third itself. This contradicts primitivity.
+  </p>
+
+  <p>
+    <strong>Exactly one leg is even.</strong> Both cannot be even in a
+    primitive triple. Both cannot be odd either: an odd square is
+    \( 1 \) modulo \( 4 \), so their sum would be \( 2 \) modulo \( 4 \). But
+    squares are only \( 0 \) or \( 1 \) modulo \( 4 \), so a square cannot be
+    \( 2 \) modulo \( 4 \). Thus one leg is even and the other odd; the
+    hypotenuse is odd.
+  </p>
+
+  <h3>Deriving the formula</h3>
+
+  <p>
+    Let \( a \) be the odd leg and \( b \) the even leg. Factor the difference
+    of squares:
+  </p>
+
+  \[ b^2 = c^2 - a^2 = (c - a)(c + a), \]
+  \[ \left(\frac{b}{2}\right)^2 = \left[\frac{c + a}{2}\right] \cdot \left[\frac{c - a}{2}\right]. \]
+
+  <p>
+    The factors on the right are positive integers. They are coprime: a
+    common divisor \( d \) would divide both their sum, which is \( c \), and
+    their difference, which is \( a \). But \( a \) and \( c \) are coprime,
+    so \( d = 1 \).
+  </p>
+
+  <p>
+    We now use <strong>unique prime factorization</strong>. A product of
+    coprime positive integers is a square only if each factor is a square:
+    any prime dividing the product appears in exactly one factor, and its
+    exponent in that factor must be even. Therefore, for integers
+    \( m > n > 0 \),
+  </p>
+
+  \[ \frac{c + a}{2} = m^2, \qquad \frac{c - a}{2} = n^2. \]
+
+  <p>Adding and subtracting yields <strong>Euclid’s formula</strong>:</p>
+
+  <div class="theorem">
+    \[ a = m^2 - n^2, \qquad b = 2mn, \qquad c = m^2 + n^2. \]
+  </div>
+
+  <p>
+    The numbers \( m \) and \( n \) are coprime, since their squares are
+    coprime. They have opposite parity — one even and one odd — because
+    \( c \) is odd. Conversely, coprime \( m > n > 0 \) of opposite parity
+    produce a primitive triple.
+  </p>
+
+  <p>
+    To verify the converse, expand
+    \( (m^2 - n^2)^2 + (2mn)^2 = (m^2 + n^2)^2 \). The first leg is odd.
+    Any odd prime dividing both legs would divide \( 2mn \), hence \( m \) or
+    \( n \), and then \( m^2 - n^2 \) would force it to divide the other.
+    That contradicts coprimality. Thus no prime divides both legs, and the
+    triple is primitive.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">\( m \)</th>
+          <th scope="col">\( n \)</th>
+          <th scope="col">\( m^2 - n^2 \)</th>
+          <th scope="col">\( 2mn \)</th>
+          <th scope="col">\( m^2 + n^2 \)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2</td><td>1</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><td>3</td><td>2</td><td>5</td><td>12</td><td>13</td></tr>
+        <tr><td>4</td><td>1</td><td>15</td><td>8</td><td>17</td></tr>
+        <tr><td>4</td><td>3</td><td>7</td><td>24</td><td>25</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Two further consequences follow from the formula.</p>
+
+  <ul>
+    <li>
+      <strong>The even leg is divisible by \( 4 \).</strong> In \( 2mn \), one
+      of \( m \) or \( n \) is even, so \( 2mn \) is divisible by \( 4 \).
+    </li>
+    <li>
+      <strong>One leg is divisible by \( 3 \).</strong> If neither leg were
+      divisible by \( 3 \), both leg squares would be \( 1 \) modulo \( 3 \),
+      and their sum would be \( 2 \) modulo \( 3 \). But \( 2 \) is not a
+      square modulo \( 3 \), since \( 0^2 = 0 \) and \( 1^2 = 1 \). So one
+      leg is divisible by \( 3 \).
+    </li>
+  </ul>
+
+  <p>
+    We have infinitely many solutions for exponent \( 2 \) and a formula
+    describing them. The formula was found using a factorization — a
+    difference of squares. What happens when we try to factor a <em>sum</em>
+    of squares the same way?
+  </p>
+</section>
+
+<section id="gaussian">
+  <h2>7. Gaussian integers and Gaussian primes</h2>
+
+  <p>
+    A difference of squares factors as \( a^2 - b^2 = (a - b)(a + b) \). To
+    factor a sum of squares similarly, introduce \( i \) with
+    \( i^2 = -1 \). Then
+  </p>
+
+  \[ a^2 + b^2 = (a + bi)(a - bi). \]
+
+  <p>
+    A <strong>Gaussian integer</strong> is a complex number \( a + bi \) with
+    \( a, b \in \mathbb{Z} \). The set is written \( \mathbb{Z}[i] \).
+    Geometrically, Gaussian integers are the points with integer coordinates
+    in the complex plane: \( a \) is the horizontal coordinate and \( b \) the
+    vertical coordinate.
+  </p>
+
+  <p>
+    Addition, subtraction, and multiplication stay within this set. For
+    example, \( (2 + i)(3 - i) = 7 + i \).
+  </p>
+
+  <h3>Conjugates, norms, and units</h3>
+
+  <p>
+    The <strong>conjugate</strong> of \( z = a + bi \) is
+    \( \bar{z} = a - bi \). Its <strong>norm</strong> is
+  </p>
+
+  \[ N(z) = z\bar{z} = a^2 + b^2. \]
+
+  <p>
+    The norm is a nonnegative integer and is multiplicative:
+    \( N(zw) = N(z) N(w) \). This follows from
+    \( \overline{zw} = \bar{z}\bar{w} \) and rearranging:
+    \( zw \cdot \overline{zw} = zw \cdot \bar{z}\bar{w} = (z\bar{z})(w\bar{w}) = N(z) N(w) \).
+    For example, \( N(2 + i) = 5 \), \( N(3 - i) = 10 \), and
+    \( N(7 + i) = 50 \).
+  </p>
+
+  <p>
+    A <strong>unit</strong> in \( \mathbb{Z}[i] \) is a Gaussian integer
+    whose reciprocal is also a Gaussian integer — that is, a number \( u \)
+    for which there is another Gaussian integer \( v \) with \( uv = 1 \).
+    The Gaussian units are \( 1, -1, i, \) and \( -i \). Indeed, \( uv = 1 \)
+    implies \( N(u) N(v) = 1 \), so each norm is \( 1 \); the only integer
+    solutions to \( a^2 + b^2 = 1 \) are \( (\pm 1, 0) \) and
+    \( (0, \pm 1) \), giving exactly these four numbers.
+  </p>
+
+  <h3>Which numbers are Gaussian primes?</h3>
+
+  <p>
+    A <strong>Gaussian prime</strong> is a nonzero Gaussian integer that is
+    not a unit — that is, not one of \( 1, -1, i, -i \) — and cannot be
+    factored into two nonunits. Equivalently, it is a number \( z \) such
+    that whenever \( z \) divides a product, \( z \) divides one of the
+    factors. In \( \mathbb{Z}[i] \), as in \( \mathbb{Z} \), the two
+    definitions agree.
+  </p>
+
+  <p>
+    The norm gives a practical test. If \( z \) is a Gaussian prime, then
+    \( N(z) \) is either an ordinary prime or the square of an ordinary
+    prime. Conversely, if \( N(z) \) is an ordinary prime, then \( z \) is a
+    Gaussian prime: a factorization \( z = uv \) would force
+    \( N(u) N(v) = N(z) \), and since \( N(z) \) is prime, one of the norms
+    must be \( 1 \), making that factor a unit.
+  </p>
+
+  <p>
+    An ordinary prime need not remain prime in the larger system. In fact, an
+    ordinary prime \( p \) factors in \( \mathbb{Z}[i] \) if and only if
+    \( p = 2 \) or \( p \equiv 1 \pmod{4} \). The prime \( 2 \) is special:
+    \( 2 = -i(1 + i)^2 \). For odd primes, the split is governed by whether
+    \( -1 \) is a square modulo \( p \).
+  </p>
+
+  <p>Two examples illustrate the two cases.</p>
+
+  <ul>
+    <li>
+      <strong>\( 5 \) splits.</strong>
+      \( 5 = (2 + i)(2 - i) \). Both factors have norm \( 5 \), so neither is
+      a unit. Therefore \( 5 \) is not a Gaussian prime. More generally,
+      every prime \( p \equiv 1 \pmod{4} \) factors this way.
+    </li>
+    <li>
+      <strong>\( 3 \) remains prime.</strong> A factorization of \( 3 \) into
+      two nonunits would require both norms to equal \( 3 \), since
+      \( N(3) = 9 \). Yet \( a^2 + b^2 = 3 \) has no integer solutions:
+      squares no larger than \( 3 \) are only \( 0 \) and \( 1 \), and
+      \( 0 + 1 = 1 \), \( 1 + 1 = 2 \), \( 1 + 0 = 1 \) — none equal
+      \( 3 \). So \( 3 \) is a Gaussian prime. More generally, every prime
+      \( p \equiv 3 \pmod{4} \) remains prime in \( \mathbb{Z}[i] \).
+    </li>
+  </ul>
+
+  <p>
+    Now \( 2 + i \) is itself a Gaussian prime: \( N(2 + i) = 5 \) is an
+    ordinary prime, so the criterion above applies.
+  </p>
+
+  <h3>The Pythagorean formula appears again</h3>
+
+  <p>Square a Gaussian integer:</p>
+
+  \[ (m + ni)^2 = (m^2 - n^2) + 2mn\,i. \]
+
+  <p>Taking norms gives</p>
+
+  \[ (m^2 - n^2)^2 + (2mn)^2 = (m^2 + n^2)^2. \]
+
+  <p>
+    These are exactly the expressions in Euclid’s formula. For instance,
+    \( (2 + i)^2 = 3 + 4i \), and taking norms gives
+    \( 3^2 + 4^2 = 5^2 \). Squaring a Gaussian integer produces the legs of
+    a Pythagorean triple as its real and imaginary parts.
+  </p>
+
+  <p>
+    This is the first appearance in this passus of a pattern that will
+    recur: a problem about ordinary integers becomes clearer when we enlarge
+    the number system. The Gaussian integers turn a fact about sums of two
+    squares into a statement about factorization in a larger ring. We now
+    have infinitely many solutions for exponent \( 2 \) and a formula
+    describing them. What happens when we replace \( 2 \) by a larger
+    exponent?
+  </p>
+</section>
+
+<section id="fermat">
+  <h2>8. Fermat’s Last Theorem</h2>
+
+  <p>
+    A <strong>Diophantine equation</strong> is an equation for which we seek
+    integer solutions. Pythagorean triples solve one such equation.
+  </p>
+
+  <div class="theorem">
+    <p>
+      <strong>Fermat’s Last Theorem.</strong> For every integer \( n > 2 \),
+      the equation
+    </p>
+    \[ x^n + y^n = z^n \]
+    <p>has no positive integer solutions.</p>
+  </div>
+
+  <p>
+    The word “positive” matters: allowing zero would give
+    \( 0^n + 1^n = 1^n \). This theorem is also different from Fermat’s
+    <em>little</em> theorem about congruences, encountered earlier. The
+    <em>last</em> theorem is the one Fermat claimed to have proved in his
+    marginal note; the <em>little</em> one is the congruence result he stated
+    in a letter but also did not prove. Both were left for others to
+    establish: Euler gave the first published proof of the little theorem in
+    \( 1736 \), and Wiles proved the last theorem in \( 1994 \).
+  </p>
+
+  <p>
+    Fermat made the claim in the margin of his copy of Diophantus’s
+    <em>Arithmetica</em>, adding that the margin was too small to contain his
+    proof. No proof was found among his papers. The annotated copy was
+    published posthumously by his son in \( 1670 \), and the problem stood
+    open for over three centuries. It was finally proved by Andrew Wiles in
+    \( 1994 \), by a route that could hardly have been further from what
+    Fermat had in mind.
+  </p>
+
+  <h3>Why prime exponents are enough</h3>
+
+  <p>
+    Suppose the theorem fails for some exponent \( n > 2 \), so that positive
+    integers \( x, y, z \) satisfy \( x^n + y^n = z^n \). We want to reduce
+    this to the case where the exponent is either an odd prime or \( 4 \).
+  </p>
+
+  <p>
+    If \( n \) has an odd prime divisor \( p \), write \( n = pk \). Then
+  </p>
+
+  \[ (x^k)^p + (y^k)^p = (z^k)^p, \]
+
+  <p>
+    which is a solution for exponent \( p \). So any counterexample at a
+    composite exponent yields one at a prime exponent.
+  </p>
+
+  <p>
+    What if \( n \) has no odd prime divisor? Then \( n \) is a power of
+    \( 2 \), so \( n \) is divisible by \( 4 \). Writing \( n = 4k \) and
+    applying the same trick reduces to the exponent \( 4 \). Therefore it
+    suffices to handle exponent \( 4 \) and every odd prime exponent.
+  </p>
+
+  <p>
+    The case \( n = 4 \) was settled by Fermat himself, using an infinite
+    descent argument. The case \( n = 3 \) was proved by Euler. For odd
+    primes \( p \ge 5 \), the problem remained open until Wiles. The next
+    section describes the nineteenth-century strategy that produced the
+    first real progress.
+  </p>
+</section>
+
+<section id="germain">
+  <h2>9. Sophie Germain’s strategy</h2>
+
+  <p>
+    Sophie Germain \( (1776\text{–}1831) \) was a French mathematician who
+    worked on Fermat’s Last Theorem at a time when women were barred from the
+    mathematical institutions of her country. She obtained lecture notes
+    under a male pseudonym, “M. LeBlanc,” and corresponded under that name
+    with Lagrange and, later, with Gauss. Her work on Fermat’s equation was
+    the most substantial progress on the problem in the two centuries between
+    Fermat and Kummer.
+  </p>
+
+  <h3>Two cases</h3>
+
+  <p>For an odd prime exponent \( p \), mathematicians distinguished two cases.</p>
+
+  <ul>
+    <li>
+      <strong>First case:</strong> \( p \) divides none of \( x, y, z \).
+    </li>
+    <li>
+      <strong>Second case:</strong> \( p \) divides at least one of
+      \( x, y, z \).
+    </li>
+  </ul>
+
+  <p>
+    Germain’s strategy addressed the first case, using <strong>auxiliary
+    primes</strong>: additional primes, different from the exponent \( p \),
+    chosen to impose useful restrictions on the remainders of \( x, y, \) and
+    \( z \).
+  </p>
+
+  <h3>The method</h3>
+
+  <p>
+    Fix an odd prime \( p \), and suppose \( x^p + y^p = z^p \). Let \( q \)
+    be a prime different from \( p \). If we can show that every \( p \)-th
+    power modulo \( q \) is one of very few values, then the equation
+    \( x^p + y^p = z^p \) imposes a strong condition on those values modulo
+    \( q \). When the condition is impossible, \( q \) rules out the assumed
+    solution.
+  </p>
+
+  <p>Germain’s celebrated consequence is the following.</p>
+
+  <div class="theorem">
+    <p>
+      If \( p \) is an odd prime and \( 2p + 1 \) is also prime, then the
+      first case of Fermat’s Last Theorem holds for exponent \( p \).
+    </p>
+  </div>
+
+  <p>
+    A prime \( p \) for which \( 2p + 1 \) is prime is now called a
+    <strong>Sophie Germain prime</strong>. Examples are \( 3, 5, \) and
+    \( 11 \), with auxiliary primes \( 7, 11, \) and \( 23 \). The result
+    above settles the first case for these exponents but not the second.
+  </p>
+
+  <h3>Example: \( p = 5 \), auxiliary prime \( 11 \)</h3>
+
+  <p>
+    Take \( p = 5 \) and auxiliary prime \( q = 11 \). The fifth powers
+    modulo \( 11 \) are:
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">\( a \)</th>
+          <th scope="col">0</th>
+          <th scope="col">1</th>
+          <th scope="col">2</th>
+          <th scope="col">3</th>
+          <th scope="col">4</th>
+          <th scope="col">5</th>
+          <th scope="col">6</th>
+          <th scope="col">7</th>
+          <th scope="col">8</th>
+          <th scope="col">9</th>
+          <th scope="col">10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">\( a^5 \bmod 11 \)</th>
+          <td>0</td>
+          <td>1</td>
+          <td>10</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>1</td>
+          <td>10</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Since \( 10 \equiv -1 \pmod{11} \), every fifth power is
+    \( 0, 1, \) or \( -1 \) modulo \( 11 \). Suppose \( x^5 + y^5 = z^5 \)
+    and none of \( x, y, z \) is divisible by \( 11 \). Then each of
+    \( x^5, y^5, z^5 \) is \( 1 \) or \( -1 \) modulo \( 11 \). Adding two
+    of these gives \( 2, 0, \) or \( -2 \) — never \( 1 \) or \( -1 \). So
+    the equation is impossible modulo \( 11 \).
+  </p>
+
+  <p>
+    Therefore any hypothetical solution with \( p = 5 \) must have at least
+    one of \( x, y, z \) divisible by \( 11 \). That is a genuine
+    restriction: it shrinks the search space for a counterexample. It is not
+    yet a contradiction, and it does not complete the proof of the theorem
+    above. What it illustrates is the method — an auxiliary prime turns a
+    hypothetical solution into a divisibility constraint, and a well-chosen
+    \( q \) can turn that constraint into a contradiction.
+  </p>
+
+  <p>
+    Germain’s broader plan was to find, for each exponent \( p \), enough
+    auxiliary primes that no solution could survive all the constraints at
+    once. She succeeded for the first case up to \( p = 100 \) — a major
+    advance for its time. The plan was eventually abandoned in favor of the
+    very different approach that led, a century and a half later, to Wiles’s
+    proof. <a href="#ref-germain">[2]</a>
+  </p>
+</section>
+<section id="elliptic">
+  <h2>10. What is an elliptic curve?</h2>
+
+  <details>
+    <summary>What you should take away from this section</summary>
+    <p>
+      You are not expected to compute on elliptic curves. The goal is to
+      understand what an elliptic curve <em>is</em>, why it has a group
+      structure, and how counting its points modulo a prime produces a
+      sequence of integers. That sequence is the key to everything that
+      follows.
+    </p>
+  </details>
+
+  <p>
+    To understand the route to Wiles’s proof, we need a new mathematical
+    object. For our purposes, an <strong>elliptic curve over the rational
+    numbers</strong> can be represented by
+  </p>
+
+  \[ y^2 = x^3 + Ax + B, \qquad 4A^3 + 27B^2 \neq 0, \]
+
+  <p>
+    where \( A \) and \( B \) are rational numbers, together with a
+    <strong>point at infinity</strong>, denoted \( O \), which will serve as
+    the identity element for the group operation defined below.
+  </p>
+
+  <details>
+    <summary>What is the point at infinity?</summary>
+    <p>
+      The equation \( y^2 = x^3 + Ax + B \) describes a curve in the
+      ordinary \( (x, y) \)-plane, but the group law needs one extra point
+      that has no finite coordinates: the point at infinity \( O \), where
+      all vertical lines meet in the projective plane. It plays the role of
+      zero in the group of rational points.
+    </p>
+  </details>
+
+  <p>
+    A <strong>rational point</strong> is a solution whose two coordinates are
+    rational.
+  </p>
+
+  <p>
+    The condition \( 4A^3 + 27B^2 \neq 0 \) ensures that the curve is
+    <strong>nonsingular</strong>: it has no cusp and no crossing of branches.
+    For example,
+  </p>
+
+  \[ E: y^2 = x^3 - x + 1 \]
+
+  <p>
+    is an elliptic curve because \( 4(-1)^3 + 27(1)^2 = 23 \neq 0 \). It
+    contains \( (0, 1) \), \( (1, 1) \), and \( (-1, 1) \). By contrast,
+    \( y^2 = x^3 \) has a cusp at the origin and is not an elliptic curve.
+    Despite its name, an elliptic curve is not an ellipse — the name is a
+    historical accident, unrelated to the shape of the graph.
+  </p>
+
+  <h3>Adding points</h3>
+
+  <p>
+    Elliptic curves have an operation called <strong>addition of
+    points</strong>. For distinct points \( P \) and \( Q \), draw the line
+    through them. In the ordinary case — when the line is not vertical and
+    does not meet the curve tangentially — it meets the cubic at a third
+    point \( R \), counting multiplicity. Reflect \( R \) across the
+    horizontal axis; the result is \( P + Q \). If the line through \( P \)
+    and \( Q \) is vertical, their sum is the point at infinity \( O \). If
+    \( P = Q \), use the tangent line at \( P \) instead.
+  </p>
+
+  <p>
+    On \( y^2 = x^3 - x + 1 \), take \( P = (0, 1) \) and \( Q = (1, 1) \).
+    Their line is \( y = 1 \). Substitution gives
+  </p>
+
+  \[ 1 = x^3 - x + 1, \qquad x(x - 1)(x + 1) = 0. \]
+
+  <p>
+    The third intersection is \( R = (-1, 1) \). Reflecting it gives
+    <strong>\( P + Q = (-1, -1) \)</strong>.
+  </p>
+
+  <p>
+    A vertical line leads to the point at infinity, which acts as zero:
+  </p>
+
+  \[ P + O = P, \qquad P + (-P) = O. \]
+
+  <p>
+    The rational points form an <strong>abelian group</strong> (defined in
+    <a href="#remainders">§3</a>): the operation stays within the set, is
+    associative and commutative, has an identity, and gives every point an
+    inverse. This group structure is what makes elliptic curves useful.
+    Without it, the curve would be a static object; with it, the rational
+    points become a system we can study.
+  </p>
+</section>
+
+<section id="modular">
+  <h2>11. What does “modular” mean?</h2>
+
+  <details>
+    <summary>What you should take away from this section</summary>
+    <p>
+      You are not expected to work with modular forms. The goal is to
+      understand that a modular form is a function whose coefficients encode
+      arithmetic data, and that for certain elliptic curves, the coefficients
+      of the associated modular form match the point counts \( a_p \) defined
+      in this section. That correspondence is the bridge between geometry and
+      analysis.
+    </p>
+  </details>
+
+  <p>
+    A complex number is \( z = u + iv \), with real \( u \) and \( v \) and
+    \( i^2 = -1 \). Its <strong>real part</strong> is \( u \) and its
+    <strong>imaginary part</strong> is \( v \). The <strong>upper
+    half-plane</strong> is the set with \( v > 0 \).
+  </p>
+
+  <p>
+    A <strong>modular form</strong> is a complex-valued function on the upper
+    half-plane satisfying precise analytic and symmetry conditions. It is
+    <strong>holomorphic</strong> — complex differentiable at every point —
+    obeys transformation rules, and satisfies regularity conditions at
+    boundary points called cusps.
+  </p>
+
+  <p>
+    For example, a modular form of integer <strong>weight</strong> \( k \) for
+    the full modular group obeys
+  </p>
+
+  \[ f\!\left(\frac{az + b}{cz + d}\right) = (cz + d)^k f(z) \]
+
+  <p>
+    for integers \( a, b, c, d \) with \( ad - bc = 1 \), together with the
+    analytic and boundary conditions. Weight names the exponent in this rule.
+    The forms associated with elliptic curves have weight \( 2 \) and use
+    particular subgroups of these transformations. The precise transformation
+    rule is not needed for what follows — what matters is that modular forms
+    are functions with a rich internal structure, and that their power series
+    expansions carry arithmetic information.
+  </p>
+
+  <p>
+    These forms have expansions in powers of \( q = e^{2\pi i z} \). Here
+    \( \pi \) is the circle constant. The coefficients can encode arithmetic
+    information about a curve.
+  </p>
+
+  <h3>Counting points modulo a prime</h3>
+
+  <p>
+    For a prime \( p \), the symbol \( \mathbb{F}_p \) denotes arithmetic
+    with remainders modulo \( p \). This is a <strong>field</strong>:
+    addition, subtraction, multiplication, and division by any nonzero class
+    are possible. Every nonzero class has a multiplicative inverse.
+  </p>
+
+  <p>
+    Reduce an appropriate integral equation for the curve modulo \( p \) and
+    count its solutions. At a prime where the reduced curve remains
+    nonsingular, define
+  </p>
+
+  \[ a_p = p + 1 - \#E(\mathbb{F}_p). \]
+
+  <p>
+    The symbol \( \# \) means “number of,” and the point count includes
+    \( O \). For \( E: y^2 = x^3 - x + 1 \) modulo \( 3 \), the right side
+    equals \( 1 \) for all three values of \( x \). Each has two possible
+    values of \( y \), namely \( 1 \) and \( 2 \). Including \( O \) gives
+    \( 7 \) points, so \( a_3 = 3 + 1 - 7 = -3 \). The curve is nonsingular
+    modulo \( 3 \).
+  </p>
+
+  <p>
+    For a modular elliptic curve, these \( a_p \) agree with the coefficients
+    of \( q^p \) in a suitable normalized modular form. This is the payoff: a
+    geometric equation and a complex function carry matching arithmetic
+    information. The curve’s point counts, which come from counting solutions
+    over finite fields, match the coefficients of a complex-analytic object.
+    Two apparently different worlds turn out to describe the same arithmetic.
+  </p>
+</section>
+
+<section id="wiles">
+  <h2>12. Andrew Wiles and the contradiction</h2>
+
+  <p>
+    Suppose there were a counterexample \( a^p + b^p = c^p \) for a prime
+    \( p \ge 5 \). One can associate a <strong>Frey curve</strong> of the
+    form
+  </p>
+
+  \[ y^2 = x(x - a^p)(x + b^p). \]
+
+  <p>
+    Its right side is a cubic. A change of coordinates over the rationals can
+    put it into the form used above. After normalizing a hypothetical
+    counterexample, the associated curve is <strong>semistable</strong>.
+    Roughly, at each prime an appropriate reduced model is either nonsingular
+    or has only a mild singularity called a node, rather than a cusp.
+  </p>
+
+  <p>The logical chain has three steps.</p>
+
+  <ol>
+    <li>
+      A Fermat counterexample would produce this special semistable elliptic
+      curve.
+    </li>
+    <li>
+      Ribet’s theorem, building on Frey’s and Serre’s work, implies that this
+      curve could not be modular.
+    </li>
+    <li>
+      Wiles proved that every semistable elliptic curve over the rational
+      numbers is modular.
+    </li>
+  </ol>
+
+  <p>
+    The same curve would have to be modular and nonmodular. Therefore the
+    assumed counterexample cannot exist. Together with the already
+    established exponents \( 3 \) and \( 4 \), this proves Fermat’s Last
+    Theorem. <a href="#ref-wiles">[3]</a>
+  </p>
+
+  <p>
+    Wiles announced his proof in \( 1993 \). A gap was found, and he and
+    Richard Taylor resolved it in \( 1994 \). The proof and companion work
+    appeared in \( 1995 \). <a href="#ref-biography">[4]</a>
+  </p>
+
+  <p>
+    This is the logical structure of the argument, not a proof of the
+    modularity theorem. Establishing that theorem is the difficult step.
+  </p>
+  <section id="hilbert">
+  <h2>13. Hilbert’s list of problems</h2>
+
+  <p>
+    A <strong>conjecture</strong> is a mathematical statement proposed as true
+    but not yet proved. A <strong>theorem</strong> has been established by
+    proof. The gap between the two can last for centuries, as Fermat’s Last
+    Theorem shows.
+  </p>
+
+  <p>
+    In \( 1900 \), at the International Congress of Mathematicians in Paris,
+    David Hilbert delivered a famous address listing \( 23 \) problems that
+    he believed would guide mathematical research into the new century.
+    Hilbert’s eighth problem concerned prime numbers and included the
+    Riemann Hypothesis. <a href="#ref-riemann">[1]</a>
+  </p>
+
+  <p>
+    Most of Hilbert’s \( 23 \) problems have since been solved. A handful
+    remain open, and the eighth is the most famous of them.
+  </p>
+
+  <p>
+    Two other well-known questions associated with the eighth problem are
+    <strong>Goldbach’s conjecture</strong> — every even integer greater than
+    \( 2 \) is a sum of two primes — and the <strong>twin-prime
+    conjecture</strong> — there are infinitely many prime pairs differing by
+    \( 2 \).
+  </p>
+
+  <p>
+    For example, \( 20 = 3 + 17 = 7 + 13 \), and \( (11, 13) \) is a
+    twin-prime pair. Examples illustrate a claim; a finite list cannot
+    establish a universal statement or a claim of infinitude. What makes both
+    conjectures hard is the absence of a general method: no known technique
+    decides whether a given additive pattern among the primes occurs
+    infinitely often. Partial results exist — Chen’s theorem, the
+    Zhang–Maynard–Tao work on bounded prime gaps — but the full conjectures
+    remain open.
+  </p>
+</section>
+
+<section id="zeta">
+  <h2>14. The Riemann zeta function</h2>
+
+  <p>
+    The tools we have assembled — primes, remainders, factorization in larger
+    number systems — reach their deepest form in the study of a single
+    function. For a real number \( s > 1 \), define
+  </p>
+
+  \[ \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \cdots. \]
+
+  <p>
+    Thus \( \zeta(2) = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots \).
+    An infinite series <strong>converges</strong> when its partial sums
+    approach a finite limit. This series converges for real \( s > 1 \).
+  </p>
+
+  <p>
+    At \( s = 1 \) it becomes the harmonic series
+    \( 1 + \frac{1}{2} + \frac{1}{3} + \cdots \), which
+    <strong>diverges</strong>: its partial sums grow without bound, even
+    though each term shrinks to zero. The standard grouping argument shows
+    this: the terms from \( 1/(2^k + 1) \) to \( 1/2^{k+1} \) sum to more
+    than \( 1/2 \), and there are infinitely many such groups.
+  </p>
+
+  <h3>Why the function contains information about primes</h3>
+
+  <p>For each prime \( p \), the geometric-series identity gives</p>
+
+  \[ \frac{1}{1 - p^{-s}} = 1 + p^{-s} + p^{-2s} + \cdots. \]
+
+  <p>
+    Multiplying these expressions over the primes generates terms such as
+    \( 2^{-2s} 3^{-s} = (2^2 \cdot 3)^{-s} = 12^{-s} \). By unique prime
+    factorization, every positive integer contributes exactly one term. We
+    obtain <strong>Euler’s product</strong>:
+  </p>
+
+  <div class="theorem">
+    \[ \zeta(s) = \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}}, \qquad s > 1. \]
+  </div>
+
+  <p>
+    The symbol \( \prod \) means a product, just as \( \sum \) means a sum.
+    Convergence justifies this infinite expansion. The sum runs over all
+    positive integers; the product runs over primes. Unique factorization
+    connects them. This identity is the bridge between the additive structure
+    of the integers and the multiplicative structure of the primes — and it
+    is why a single function can encode everything we might want to know
+    about how the primes are distributed.
+  </p>
+</section>
+
+<section id="riemann">
+  <h2>15. The Riemann Hypothesis</h2>
+
+  <p>
+    We have arrived at the deepest open question about primes — the one
+    Hilbert placed at the center of his eighth problem, and the one that
+    governs how tightly we can control the prime-counting function
+    \( \pi(N) \).
+  </p>
+
+  <p>
+    The zeta series also converges for complex \( s \) with
+    \( \operatorname{Re}(s) > 1 \). Here \( \operatorname{Re}(s) \) denotes
+    the real part. Through <strong>analytic continuation</strong>,
+    mathematicians extend the function beyond that region: the extension
+    agrees with the original function wherever the original series converges.
+    The extended zeta function is defined throughout the complex plane except
+    for a <strong>pole</strong> at \( s = 1 \), where it becomes unbounded.
+    The pole at \( s = 1 \) is not an accident; it is the analytic shadow of
+    the divergence of the harmonic series.
+  </p>
+
+  <p>
+    A <strong>zero</strong> of a function is an input where its value is
+    zero. The extended zeta function has zeros at \( -2, -4, -6, \ldots \),
+    called its <strong>trivial zeros</strong>. Its other zeros lie in the
+    <strong>critical strip</strong> \( 0 < \operatorname{Re}(s) < 1 \).
+  </p>
+
+  <div class="theorem">
+    <p>
+      <strong>Riemann Hypothesis.</strong> Every nontrivial zero of
+      \( \zeta(s) \) has real part \( \frac{1}{2} \).
+    </p>
+  </div>
+
+  <p>
+    Geometrically, all these zeros would lie on the vertical line
+    \( \operatorname{Re}(s) = \frac{1}{2} \) in the complex plane. The
+    hypothesis remains unproved. <a href="#ref-rh">[5]</a>
+  </p>
+
+  <p>
+    The Prime Number Theorem describes the leading behavior of the prime
+    count. The Riemann Hypothesis would give much tighter control over its
+    <em>fluctuations</em> around a refined approximation. Concretely, it
+    would imply that
+  </p>
+
+  \[ \left| \pi(N) - \operatorname{Li}(N) \right| < C \sqrt{N} \log N \]
+
+  <p>
+    for some constant \( C \), where \( \operatorname{Li}(N) \) is the
+    logarithmic integral
+    \( \int_2^N \frac{dt}{\log t} \) — a better approximation than
+    \( N / \log N \). Without the hypothesis, we can only bound the error
+    much more weakly. The remarkable connection is that the locations of
+    zeros of a complex function govern the distribution of ordinary prime
+    numbers.
+  </p>
+
+  <p>
+    This is where the passus ends, but the story does not. We began with
+    Euclid’s proof that the primes are infinite, moved through remainders and
+    the Chinese Remainder Theorem, and saw how factorizations in larger
+    number systems — the Gaussian integers, then the arithmetic of elliptic
+    curves and modular forms — turned a question about whole-number
+    equations into a question about complex functions. Wiles’s proof of
+    Fermat’s Last Theorem was a victory of that method. The Riemann
+    Hypothesis is the problem that remains.
+  </p>
+</section>
+</section>
+</main>
+</html>

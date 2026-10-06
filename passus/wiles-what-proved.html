@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Origins of Mathematics — What Wiles proved and what remained open">
+  <title>What Wiles Proved — Origins of Mathematics</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body id="top">
+
+  <header>
+    <h1>What Wiles Proved — and What Remained Open</h1>
+    <p class="small course-meta">A companion note for Passus 8</p>
+  </header>
+
+  <div id="navigation-placeholder">
+    <nav class="course-navigation" aria-label="Course navigation">
+      <ul>
+        <li><a data-path="index.html" href="../index.html">Home</a></li>
+        <li><a data-path="resources/syllabus.html" href="../resources/syllabus.html">Syllabus</a></li>
+        <li><a data-path="passus.html" href="../passus.html">Passūs</a></li>
+        <li><a data-path="problem-sets.html" href="../problem-sets.html">Problem Sets</a></li>
+        <li><a data-path="resources.html" href="../resources.html">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+
+    <p class="lead">
+      Andrew Wiles proved Fermat’s Last Theorem in 1994. But the theorem he
+      actually proved was not “Fermat’s Last Theorem” — it was a special case
+      of a much larger conjecture about elliptic curves and modular forms.
+      This note explains exactly what Wiles established, what he did not, and
+      how the remaining gap was closed.
+    </p>
+
+    <nav class="contents" aria-label="Contents">
+      <ol>
+        <li><a href="#taniyama">The conjecture Wiles worked on</a></li>
+        <li><a href="#semistable">What “semistable” means</a></li>
+        <li><a href="#what-wiles">What Wiles proved in 1995</a></li>
+        <li><a href="#gap">The gap and how it was fixed</a></li>
+        <li><a href="#full">The full modularity theorem (2001)</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#references">References</a></li>
+      </ol>
+    </nav>
+
+    <section id="taniyama">
+      <h2>1. The conjecture Wiles worked on</h2>
+
+      <p>
+        In the 1950s, two Japanese mathematicians, Yutaka Taniyama and Goro
+        Shimura, studied the number of solutions of certain equations called
+        elliptic curves. They compared these solution counts to the
+        coefficients of a class of functions called modular forms. The
+        sequences of numbers appeared to match, and Taniyama and Shimura
+        conjectured that this could not be a coincidence: every elliptic
+        curve over the rational numbers should be associated with a modular
+        form. <a href="#ref-taylor">[1]</a>
+      </p>
+
+      <p>
+        The conjecture passed through several formulations and gained
+        contributions from André Weil and others. It became known as the
+        Taniyama–Shimura–Weil conjecture, or TSW. Its modern name is the
+        <strong>modularity theorem</strong>.
+      </p>
+
+      <p>
+        The statement, in one form, is this:
+      </p>
+
+      <div class="theorem">
+        <p>
+          <strong>Modularity theorem (full form).</strong> Every elliptic
+          curve over the rational numbers is modular.
+        </p>
+      </div>
+
+      <p>
+        “Modular” here means that the curve’s sequence of point counts
+        <em>a</em><sub>p</sub> matches the coefficients of a modular form of
+        weight 2. The theorem asserts that this matching always occurs.
+      </p>
+    </section>
+
+    <section id="semistable">
+      <h2>2. What “semistable” means</h2>
+
+      <p>
+        The full modularity theorem was far out of reach in the 1980s. Wiles
+        proved a <em>special case</em>: modularity for <strong>semistable</strong>
+        elliptic curves.
+      </p>
+
+      <p>
+        Semistability is a technical condition about how a curve behaves when
+        reduced modulo various primes. Roughly, an elliptic curve is
+        semistable if, at every prime, the reduced curve is either
+        nonsingular or has only a mild singularity called a <em>node</em> —
+        not a cusp. A node is a point where two branches of the curve cross
+        transversally; a cusp is a sharper singularity where the curve comes
+        to a point.
+      </p>
+
+      <p>
+        Many elliptic curves are semistable; many are not. The Frey curve
+        constructed from a hypothetical counterexample to Fermat’s Last
+        Theorem is always semistable. This is why Wiles’s special case was
+        enough. He did not need modularity for all elliptic curves — only
+        for the one specific semistable curve that a Fermat counterexample
+        would produce.
+      </p>
+    </section>
+
+    <section id="what-wiles">
+      <h2>3. What Wiles proved in 1995</h2>
+
+      <p>
+        Wiles published his proof in two papers in 1995.
+      </p>
+
+      <ul>
+        <li>
+          <strong>“Modular elliptic curves and Fermat’s Last Theorem”</strong>
+          (Annals of Mathematics, 1995). This paper proves the modularity of
+          semistable elliptic curves, and deduces Fermat’s Last Theorem from
+          it via the Frey–Ribet argument.
+        </li>
+        <li>
+          <strong>“Ring theoretic properties of certain Hecke algebras”</strong>
+          (Annals of Mathematics, 1995), co-authored with Richard Taylor.
+          This paper supplies a crucial technical ingredient — the proof
+          that certain Hecke algebras are local complete intersections —
+          that the first paper relies on.
+        </li>
+      </ul>
+
+      <p>
+        Together, these two papers establish:
+      </p>
+
+      <div class="theorem">
+        <p>
+          <strong>Wiles’s theorem (1995).</strong> Every semistable elliptic
+          curve over the rational numbers is modular.
+        </p>
+      </div>
+
+      <p>
+        This was enough to prove Fermat’s Last Theorem. It was <em>not</em>
+        the full modularity theorem. Elliptic curves that are not semistable
+        were not covered.
+      </p>
+    </section>
+
+    <section id="gap">
+      <h2>4. The gap and how it was fixed</h2>
+
+      <p>
+        Wiles announced his proof in June 1993, in a series of three lectures
+        at the Isaac Newton Institute in Cambridge. The title of the lectures
+        gave nothing away — “Modular Forms, Elliptic Curves and Galois
+        Representations” — and Wiles wrote up Fermat’s Last Theorem as the
+        conclusion only at the end. The room erupted in applause.
+        <a href="#ref-abel">[2]</a>
+      </p>
+
+      <p>
+        During peer review, however, a serious gap was found. The error was in
+        a step concerning the construction of a “Euler system” — a technical
+        device Wiles had used to bound the size of certain groups. The gap
+        was identified by Nick Katz and reported to Wiles in August 1993.
+        <a href="#ref-rubin">[3]</a>
+      </p>
+
+      <p>
+        Wiles spent nearly a year trying to repair the Euler system
+        construction, without success. He then returned to an earlier
+        approach he had abandoned. The new approach required proving that
+        certain Hecke algebras are local complete intersections — a
+        condition that implies the isomorphism he needed. Working with his
+        former student Richard Taylor, Wiles completed this proof in 1994.
+        <a href="#ref-rubin">[3]</a>
+      </p>
+
+      <p>
+        The revised proof was submitted on 24 October 1994 and published in
+        May 1995 as a special issue of the <em>Annals of Mathematics</em>.
+      </p>
+    </section>
+
+    <section id="full">
+      <h2>5. The full modularity theorem (2001)</h2>
+
+      <p>
+        Wiles’s theorem covered semistable elliptic curves. The remaining
+        cases — curves that are not semistable — were proved later.
+      </p>
+
+      <ul>
+        <li>
+          <strong>1996:</strong> Fred Diamond extended Wiles’s techniques to
+          a broader class of curves.
+        </li>
+        <li>
+          <strong>1999:</strong> Brian Conrad, Fred Diamond, and Richard
+          Taylor handled further cases.
+        </li>
+        <li>
+          <strong>2001:</strong> Christophe Breuil, Brian Conrad, Fred
+          Diamond, and Richard Taylor published the final paper,
+          “On the modularity of elliptic curves over ℚ: wild 3-adic
+          exercises,” completing the proof. <a href="#ref-bcdt">[4]</a>
+        </li>
+      </ul>
+
+      <p>
+        With this work, the Taniyama–Shimura–Weil conjecture became the
+        <strong>modularity theorem</strong>: every elliptic curve over the
+        rational numbers is modular, with no exceptions.
+      </p>
+
+      <p>
+        So the final picture is:
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>From Wiles to the full modularity theorem</caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Result</th>
+              <th scope="col">Authors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1995</td>
+              <td>Semistable elliptic curves are modular (enough for FLT)</td>
+              <td>Wiles; Taylor–Wiles</td>
+            </tr>
+            <tr>
+              <td>1996–1999</td>
+              <td>Further cases of modularity</td>
+              <td>Diamond; Conrad–Diamond–Taylor</td>
+            </tr>
+            <tr>
+              <td>2001</td>
+              <td>All elliptic curves over ℚ are modular</td>
+              <td>Breuil–Conrad–Diamond–Taylor</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="summary">
+      <h2>6. Summary</h2>
+
+      <ul>
+        <li>
+          <strong>What Wiles proved:</strong> Every semistable elliptic curve
+          over the rational numbers is modular. This was enough to imply
+          Fermat’s Last Theorem.
+        </li>
+        <li>
+          <strong>What he did not prove:</strong> The full modularity theorem
+          for all elliptic curves. Non-semistable curves were not covered by
+          his 1995 papers.
+        </li>
+        <li>
+          <strong>What closed the gap:</strong> Work by Diamond, Conrad,
+          Taylor, and Breuil between 1996 and 2001 extended the methods to
+          all elliptic curves. The full modularity theorem was proved in 2001.
+        </li>
+      </ul>
+
+      <p>
+        The distinction matters because it shows how a famous theorem can be
+        proved through a special case of a much larger conjecture. Wiles did
+        not set out to prove the modularity theorem in full. He set out to
+        prove enough of it to settle Fermat’s Last Theorem, and he succeeded.
+      </p>
+    </section>
+
+    <section id="references">
+      <h2>References and further reading</h2>
+      <ol>
+        <li id="ref-taylor">
+          Taylor & Francis, <em>Wiles’s Strategy and Subsequent
+          Developments</em>, Chapter 23 in <em>Algebraic Number Theory and
+          Fermat’s Last Theorem</em>. On the Taniyama–Shimura–Weil conjecture
+          and Wiles’s approach.
+        </li>
+        <li id="ref-abel">
+          The Abel Prize, <a href="https://abelprize.no/sites/default/files/2021-04/bio_en_2016_A.%20Wiles.pdf">Biography of Andrew Wiles</a>. On the 1993
+          announcement and the subsequent gap.
+        </li>
+        <li id="ref-rubin">
+          Karl Rubin, <a href="http://www.ams.org/notices/199501/rubin.pdf">“Another Step Toward Fermat,”</a> Notices of the AMS, 1995.
+          On the Euler system gap and the Taylor–Wiles repair.
+        </li>
+        <li id="ref-bcdt">
+          Breuil, Conrad, Diamond, and Taylor, <a href="https://en.m.wikipedia.org/wiki/Taniyama-Shimura_Conjecture">“On the modularity of
+          elliptic curves over ℚ: wild 3-adic exercises,”</a> Journal of the
+          American Mathematical Society, 2001.
+        </li>
+      </ol>
+    </section>
+
+    <p class="back-to-top">
+      <a href="#top">↑ Back to top</a>
+    </p>
+
+  </main>
+
+  <div id="footer-placeholder">
+    <footer>
+      <p class="small">
+        © 2026 Irina Shablinsky.
+        Unless otherwise noted, original course materials are licensed under the
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/">
+          Creative Commons Attribution–NonCommercial 4.0 International License
+          (CC BY-NC 4.0).
+        </a>
+        Third-party materials remain subject to their respective copyright and
+        license terms.
+        Last updated: August 2026
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    if (window.location.protocol !== "file:") {
+      const siteRoot = window.location.hostname.endsWith("github.io")
+        ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+        : "/";
+
+      fetch(`${siteRoot}assets/includes/navigation.html`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Navigation request failed: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then(html => {
+          const placeholder = document.getElementById("navigation-placeholder");
+          placeholder.innerHTML = html;
+
+          placeholder.querySelectorAll("a[data-path]").forEach(link => {
+            link.href = `${siteRoot}${link.dataset.path}`;
+          });
+        })
+        .catch(error => console.error("Navigation load failed:", error));
+
+      fetch(`${siteRoot}assets/includes/footer.html`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Footer request failed: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(error => console.error("Footer load failed:", error));
+    }
+  </script>
+
+</body>
+</html>

@@ -1,4 +1,8 @@
-/* Shared styling for course pages */
+/* ==========================================================================
+   Shared styling for course pages
+   ========================================================================== */
+
+/* ---- Base tokens -------------------------------------------------------- */
 
 :root {
   --bg: #ffffff;
@@ -6,6 +10,12 @@
   --link: #0b63c7;
   --link-hover: #084a93;
   --border: #111111;
+
+  /* Narrative lesson accents */
+  --accent: #8a4f2d;
+  --accent-soft: #f5e9dc;
+  --surface: #f7f4ef;
+  --muted: #5f5a54;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,8 +25,15 @@
     --link: #8ab4f8;
     --link-hover: #a9c7ff;
     --border: #e9e9e9;
+
+    --accent: #e5ad83;
+    --accent-soft: #35271f;
+    --surface: #1d1b19;
+    --muted: #c4bdb5;
   }
 }
+
+/* ---- Base layout -------------------------------------------------------- */
 
 html, body {
   background: var(--bg);
@@ -57,8 +74,21 @@ ul ul {
   padding-left: 20px;
 }
 
+ol {
+  margin: 10px 0;
+  padding-left: 28px;
+}
+
+ol li {
+  margin: 10px 0;
+}
+
 li {
   margin: 5px 0;
+}
+
+section {
+  margin-bottom: 35px;
 }
 
 a {
@@ -72,63 +102,11 @@ a:focus {
   color: var(--link-hover);
 }
 
-
-/* Responsive YouTube embeds (optional utility) */
-     @media (prefers-color-scheme: dark) {
-         html {
-           filter: invert(100%);
-        }
-
-        .youtube-container iframe {
-          filter: invert(100%);
-        }
-
-        .noreverse {
-          filter: invert(100%);
-        }
-      }
-      .desmos-container {
-        overflow: hidden;
-        padding-bottom: 100%;
-        position: relative;
-        height: 0;
-      }
-
-      .desmos-container iframe {
-        height: 95%;
-        width: 95%;
-        left: 0;
-        position: absolute;
-        top: 0;
-      }
-
-      .youtube-container {
-        overflow: hidden;
-        padding-bottom: 56.25%;
-        position: relative;
-        height: 0;
-      }
-
-      .youtube-container iframe {
-        height: 100%;
-        width: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-      }
-/* ---- Page utilities (safe defaults) ---- */
-
-ol {
-  margin: 10px 0;
-  padding-left: 28px;
-}
-
-ol li {
-  margin: 10px 0;
-}
+/* ---- Code and preformatted text ---------------------------------------- */
 
 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   font-size: 0.95em;
 }
 
@@ -137,8 +115,14 @@ pre {
   padding: 12px 14px;
   overflow: auto;
   border: 1px solid var(--border);
+  border-left: 4px solid #4a6fa5;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.04);
+  line-height: 1.4;
+}
+
+pre code {
+  color: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -147,20 +131,143 @@ pre {
   }
 }
 
+/* ---- Callouts ----------------------------------------------------------- */
+
 .callout {
-  border-left: 6px solid var(--border);
-  padding: 10px 14px;
-  margin: 14px 0;
-  background: rgba(0, 0, 0, 0.03);
-  border-radius: 10px;
+  border-left: 6px solid #FDFD96;
+  padding: 14px 16px;
+  margin: 20px 0;
+  background: #ffffe0;
+  border-radius: 4px;
+}
+
+.callout h3 {
+  margin-top: 0;
+}
+
+.callout ul {
+  margin: 6px 0 0 18px;
 }
 
 @media (prefers-color-scheme: dark) {
   .callout {
     background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--border);
   }
 }
-/* ---- Grading page components ---- */
+
+.warning {
+  background: #fff4e5;
+  border-left-color: #f39c12;
+}
+
+.tip {
+  background: #eaf7ff;
+  border-left-color: #3498db;
+}
+
+.note {
+  background: #f3f5f7;
+  border-left-color: #888888;
+}
+
+@media (prefers-color-scheme: dark) {
+  .warning,
+  .tip,
+  .note {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ---- Tables ------------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 2px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background: #eef2f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  th {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+table th:first-child,
+table td:first-child {
+  white-space: nowrap;
+}
+
+/* ---- Figures ------------------------------------------------------------ */
+
+figure {
+  margin: 14px 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  margin-top: 6px;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+/* ---- Blocks and quotes -------------------------------------------------- */
+
+blockquote {
+  margin: 10px 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--border);
+}
+
+/* ---- Buttons ------------------------------------------------------------ */
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--link);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: var(--link-hover);
+  text-decoration: none;
+  color: white;
+}
+
+/* ---- Small utilities ---------------------------------------------------- */
+
+.small {
+  font-size: 0.85em;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9em;
+  margin-right: 8px;
+}
+
+/* ---- Card / grid (grading pages) --------------------------------------- */
 
 .grid {
   display: grid;
@@ -190,216 +297,98 @@ pre {
   margin-top: 0;
 }
 
-.badge {
-  display: inline-block;
-  padding: 2px 10px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 0.9em;
-  margin-right: 8px;
+/* ---- Responsive embeds (YouTube / Desmos) ------------------------------ */
+
+.youtube-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
-.small {
-  font-size: 0.85em;
+.youtube-container iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
-blockquote {
-  margin: 10px 0;
-  padding-left: 12px;
-  border-left: 4px solid var(--border);
-}
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--link);
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 10px;
-    font-weight: bold;
+.desmos-container {
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+  height: 0;
 }
 
-.button:hover {
-    background-color: var(--link-hover);
-    text-decoration: none;
-    color: white;
-}
-/* ---- Lecture content utilities ---- */
-
-figure {
-  margin: 14px 0;
+.desmos-container iframe {
+  height: 95%;
+  width: 95%;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
-figure img {
-  max-width: 100%;
-  height: auto;
-}
+/* ---- Binary grid (number-systems lecture) ------------------------------ */
 
-figcaption {
-  margin-top: 6px;
-  font-size: 0.95em;
-  opacity: 0.9;
-}
-footer {
+.binary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 70px);
+  justify-content: center;
+  margin: 20px 0;
   text-align: center;
-  margin-top: 4rem;
-  font-size: 0.9em;
-  color: #666;
-}
-.site-footer {
-  text-align: center;
-  margin-top: 4rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #ccc;
-  font-size: 0.9em;
-  color: #666;
-}
-.site-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #ccc;
+  font-family: monospace;
 }
 
-.site-header h1 {
-  margin-bottom: 0.3rem;
+.binary-grid div {
+  border: 2px solid #444;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  background: #fafafa;
 }
 
-.course-meta {
-  font-size: 0.9em;
-  color: #666;
+.binary-grid .bit {
+  font-weight: bold;
+  background: #eef3ff;
 }
-/* Live format validation (while typing) */
+
+.grid-caption {
+  text-align: center;
+  font-family: monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  .binary-grid div {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--border);
+  }
+  .binary-grid .bit {
+    background: rgba(138, 180, 248, 0.15);
+  }
+}
+
+/* ---- Format validation (exercise pages) -------------------------------- */
+
 main .exercise input.format-bad {
   border: 3px solid #ff0000 !important;
   background: rgba(255, 0, 0, 0.15) !important;
   box-shadow: 0 0 6px rgba(255, 0, 0, 0.6) !important;
 }
+
 main .exercise input.format-ok {
   border: 3px solid #00b050 !important;
   background: rgba(0, 176, 80, 0.12) !important;
   box-shadow: 0 0 6px rgba(0, 176, 80, 0.5) !important;
 }
-/* Hint button highlight when format is wrong */
+
 main .exercise button.hint-glow {
   background: #ff9800 !important;
   box-shadow: 0 0 8px rgba(255, 152, 0, 0.9);
   transform: scale(1.05);
 }
-.binary-grid{
-display:grid;
-grid-template-columns:repeat(6,60px);
-text-align:center;
-font-family:monospace;
-}
 
-.binary-grid div{
-border:1px solid #444;
-padding:8px;
-}
-.binary-grid{
-  display:grid;
-  grid-template-columns: repeat(6, 70px);
-  justify-content:center;
-  margin:20px 0;
-  font-family:monospace;
-}
-
-.binary-grid div{
-  border:2px solid #444;
-  padding:10px;
-  text-align:center;
-  font-size:18px;
-  background:#fafafa;
-}
-
-.binary-grid .bit{
-  font-weight:bold;
-  background:#eef3ff;
-}
-
-.grid-caption{
-  text-align:center;
-  font-family:monospace;
-}
-pre {
-  background: #f6f8fa;
-  padding: 14px;
-  border-radius: 6px;
-  overflow-x: auto;
-  border-left: 4px solid #4a6fa5;
-  line-height: 1.4;
-}
-
-code {
-  font-family: "Courier New", monospace;
-  font-size: 0.95em;
-}
-
-pre code {
-  color: #222;
-}
-/* ===========================
-   Tables
-   =========================== */
-
-table {
-     border-collapse: collapse;
-  width: 100%;
-}
-
-th,
-td {
-    border: 2px solid var(--border);
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-    background: #eef2f7;
-}
-
-table th:first-child,
-table td:first-child {
-    white-space: nowrap;
-}
-section {
-  margin-bottom: 35px;
-}
-.callout {
-  background: #ffffe0;
-  border-left: 5px solid #FDFD96;
-  padding: 14px 16px;
-  margin: 20px 0;
-  border-radius: 4px;
-}
-
-.callout h3 {
-  margin-top: 0;
-}
-
-.callout ul {
-  margin: 6px 0 0 18px;
-}
-.warning {
-  background: #fff4e5;
-  border-left: 5px solid #f39c12;
-}
-
-.tip {
-  background: #eaf7ff;
-  border-left: 5px solid #3498db;
-}
-
-.note {
-  background: #f3f5f7;
-  border-left: 5px solid #888;
-  
-}
-/*=============================
-       Navigation
-===============================*/
-
+/* ---- Navigation --------------------------------------------------------- */
 
 .course-navigation {
   margin: 1rem 0 2rem;
@@ -431,9 +420,9 @@ section {
     flex-direction: column;
   }
 }
-/*======================
-   Announcement box
-========================*/
+
+/* ---- Announcement box --------------------------------------------------- */
+
 .announcements {
   margin-top: 2rem;
   padding: 1rem 1.25rem;
@@ -450,32 +439,18 @@ section {
   margin-bottom: 0;
 }
 
-/* ===========================
-   Narrative lesson components
-   =========================== */
-
-:root {
-  --accent: #8a4f2d;
-  --accent-soft: #f5e9dc;
-  --surface: #f7f4ef;
-  --muted: #5f5a54;
-}
-
 @media (prefers-color-scheme: dark) {
-  :root {
-    --accent: #e5ad83;
-    --accent-soft: #35271f;
-    --surface: #1d1b19;
-    --muted: #c4bdb5;
+  .announcements {
+    background-color: rgba(255, 255, 255, 0.05);
   }
 }
+
+/* ---- Narrative lesson components --------------------------------------- */
 
 .lesson-header {
   margin: 2rem 0 2.75rem;
   text-align: left;
 }
-
-
 
 .eyebrow,
 .section-kicker {
@@ -514,8 +489,6 @@ section {
   scroll-margin-top: 1rem;
   margin-bottom: 4.5rem;
 }
-
-
 
 .lead {
   font-size: 1.12rem;
@@ -648,16 +621,132 @@ mjx-container[display="true"] {
   font-size: 1.08rem;
 }
 
+/* ---- Page utility classes (passus pages) -------------------------------- */
+
+.contents ol {
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.contents li {
+  break-inside: avoid;
+}
+
+.math {
+  text-align: center;
+  font-size: 1.08em;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.theorem {
+  border-left: 3px solid var(--text);
+  padding: 0.2rem 1rem;
+  margin: 1.3rem 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+h2 {
+  margin-top: 2.6rem;
+  scroll-margin-top: 1rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Headers / footers ------------------------------------------------- */
+
+.site-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.site-header h1 {
+  margin-bottom: 0.3rem;
+}
+
+.course-meta {
+  font-size: 0.9em;
+  color: #666;
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* ---- Responsive tweaks -------------------------------------------------- */
+
+@media (max-width: 560px) {
+  .contents ol {
+    columns: 1;
+  }
+  body {
+    padding: 16px;
+  }
+  .math {
+    font-size: 1em;
+  }
+}
+
 @media (max-width: 520px) {
   body {
     padding: 16px;
   }
-
   .lesson-nav ol {
     display: block;
   }
-
   .glyph-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Print -------------------------------------------------------------- */
+
+@media print {
+  .contents,
+  #navigation-placeholder,
+  .back-to-top {
+    display: none;
+  }
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+  tr,
+  .theorem {
+    break-inside: avoid;
+  }
+  a {
+    color: inherit;
   }
 }
