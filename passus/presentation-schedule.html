@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Presentation Schedule</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .presentation-schedule { width: 100%; border-collapse: collapse; margin-block: 1.5rem; }
+    .presentation-schedule caption { text-align: left; font-weight: bold; margin-bottom: 0.75rem; }
+    .presentation-schedule th, .presentation-schedule td { padding: 0.75rem; border: 1px solid #d9d9d9; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    .presentation-schedule thead { background: #f2f2f2; color: #111; }
+    .presentation-schedule td:first-child { white-space: nowrap; }
+    @media (max-width: 480px) {
+      .presentation-schedule th, .presentation-schedule td { padding: 0.45rem; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <h1>Research Project Presentation Schedule</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <table class="presentation-schedule">
+      <caption>Fall 2026 presentation schedule</caption>
+      <thead>
+        <tr><th scope="col">Date</th><th scope="col">Team</th><th scope="col">Topic</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>10/20</td><td>Caitlin &amp; George B</td><td>Magic Squares: Evolution and Significance</td></tr>
+        <tr><td>10/23</td><td>Ryan P</td><td>TBD</td></tr>
+        <tr><td>10/27</td><td>George &amp; Tommy</td><td>The Development of Complex Numbers During the Renaissance</td></tr>
+        <tr><td>10/30</td><td>Ryan D</td><td>Egyptian Unit Fraction</td></tr>
+        <tr><td>11/10</td><td>Scott &amp; Jordan &amp; Kristian</td><td>The Josephus Problem</td></tr>
+        <tr><td>11/10</td><td>Sam Kaplan</td><td>The Geometry of Islamic Tiling</td></tr>
+        <tr><td>11/13</td><td>Jayden</td><td>The Origins of Zero</td></tr>
+        <tr><td>11/13</td><td>Brandan</td><td>Graph Theory: Order produced from Disorder</td></tr>
+        <tr><td>11/17</td><td>Evan &amp; Joseph</td><td>Godel&#x27;s Incompleteness Theorem</td></tr>
+      </tbody>
+    </table>
+    
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
