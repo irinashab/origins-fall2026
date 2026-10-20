@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Passus 9 — Algebra and Quadratic Equations</title>
+  <link rel="stylesheet" href="../assets/style.css"><script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+body {font-family:Arial,sans-serif;line-height:1.65;max-width:800px;margin:0 auto;padding:20px;}
+figure {margin:1.5rem auto;max-width:600px;} figure svg {display:block;width:100%;height:auto;max-height:355px;}
+figcaption {text-align:center;font-size:.95rem;margin-top:.6rem;}
+.table-wrap {overflow-x:auto;} table {border-collapse:collapse;width:100%;margin:1rem 0;} th,td {padding:.6rem .8rem;border:1px solid #aaa;text-align:left;}
+section {margin-top:2.4rem;} .contents {margin:1.5rem 0;} details {margin:1rem 0;padding:.7rem 1rem;border:1px solid #aaa;} summary {cursor:pointer;font-weight:bold;}
+mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 0;}
+@media print {#navigation-placeholder,#footer-placeholder,.contents,.back-to-top {display:none;} body {max-width:none;font-size:11pt;} h2,h3 {break-after:avoid;} figure,table {break-inside:avoid;}}
+</style>
+</head>
+<body id="top">
+  <header>
+    <h1>Passus 9 — Algebra and Quadratic Equations</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <nav class="contents" aria-label="Passus contents">
+<ol>
+<li><a href="#algebra">From problems to algebra</a></li>
+<li><a href="#shares">An unknown share</a></li>
+<li><a href="#restoration">Restoration and balancing</a></li>
+<li><a href="#square">Completing a square</a></li>
+<li><a href="#factors">Multiplication and factoring</a></li>
+<li><a href="#average">Finding the roots through their average</a></li>
+<li><a href="#general">A general method</a></li>
+<li><a href="#complex">When real numbers are not enough</a></li>
+<li><a href="#practice">Questions and exercises</a></li>
+<li><a href="#references">Sources and further reading</a></li>
+</ol>
+</nav>
+<p>Earlier passūs examined numerical procedures and geometric arguments that we can now express as equations. Here we turn to algebra itself: how can we describe an unknown quantity, transform an equation without changing its solutions, and develop a method that works for a whole class of problems? We begin with al-Khwārizmī and then connect geometric completion to a modern way of solving quadratic equations without guessing their factors.</p>
+
+<p><strong>Companion handout:</strong> <a href="handouts/quadratic-equations.pdf">Quadratic Equations (PDF)</a>, incorporated into sections 5–8 below.</p>
+
+<section id="algebra">
+<h2>1. From problems to algebra</h2>
+<p>It is useful to distinguish solving a particular problem from organizing methods for many problems of the same kind. A numerical recipe may contain an algebraic idea even when its author does not use letters, an equals sign, or our modern notion of a polynomial. Rewriting that recipe in symbols can help us understand it, but the symbols belong to our explanation.</p>
+<p>Al-Khwārizmī worked in ninth-century Baghdad. His treatise on calculation by <em>al-jabr</em> and <em>al-muqābala</em> organized methods for linear and quadratic problems, including practical applications. The word <em>algebra</em> comes from <em>al-jabr</em>; <em>algorithm</em> comes through the Latin rendering of his name. His exposition was verbal, not written in the symbolic notation used below.</p>
+<p>We should not describe this as a sudden invention of all algebra. Earlier mathematical traditions already contained procedures for unknown quantities. The important development here is the systematic treatment and justification of classes of equations. Nor should we confuse this stage with the much later development of modern abstract algebra.</p>
+</section>
+
+<section id="shares">
+<h2>2. An unknown share</h2>
+<p>Consider a simplified inheritance calculation. Suppose an estate of 1000 dirhams is to be divided among three sons and two daughters, with each son receiving twice a daughter's share. We assume that this entire amount is available for these children under the stated rule; this is a mathematical model, not a complete treatment of inheritance law.</p>
+<p>Let \(x\) be one daughter's share. Then each son receives \(2x\), so</p>
+\[3(2x)+2x=1000,\qquad 8x=1000,\qquad x=125.\]
+<p>Each daughter receives 125 dirhams and each son receives 250. The check is part of the solution:</p>
+\[2(125)+3(250)=1000.\]
+<p>The same reasoning works when the total is less convenient. If 127,534 dirhams are shared among four sons and five daughters under the same rule, then</p>
+\[4(2x)+5x=127534,\qquad x=\frac{127534}{13}=9810\frac4{13}.\]
+<p>Each son's share is \(19620\frac8{13}\) dirhams. These are exact mathematical shares; practical subdivision of currency is a separate question. The point of the method is that changing the numbers does not require inventing a new argument.</p>
+<details><summary>Connection with false position</summary>
+<p>Try a daughter's share of 1. The three sons and two daughters would then receive a total of 8. To reach 1000, multiply every share by \(1000/8=125\). This works because the total is proportional to the trial share. The equation \(8x=1000\) expresses the same structure.</p>
+</details>
+</section>
+
+<section id="restoration">
+<h2>3. Restoration and balancing</h2>
+<p>In historical usage, <em>al-jabr</em>, often translated as restoration or completion, removes a subtracted quantity by adding it to both sides. For example, in modern notation,</p>
+\[x-5=11\quad\Longrightarrow\quad x-5+5=11+5\quad\Longrightarrow\quad x=16.\]
+<p><em>Al-muqābala</em>, often translated as balancing or reduction, cancels like quantities on opposite sides:</p>
+\[x^2+5x=3x+12\quad\Longrightarrow\quad x^2+2x=12.\]
+<p>Dividing \(8x=1000\) by 8 is also a valid transformation, but we should not identify every simplifying operation with the historical term <em>al-jabr</em>. In each case, ask why the operation preserves the solution set. Adding or subtracting the same quantity on both sides is reversible, as is division by a known nonzero number.</p>
+<p>Al-Khwārizmī separated equations into six types involving positive squares, roots, and numbers. In the following modern translations, \(a,b,c\) are positive:</p>
+<div class="table-wrap"><table>
+<caption>Six historical equation types in modern notation</caption>
+<thead><tr><th scope="col">Description</th><th scope="col">Equation</th></tr></thead>
+<tbody>
+<tr><td>Squares equal roots</td><td>\(ax^2=bx\)</td></tr>
+<tr><td>Squares equal numbers</td><td>\(ax^2=c\)</td></tr>
+<tr><td>Roots equal numbers</td><td>\(bx=c\)</td></tr>
+<tr><td>Squares and roots equal numbers</td><td>\(ax^2+bx=c\)</td></tr>
+<tr><td>Squares and numbers equal roots</td><td>\(ax^2+c=bx\)</td></tr>
+<tr><td>Roots and numbers equal squares</td><td>\(bx+c=ax^2\)</td></tr>
+</tbody></table></div>
+<p>Here “roots” means multiples of the unknown quantity, not a list of solutions. The separation reflects a treatment using positive quantities. Modern signed coefficients let us gather these cases into one notation. <a href="#ref-history">[2]</a></p>
+</section>
+
+<section id="square">
+<h2>4. Completing a square</h2>
+<p>Consider</p>
+\[x^2+10x=39.\]
+<p>For a positive length \(x\), draw an \(x\)-by-\(x\) square and split the area \(10x\) into two rectangles, each measuring \(x\) by 5. Attach them along adjacent sides. The missing corner is a 5-by-5 square.</p>
+<figure>
+<svg viewBox="0 0 450 355" role="img" aria-labelledby="square-title square-desc">
+<title id="square-title">Completing the square for x squared plus ten x</title>
+<desc id="square-desc">An x by x square with two rectangles of width five forms a larger square except for a missing corner of area twenty five.</desc>
+<g stroke="currentColor" stroke-width="2">
+<rect x="65" y="40" width="200" height="200" fill="#dce9f5"/>
+<rect x="265" y="40" width="100" height="200" fill="#f6e5c9"/>
+<rect x="65" y="240" width="200" height="100" fill="#f6e5c9"/>
+<rect x="265" y="240" width="100" height="100" fill="#e2efd9" stroke-dasharray="6 4"/>
+</g>
+<g fill="#111" text-anchor="middle" font-family="Arial, sans-serif" font-size="22">
+<text x="165" y="145">x²</text><text x="315" y="145">5x</text><text x="165" y="298">5x</text><text x="315" y="298">25</text>
+</g><g fill="currentColor" text-anchor="middle" font-family="Arial, sans-serif" font-size="20"><text x="165" y="28">x</text><text x="315" y="28">5</text><text x="43" y="145">x</text><text x="43" y="298">5</text></g>
+</svg>
+<figcaption>Adding 25 completes a square of side \(x+5\). The drawing represents positive lengths.</figcaption>
+</figure>
+<p>Adding the corner to both sides of the area equation gives</p>
+\[x^2+10x+25=39+25,\qquad (x+5)^2=64.\]
+<p>For a positive length, \(x+5=8\), so \(x=3\). Modern algebra also permits \(x+5=-8\), giving \(x=-13\). Both numbers solve the original equation, but the negative solution is not a side length in this diagram.</p>
+<p>This distinction matters historically: a geometric argument involving positive lengths and a modern equation over all real numbers need not admit the same kinds of answers.</p>
+<h3>A historical example with two positive solutions</h3>
+<p>Al-Khwārizmī discusses a case that we write as \(x^2+21=10x\). Halving 10 gives 5; comparing \(5^2\) with 21 gives 4, whose square root is 2. The two values are \(5-2=3\) and \(5+2=7\). <a href="#ref-example">[3]</a> We can express the calculation as</p>
+\[x^2-10x+25=4,\qquad (x-5)^2=4,\qquad x=5\pm2.\]
+<p>Both roots are equally far from 5. That observation leads directly to the next method.</p>
+</section>
+
+<section id="factors">
+<h2>5. Multiplication and factoring</h2>
+<p>The distributive law gives</p>
+\[(x-3)(x-4)=x^2-4x-3x+12=x^2-7x+12.\]
+<p>The coefficient \(-7\) is the negative of the sum of 3 and 4, and the constant 12 is their product. In general,</p>
+\[(x-r)(x-s)=x^2-(r+s)x+rs.\]
+<p>This identity suggests how to work backwards. If we find numbers \(r,s\) with the right sum and product, we obtain a factorization and can solve the equation.</p>
+<p>For real or complex numbers, the <strong>zero-product property</strong> says that \(ab=0\) implies \(a=0\) or \(b=0\). Indeed, if \(a\ne0\), division by \(a\) gives \(b=0\). Therefore</p>
+\[x^2-7x+12=0\quad\Longleftrightarrow\quad (x-3)(x-4)=0\]
+<p>has exactly the solutions \(x=3\) and \(x=4\), not \(-3\) and \(-4\).</p>
+<p>A second identity will do most of the work in what follows:</p>
+\[(m+u)(m-u)=m^2-u^2.\]
+<p>The two middle terms cancel. This is the difference-of-squares identity, written in a form that keeps the common midpoint \(m\) visible.</p>
+</section>
+
+<section id="average">
+<h2>6. Finding the roots through their average</h2>
+<p>Now solve</p>
+\[x^2-2x-24=0.\]
+<p>To factor it as \((x-r)(x-s)\), we need \(r+s=2\) and \(rs=-24\). Rather than guess factors of 24, use the sum first. Two real numbers with sum 2 have average 1, so write the candidates as</p>
+\[r=1+u,\qquad s=1-u.\]
+<p>The sum is automatically correct. The product condition becomes</p>
+\[(1+u)(1-u)=-24,\qquad 1-u^2=-24,\qquad u^2=25.\]
+<p>Choose \(u=5\). Then \(r=6\) and \(s=-4\), so</p>
+\[x^2-2x-24=(x-6)(x+4),\qquad \boxed{x=6\text{ or }x=-4}.\]
+<figure>
+<svg viewBox="0 0 620 130" role="img" aria-labelledby="roots-title roots-desc">
+<title id="roots-title">The roots are symmetric about their average</title>
+<desc id="roots-desc">Negative four and six are each five units from their average, one.</desc>
+<g stroke="currentColor" fill="none" stroke-width="2"><path d="M35 65H585M70 55V75M310 55V75M550 55V75"/><path d="M70 35H310M310 35H550"/></g>
+<g fill="currentColor"><circle cx="70" cy="65" r="5"/><circle cx="550" cy="65" r="5"/></g>
+<g fill="currentColor" font-family="Arial, sans-serif" text-anchor="middle" font-size="20"><text x="70" y="104">−4</text><text x="310" y="104">1</text><text x="550" y="104">6</text><text x="190" y="26">5 units</text><text x="430" y="26">5 units</text></g>
+</svg>
+<figcaption>The average fixes the center; the product determines the distance from it.</figcaption>
+</figure>
+<p>Choosing \(u=-5\) would only exchange the two roots. We did not assume that a factorization already existed: we constructed two numbers and checked their sum and product. The resulting identity and zero-product property establish the complete solution set.</p>
+<details><summary>Check both answers directly</summary>
+\[6^2-2(6)-24=0,\qquad (-4)^2-2(-4)-24=0.\]
+<p>Substitution confirms that both work. The factorization additionally explains why no other roots are possible.</p>
+</details>
+</section>
+
+<section id="general">
+<h2>7. A general method</h2>
+<p>Let \(ax^2+bx+c=0\), with real coefficients and \(a\ne0\). Divide by \(a\), and write</p>
+\[x^2+Bx+C=0,\qquad B=\frac ba,\qquad C=\frac ca.\]
+<p>The desired roots must have sum \(-B\), so their average is \(m=-B/2\). Seek them as \(m+u\) and \(m-u\). Their product must be \(C\):</p>
+\[m^2-u^2=C,\qquad u^2=m^2-C=\frac{B^2}{4}-C.\]
+<p>Put \(D=m^2-C\). For real coefficients, there are three possibilities:</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Value of \(D\)</th><th scope="col">Roots</th></tr></thead>
+<tbody><tr><td>\(D&gt;0\)</td><td>Two distinct real roots \(m\pm\sqrt D\)</td></tr>
+<tr><td>\(D=0\)</td><td>One distinct real root \(m\), appearing twice in \((x-m)^2\)</td></tr>
+<tr><td>\(D&lt;0\)</td><td>No real roots; two nonreal complex roots</td></tr></tbody>
+</table></div>
+<p>For example, \(x^2-6x+7=0\) gives \(m=3\), \(D=9-7=2\), and roots \(3\pm\sqrt2\). A failure to find integer factors does not mean that real roots do not exist.</p>
+<p>The same computation is completing the square:</p>
+\[x^2+Bx+C=(x-m)^2-D.\]
+<p>It also recovers the familiar quadratic formula. Since \(D=(b^2-4ac)/(4a^2)\), the roots, as an unordered pair, are</p>
+\[\boxed{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}.\]
+<p>The discriminant \(\Delta=b^2-4ac\) has the same sign as \(D\), because \(4a^2&gt;0\). The formula summarizes the reasoning: normalize the quadratic, find the average, and determine the square of the displacement.</p>
+</section>
+
+<section id="complex">
+<h2>8. When real numbers are not enough</h2>
+<p>Return to the example</p>
+\[\frac{x^2}{2}-2x+3=0.\]
+<p>Multiplication by 2 preserves the solutions and gives \(x^2-4x+6=0\). The proposed roots have sum 4 and average 2, so write them as \(2+u\) and \(2-u\). Their product must be 6:</p>
+\[(2+u)(2-u)=6,\qquad 4-u^2=6,\qquad u^2=-2.\]
+<p>No real number satisfies this equation. Thus the original quadratic has <strong>no real roots</strong>. If we work in the complex numbers, with \(i^2=-1\), we can choose \(u=i\sqrt2\). The two roots are then</p>
+\[\boxed{x=2+i\sqrt2\quad\text{or}\quad x=2-i\sqrt2}.\]
+<p>We can verify the factorization without assuming a general theorem about polynomials:</p>
+\[\begin{aligned}
+(x-(2+i\sqrt2))(x-(2-i\sqrt2))
+&=(x-2)^2-(i\sqrt2)^2\\
+&=(x-2)^2+2\\
+&=x^2-4x+6.
+\end{aligned}\]
+<p>Every quadratic with real coefficients factors into linear factors over the complex numbers, counting a repeated root twice. Over the real numbers, it does so only when its discriminant is nonnegative.</p>
+<p>The modern treatment has combined several ideas: unknown quantities, equivalent equations, polynomial identities, and an expanded number system. The historical resemblance between an older procedure and a modern method is worth studying, but it does not mean that earlier mathematicians used our notation or accepted the same kinds of numbers. The average-and-product presentation here is also discussed by Po-Shen Loh, who distinguishes its pedagogical organization from the earlier history of its component ideas. <a href="#ref-loh">[4]</a></p>
+</section>
+
+<section id="practice">
+<h2>9. Questions and exercises</h2>
+<ol>
+<li>Under the simplified sharing rule in §2, divide 2600 dirhams among two sons and four daughters. Write an equation, solve it, and check the total.</li>
+<li>Use restoration to solve \(3x-7=20\). Use balancing to simplify \(x^2+7x=2x+24\). Explain why each transformation preserves the solutions.</li>
+<li>Draw an area diagram for \(x^2+6x=16\). What corner completes the square? Find all real solutions, then identify the one represented by a positive length.</li>
+<li>Use the average and product method to solve \(x^2-8x+7=0\), \(x^2+4x-12=0\), and \(2x^2-12x+14=0\). Check each factorization.</li>
+<li>Apply the method to \(x^2-6x+9=0\) and \(x^2-6x+13=0\). Explain the difference between a repeated root and no real roots. For the second equation, give the complex roots.</li>
+<li>A student says, “Every quadratic can be factored, so I should always find two integers whose sum and product work.” Identify both missing qualifications and give counterexamples.</li>
+<li>Explain the relationship between completing the square and writing the roots as \(m+u\) and \(m-u\). Why does choosing just one square root for \(u\) still produce both roots?</li>
+<li>What does a modern symbolic reconstruction tell us about an old procedure? What additional evidence would be needed to attribute the modern argument, or its accepted kinds of solutions, to a historical author?</li>
+</ol>
+</section>
+
+<section id="references">
+<h2>10. Sources and further reading</h2>
+<ol>
+<li id="ref-draft">Jay Cummings, <cite>Math History: A Long-Form Mathematics Textbook</cite>, p. 339 in the Kindle citation supplied with the draft. Background reading on the development of algebra and practical problems. The discussion above is rewritten and distinguishes historical operations from modern notation.</li>
+<li id="ref-history"><a href="https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/">MacTutor History of Mathematics: Al-Khwārizmī</a>. Historical context, terminology, and equation types.</li>
+<li id="ref-example"><a href="https://mathshistory.st-andrews.ac.uk/Extras/Al-Khwarizmi_quadratics/">Al-Khwārizmī and quadratic equations</a>. An excerpt illustrating the case with two positive solutions.</li>
+<li id="ref-loh">Po-Shen Loh, <a href="https://poshenloh.com/quadratic">A Different Way to Solve Quadratic Equations</a> and <a href="https://www.poshenloh.com/quadraticrelated/">Related Work</a>. A modern presentation of the average-and-product method and discussion of earlier work.</li>
+<li id="ref-handout"><a href="handouts/quadratic-equations.pdf"><cite>Quadratic Equations</cite> — course handout (PDF)</a>. The worked examples and progression through factoring, average and product, and complex roots are incorporated here.</li>
+</ol>
+</section>
+
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
