@@ -50,8 +50,6 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 
 </nav>
 <p>Earlier passūs examined numerical procedures and geometric arguments that we can now express as equations. Here we turn to algebra itself: how can we describe an unknown quantity, transform an equation without changing its solutions, and develop a method that works for a whole class of problems? We begin with al-Khwārizmī and then connect geometric completion to a modern way of solving quadratic equations without guessing their factors.</p>
 
-<p><strong>Companion handout:</strong> <a href="handouts/quadratic-equations.pdf">Quadratic Equations (PDF)</a>, incorporated into sections 5–8 below.</p>
-
 <section id="algebra">
 <h2>1. From problems to algebra</h2>
 <p>It is useful to distinguish solving a particular problem from organizing methods for many problems of the same kind. A numerical recipe may contain an algebraic idea even when its author does not use letters, an equals sign, or our modern notion of a polynomial. Rewriting that recipe in symbols can help us understand it, but the symbols belong to our explanation.</p>
@@ -134,9 +132,16 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 
 <p>The coefficient \(-7\) is the negative of the sum of 3 and 4, and the constant 12 is their product. In general,</p>
 \[(x-r)(x-s)=x^2-(r+s)x+rs.\]
 <p>This identity suggests how to work backwards. If we find numbers \(r,s\) with the right sum and product, we obtain a factorization and can solve the equation.</p>
-<p>For real or complex numbers, the <strong>zero-product property</strong> says that \(ab=0\) implies \(a=0\) or \(b=0\). Indeed, if \(a\ne0\), division by \(a\) gives \(b=0\). Therefore</p>
+<p>For real or complex numbers, the <strong>zero-product property</strong> says that \(ab=0\) implies \(a=0\) or \(b=0\).</p>
+<details><summary>Why the zero-product property holds</summary>
+<p>If \(ab=0\) and \(a\ne0\), dividing both sides by \(a\) gives \(b=0\). Thus at least one factor must be zero. This uses the assumption that division by a nonzero number is valid.</p>
+</details>
+<p>Therefore</p>
 \[x^2-7x+12=0\quad\Longleftrightarrow\quad (x-3)(x-4)=0\]
 <p>has exactly the solutions \(x=3\) and \(x=4\), not \(-3\) and \(-4\).</p>
+<p>The same cancellation appears when the two factors are built around a common expression. For instance,</p>
+\[(x+3u)(x-3u)=x^2-3ux+3ux-9u^2=x^2-9u^2.\]
+<p>The two middle terms cancel because they are opposites. This is a special case of the identity in the next paragraph.</p>
 <p>A second identity will do most of the work in what follows:</p>
 \[(m+u)(m-u)=m^2-u^2.\]
 <p>The two middle terms cancel. This is the difference-of-squares identity, written in a form that keeps the common midpoint \(m\) visible.</p>
@@ -162,7 +167,7 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 
 </svg>
 <figcaption>The average fixes the center; the product determines the distance from it.</figcaption>
 </figure>
-<p>Choosing \(u=-5\) would only exchange the two roots. We did not assume that a factorization already existed: we constructed two numbers and checked their sum and product. The resulting identity and zero-product property establish the complete solution set.</p>
+<p>Choosing \(u=-5\) would only exchange the two roots, so one square root is enough. We did not assume that a factorization already existed: we constructed two numbers and checked their sum and product. The resulting identity and zero-product property establish the complete solution set.</p>
 <details><summary>Check both answers directly</summary>
 \[6^2-2(6)-24=0,\qquad (-4)^2-2(-4)-24=0.\]
 <p>Substitution confirms that both work. The factorization additionally explains why no other roots are possible.</p>
@@ -185,7 +190,7 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 
 <p>For example, \(x^2-6x+7=0\) gives \(m=3\), \(D=9-7=2\), and roots \(3\pm\sqrt2\). A failure to find integer factors does not mean that real roots do not exist.</p>
 <p>The same computation is completing the square:</p>
 \[x^2+Bx+C=(x-m)^2-D.\]
-<p>It also recovers the familiar quadratic formula. Since \(D=(b^2-4ac)/(4a^2)\), the roots, as an unordered pair, are</p>
+<p>It also recovers the familiar quadratic formula. Since \(D=(b^2-4ac)/(4a^2)=\Delta/(4a^2)\), where \(\Delta=b^2-4ac\), the roots, as an unordered pair, are</p>
 \[\boxed{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}.\]
 <p>The discriminant \(\Delta=b^2-4ac\) has the same sign as \(D\), because \(4a^2&gt;0\). The formula summarizes the reasoning: normalize the quadratic, find the average, and determine the square of the displacement.</p>
 </section>
@@ -206,6 +211,7 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 
 &=x^2-4x+6.
 \end{aligned}\]
 <p>Every quadratic with real coefficients factors into linear factors over the complex numbers, counting a repeated root twice. Over the real numbers, it does so only when its discriminant is nonnegative.</p>
+<p>The Babylonians and Greeks already knew how to find two numbers from their sum and product in particular cases. That trick is older than the general quadratic-solving method developed here. Using it to solve every quadratic requires polynomial factoring, negative numbers, and eventually complex numbers; these were not all available in those earlier traditions. The historical point is therefore not that one culture “invented” the method in its modern form, but that older techniques became part of a broader algebraic system.</p>
 <p>The modern treatment has combined several ideas: unknown quantities, equivalent equations, polynomial identities, and an expanded number system. The historical resemblance between an older procedure and a modern method is worth studying, but it does not mean that earlier mathematicians used our notation or accepted the same kinds of numbers. The average-and-product presentation here is also discussed by Po-Shen Loh, who distinguishes its pedagogical organization from the earlier history of its component ideas. <a href="#ref-loh">[4]</a></p>
 </section>
 
@@ -218,6 +224,7 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 
 <li>Use the average and product method to solve \(x^2-8x+7=0\), \(x^2+4x-12=0\), and \(2x^2-12x+14=0\). Check each factorization.</li>
 <li>Apply the method to \(x^2-6x+9=0\) and \(x^2-6x+13=0\). Explain the difference between a repeated root and no real roots. For the second equation, give the complex roots.</li>
 <li>A student says, “Every quadratic can be factored, so I should always find two integers whose sum and product work.” Identify both missing qualifications and give counterexamples.</li>
+<li>Solve \(x^2-2x-24=0\) once by guessing factors and once by the average-and-product method. What does the second method prove that guessing does not?</li>
 <li>Explain the relationship between completing the square and writing the roots as \(m+u\) and \(m-u\). Why does choosing just one square root for \(u\) still produce both roots?</li>
 <li>What does a modern symbolic reconstruction tell us about an old procedure? What additional evidence would be needed to attribute the modern argument, or its accepted kinds of solutions, to a historical author?</li>
 </ol>
@@ -230,7 +237,6 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 
 <li id="ref-history"><a href="https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/">MacTutor History of Mathematics: Al-Khwārizmī</a>. Historical context, terminology, and equation types.</li>
 <li id="ref-example"><a href="https://mathshistory.st-andrews.ac.uk/Extras/Al-Khwarizmi_quadratics/">Al-Khwārizmī and quadratic equations</a>. An excerpt illustrating the case with two positive solutions.</li>
 <li id="ref-loh">Po-Shen Loh, <a href="https://poshenloh.com/quadratic">A Different Way to Solve Quadratic Equations</a> and <a href="https://www.poshenloh.com/quadraticrelated/">Related Work</a>. A modern presentation of the average-and-product method and discussion of earlier work.</li>
-<li id="ref-handout"><a href="handouts/quadratic-equations.pdf"><cite>Quadratic Equations</cite> — course handout (PDF)</a>. The worked examples and progression through factoring, average and product, and complex roots are incorporated here.</li>
 </ol>
 </section>
 
