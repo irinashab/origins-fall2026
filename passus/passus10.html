@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Passus 10 — Complex Numbers Are Real</title>
+  <link rel="stylesheet" href="../assets/style.css"><script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+figure {margin:1.5rem 0;} figure img, main p > img {display:block;width:100%;height:auto;background:#fff;}
+figcaption {font-size:.95rem;line-height:1.5;margin-top:.6rem;}
+.table-wrap {overflow-x:auto;margin:1.4rem 0;} table {width:100%;border-collapse:collapse;} th,td {padding:.65rem .8rem;border:1px solid #aaa;text-align:left;vertical-align:top;} th {background:var(--surface,#f5f5f5);}
+h2 {margin-top:2.5rem;} mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.25rem 0;}
+@media print {.contents,#navigation-placeholder,#footer-placeholder,.back-to-top {display:none;} figure,table {break-inside:avoid;} h2,h3 {break-after:avoid;}}
+</style></head>
+<body id="top">
+  <header>
+    <h1>Passus 10 — Imaginary Numbers Are Real</h1>
+  </header>
+
+  <div id="navigation-placeholder"><nav aria-label="Course navigation"><a href="../index.html">Home</a> · <a href="../passus.html">Passūs</a> · <a href="../problem-sets.html">Problem Sets</a></nav></div>
+
+  <main>
+  
+    <nav class="contents" aria-label="Lecture contents"><ol><li><a href="#an-impossible-division-of-a-segment">An impossible division of a segment</a></li><li><a href="#what-is-a-complex-number">What is a complex number?</a></li><li><a href="#the-complex-plane-and-basic-operations">The complex plane and basic operations</a></li><li><a href="#multiplication-as-a-geometric-transformation">Multiplication as a geometric transformation</a></li><li><a href="#arguments-radians-and-polar-form">Arguments, radians, and polar form</a></li><li><a href="#eulers-formula-step-by-step">Euler’s formula, step by step</a></li><li><a href="#exponential-form-powers-and-roots">Exponential form, powers, and roots</a></li><li><a href="#complex-functions-and-their-pictures">Complex functions and their pictures</a></li><li><a href="#returning-to-the-opening-problem">Returning to the opening problem</a></li><li><a href="#questions-and-exercises">Questions and exercises</a></li><li><a href="#references-and-further-reading">References and further reading</a></li></ol></nav>
+<p>Complex and imaginary numbers are genuine mathematical objects, but they are not all <strong>real numbers</strong> in the technical sense. The title plays on those two meanings of “real.” In this passus, we build their arithmetic, interpret multiplication geometrically, and derive Euler’s formula <span class="math display">\[
+e^{i\theta}=\cos\theta+i\sin\theta.
+\]</span> The formula will connect powers, roots, and rotations. We then use that connection to understand how a complex function transforms a plane.</p>
+<p>We assume familiarity with factorials and power series. We will recall the particular expansions needed for the derivation without introducing series terminology.</p>
+<h2 id="an-impossible-division-of-a-segment">1. An impossible division of a segment</h2>
+<p>Let <span class="math inline">\(AB=a&gt;0\)</span>. Can we choose a point <span class="math inline">\(K\)</span> <strong>between</strong> <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> so that <span class="math display">\[
+AK\cdot KB=\frac{a^2}{2}?
+\]</span> If <span class="math inline">\(AK=x\)</span>, then <span class="math inline">\(KB=a-x\)</span>, with <span class="math inline">\(0&lt;x&lt;a\)</span>. The equation becomes <span class="math display">\[
+x(a-x)=\frac{a^2}{2},
+\qquad
+x^2-ax+\frac{a^2}{2}=0.
+\]</span> Completing the square gives <span class="math display">\[
+\left(x-\frac a2\right)^2=-\frac{a^2}{4}.
+\]</span> No real number has a negative square, so no such point exists.</p>
+<p>We can see the obstruction before solving the equation: <span class="math display">\[
+x(a-x)=\frac{a^2}{4}-\left(x-\frac a2\right)^2
+\leq\frac{a^2}{4}.
+\]</span> The largest product occurs at the midpoint, where both lengths are <span class="math inline">\(a/2\)</span>. The requested product <span class="math inline">\(a^2/2\)</span> is twice that maximum.</p>
+<p><strong>Example.</strong> For a segment of length 10, the largest product is <span class="math inline">\(5\cdot5=25\)</span>, whereas the problem asks for 50. Moving the point elsewhere on the real line does not help: outside the segment, <span class="math inline">\(x(a-x)&lt;0\)</span>.</p>
+<p>If we allow a number <span class="math inline">\(i\)</span> satisfying <span class="math inline">\(i^2=-1\)</span>, the equation has the two solutions <span class="math display">\[
+x=\frac a2\pm\frac a2i.
+\]</span> These solve the <strong>algebraic equation</strong>. They do not produce a point between the endpoints of the original segment. Extending the number system changes the domain in which we are solving the problem.</p>
+<p><strong>Historical note.</strong> Paul Nahin discusses this problem in <em>An Imaginary Tale</em>, chapter 3, box 3.1, attributing it to Carnot’s <em>Géométrie de position</em> (1803). His account distinguishes Carnot’s interpretation of impossibility from Buée’s proposal to interpret the imaginary component as a displacement off the line. Nahin explicitly relies on Alexander Macfarlane’s later account rather than direct inspection of Carnot’s book. We will develop the plane interpretation mathematically below rather than treat it as Carnot’s conclusion.</p>
+<p><strong>Pause and explain.</strong> What does “no solution” mean here? Which statement changes when we allow complex numbers, and which geometric statement remains true?</p>
+<h2 id="what-is-a-complex-number">2. What is a complex number?</h2>
+<p>A <strong>complex number</strong> has the form <span class="math display">\[
+z=a+bi,\qquad a,b\in\mathbb R,\qquad i^2=-1.
+\]</span> The set of complex numbers is denoted by <span class="math inline">\(\mathbb C\)</span>.</p>
+<ul>
+<li>The <strong>real part</strong> is <span class="math inline">\(\operatorname{Re}(z)=a\)</span>.</li>
+<li>The <strong>imaginary part</strong> is <span class="math inline">\(\operatorname{Im}(z)=b\)</span>. It is the real coefficient <span class="math inline">\(b\)</span>, <strong>not</strong> the term <span class="math inline">\(bi\)</span>.</li>
+<li>A number is real when <span class="math inline">\(b=0\)</span>. Thus the real numbers are contained in the complex numbers.</li>
+<li>A nonzero number of the form <span class="math inline">\(bi\)</span> is <strong>purely imaginary</strong>.</li>
+<li>Two complex numbers are equal exactly when both corresponding parts are equal: <span class="math display">\[
+a+bi=c+di\quad\Longleftrightarrow\quad a=c\text{ and }b=d.
+\]</span></li>
+</ul>
+<p>For example, <span class="math inline">\(3-2i\)</span> has real part 3 and imaginary part <span class="math inline">\(-2\)</span>; <span class="math inline">\(7=7+0i\)</span> is both real and complex; <span class="math inline">\(-4i=0-4i\)</span> is purely imaginary.</p>
+<h3 id="why-the-definition-is-consistent-with-arithmetic">Why the definition is consistent with arithmetic</h3>
+<p>We can construct complex numbers as ordered pairs of real numbers. Define <span class="math display">\[
+(a,b)+(c,d)=(a+c,b+d)
+\]</span> and <span class="math display">\[
+(a,b)(c,d)=(ac-bd,ad+bc).
+\]</span> Identify the real number <span class="math inline">\(a\)</span> with <span class="math inline">\((a,0)\)</span>, and set <span class="math inline">\(i=(0,1)\)</span>. Then <span class="math display">\[
+(0,1)(0,1)=(-1,0),
+\]</span> so <span class="math inline">\(i^2=-1\)</span>. Also <span class="math inline">\((a,b)=(a,0)+b(0,1)=a+bi\)</span>.</p>
+<p>This gives a concrete interpretation of the new arithmetic. We are not claiming that a real number has a negative square: we have constructed a larger number system.</p>
+<p>The historical word “imaginary” does not mean fictitious. The word “lateral,” meaning sideways, suggests the plane picture we will use, but neither word replaces a mathematical definition.</p>
+<h2 id="the-complex-plane-and-basic-operations">3. The complex plane and basic operations</h2>
+<p>Represent <span class="math inline">\(z=a+bi\)</span> by the point <span class="math inline">\((a,b)\)</span>. The horizontal coordinate axis is the <strong>real axis</strong> and the vertical coordinate axis is the <strong>imaginary axis</strong>. We can also represent <span class="math inline">\(z\)</span> by the directed arrow from the origin to that point.</p>
+<h3 id="addition-and-subtraction">Addition and subtraction</h3>
+<p>Add or subtract corresponding coordinates: <span class="math display">\[
+(a+bi)+(c+di)=(a+c)+(b+d)i.
+\]</span> For example, <span class="math display">\[
+(2+3i)+(-1+2i)=1+5i,
+\]</span> <span class="math display">\[
+(2+3i)-(-1+2i)=3+i.
+\]</span> Geometrically, addition follows the parallelogram rule, or the head-to-tail rule for arrows.</p>
+<h3 id="multiplication">Multiplication</h3>
+<p>Distribute and use <span class="math inline">\(i^2=-1\)</span>: <span class="math display">\[
+\begin{aligned}
+(a+bi)(c+di)
+&amp;=ac+adi+bci+bdi^2\\
+&amp;=(ac-bd)+(ad+bc)i.
+\end{aligned}
+\]</span> For example, <span class="math display">\[
+(2+i)(3-2i)=6-4i+3i-2i^2=8-i.
+\]</span></p>
+<h3 id="modulus-and-distance">Modulus and distance</h3>
+<p>The <strong>modulus</strong> of <span class="math inline">\(z=a+bi\)</span> is its distance from the origin: <span class="math display">\[
+|z|=\sqrt{a^2+b^2}.
+\]</span> Thus <span class="math inline">\(|3+4i|=5\)</span>, <span class="math inline">\(|-2i|=2\)</span>, and <span class="math inline">\(|0|=0\)</span>. The modulus is always a nonnegative real number.</p>
+<p>The distance between two complex numbers <span class="math inline">\(z\)</span> and <span class="math inline">\(w\)</span> is <span class="math inline">\(|z-w|\)</span>. For example, the distance between <span class="math inline">\(2+3i\)</span> and <span class="math inline">\(-1+2i\)</span> is <span class="math display">\[
+|(2+3i)-(-1+2i)|=|3+i|=\sqrt{10}.
+\]</span></p>
+<h3 id="conjugation-and-division">Conjugation and division</h3>
+<p>The <strong>complex conjugate</strong> of <span class="math inline">\(z=a+bi\)</span> is <span class="math display">\[
+\overline z=a-bi.
+\]</span> It reflects the point across the real axis. Multiplying conjugates gives <span class="math display">\[
+z\overline z=(a+bi)(a-bi)=a^2+b^2=|z|^2.
+\]</span> For <span class="math inline">\(z\ne0\)</span>, this supplies a reciprocal: <span class="math display">\[
+\frac1z=\frac{\overline z}{|z|^2}.
+\]</span> To divide by a nonzero complex number, multiply numerator and denominator by its conjugate. For instance, <span class="math display">\[
+\begin{aligned}
+\frac{3+2i}{1-i}
+&amp;=\frac{(3+2i)(1+i)}{(1-i)(1+i)}\\
+&amp;=\frac{1+5i}{2}
+=\frac12+\frac52i.
+\end{aligned}
+\]</span> Check by multiplying this answer by <span class="math inline">\(1-i\)</span>.</p>
+<p><strong>Practice.</strong> Find the real part, imaginary part, conjugate, and modulus of <span class="math inline">\(-3+4i\)</span>. Then calculate <span class="math inline">\((1+i)^2\)</span> and <span class="math inline">\(1/(1+i)\)</span>.</p>
+<h2 id="multiplication-as-a-geometric-transformation">4. Multiplication as a geometric transformation</h2>
+<p>Multiplication by a positive real number <span class="math inline">\(r\)</span> stretches every arrow by the factor <span class="math inline">\(r\)</span>, or contracts it when <span class="math inline">\(0&lt;r&lt;1\)</span>. Multiplication by <span class="math inline">\(-1\)</span> reverses every arrow: a half-turn about the origin. Multiplication by zero sends every point to the origin, so it is a separate case.</p>
+<figure>
+<img src="../assets/images/passus10/real-multiplication.svg" alt="Positive multiplication scales an arrow; negative multiplication also reverses it." /><figcaption aria-hidden="true">Positive multiplication scales an arrow; negative multiplication also reverses it.</figcaption>
+</figure>
+<p><em>Figure 1. Input arrows are blue and output arrows are red. A negative factor reverses direction as well as scaling the magnitude.</em></p>
+<p>What does multiplication by <span class="math inline">\(i\)</span> do to an arbitrary point? <span class="math display">\[
+i(a+bi)=ai+bi^2=-b+ai.
+\]</span> In coordinates this is <span class="math display">\[
+(a,b)\longmapsto(-b,a),
+\]</span> which is a counterclockwise quarter-turn about the origin. This proves the rotation interpretation for <strong>every</strong> point, not just for 1.</p>
+<p><strong>Example.</strong> Starting with <span class="math inline">\(z=2+i\)</span>, repeated multiplication by <span class="math inline">\(i\)</span> gives <span class="math display">\[
+2+i\longmapsto-1+2i\longmapsto-2-i
+\longmapsto1-2i\longmapsto2+i.
+\]</span> All four points have modulus <span class="math inline">\(\sqrt5\)</span>. The direction changes while the distance from the origin stays fixed.</p>
+<p>In particular, <span class="math display">\[
+1\xrightarrow{\times i}i\xrightarrow{\times i}-1
+\xrightarrow{\times i}-i\xrightarrow{\times i}1.
+\]</span> <img src="../assets/images/passus10/quarter-turns.svg" alt="Four counterclockwise quarter-turns cycle through one, i, negative one, and negative i." /></p>
+<p><em>Figure 2. Each curved arrow represents multiplication by i. Two steps give a half-turn; four return to the starting point.</em></p>
+<p>Thus <span class="math display">\[
+i^0=1,\quad i^1=i,\quad i^2=-1,\quad i^3=-i,\quad i^4=1.
+\]</span> For an integer exponent <span class="math inline">\(n\)</span>, write <span class="math inline">\(n=4q+r\)</span>, where <span class="math inline">\(0\leq r&lt;4\)</span>. Then <span class="math inline">\(i^n=i^r\)</span>. For example, <span class="math display">\[
+i^{2026}=i^2=-1,\qquad i^{-1}=-i.
+\]</span> Multiplication by <span class="math inline">\(-i\)</span> is a clockwise quarter-turn. Multiplication by <span class="math inline">\(2i\)</span> combines a counterclockwise quarter-turn with a doubling of distances from the origin.</p>
+<h2 id="arguments-radians-and-polar-form">5. Arguments, radians, and polar form</h2>
+<p>For a <strong>nonzero</strong> complex number, an <strong>argument</strong> is an angle measured from the positive real axis to its arrow, with counterclockwise angles taken as positive. The argument is not unique: adding a whole turn gives the same direction.</p>
+<p>We use <strong>radians</strong>. An angle in radians is the signed arc length it cuts off on the unit circle. One full turn is <span class="math inline">\(2\pi\)</span>, so <span class="math display">\[
+180^\circ=\pi,\qquad90^\circ=\frac\pi2,
+\qquad60^\circ=\frac\pi3.
+\]</span> The sine and cosine power series used later require angles in radians.</p>
+<p>If <span class="math inline">\(r=|z|&gt;0\)</span> and <span class="math inline">\(\theta\)</span> is an argument of <span class="math inline">\(z=a+bi\)</span>, then <span class="math display">\[
+a=r\cos\theta,\qquad b=r\sin\theta.
+\]</span> Therefore the <strong>polar form</strong> is <span class="math display">\[
+z=r(\cos\theta+i\sin\theta).
+\]</span> All its arguments are <span class="math inline">\(\theta+2\pi k\)</span>, with <span class="math inline">\(k\in\mathbb Z\)</span>. When we need one chosen angle, we will use the <strong>principal argument</strong> <span class="math inline">\(\operatorname{Arg}(z)\in(-\pi,\pi]\)</span>. Other conventions exist. Zero has no defined argument because its arrow has no direction.</p>
+<p><strong>Example 1.</strong> For <span class="math inline">\(1+i\)</span>, the modulus is <span class="math inline">\(\sqrt2\)</span> and an argument is <span class="math inline">\(\pi/4\)</span>: <span class="math display">\[
+1+i=\sqrt2\left(\cos\frac\pi4+i\sin\frac\pi4\right).
+\]</span></p>
+<p><strong>Example 2.</strong> For <span class="math inline">\(-1+\sqrt3i\)</span>, the modulus is 2 and the point lies in the second quadrant: <span class="math display">\[
+-1+\sqrt3i=2\left(\cos\frac{2\pi}3+i\sin\frac{2\pi}3\right).
+\]</span> Using only <span class="math inline">\(\arctan(b/a)\)</span> can select the wrong quadrant. Always check the signs of both coordinates. When <span class="math inline">\(a=0\)</span>, the ratio is not even defined.</p>
+<h3 id="why-multiplication-adds-angles">Why multiplication adds angles</h3>
+<p>Let <span class="math display">\[
+z=r(\cos\theta+i\sin\theta),\qquad
+w=s(\cos\phi+i\sin\phi).
+\]</span> Distributing gives <span class="math display">\[
+zw=rs\left[(\cos\theta\cos\phi-\sin\theta\sin\phi)
++i(\sin\theta\cos\phi+\cos\theta\sin\phi)\right].
+\]</span> By the trigonometric addition identities, <span class="math display">\[
+\boxed{zw=rs\bigl(\cos(\theta+\phi)+i\sin(\theta+\phi)\bigr).}
+\]</span> Thus <span class="math inline">\(|zw|=|z||w|\)</span>, and an argument of the product is the sum of arguments of the factors, understood modulo <span class="math inline">\(2\pi\)</span>.</p>
+<p>There are two related statements to keep distinct:</p>
+<ul>
+<li>To find the <strong>product</strong>, multiply the two moduli and add the two angles.</li>
+<li>As a map of the plane, multiplication by a <strong>fixed</strong> <span class="math inline">\(w\ne0\)</span> scales every input by <span class="math inline">\(|w|\)</span> and rotates it by an argument of <span class="math inline">\(w\)</span>.</li>
+</ul>
+<p><strong>Example.</strong> Multiplication by <span class="math inline">\(1+i\)</span> scales by <span class="math inline">\(\sqrt2\)</span> and rotates by <span class="math inline">\(\pi/4\)</span>. In particular, <span class="math display">\[
+(1+i)^2=2i,
+\]</span> whose modulus is 2 and whose argument is <span class="math inline">\(\pi/2\)</span>.</p>
+<h3 id="a-product-with-both-rotation-and-scaling">A product with both rotation and scaling</h3>
+<p>Take <span class="math inline">\(z=2+i\)</span> and <span class="math inline">\(w=1+i\)</span>. Algebra gives <span class="math display">\[
+zw=(2+i)(1+i)=2+2i+i+i^2=1+3i.
+\]</span> Here <span class="math inline">\(|z|=\sqrt5\)</span>, <span class="math inline">\(|w|=\sqrt2\)</span>, and <span class="math inline">\(|zw|=\sqrt{10}\)</span>. Since an argument of <span class="math inline">\(w\)</span> is <span class="math inline">\(\pi/4\)</span>, multiplication by <span class="math inline">\(w\)</span> rotates the arrow for <span class="math inline">\(z\)</span> counterclockwise by 45° and increases its length by a factor of <span class="math inline">\(\sqrt2\)</span>. The output angle is about 71.565°, the sum of about 26.565° and 45°.</p>
+<figure>
+<img src="../assets/images/passus10/complex-multiplication.svg" alt="The product of two plus i and one plus i is one plus three i, obtained by rotation and scaling." /><figcaption aria-hidden="true">The product of two plus i and one plus i is one plus three i, obtained by rotation and scaling.</figcaption>
+</figure>
+<p><em>Multiplication combines two operations. The blue input vector is rotated through the green angle and scaled by the modulus of w to produce the purple vector. The curved red arrow indicates the rotation angle; the increased vector length shows the scaling.</em></p>
+<h2 id="eulers-formula-step-by-step">6. Euler’s formula, step by step</h2>
+<p>We already know how angles behave under multiplication. Euler’s formula explains why exponential notation fits that geometry: <span class="math display">\[
+\boxed{e^{i\theta}=\cos\theta+i\sin\theta\qquad(\theta\in\mathbb R).}
+\]</span> Here is a derivation from the familiar power series. It assumes the standard sine and cosine expansions; it does not assume Euler’s formula.</p>
+<h3 id="step-1.-extend-the-exponential-to-complex-inputs">Step 1. Extend the exponential to complex inputs</h3>
+<p>Define the complex exponential by the same power series as the real exponential: <span class="math display">\[
+e^z=\sum_{n=0}^{\infty}\frac{z^n}{n!}
+=1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\cdots.
+\]</span> This series converges absolutely for every complex <span class="math inline">\(z\)</span>. In particular, its term magnitudes sum to the convergent real series <span class="math inline">\(\sum |z|^n/n!\)</span>. Consequently we may separate the even- and odd-indexed terms in the calculation below.</p>
+<h3 id="step-2.-substitute-the-imaginary-input">Step 2. Substitute the imaginary input</h3>
+<p>For a real angle <span class="math inline">\(\theta\)</span>, <span class="math display">\[
+e^{i\theta}=1+i\theta+\frac{i^2\theta^2}{2!}
++\frac{i^3\theta^3}{3!}+\frac{i^4\theta^4}{4!}
++\frac{i^5\theta^5}{5!}+\frac{i^6\theta^6}{6!}+\cdots.
+\]</span> Use the four-step cycle of powers of <span class="math inline">\(i\)</span>: <span class="math display">\[
+e^{i\theta}=1+i\theta-\frac{\theta^2}{2!}
+-i\frac{\theta^3}{3!}+\frac{\theta^4}{4!}
++i\frac{\theta^5}{5!}-\frac{\theta^6}{6!}+\cdots.
+\]</span> Notice that even powers contribute real terms and odd powers contribute purely imaginary terms.</p>
+<h3 id="step-3.-collect-the-two-parts">Step 3. Collect the two parts</h3>
+<p>Grouping those terms gives <span class="math display">\[
+\begin{aligned}
+e^{i\theta}
+&amp;=\left(1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}
+-\frac{\theta^6}{6!}+\cdots\right)\\
+&amp;\quad+i\left(\theta-\frac{\theta^3}{3!}
++\frac{\theta^5}{5!}-\frac{\theta^7}{7!}+\cdots\right).
+\end{aligned}
+\]</span> The signs can also be checked directly: <span class="math display">\[
+i^{2k}=(i^2)^k=(-1)^k,\qquad
+i^{2k+1}=i(-1)^k.
+\]</span> Thus the same calculation in summation notation is <span class="math display">\[
+e^{i\theta}
+=\sum_{k=0}^{\infty}\frac{(-1)^k\theta^{2k}}{(2k)!}
++i\sum_{k=0}^{\infty}\frac{(-1)^k\theta^{2k+1}}{(2k+1)!}.
+\]</span></p>
+<h3 id="step-4.-recognize-the-trigonometric-series">Step 4. Recognize the trigonometric series</h3>
+<p>Recall <span class="math display">\[
+\cos\theta=1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}-\cdots,
+\]</span> <span class="math display">\[
+\sin\theta=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\cdots.
+\]</span> Substituting these identities proves <span class="math display">\[
+e^{i\theta}=\cos\theta+i\sin\theta.
+\]</span> This is an exact identity for every real <span class="math inline">\(\theta\)</span>, not a small-angle approximation.</p>
+<h3 id="step-5.-interpret-the-result">Step 5. Interpret the result</h3>
+<p>Because <span class="math inline">\(\cos^2\theta+\sin^2\theta=1\)</span>, <span class="math display">\[
+|e^{i\theta}|=1.
+\]</span> Its argument is <span class="math inline">\(\theta\)</span> modulo <span class="math inline">\(2\pi\)</span>. As <span class="math inline">\(\theta\)</span> increases, the point moves counterclockwise around the <strong>unit circle</strong>, the circle <span class="math inline">\(|z|=1\)</span> centered at the origin.</p>
+<p>Some useful values are</p>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>Angle in radians</th>
+<th>Complex exponential</th>
+<th>Point (real, imaginary)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>e⁰ = 1</td>
+<td>(1, 0)</td>
+</tr>
+<tr class="even">
+<td>π/2</td>
+<td>e<sup>iπ/2</sup> = i</td>
+<td>(0, 1)</td>
+</tr>
+<tr class="odd">
+<td>π</td>
+<td>e<sup>iπ</sup> = −1</td>
+<td>(−1, 0)</td>
+</tr>
+<tr class="even">
+<td>3π/2</td>
+<td>e<sup>3πi/2</sup> = −i</td>
+<td>(0, −1)</td>
+</tr>
+<tr class="odd">
+<td>2π</td>
+<td>e<sup>2πi</sup> = 1</td>
+<td>(1, 0)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The value at <span class="math inline">\(\theta=\pi\)</span> gives <strong>Euler’s identity</strong>: <span class="math display">\[
+e^{i\pi}+1=0.
+\]</span> It also follows that <span class="math display">\[
+e^{i(\theta+2\pi)}=e^{i\theta},\qquad
+\overline{e^{i\theta}}=e^{-i\theta}.
+\]</span></p>
+<h3 id="step-6.-verify-the-exponential-multiplication-rule-for-angles">Step 6. Verify the exponential multiplication rule for angles</h3>
+<p>Using the polar multiplication formula already proved, <span class="math display">\[
+\begin{aligned}
+e^{i\theta}e^{i\phi}
+&amp;=(\cos\theta+i\sin\theta)(\cos\phi+i\sin\phi)\\
+&amp;=\cos(\theta+\phi)+i\sin(\theta+\phi)\\
+&amp;=e^{i(\theta+\phi)}.
+\end{aligned}
+\]</span> This establishes the rule we need without assuming it merely because the notation looks like an ordinary exponential.</p>
+<p><strong>Example.</strong> <span class="math display">\[
+e^{i\pi/3}=\frac12+\frac{\sqrt3}{2}i,
+\qquad
+e^{-i\pi/3}=\frac12-\frac{\sqrt3}{2}i.
+\]</span> Their product is 1. Their sum is 1. More generally, <span class="math display">\[
+\cos\theta=\frac{e^{i\theta}+e^{-i\theta}}2,
+\qquad
+\sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}.
+\]</span></p>
+<h2 id="exponential-form-powers-and-roots">7. Exponential form, powers, and roots</h2>
+<p>Euler’s formula lets us write the polar form compactly: <span class="math display">\[
+z=re^{i\theta},\qquad r=|z|&gt;0.
+\]</span> For nonzero numbers, <span class="math display">\[
+(re^{i\theta})(se^{i\phi})=rs\,e^{i(\theta+\phi)},
+\qquad
+\frac{re^{i\theta}}{se^{i\phi}}=\frac rs e^{i(\theta-\phi)}.
+\]</span> Repeated multiplication gives <strong>de Moivre’s formula</strong> for integer powers: <span class="math display">\[
+\bigl(r(\cos\theta+i\sin\theta)\bigr)^n
+=r^n(\cos(n\theta)+i\sin(n\theta)).
+\]</span> For negative powers, require <span class="math inline">\(r&gt;0\)</span>, as we already do here.</p>
+<p><strong>Example 1.</strong> Since <span class="math inline">\(1+i=\sqrt2e^{i\pi/4}\)</span>, <span class="math display">\[
+(1+i)^8=(\sqrt2)^8e^{2\pi i}=16.
+\]</span></p>
+<p><strong>Example 2.</strong> Rotate <span class="math inline">\(3+4i\)</span> clockwise by a quarter-turn. Multiply by <span class="math inline">\(e^{-i\pi/2}=-i\)</span>: <span class="math display">\[
+-i(3+4i)=4-3i.
+\]</span> Its modulus is still 5.</p>
+<h3 id="cube-roots-of-unity">Cube roots of unity</h3>
+<p>A <strong>root of unity</strong> is a number whose positive integer power equals 1. Start with <span class="math inline">\(z^3=1\)</span>. Factoring, <span class="math display">\[
+z^3-1=(z-1)(z^2+z+1),
+\]</span> gives <span class="math display">\[
+1,\qquad -\frac12+\frac{\sqrt3}{2}i,
+\qquad -\frac12-\frac{\sqrt3}{2}i.
+\]</span> Now derive their locations geometrically. If <span class="math inline">\(z=re^{i\theta}\)</span>, then <span class="math display">\[
+z^3=r^3e^{3i\theta}=1.
+\]</span> Taking moduli gives <span class="math inline">\(r^3=1\)</span>, so <span class="math inline">\(r=1\)</span>. Its angle must satisfy <span class="math inline">\(3\theta=2\pi k\)</span>. The three distinct choices are <span class="math display">\[
+\theta=0,\quad\frac{2\pi}3,\quad\frac{4\pi}3.
+\]</span> They are equally spaced on the unit circle and form an equilateral triangle. If <span class="math inline">\(\omega=e^{2\pi i/3}\)</span>, the roots are <span class="math inline">\(1,\omega,\omega^2\)</span>, with <span class="math inline">\(\omega^3=1\)</span> and <span class="math inline">\(1+\omega+\omega^2=0\)</span>.</p>
+<figure>
+<img src="../assets/images/passus10/cube-roots.svg" alt="Three cube roots of unity lie at equally spaced angles on the unit circle." /><figcaption aria-hidden="true">Three cube roots of unity lie at equally spaced angles on the unit circle.</figcaption>
+</figure>
+<p><em>Figure 3. Repeated multiplication by ω rotates through the three cube roots of unity. Each step is 120°, or 2π/3 radians.</em></p>
+<h3 id="all-nth-roots">All nth roots</h3>
+<p>For <span class="math inline">\(w=Re^{i\phi}\ne0\)</span>, an <strong>nth root</strong> of <span class="math inline">\(w\)</span> is a solution of <span class="math inline">\(z^n=w\)</span>, where <span class="math inline">\(n\)</span> is a positive integer. Equating moduli and angles gives <span class="math display">\[
+r^n=R,\qquad n\theta=\phi+2\pi k.
+\]</span> Therefore the complete set of roots is <span class="math display">\[
+\boxed{z_k=R^{1/n}e^{i(\phi+2\pi k)/n},
+\qquad k=0,1,\ldots,n-1.}
+\]</span> They lie on the circle of radius <span class="math inline">\(R^{1/n}\)</span>, spaced by angle <span class="math inline">\(2\pi/n\)</span>. Other integer values of <span class="math inline">\(k\)</span> repeat these roots. In particular, the nth roots of unity have <span class="math inline">\(R=1\)</span> and <span class="math inline">\(\phi=0\)</span>.</p>
+<p>The equation <span class="math inline">\(z^n=0\)</span> is different: it has only the distinct solution <span class="math inline">\(z=0\)</span>, with multiplicity <span class="math inline">\(n\)</span>. Also, a notation such as <span class="math inline">\(w^{1/n}\)</span> may mean one selected root; when finding <strong>all</strong> roots, list the values explicitly.</p>
+<p><strong>Example 3.</strong> Solve <span class="math inline">\(z^4=-16\)</span>. Write <span class="math inline">\(-16=16e^{i\pi}\)</span>. The roots have modulus 2 and angles <span class="math display">\[
+\frac\pi4,\quad\frac{3\pi}4,\quad\frac{5\pi}4,\quad\frac{7\pi}4.
+\]</span> In rectangular form they are <span class="math display">\[
+\sqrt2+i\sqrt2,\quad-\sqrt2+i\sqrt2,
+\quad-\sqrt2-i\sqrt2,\quad\sqrt2-i\sqrt2.
+\]</span> Raising any of these to the fourth power gives modulus 16 and angle <span class="math inline">\(\pi\)</span> modulo <span class="math inline">\(2\pi\)</span>, hence <span class="math inline">\(-16\)</span>.</p>
+<h2 id="complex-functions-and-their-pictures">8. Complex functions and their pictures</h2>
+<p>A <strong>complex-valued function</strong> assigns one complex output to each input in its domain. For a function <span class="math inline">\(f:D\to\mathbb C\)</span>, where <span class="math inline">\(D\subseteq\mathbb C\)</span>, write <span class="math display">\[
+z=x+iy,\qquad f(z)=u(x,y)+iv(x,y).
+\]</span> The real functions <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> describe the two output coordinates.</p>
+<p>A <strong>domain</strong> specifies which inputs are allowed. For example, <span class="math inline">\(f(z)=1/z\)</span> has domain <span class="math inline">\(\mathbb C\setminus\{0\}\)</span>. A <strong>zero</strong> of <span class="math inline">\(f\)</span> is an allowed input satisfying <span class="math inline">\(f(z)=0\)</span>.</p>
+<p>The graph of a complex function consists of points <span class="math display">\[
+(x,y,u(x,y),v(x,y))
+\]</span> in <span class="math inline">\(\mathbb R^4\)</span>. It is usually a two-real-dimensional surface situated in a four-dimensional ambient space, not a four-dimensional volume. For teaching, we can draw separate input and output planes and show where particular points, lines, and regions go.</p>
+<h3 id="example-1.-a-translation">Example 1. A translation</h3>
+<p>For <span class="math inline">\(f(z)=z+(2-i)\)</span>, every point moves 2 units right and 1 unit down. In coordinates, <span class="math display">\[
+(x,y)\longmapsto(x+2,y-1).
+\]</span> For instance, <span class="math inline">\(f(i)=2\)</span>.</p>
+<h3 id="example-2.-rotation-and-scaling">Example 2. Rotation and scaling</h3>
+<p>For <span class="math inline">\(f(z)=(1+i)z\)</span>, every nonzero arrow is rotated by <span class="math inline">\(\pi/4\)</span> and scaled by <span class="math inline">\(\sqrt2\)</span>. The origin stays fixed. This is exactly the multiplication map studied earlier.</p>
+<h3 id="example-3.-squaring">Example 3. Squaring</h3>
+<p>For <span class="math inline">\(f(z)=z^2\)</span>, <span class="math display">\[
+(x+iy)^2=(x^2-y^2)+i(2xy),
+\]</span> so <span class="math display">\[
+u(x,y)=x^2-y^2,\qquad v(x,y)=2xy.
+\]</span> In polar form, <span class="math display">\[
+re^{i\theta}\longmapsto r^2e^{2i\theta}.
+\]</span> Moduli are squared and angles doubled. Unlike multiplication by a fixed number, this is not one uniform rotation and scaling of the whole plane.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>Input z</th>
+<th>Output z²</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>i</td>
+<td>−1</td>
+</tr>
+<tr class="odd">
+<td>−1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1 + i</td>
+<td>2i</td>
+</tr>
+<tr class="odd">
+<td>−1 − i</td>
+<td>2i</td>
+</tr>
+</tbody>
+</table></div>
+<p>The map sends both <span class="math inline">\(z\)</span> and <span class="math inline">\(-z\)</span> to the same output. Every nonzero complex output has exactly two preimages in the entire complex plane; zero has one distinct preimage.</p>
+<p>Consider the <strong>open upper half-plane</strong> <span class="math inline">\(\operatorname{Im}(z)&gt;0\)</span>. Here <span class="math inline">\(0&lt;\theta&lt;\pi\)</span>, so <span class="math inline">\(0&lt;2\theta&lt;2\pi\)</span>. Squaring maps this region <strong>one-to-one onto the plane with the nonnegative real axis removed</strong>. Each allowed output has exactly one square root in the open upper half-plane. The excluded boundary matters: neither zero nor a positive real number has a square root strictly above the real axis.</p>
+<p>A circle <span class="math inline">\(|z|=r\)</span> maps to <span class="math inline">\(|w|=r^2\)</span>, traversed twice as the input makes one full turn. A ray at angle <span class="math inline">\(\theta\)</span> maps to a ray at angle <span class="math inline">\(2\theta\)</span>. Cartesian grid lines behave differently. For example, on <span class="math inline">\(x=1\)</span>, <span class="math display">\[
+u=1-y^2,\qquad v=2y,
+\]</span> so its image is the parabola <span class="math inline">\(u=1-v^2/4\)</span>.</p>
+<h3 id="example-4.-following-points-and-an-entire-line">Example 4. Following points and an entire line</h3>
+<p>Now let <span class="math inline">\(f(z)=z^2+1\)</span>. This is the squaring map followed by a translation one unit to the right. For one input, <span class="math display">\[
+\begin{aligned}
+f(1+i)&amp;=(1+i)^2+1\\
+&amp;=1+2i+i^2+1\\
+&amp;=1+2i.
+\end{aligned}
+\]</span></p>
+<figure>
+<img src="../assets/images/passus10/point-mapping.svg" alt="Separate input and output planes show one plus i mapping to one plus two i." /><figcaption aria-hidden="true">Separate input and output planes show one plus i mapping to one plus two i.</figcaption>
+</figure>
+<p><em>Figure 4. Each plane has two real coordinates. The connecting arrow associates an input with its output; it is not a trajectory within one plane.</em></p>
+<p>To follow a whole line, take the inputs <span class="math inline">\(z=x+i\)</span>, where <span class="math inline">\(x\)</span> ranges over the real numbers. These inputs lie on the horizontal line <span class="math inline">\(y=1\)</span>. Then <span class="math display">\[
+f(x+i)=(x+i)^2+1=x^2+2xi.
+\]</span> The output coordinates satisfy <span class="math inline">\(u=x^2\)</span>, <span class="math inline">\(v=2x\)</span>. Eliminating <span class="math inline">\(x=v/2\)</span> gives <span class="math display">\[
+u=\frac{v^2}{4},
+\]</span> a parabola opening to the right in the output plane.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>Input z</th>
+<th>Output f(z) = z² + 1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>−2 + i</td>
+<td>4 − 4i</td>
+</tr>
+<tr class="even">
+<td>−1 + i</td>
+<td>1 − 2i</td>
+</tr>
+<tr class="odd">
+<td>i</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1 + i</td>
+<td>1 + 2i</td>
+</tr>
+<tr class="odd">
+<td>2 + i</td>
+<td>4 + 4i</td>
+</tr>
+</tbody>
+</table></div>
+<figure>
+<img src="../assets/images/passus10/line-to-parabola.svg" alt="Matching colored points track a horizontal line into a right-opening parabola." /><figcaption aria-hidden="true">Matching colored points track a horizontal line into a right-opening parabola.</figcaption>
+</figure>
+<p><em>Figure 5. As x increases along the input line, v increases along the output parabola. Matching colors identify corresponding points.</em></p>
+<h3 id="three-useful-visualization-methods">Three useful visualization methods</h3>
+<ol type="1">
+<li><strong>Mapping diagrams:</strong> use separate input and output planes, following sample points or a grid.</li>
+<li><strong>Real and imaginary surfaces:</strong> plot <span class="math inline">\(u(x,y)\)</span> and <span class="math inline">\(v(x,y)\)</span> separately as surfaces in three dimensions. For squaring, these are <span class="math inline">\(u=x^2-y^2\)</span> and <span class="math inline">\(v=2xy\)</span>.</li>
+<li><strong>Domain coloring:</strong> color each input by the argument of its output and use a stated brightness or contour convention for the output modulus. The color at an input describes <span class="math inline">\(f(z)\)</span>, not <span class="math inline">\(z\)</span>. A legend is essential; zeros need a special convention because their arguments are undefined.</li>
+</ol>
+<p>These methods encode different aspects of the same mapping. None is a literal drawing of the complete graph in four-dimensional space.</p>
+<h2 id="returning-to-the-opening-problem">9. Returning to the opening problem</h2>
+<p>The algebraic roots were <span class="math display">\[
+z=\frac a2\pm\frac a2i.
+\]</span> In the complex plane these lie above and below the midpoint of the segment joining 0 to <span class="math inline">\(a\)</span>. For the upper root, <span class="math display">\[
+a-z=\frac a2-\frac a2i=\overline z,
+\]</span> and therefore <span class="math display">\[
+z(a-z)=z\overline z=|z|^2
+=\frac{a^2}{4}+\frac{a^2}{4}=\frac{a^2}{2}.
+\]</span> The complex equation is satisfied exactly. The vectors have equal moduli and opposite arguments, so their product is positive real.</p>
+<p>If we interpret <span class="math inline">\(z\)</span> as a point <span class="math inline">\(K\)</span> off the line, its distances to the endpoints are both <span class="math inline">\(a/\sqrt2\)</span>, whose product is <span class="math inline">\(a^2/2\)</span>. That is a valid <strong>different configuration</strong>, but it does not divide the original segment: <span class="math inline">\(K\)</span> is not on <span class="math inline">\(AB\)</span>, and <span class="math inline">\(AK+KB=a\sqrt2\ne a\)</span>. Complex arithmetic makes a new interpretation possible without making the original impossible construction possible.</p>
+<p>The central connection is now established: complex multiplication combines scaling and rotation, and Euler’s formula expresses rotation with the exponential.</p>
+<h2 id="questions-and-exercises">10. Questions and exercises</h2>
+<ol type="1">
+<li>Explain why <span class="math inline">\(\operatorname{Im}(4-7i)=-7\)</span>, not <span class="math inline">\(-7i\)</span>. Give a complex number that is real and a nonreal complex number that is not purely imaginary.</li>
+<li>Calculate <span class="math inline">\((3-2i)+(1+5i)\)</span>, <span class="math inline">\((3-2i)(1+5i)\)</span>, and <span class="math inline">\((3-2i)/(1+5i)\)</span>. Give the conjugate and modulus of <span class="math inline">\(3-2i\)</span>.</li>
+<li>Plot <span class="math inline">\(z=-2+3i\)</span>, <span class="math inline">\(iz\)</span>, <span class="math inline">\(-z\)</span>, and <span class="math inline">\(-iz\)</span>. Explain why they lie on one circle.</li>
+<li>Find <span class="math inline">\(i^{37}\)</span>, <span class="math inline">\(i^{2027}\)</span>, and <span class="math inline">\(i^{-6}\)</span>. Explain your use of remainders modulo 4.</li>
+<li>Write <span class="math inline">\(1-\sqrt3i\)</span>, <span class="math inline">\(-2\)</span>, and <span class="math inline">\(-2-2i\)</span> in polar and exponential form, stating a principal argument for each.</li>
+<li>Reproduce the Euler derivation through the terms of degree 7. Explain the alternating signs and why separating even and odd terms is legitimate.</li>
+<li>Use Euler’s formula to evaluate <span class="math inline">\(e^{i\pi/6}\)</span>, <span class="math inline">\(e^{-i\pi/2}\)</span>, and <span class="math inline">\(e^{5\pi i/3}\)</span>. Explain why each has modulus 1.</li>
+<li>Calculate <span class="math inline">\((\sqrt3+i)^6\)</span> using polar form. Check the modulus of your answer independently.</li>
+<li>Find all solutions of <span class="math inline">\(z^3=-8\)</span>, and plot them. Explain why there are three distinct roots rather than only the real root.</li>
+<li>For <span class="math inline">\(f(z)=z^2\)</span>, describe the images of the real axis, imaginary axis, unit circle, and ray of argument <span class="math inline">\(\pi/4\)</span>. Which different inputs map to <span class="math inline">\(-9\)</span>?</li>
+<li>Explain why squaring is two-to-one over nonzero outputs when its domain is all of <span class="math inline">\(\mathbb C\)</span>, but one-to-one on the open upper half-plane. Identify the latter map’s image precisely.</li>
+<li>For <span class="math inline">\(a=6\)</span> in the opening problem, find the complex roots and check their product relation. Explain why these roots do not solve the original segment-division problem.</li>
+</ol>
+<h2 id="references-and-further-reading">11. References and further reading</h2>
+<ul>
+<li>David M. Burton, <em>The History of Mathematics: An Introduction</em>.</li>
+<li>Stephen Welch, <em>Imaginary Numbers Are Real</em>. Welch Labs, 2024. The diagrams in this passus were drawn for the course, with the supplied illustrations serving as conceptual references.</li>
+<li>Paul J. Nahin, <em>An Imaginary Tale: The Story of √−1</em> (1998), chapter 3, box 3.1. Historical discussion of the opening segment-division problem and its interpretations.</li>
+<li>Alexander Macfarlane, “On the Imaginary of Algebra,” <em>Proceedings of the American Association for the Advancement of Science</em> 41 (1892), 33–55. Cited by Nahin for his account of Carnot; not consulted directly here.</li>
+</ul>
+
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
