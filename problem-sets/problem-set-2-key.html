@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Problem Set 2 — Solution Key</title>
+  <link rel="stylesheet" href="../assets/style.css"><script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+main li { margin-bottom: .8rem; }
+section { margin: 2rem 0; }
+blockquote { border-left: 4px solid #9aa5b1; margin: 1rem 0; padding: .3rem 1.2rem; background: #f7f8fa; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: .3rem 0; }
+@media print { section { break-inside: auto; } h2 { break-after: avoid; } }
+</style></head>
+<body id="top">
+  <header>
+    <h1>Problem Set 2 — Solution Key</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+<p><strong>Instructor solution key.</strong> Equivalent valid arguments and constructions are acceptable.</p>
+<h2>1. Squaring numbers ending in 5</h2>
+<p>Write the number as \(10n+5\), where \(n\geq0\) is an integer. Multiply the number preceding the final 5 by its successor, then append 25 (with leading zeros omitted).</p>
+\[55^2=3025,\qquad65^2=4225,\qquad75^2=5625,\qquad85^2=7225.\]
+<p>The general proof is</p>
+\[(10n+5)^2=100n^2+100n+25=100n(n+1)+25.\]
+<p>Multiplication by 100 shifts the decimal representation of \(n(n+1)\) two places to the left. Adding 25 fills the last two places, with no carry. The case \(n=0\) gives \(5^2=25\).</p>
+<h2>2. Finding a pair</h2>
+<p><strong>(a)</strong> Partition the set into four disjoint pairs:</p>
+\[\{1,8\},\quad\{2,7\},\quad\{3,6\},\quad\{4,5\}.\]
+<p>Each pair sums to 9. Choosing five distinct numbers places five choices into four pairs, so at least one pair contains two chosen numbers, by the pigeonhole principle.</p>
+<p><strong>(b)</strong> Yes: choose \(\{1,2,3,4\}\). The largest possible sum of two distinct chosen numbers is \(3+4=7&lt;9\). Thus five is the smallest number of choices that guarantees a pair summing to 9.</p>
+<h2>3. A remainder problem</h2>
+<p>We seek \(N\equiv1\pmod2\), \(N\equiv4\pmod5\), and \(N\equiv8\pmod{11}\). The combined modulus is \(2\cdot5\cdot11=110\).</p>
+<p><strong>(a) Reconstruction.</strong> Build one number for each condition that is 1 modulo the relevant divisor and 0 modulo the other two:</p>
+<ul><li>For 2: \(55\) is odd and divisible by 5 and 11.</li>
+<li>For 5: \(22\equiv2\pmod5\), and \(3\cdot2\equiv1\pmod5\). Use \(66=3\cdot22\).</li>
+<li>For 11: \(10\equiv-1\pmod{11}\), so \(100=10\cdot10\equiv1\pmod{11}\). It is divisible by 2 and 5.</li></ul>
+<p>Multiply these contributions by the required remainders and add:</p>
+\[N_0=1\cdot55+4\cdot66+8\cdot100=1119=10\cdot110+19.\]
+<p>Subtracting multiples of 110 preserves all three remainders, so the smallest positive candidate is \(\boxed{19}\).</p>
+<p><strong>(b) Check.</strong> \(19=2\cdot9+1=5\cdot3+4=11\cdot1+8\).</p>
+<p><strong>(c) All solutions.</strong> If \(N\) is any solution, \(N-19\) is divisible by 2, 5, and 11. Since these divisors are pairwise relatively prime, their product 110 divides \(N-19\). Conversely, adding any multiple of 110 preserves the remainders. Thus all positive solutions are</p>
+\[\boxed{N=19+110k,\qquad k=0,1,2,\ldots.}\]
+<p>This also proves that 19 is the smallest positive solution.</p>
+<h2>4. Trisecting a line segment</h2>
+<p><strong>Construction.</strong> Draw an auxiliary ray from \(A\) that does not lie on \(AB\). With any fixed compass opening, mark consecutive points \(P_1,P_2,P_3\) along it so that \(AP_1=P_1P_2=P_2P_3\). Join \(P_3\) to \(B\). Through \(P_1\) and \(P_2\), construct lines parallel to \(P_3B\); let their intersections with \(AB\) be \(C\) and \(D\).</p>
+<p>The parallels are legitimate straightedge-and-compass constructions: at each \(P_j\), copy the angle between the ray pointing toward \(A\) and \(P_3B\), choosing the corresponding side. To copy an angle, draw equal-radius arcs about the old and new vertices, transfer the chord between the original arc intersections with the compass, and draw the new ray through the transferred point.</p>
+<svg viewBox="0 0 650 300" style="max-width:650px;width:100%" role="img" aria-label="Triangle A P3 B, with equally spaced P1 and P2 on A P3 and parallel segments P1 C and P2 D."><g fill="none" stroke="#263d52" stroke-width="2"><path d="M60 250 L480 250 L240 40 Z M120 180 L200 250 M180 110 L340 250"/></g><g font-size="19" font-family="serif"><text x="40" y="275">A</text><text x="195" y="275">C</text><text x="335" y="275">D</text><text x="480" y="275">B</text><text x="85" y="180">P₁</text><text x="145" y="110">P₂</text><text x="230" y="28">P₃</text></g></svg>
+<p><strong>Proof.</strong> Parallelism gives \(\triangle AP_1C\sim\triangle AP_3B\) and \(\triangle AP_2D\sim\triangle AP_3B\). Therefore</p>
+\[\frac{AC}{AB}=\frac{AP_1}{AP_3}=\frac13,\qquad\frac{AD}{AB}=\frac{AP_2}{AP_3}=\frac23.\]
+<p>It follows that \(AC=CD=DB=AB/3\).</p>
+<p><strong>Optional extension.</strong> For an integer \(m\geq2\), mark \(m\) equal steps along the auxiliary ray, join the last point to \(B\), and draw parallels through the intermediate points. Similarity places the intersections at fractions \(1/m,2/m,\ldots,(m-1)/m\) of \(AB\). For \(m=1\), no division is necessary.</p>
+<h2>5. One quadratic, three methods</h2>
+<h3>(a) Geometry: four rectangles</h3>
+<p>Each rectangle has area \(10x/4=(5/2)x\), so its sides are \(x\) and \(5/2\). Placing one along each side of the original square leaves four corner squares, each of side \(5/2\).</p>
+<svg viewBox="0 0 520 410" style="max-width:520px;width:100%" role="img" aria-label="A completed square with central square x squared, four rectangles of area five x over two, and four corner squares of area twenty-five over four."><g stroke="#263d52" stroke-width="2"><rect x="80" y="45" width="320" height="320" fill="#e6edf5"/><rect x="180" y="145" width="120" height="120" fill="white"/><g fill="#f6dfb4"><rect x="80" y="45" width="100" height="100"/><rect x="300" y="45" width="100" height="100"/><rect x="80" y="265" width="100" height="100"/><rect x="300" y="265" width="100" height="100"/></g><path d="M180 45 V365 M300 45 V365 M80 145 H400 M80 265 H400" fill="none"/></g><g font-family="serif" font-size="20" text-anchor="middle"><text x="130" y="105">25/4</text><text x="350" y="105">25/4</text><text x="130" y="325">25/4</text><text x="350" y="325">25/4</text><text x="240" y="210">x²</text><text x="240" y="105">5x/2</text><text x="240" y="325">5x/2</text><text x="130" y="210">5x/2</text><text x="350" y="210">5x/2</text><text x="130" y="30">5/2</text><text x="240" y="30">x</text><text x="350" y="30">5/2</text><text x="240" y="395">Completed side: x + 5</text></g></svg>
+<p>The added area is \(4(5/2)^2=25\), and the larger square has side \(x+5\). Hence</p>
+\[(x+5)^2=39+25=64.\]
+<p>Lengths are positive, so \(x+5=8\), giving \(\boxed{x=3}\).</p>
+<h3>(b) Quadratic formula</h3>
+\[x^2+10x-39=0,\qquad x=\frac{-10\pm\sqrt{100+156}}2=\frac{-10\pm16}2.\]
+<p>Thus \(\boxed{x=3\text{ or }x=-13}\).</p>
+<h3>(c) Average and product</h3>
+<p>The roots have sum \(-10\), average \(-5\), and product \(-39\). Write them as \(-5-d\) and \(-5+d\), with \(d\geq0\). Then</p>
+\[(-5-d)(-5+d)=25-d^2=-39,\qquad d^2=64,\qquad d=8.\]
+<p>The roots are \(-5-8=-13\) and \(-5+8=3\).</p>
+<h3>(d) Comparison and verification</h3>
+<p>Both algebraic methods give the same two roots. The geometric method treats \(x\) as a positive length, so it cannot represent \(x=-13\). Both values nevertheless satisfy the algebraic equation:</p>
+\[3^2+10(3)=9+30=39,\qquad(-13)^2+10(-13)=169-130=39.\]
+<h2>Optional challenge: A geometric identity</h2>
+<figure style="max-width:650px;margin:1rem auto"><img src="../assets/images/problem-set-2/gnomon.svg" style="width:100%;height:auto" alt="Two differently shaded versions of the same gnomon."></figure>
+<p>Set \(s=(a+b)/2\) and \(d=(a-b)/2\). Then \(s-d=b\) and \(b+d=s\).</p>
+<p>In the upper diagram, the shaded rectangle has dimensions \(a\) and \(b\), hence area \(ab\). Separate it at the vertical line marking the end of the length \(s\). Its left piece has dimensions \(s\) by \(b\); its right piece has dimensions \(d\) by \(b\).</p>
+<p>Keep the right piece fixed. Rotate the left \(s\)-by-\(b\) rectangle through a right angle and place it in the rightmost vertical strip of the lower diagram. That strip has width \(b\) and height \(b+d=s\), so the rotated piece fits exactly. These two pieces form the lower shaded region, with no overlap or gaps. Rotation preserves area, so the shaded areas are equal.</p>
+<p>The lower shaded region is also the difference between a square of side \(s\) and an unshaded square of side \(d\). Consequently,</p>
+\[ab=s^2-d^2=\boxed{\left(\frac{a+b}{2}\right)^2-\left(\frac{a-b}{2}\right)^2}.\]
+<p><strong>Connection.</strong> The product of two numbers equals the square of their average minus the square of their half-difference. Equivalently, if the average is \(m\) and the product is \(p\), then the half-difference satisfies \(d^2=m^2-p\), and the numbers are \(m\pm d\). The diagram proves the identity for \(a&gt;b&gt;0\); the algebraic identity \((m-d)(m+d)=m^2-d^2\) holds for all real \(m,d\), including the negative average and negative product in Problem 5.</p>
+<p class="back-to-top"><a href="#top">↑ Back to top</a></p>
+</main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>

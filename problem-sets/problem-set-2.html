@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Problem Set 2</title>
+  <link rel="stylesheet" href="../assets/style.css"><script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+main li { margin-bottom: .8rem; }
+section { margin: 2rem 0; }
+blockquote { border-left: 4px solid #9aa5b1; margin: 1rem 0; padding: .3rem 1.2rem; background: #f7f8fa; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: .3rem 0; }
+@media print { section { break-inside: auto; } h2 { break-after: avoid; } }
+</style></head>
+<body id="top">
+  <header>
+    <h1>Problem Set 2</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    
+<p>Show your reasoning and label all diagrams. A proof must explain why a statement holds in general; examples alone are not sufficient.</p>
+<p><strong>Submission:</strong> Submit all work, including diagrams, as a single PDF file. Do not submit snapshots or separate image files.</p>
+
+<section aria-labelledby="squares"><h2 id="squares">1. Squaring numbers ending in 5</h2>
+<p>Consider the following squares:</p>
+\[15^2=225,\qquad25^2=625,\qquad35^2=1225,\qquad45^2=2025.\]
+<ol type="a">
+<li>State a conjecture describing a rule for squaring any positive integer whose decimal representation ends in 5.</li>
+<li>Give four additional examples illustrating your conjecture.</li>
+<li>Prove your conjecture. Explain how your algebraic expression produces the decimal digits described by your rule.</li>
+</ol></section>
+
+<section aria-labelledby="pairs"><h2 id="pairs">2. Finding a pair</h2>
+<p>Choose any five distinct numbers from the set \(\{1,2,3,4,5,6,7,8\}\).</p>
+<ol type="a">
+<li>Prove that two of the chosen numbers must add up to 9.</li>
+<li>Can you choose four distinct numbers from the set so that no two add up to 9? Give an example or prove that it is impossible.</li>
+</ol></section>
+
+<section aria-labelledby="remainders"><h2 id="remainders">3. A remainder problem</h2>
+<blockquote><p>There are certain things whose number is unknown. When counted by twos, one is left over; when counted by fives, four are left over; and when counted by elevens, eight are left over.</p></blockquote>
+<ol type="a">
+<li>Find the smallest positive number of things, using the reconstruction method associated with Sun Zi that we discussed in class. You may use modern notation. Show how you construct and combine the contributions for the three remainder conditions.</li>
+<li>Check your answer against each of the three conditions.</li>
+<li>Describe all positive integer solutions and explain why your description gives all of them.</li>
+</ol></section>
+
+<section aria-labelledby="trisection"><h2 id="trisection">4. Trisecting a line segment</h2>
+<p>Using an unmarked straightedge and compass, divide a given line segment \(AB\) into three equal parts. You may not use ruler measurements.</p>
+<ol type="a">
+<li>Draw and label your construction. Describe its steps clearly enough that another student could reproduce it.</li>
+<li>Prove that the three resulting segments have equal lengths.</li>
+</ol>
+<p><strong>Optional extension:</strong> Explain how to adapt your method to divide a segment into any prescribed positive integer number of equal parts.</p></section>
+
+<section aria-labelledby="quadratic"><h2 id="quadratic">5. One quadratic, three methods</h2>
+<p>Consider the equation</p>
+\[x^2+10x=39.\]
+<p>Explore an alternative geometric completion of the square of the kind used by al-Khwārizmī, then compare it with two algebraic approaches. <strong>Your geometric argument must use a different arrangement from the one presented in the lecture.</strong> Use the four-rectangle construction described below rather than reproducing the lecture diagram.</p>
+<ol type="a">
+<li><strong>Geometry.</strong> Begin with a square of side \(x\). Represent the term \(10x\) by four equal rectangles, and place one rectangle along each side of the square. Determine the dimensions of each rectangle. Draw the resulting figure, identify the four missing corner squares, and calculate the total area that must be added to complete a larger square. Use your diagram to find \(x\). Label all lengths and areas and explain each step.</li>
+<li><strong>Quadratic formula.</strong> Rewrite the equation in standard form and use the quadratic formula to find both roots.</li>
+<li><strong>Average and product.</strong> Determine the average and product of the two roots. Write the roots as their average minus and plus an unknown amount, and use their product to determine that amount. Find both roots.</li>
+<li><strong>Comparison.</strong> Compare the results of the three methods. Why does the geometric construction give only the positive root? Verify both algebraic roots in the original equation.</li>
+</ol>
+<p><em>Geometric problem adapted from Jay Cummings, Math History: A Long-Form Mathematics Textbook, p. 390 (Kindle edition).</em></p>
+</section>
+
+<section aria-labelledby="challenge"><h2 id="challenge">Optional challenge: A geometric identity</h2>
+<p>Let \(a&gt;b&gt;0\). Use the two shaded versions of the diagram below to prove geometrically that</p>
+\[ab=\left(\frac{a+b}{2}\right)^2-\left(\frac{a-b}{2}\right)^2.\]
+<p>The same figure, called a <em>gnomon</em>, is shown twice with different shading. Explain why the shaded regions have equal areas and identify the areas they represent. An algebraic expansion alone is not sufficient.</p>
+<figure style="margin:1.5rem auto;max-width:760px"><img src="../assets/images/problem-set-2/gnomon.svg" style="display:block;width:100%;height:auto" alt="Two identical gnomons: an a by b rectangle is shaded in the first; an L-shaped difference of squares is shaded in the second. The diagram labels a, b, their half-sum, and their half-difference."><figcaption>Two ways to shade the same gnomon. Use the labeled lengths to compare areas.</figcaption></figure>
+<p>How does this identity explain the relationship between the average, product, and half-difference of two numbers?</p>
+<p><em>Adapted from Exercise 6.1 in the supplied text; diagram redrawn for this assignment.</em></p>
+</section>
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+</body>
+</html>
