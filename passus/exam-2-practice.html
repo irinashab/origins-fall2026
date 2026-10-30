@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Irina Shablinsky">
+  <meta name="description" content="Fall 2026 Origins of Mathematics">
+  <title>Origins of Mathematics – Exam 2 Practice</title>
+  <link rel="stylesheet" href="../assets/style.css"><script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+.practice-contents ol { columns: 2; column-gap: 2rem; }
+.practice-contents li { break-inside: avoid; margin-bottom: .45rem; }
+.practice-problem { margin: 2.5rem 0; scroll-margin-top: 1rem; }
+.practice-problem h2 { margin-bottom: .8rem; }
+.practice-problem details { margin: 1rem 0; padding: 0; border: 0; background: transparent; }
+.practice-problem summary { cursor: pointer; font-weight: bold; padding: .35rem 0; }
+.practice-problem details > div { padding-left: 1rem; }
+.practice-controls { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+.practice-controls button { font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 4px; padding: .45rem .8rem; cursor: pointer; }
+.practice-controls button:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.practice-problem mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+@media (max-width: 600px) { .practice-contents ol { columns: 1; } }
+@media print {
+  .practice-controls, #navigation-placeholder, #footer-placeholder, .back-to-top, .practice-contents { display: none; }
+  .practice-problem { margin: 1.5rem 0; }
+  h2, summary { break-after: avoid; }
+  body { color: #000; background: #fff; }
+}
+</style>
+</head>
+<body id="top">
+  <header>
+    <h1>Exam 2 Review</h1>
+  </header>
+
+  <div id="navigation-placeholder"></div>
+
+  <main>
+  
+    <p>Practice the topics for Exam 2: prime numbers, remainders, Fermat’s Little Theorem, the Chinese Remainder Theorem, the pigeonhole principle, quadratic equations over the real numbers, and Fermat’s Last Theorem.</p>
+<p>Try each problem first. If you get stuck, open its hint, then return to your work before opening the answer. Show your reasoning, use exact answers, and practice without a calculator. All congruence variables are integers.</p>
+<nav class="practice-contents" aria-label="Practice problems"><h2>Problems</h2><ol>
+<li><a href="#problem-1">Prime or composite</a></li>
+<li><a href="#problem-2">A finite list of primes</a></li>
+<li><a href="#problem-3">Remainders without large calculations</a></li>
+<li><a href="#problem-4">When cancellation fails</a></li>
+<li><a href="#problem-5">Using Fermat’s Little Theorem</a></li>
+<li><a href="#problem-6">A test that does not prove primality</a></li>
+<li><a href="#problem-7">Combining three remainders</a></li>
+<li><a href="#problem-8">When the moduli are not coprime</a></li>
+<li><a href="#problem-9">Remainder classes as boxes</a></li>
+<li><a href="#problem-10">Choosing the right boxes</a></li>
+<li><a href="#problem-11">Quadratic equations over the real numbers</a></li>
+<li><a href="#problem-12">Fermat’s Last Theorem</a></li>
+</ol></nav>
+<div class="practice-controls"><button type="button" id="open-hints">Show all hints</button><button type="button" id="close-solutions">Hide hints and answers</button></div>
+<section class="practice-problem" id="problem-1" aria-labelledby="heading-1">
+<h2 id="heading-1">1. Prime or composite</h2>
+<p>Determine whether each number is prime or composite. Justify each answer:</p>
+<p><b>(a)</b> 187;</p>
+<p><b>(b)</b> 191. For a primality claim, explain why your checks are enough.</p>
+<details class="practice-hint"><summary>Hint for problem 1</summary><div><p>For 187, try small prime divisors. For 191, ask how large the smaller factor of a composite number can be: if both factors exceeded √191, what would their product exceed?</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 1</summary><div><p><b>(a)</b> 187 = 11 · 17, so it is composite.</p>
+<p><b>(b)</b> If 191 were composite, it would have a prime divisor at most √191 &lt; 14. The only primes to check are 2, 3, 5, 7, 11, 13. It is odd, its digit sum is 11, and its last digit is not 0 or 5. Also 191 = 7 · 27 + 2 = 11 · 17 + 4 = 13 · 14 + 9. None of those primes divides 191, so 191 is prime. The factor bound follows because a factorization 191 = ab with 1 &lt; a ≤ b implies a² ≤ 191; any prime divisor of a is no larger than a.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-2" aria-labelledby="heading-2">
+<h2 id="heading-2">2. A finite list of primes</h2>
+<p>Start with the list 2, 3, 5, 7. Let N = 2 · 3 · 5 · 7 + 1.</p>
+<p><b>(a)</b> Explain why none of the listed primes divides N.</p>
+<p><b>(b)</b> Explain why N must have a prime divisor absent from the list, whether or not N itself is prime.</p>
+<p><b>(c)</b> Why does the same reasoning work for any finite list of primes?</p>
+<details class="practice-hint"><summary>Hint for problem 2</summary><div><p>For each listed prime p, compare N with the product N − 1. You may use that every integer greater than 1 has a prime divisor. Do not assume that the new number is prime.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 2</summary><div><p>Here N = 211. Each listed prime divides 210, so N leaves remainder 1 when divided by each of them. Since N &gt; 1, it has a prime divisor q. That divisor cannot be on the list: if q divided both N and N − 1, it would divide their difference 1, which no prime does. The same argument works with N = p₁···p<sub>k</sub> + 1 for any nonempty finite list of primes. Thus every finite list misses a prime, proving there are infinitely many. There is no need to determine whether the constructed N is prime.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-3" aria-labelledby="heading-3">
+<h2 id="heading-3">3. Remainders without large calculations</h2>
+<p><b>(a)</b> Find the remainder when −65 is divided by 9, and write a division equation with a nonnegative remainder.</p>
+<p><b>(b)</b> Find the remainder when 2027² − 2027 is divided by 7 without expanding the square.</p>
+<details class="practice-hint"><summary>Hint for problem 3</summary><div><p>For (a), find the multiple of 9 immediately below −65. For (b), reduce 2027 first, then apply the same arithmetic operations to its remainder.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 3</summary><div><p><b>(a)</b> −65 = 9(−8) + 7, so the remainder is 7. Writing −65 = 9(−7) − 2 is an integer equality but does not use the standard nonnegative remainder.</p>
+<p><b>(b)</b> Since 2027 = 7 · 289 + 4, we have 2027 ≡ 4 (mod 7). Therefore 2027² − 2027 ≡ 4² − 4 = 12 ≡ 5 (mod 7). The remainder is 5.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-4" aria-labelledby="heading-4">
+<h2 id="heading-4">4. When cancellation fails</h2>
+<p>A student claims that \(3a \equiv 3b \pmod{12}\) always implies \(a \equiv b \pmod{12}\).</p>
+<p><b>(a)</b> Give a counterexample and check it.</p>
+<p><b>(b)</b> What congruence modulo 4 does follow? Explain directly using divisibility.</p>
+<details class="practice-hint"><summary>Hint for problem 4</summary><div><p>Try choosing a and b whose difference is 4. For (b), write 3(a − b) = 12t for an integer t and simplify this integer equality.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 4</summary><div><p><b>(a)</b> Take a = 1 and b = 5. Then 3a = 3 and 3b = 15 differ by 12 and are congruent modulo 12. But a and b differ by 4, which is not divisible by 12.</p>
+<p><b>(b)</b> The hypothesis means 3(a − b) = 12t for some integer t. Dividing this equality by 3 gives a − b = 4t, so \(a \equiv b \pmod{4}\). Dividing the equality changes the relevant modulus; it does not justify keeping modulus 12.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-5" aria-labelledby="heading-5">
+<h2 id="heading-5">5. Using Fermat’s Little Theorem</h2>
+<p><b>(a)</b> Use Fermat’s Little Theorem to find the remainder when \(5^{123}\) is divided by 11. Check the hypotheses.</p>
+<p><b>(b)</b> Find the remainder when \(11^{10}\) is divided by 11. Why would applying \(a^{p-1}\equiv1\) here be invalid?</p>
+<details class="practice-hint"><summary>Hint for problem 5</summary><div><p>For (a), the relevant exponent is p − 1 = 10. Divide 123 by 10. For (b), check the hypothesis about whether the prime divides the base.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 5</summary><div><p><b>(a)</b> The number 11 is prime and does not divide 5, so 5<sup>10</sup> ≡ 1 (mod 11). Since 123 = 10 · 12 + 3,</p>
+<p>\(5^{123}\) = (5<sup>10</sup>)<sup>12</sup>5³ ≡ 5³ = 125 ≡ 4 (mod 11).</p>
+<p>The remainder is 4.</p>
+<p><b>(b)</b> The remainder of \(11^{10}\) modulo 11 is 0, since the power is divisible by 11. The nondivisibility hypothesis in the form \(a^{p-1}\equiv1\) fails: the base is itself divisible by the prime.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-6" aria-labelledby="heading-6">
+<h2 id="heading-6">6. A test that does not prove primality</h2>
+<p>You are given 91 = 7 · 13 and 3⁶ = 729 ≡ 1 (mod 91).</p>
+<p><b>(a)</b> Deduce that \(3^{90}\) ≡ 1 (mod 91).</p>
+<p><b>(b)</b> Explain why this does not make 91 prime. What does this example show about the converse of Fermat’s Little Theorem?</p>
+<details class="practice-hint"><summary>Hint for problem 6</summary><div><p>Express 90 as a multiple of 6. Then distinguish the implication “prime implies this congruence” from its converse.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 6</summary><div><p><b>(a)</b> Because 90 = 6 · 15, we obtain \(3^{90}\) = (3⁶)<sup>15</sup> ≡ 1<sup>15</sup> = 1 (mod 91).</p>
+<p><b>(b)</b> Nevertheless 91 = 7 · 13 is composite. Fermat’s Little Theorem says that for a prime p and a base not divisible by p, the stated congruence holds. It does not say that satisfying one such congruence forces the modulus to be prime. This example disproves that converse.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-7" aria-labelledby="heading-7">
+<h2 id="heading-7">7. Combining three remainders</h2>
+<p><b>(a)</b> Find all integers x satisfying \(x \equiv 1 \pmod{4}\) and \(x \equiv 4 \pmod{7}\). State the smallest positive solution.</p>
+<p><b>(b)</b> Add the condition \(x \equiv 0 \pmod{5}\). Find all integer solutions to the three conditions and verify the smallest positive one. Explain the period.</p>
+<details class="practice-hint"><summary>Hint for problem 7</summary><div><p>Begin with 1, 5, 9, … and look at their remainders modulo 7. Once you have x = x₀ + 28t, impose the condition modulo 5.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 7</summary><div><p><b>(a)</b> Among 1, 5, 9, 13, 17, 21, 25, the number 25 leaves remainder 4 modulo 7. Since 4 and 7 are coprime, all solutions are \(x=25+28t,\quad t\in\mathbb{Z}\). The smallest positive solution is 25.</p>
+<p><b>(b)</b> Modulo 5, the additional condition gives 25 + 28t ≡ 3t ≡ 0. Checking t modulo 5 gives t ≡ 0, so t = 5s. Therefore all integer solutions are \(x=25+140s,\quad s\in\mathbb{Z}\). The smallest positive solution is 25: it leaves remainder 1 modulo 4, remainder 4 modulo 7, and remainder 0 modulo 5. The moduli 4, 7, and 5 are pairwise coprime, so the period is their product 140. For positive solutions only, take s ≥ 0.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-8" aria-labelledby="heading-8">
+<h2 id="heading-8">8. When the moduli are not coprime</h2>
+<p>Decide whether each system has a solution. If it does, give all integer solutions; if it does not, explain the contradiction.</p>
+<p><b>(a)</b> \(x \equiv 1 \pmod{4}\), \(x \equiv 3 \pmod{6}\).</p>
+<p><b>(b)</b> \(x \equiv 1 \pmod{4}\), \(x \equiv 2 \pmod{6}\). Does failure of coprimality automatically mean that no solution exists?</p>
+<details class="practice-hint"><summary>Hint for problem 8</summary><div><p>For (a), list the numbers congruent to 1 modulo 4 in one block of length 12. For (b), compare the parities forced by the two conditions.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 8</summary><div><p><b>(a)</b> In the range 0 through 11, numbers congruent to 1 modulo 4 are 1, 5, 9; only 9 is congruent to 3 modulo 6. Adding 12 preserves both remainders, and every integer reduces to a representative in that range. Thus all solutions are \(x=9+12t,\quad t\in\mathbb{Z}\).</p>
+<p><b>(b)</b> A number congruent to 1 modulo 4 is odd, whereas a number congruent to 2 modulo 6 is even. No solution exists. Noncoprimality alone does not settle existence: these two examples have the same moduli and different outcomes.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-9" aria-labelledby="heading-9">
+<h2 id="heading-9">9. Remainder classes as boxes</h2>
+<p><b>(a)</b> Prove that among any ten integers, two have a difference divisible by 9. Identify the objects and boxes.</p>
+<p><b>(b)</b> Give nine distinct integers for which no pair has a difference divisible by 9.</p>
+<details class="practice-hint"><summary>Hint for problem 9</summary><div><p>Use the possible remainders modulo 9 as boxes. For (b), try choosing exactly one representative of each remainder class.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 9</summary><div><p><b>(a)</b> Put each of the ten integers into the box labeled by its remainder modulo 9. There are nine boxes: 0, 1, …, 8. By the pigeonhole principle, two integers a and b occupy the same box. Then a ≡ b (mod 9), so 9 divides a − b. This also works if some of the original integers are equal, because zero is divisible by 9.</p>
+<p><b>(b)</b> The set {0, 1, …, 8} works. Its elements have distinct remainders modulo 9; equivalently, every nonzero difference has absolute value less than 9.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-10" aria-labelledby="heading-10">
+<h2 id="heading-10">10. Choosing the right boxes</h2>
+<p>Seven distinct numbers are selected from {1, 2, …, 12}.</p>
+<p><b>(a)</b> Prove that two selected numbers have sum 13. Identify your boxes.</p>
+<p><b>(b)</b> Show that six selected numbers need not contain such a pair.</p>
+<details class="practice-hint"><summary>Hint for problem 10</summary><div><p>Pair the numbers in the original set so that each pair sums to 13. How many pairs are there? For (b), choose just one number from each pair.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 10</summary><div><p><b>(a)</b> Use the six pairs {1, 12}, {2, 11}, {3, 10}, {4, 9}, {5, 8}, {6, 7} as boxes. Seven selected numbers in six boxes force at least two into one box. Since the selected numbers are distinct and each box contains exactly two numbers, both members of a pair were selected. Their sum is 13.</p>
+<p><b>(b)</b> Choose {1, 2, 3, 4, 5, 6}. The greatest sum of two distinct members is 6 + 5 = 11, so no pair sums to 13.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-11" aria-labelledby="heading-11">
+<h2 id="heading-11">11. Quadratic equations over the real numbers</h2>
+<p><b>(a)</b> Solve \(x^2+6x=27\) by completing the square. Explain the missing corner using a sketch or description. Find all real roots and identify the positive length.</p>
+<p><b>(b)</b> Solve \(2x^2-20x+42=0\) by writing the roots as m + u and m − u.</p>
+<p><b>(c)</b> Classify the real roots of \(x^2-8x+k=0\) according to k: two distinct roots, one repeated root, or no real roots. Justify your classification.</p>
+<details class="practice-hint"><summary>Hint for problem 11</summary><div><p>For (a), split 6x into two equal rectangles. For (b), first divide the equation by 2; use the sum of the roots to find their average, then their product to find u². For (c), isolate a square and ask whether its required value is positive, zero, or negative.</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 11</summary><div><p><b>(a)</b> Split 6x into two rectangles of dimensions x by 3. Place them along adjacent sides of the x by x square. The missing corner is 3 by 3, with area 9. Adding 9 to both sides gives</p>
+<p>x² + 6x + 9 = 36, so (x + 3)² = 36.<br/>Thus x + 3 = ±6, giving x = 3 or x = −9.</p>
+<p>Both solve the real equation; only x = 3 represents a positive side length in the area construction.</p>
+<p><b>(b)</b> Dividing by 2 gives x² − 10x + 21 = 0. The roots have sum 10, so their average is m = 5. Write them as 5 + u and 5 − u. The product condition is 25 − u² = 21, so u² = 4. Choosing u = 2 gives the roots 7 and 3. The factorization 2(x − 7)(x − 3) verifies the answer.</p>
+<p><b>(c)</b> Completing the square gives \((x-4)^2=16-k\). If k &lt; 16, the roots are the two distinct real numbers \(4\pm\sqrt{16-k}\). If k = 16, the root 4 is repeated. If k &gt; 16, the right side is negative, so there are no real roots.</p></div></details>
+</section>
+<section class="practice-problem" id="problem-12" aria-labelledby="heading-12">
+<h2 id="heading-12">12. Fermat’s Last Theorem</h2>
+<p><b>(a)</b> State Fermat’s Last Theorem precisely. Explain how it differs from Fermat’s Little Theorem.</p>
+<p><b>(b)</b> Optional extension: suppose positive integers a, b, c satisfied \(a^{15}+b^{15}=c^{15}\). Show how this would produce a counterexample with exponent 3, and also one with exponent 5.</p>
+<details class="practice-hint"><summary>Hint for problem 12</summary><div><p>For (a), specify the exponent and the domain of x, y, z. For (b), use 15 = 3 · 5 and the identity \((a^r)^s=a^{rs}\).</p></div></details>
+<details class="practice-answer"><summary>Worked answer for problem 12</summary><div><p><b>(a)</b> For every integer n &gt; 2, the equation \(x^n+y^n=z^n\) has no solutions in positive integers x, y, z. The restrictions to integer exponent n &gt; 2 and positive integer variables are essential. Fermat’s Little Theorem instead concerns congruences: if p is prime and p does not divide a, then \(a^{p-1}\equiv1\) (mod p). The two theorems address different questions.</p>
+<p><b>(b)</b> A hypothetical solution with exponent 15 would give</p>
+<p>\((a^5)^3+(b^5)^3=(c^5)^3\),</p>
+<p>a solution with exponent 3 in positive integers. It would also give</p>
+<p>\((a^3)^5+(b^3)^5=(c^3)^5\),</p>
+<p>a solution with exponent 5. Integer powers of positive integers are again positive integers, so both constructions stay in the required domain. This illustrates how a solution at a composite exponent can produce one at a divisor exponent.</p></div></details>
+</section>
+<section aria-labelledby="checking"><h2 id="checking">Checking your explanations</h2><ul>
+<li>A primality argument rules out every possible prime divisor up to the square root; a composite verdict only needs one nontrivial factorization.</li>
+<li>A proof that primes never run out needs a new prime divisor, not a claim that the constructed number is always prime.</li>
+<li>A remainder is nonnegative and less than the modulus. Check theorem hypotheses before reducing an exponent or cancelling a factor.</li>
+<li>A Chinese remainder answer should include all solutions and their period, then verify the stated remainders.</li>
+<li>A pigeonhole proof names the objects and boxes and explains why sharing a box gives the desired conclusion.</li>
+<li>A quadratic solution accounts for both square-root signs and distinguishes real algebraic solutions from positive lengths.</li>
+</ul></section>
+     <p class="back-to-top">
+  <a href="#top">↑ Back to top</a>
+</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+  const siteRoot = window.location.hostname.endsWith("github.io")
+    ? `/${window.location.pathname.split("/").filter(Boolean)[0]}/`
+    : "/";
+
+  fetch(`${siteRoot}assets/includes/navigation.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Navigation request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById("navigation-placeholder");
+      placeholder.innerHTML = html;
+
+      placeholder.querySelectorAll("a[data-path]").forEach(link => {
+        link.href = `${siteRoot}${link.dataset.path}`;
+      });
+    })
+    .catch(error => console.error("Navigation load failed:", error));
+
+  fetch(`${siteRoot}assets/includes/footer.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Footer request failed: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Footer load failed:", error));
+</script>
+
+
+<script>
+document.getElementById('open-hints').addEventListener('click', () => {
+  document.querySelectorAll('.practice-hint').forEach(item => { item.open = true; });
+});
+document.getElementById('close-solutions').addEventListener('click', () => {
+  document.querySelectorAll('.practice-problem details').forEach(item => { item.open = false; });
+});
+// Include hints and worked answers in a printed copy, then restore the reader's view.
+let practicePrintState = [];
+window.addEventListener('beforeprint', () => {
+  practicePrintState = Array.from(document.querySelectorAll('.practice-problem details'), item => [item, item.open]);
+  practicePrintState.forEach(([item]) => { item.open = true; });
+});
+window.addEventListener('afterprint', () => {
+  practicePrintState.forEach(([item, wasOpen]) => { item.open = wasOpen; });
+});
+</script>
+</body>
+</html>
